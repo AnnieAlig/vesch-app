@@ -1,0 +1,114 @@
+.services{
+    position: relative;
+    margin-top: 50px;
+}
+.services .brand_text-rotated {
+    top: 0;
+}
+.services__title-main{
+    margin-bottom: 50px;
+}
+.services__item{
+    padding-right: 25px;
+    margin-bottom: 50px;
+}
+/* .services__title{
+    min-height: 58px;
+} */
+.services__image{
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-flex;
+    justify-content: flex-start;
+    width: 66.6%;
+    max-height: 190px;
+    img{
+        object-fit: contain;
+        object-position: 0 0;
+    }
+}
+@media(min-width:768px){
+    .services{
+        margin-top: 0;
+    }
+    .services__title{
+        min-height: 58px;
+    }
+    .services__image{
+        max-height: 395px;
+        // width: auto;
+        margin-bottom: 60px;
+    }
+}
+@media(min-width:1280px){
+    .services__item{
+        padding-right: 20px;
+        margin-bottom: 0;
+    }
+    .services__image{
+        display: flex;
+        width: 100%;
+    }
+}
+
+.services__link{
+    position: absolute;
+    right: 20px;
+    color: var(--color_white);
+    bottom: -50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--transition);
+}
+.services__link .rotated{
+    transform: translateX(100%) rotate(-90deg);
+    transform-origin: bottom left;
+    display: flex;
+    align-items: center;
+}
+.services__link .ic,
+.services__link:hover .ic{
+    color: var(--color_white);
+}
+.services__image::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color_text);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    transition: var(--transition);
+}
+.services__image:hover::after{
+    opacity: 0.85;
+}
+.services__image:hover .services__link{
+    bottom: 20px;
+    pointer-events: initial;
+    z-index: 2;
+    opacity: 1;
+}
+
+.services__all-link{
+    font-size: var(--text-big);
+    font-weight: bold;
+    color: var(--color_text);
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: auto;
+}
+.services__all-link .ic {
+    margin-left: 8px;
+}
+.services__all-link .ic,
+.services__all-link:hover .ic{
+    color: var(--color_text);
+}

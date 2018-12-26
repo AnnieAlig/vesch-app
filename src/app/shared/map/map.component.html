@@ -1,0 +1,46 @@
+<div class="map">
+    <div class="row">
+        <div class="col-desktop-1"></div>
+        <h2 class="map__title col-3 col-tablet-4 col-desktop-4">ждем вас по адресам</h2>
+    </div>
+    <div class="map__menu row">
+        <div class="col-3 hidden-mobile">
+            <ul class="menu-list map__sort">
+                <li class="navbar__item">
+                    <a href="" class="navbar__link">Все локации</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="" class="navbar__link active">Приемные пункты</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="" class="navbar__link">Чистоматы</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-desktop-3 col-tablet-1 col-4">
+            <ul class="menu-list map__view">
+                <li class="menu-list-item navbar__item">
+                    <a href="" class="menu-list-link navbar__link" 
+                        (click)="setMode('map')" [ngClass]="{'active': mode === 'map'}">Карта</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="" class="navbar__link" 
+                        (click)="setMode('list')"
+                        [ngClass]="{'active': mode === 'list'}">Список</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="map__inner">
+        <div class="map__frame" *ngIf="mode === 'map'" [@fadeInOut]>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.1316161213595!2d30.478105615686832!3d50.42001937947115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cecfedb45233%3A0x68b832bbbd83e6f9!2z0LLRg9C70LjRhtGPINCf0YDQtdC-0LHRgNCw0LbQtdC90YHRjNC60LAsIDQzLCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1suk!2sua!4v1544827621549" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="map__list row" *ngIf="mode === 'list'" [@fadeInOut]>
+            <div class="map__list-item" *ngFor="let item of mapList">
+                <div class="map__list-address">{{item.address}}</div>
+                <div class="map__list-schedule">Время работы {{item.schedule}}</div>
+                <a href="{{item.link}}" class="map__list-link">Как добраться <i class="ic--arrow">&rarr;</i></a>
+            </div>
+        </div>
+    </div>
+</div>

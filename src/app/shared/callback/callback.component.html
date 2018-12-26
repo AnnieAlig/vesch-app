@@ -1,0 +1,21 @@
+<div class="callback">
+  <div class="row align-items-center justify-content-between">
+      <div class="col-desktop-2 callback__texts">
+          <h3 class="callback__title">
+              {{data.title}}
+          </h3>
+          <p class="callback__description">
+              {{data.description}}
+          </p>
+      </div>
+      <!-- <div class="col-1"></div> -->
+      <form class="callback__form" #form="ngForm" (ngSubmit)="onSubmit(form)" 
+        [ngClass]="{'validated': validated}">
+          <input type="text" class="callback__input" placeholder="Введите имя" name="name" required 
+            [(ngModel)]="callback.name">
+          <input type="text" class="callback__input" placeholder="+38(0__)___-__-__" name="phone" required
+            [textMask]="{mask: phoneMask}" [(ngModel)]="callback.phone">
+          <button class="callback__submit btn btn-primary" type="submit">{{data.button}}</button>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <a href="javascript:void(0);" class="modal__close" (click)="close()">
+                  <i class="ic ic--close" ></i>
+            </a>
+        </div>
+        <div class="modal-body">
+          <div class="container-inner">
+            <div class="row">
+              <div class="col-1 hidden-tablet"></div>
+              <div class="col-4 search">
+                  <label for="" class="search-label"> 
+                      <input type="text" class="search-input" placeholder="Поиск по сайту..."
+                        [(ngModel)]="searchInput" name="search">
+                      <i class="ic ic--search ic--mobile" (click)="search()"></i>
+                  </label>
+                  <p class="search-help hidden-tablet">Нажмите enter для поиска или esc, чтобы выйти</p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

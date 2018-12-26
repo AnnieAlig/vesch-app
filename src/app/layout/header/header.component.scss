@@ -1,0 +1,40 @@
+@media(max-width:1279px){
+    .header-desktop{
+        display: none;
+    }
+}
+
+/* TOP BAR */
+
+.top-bar{
+    justify-content: flex-end;
+}
+.top-bar__container {
+    display: flex;
+    justify-content: flex-end;
+}
+.top-bar__menu{
+    padding: 10px 0 0;
+}
+.top-bar__menu--main{
+    margin-left: -12px;
+}
+.top-bar__menu--main .top-bar__link{
+    padding: 10px;
+    @media(min-width:1280px) and (max-width:1440px){
+        padding: 10px 6px;
+    }
+}
+.top-bar__menu--ic{
+    margin-left: 10px;
+}
+.top-bar__menu--ic .top-bar__link{
+    padding: 10px 5px;
+}
+
+.lang-switcher {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+

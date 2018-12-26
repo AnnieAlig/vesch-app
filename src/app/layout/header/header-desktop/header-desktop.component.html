@@ -1,0 +1,111 @@
+<header class="container-inner header-desktop">
+  <div class="top-bar row">
+      <div class="decor decor--half decor--bottom"></div>
+      <div class="col-4 top-bar__container">
+          <ul class="menu-list top-bar__menu top-bar__menu--main">
+              <li class="top-bar__item">
+                  <a class="top-bar__link text-small" href="tel:0931700909">
+                      <i class="ic ic--phone"></i>
+                      (093) 170&bull;09&bull;09
+                  </a>
+              </li>
+              <li class="top-bar__item">
+                  <a class="top-bar__link text-small" href="tel:0949533909">
+                      (094) 953&bull;39&bull;09
+                  </a>
+              </li>
+              <!-- <li class="top-bar__item">
+                  <a class="top-bar__link text-small" href="">
+                      <i class="ic ic--location"></i>
+                      Киев
+                  <i class="ic ic--dropdown">^</i>
+                  </a>
+              </li>
+              <li class="top-bar__item">
+                  <a class="top-bar__link text-small" href="">
+                      <i class="ic ic--user"></i>
+                      Здравствуйте, Александр
+                  </a>
+              </li> -->
+          </ul>
+          <ul class="menu-list top-bar__menu top-bar__menu--ic">
+              <li class="top-bar__item">
+                  <a class="top-bar__link" href="">
+                      <i class="ic ic--cart"></i>
+                  </a>
+              </li>
+              <li class="top-bar__item">
+                  <a class="top-bar__link" href="javascript:void(0);" (click)="openSearchDialog()">
+                      <i class="ic ic--search"></i>
+                  </a>
+              </li>
+              <li class="top-bar__item">
+                <ul class="lang-switcher">
+                    <li>
+                        <a href="" class="top-bar__link active text-small">Рус</a>
+                    </li>
+                    <li>
+                        <a href="" class="top-bar__link text-small">Укр</a>
+                    </li>
+                </ul>
+              </li>
+          </ul>
+      </div>
+      
+  </div>
+  <div class="navbar">
+      <a href="/" class="navbar__brand">
+          <img src="assets/img/brand/logo@2x.png" srcset="assets/img/brand/logo@1x.png 1x, assets/img/brand/logo@2x.png 2x, assets/img/brand/logo@3x.png 3x" alt="VESCH">
+      </a>
+      <ul class="menu-list navbar__menu">
+          <li class="navbar__item">
+              <a href="javascript:void(0);" class="navbar__link" (click)="collapsed = !collapsed">
+                  О нас
+                  <i class="ic ic--dropdown">^</i>
+              </a>
+          </li>
+          <li class="navbar__item">
+              <a href="" class="navbar__link active">Акции</a>
+          </li>
+          <li class="navbar__item">
+              <a href="" class="navbar__link">Сервисы</a>
+          </li>
+          <li class="navbar__item">
+              <a href="" class="navbar__link">Услуги</a>
+          </li>
+          <li class="navbar__item">
+              <a href="" class="navbar__link">Програма лояльности</a>
+          </li>
+          <li class="navbar__item">
+              <a href="" class="navbar__link">Пункты приема</a>
+          </li>
+      </ul>
+  </div>
+</header>
+
+<div class="about-us" [ngClass]="{'collapsed': !collapsed}">
+    <div class="container-inner">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="about-us__title">о нас</div>
+            <div class="col-1"></div>
+            <ul class="menu-list about-us__menu col-1">
+                <li class="about-us-item">
+                    <a href="" class="about-us-link">Компания</a>
+                </li>
+                <li class="about-us-item">
+                    <a href="" class="about-us-link">Как мы работаем</a>
+                </li>
+                <li class="about-us-item">
+                    <a href="" class="about-us-link">Новости</a>
+                </li>
+                <li class="about-us-item">
+                    <a href="" class="about-us-link">Вакансии </a>
+                </li>
+                <li class="about-us-item">
+                    <a href="" class="about-us-link">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

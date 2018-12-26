@@ -1,0 +1,346 @@
+<!-- SLIDER -->
+<div class="slider container-inner">
+  <div class="decor-bar decor-bar--down">
+      <div class="decor decor--full decor-to--left">
+            <img src="/assets/img/decor.svg">
+      </div>
+      <div class="col-desktop-4 col-tablet-2 col-2"></div>
+      <div class="decor decor--half decor--top"></div>
+  </div>
+  <div class="slider__container">
+      <div class="slider__inner">
+            <div class="slider__slide" *ngFor="let slide of slider; let index = index;" 
+              [ngClass]="{ 'active': (index + 1) === activeSlide}">
+                  <div class="slider__images hidden-mobile hidden-tablet" [style.background-image]='getSliderImage("desktop")'></div>
+                  <div class="slider__images hidden-mobile hidden-desktop" [style.background-image]='getSliderImage("tablet")'></div>
+                  <div class="slider__images hidden-desktop hidden-tablet" [style.background-image]='getSliderImage("mobile")'></div>
+                  <div class="slider__text">
+                      <h1 class="slder__title" innerHtml="{{slide.title}}"></h1>
+                  </div>
+              </div>
+            <ul class="slider__controls">
+                <li class="slider__control" *ngFor="let item of slider; let index = index"
+                  [ngClass]="{ 'active': (index + 1) === activeSlide}" (click)='activeSlide = (index + 1)'>
+                    <div class="slider__line"></div>
+                    <div class="slider__number">{{index+1}}</div>
+                </li>
+            </ul>
+      </div>
+  </div>
+</div>
+<!-- END OF SLIDER -->
+<div class="container-inner">
+    <div class="decor-bar decor-bar--sm decor-bar-absolute">
+        <div class="col-1"></div>
+        <div class="decor decor--half decor--top"></div>
+    </div>
+    <!-- CALLBACK -->
+    <app-callback mode="order"></app-callback>
+    <!-- END OF CALLBACK -->
+    <div class="decor-bar--sm decor-bar">
+        <div class="col-1 col-tablet-2 col-desktop-3"></div>
+        <div class="decor decor--half decor--bottom"></div>
+    </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="container-inner">
+    <div class="decor-bar decor-bar--lg">
+        <div class="col-tablet-2 col-desktop-2"></div>
+        <div class="decor decor--full">
+            <img src="/assets/img/decor.svg">
+        </div>
+    </div>
+    <section class="benefits row">
+        <div class="col-tablet-2 col-desktop-2 benefits__item" *ngFor="let benefit of benefits">
+            <h3 class="benefits__title">{{benefit.title}}</h3>
+            <p class="benefits__description">
+                {{benefit.description}}
+            </p>
+            <a href="{{benefit.link}}" class="benefits__link">
+                Детальнее
+                <i class="ic ic--more">^</i>
+            </a>
+            <div class="benefits__image">
+                <img src="{{benefit.img}}" alt="{{benefit.alt}}">
+            </div>
+        </div>
+        
+        <div class="decor-bar col-4 col-tablet-2 mt20 hidden-desktop align-items-end decor-to-right">
+            <div class="col-2"></div>
+            <div class="col-tablet-2 decor decor--full">
+                <img src="/assets/img/decor.svg">
+            </div>
+        </div>
+        <div class="brand_text-rotated hidden-mobile">
+            <p>новый взгляд на вещи</p>
+        </div>
+    </section>
+    <div class="decor-bar decor-bar--lg hidden-tablet hidden-mobile">
+        <div class="col-5"></div>
+        <div class="decor decor--full">
+            <img src="/assets/img/decor.svg">
+        </div>
+    </div>
+</div>
+<!-- END OF BENEFITS -->
+
+<!-- VIDEO -->
+<div class="container-inner">
+    <div class="decor-bar decor-bar--sm decor-bar--down">
+        <div class="col-1"></div>
+        <div class="decor decor--full">
+            <img src="/assets/img/decor.svg">
+        </div>
+    </div>
+    <app-video></app-video>
+    <div class="decor-bar decor-bar--sm">
+        <div class="col-tablet-1 col-desktop-1"></div>
+        <div class="decor decor--half decor--bottom"></div>
+        <div class="col-2">
+        </div>
+        <div class="decor decor--full decor-bar--top">
+            <img src="/assets/img/decor.svg">
+        </div>
+    </div>
+</div>
+<!-- END OF VIDEO -->
+
+<!-- STEPS -->
+<div class="container-inner">
+    <section class="steps">
+        <div class="row">
+            <div class="col-tablet-1 col-desktop-1"></div>
+            <h2 class="col-tablet-3 col-desktop-3 steps__main-title">
+                Мобильная экочистка &ndash; <br> как это работает
+            </h2>
+            <div class="col-tablet-2 col-desktop-2 steps__image">
+                <img src="/assets/img/home/mobile_bus.png" alt="mobile cleaning">
+            </div>
+            <div class="brand_text-rotated hidden-mobile">
+                <p>мобильная экочистка</p>
+            </div>
+            <div class="steps__container col-4">
+                <div class="steps__item" *ngFor="let step of steps; let index = index">
+                    <div class="steps__number">{{index+1}}</div>
+                    <h3 class="steps__title">{{step.title}}</h3>
+                    <p class="steps__description">{{step.description}}</p>
+                </div>
+            </div>
+            <div class="col-tablet-2 col-desktop-1"></div>
+            <div class="col-tablet-2 col-desktop-1 mobile-app">
+                <h3 class="mobile-app__title">Скачайте приложение через</h3>
+                <a href="" class="mobile-app__link">
+                    <img src="/assets/img/home/apple@2x.png" srcset="/assets/img/home/apple@1x.png 1x, /assets/img/home/apple@2x.png 2x, /assets/img/home/apple@3x.png 3x" alt="app store">
+                </a>
+                <a href="" class="mobile-app__link">
+                    <img src="/assets/img/home/google@2x.png" srcset="/assets/img/home/google@1x.png 1x, /assets/img/home/google@2x.png 2x, /assets/img/home/google@3x.png 3x" alt="google play">
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- END OF STEPS -->
+
+<div class="container-inner">
+    <div class="decor-bar decor-bar--sm">
+        <div class="decor decor--half decor--top"></div>
+    </div>
+    <!-- CALLBACK -->
+    <app-callback mode="order"></app-callback>
+    <!-- END OF CALLBACK -->
+    <div class="decor-bar decor-bar--sm">
+        <div class="col-1">
+        </div>
+        <div class="decor decor--half decor--bottom"></div>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<div class="container-inner">    
+    <div class="decor-bar decor-bar--sm mb-tablet-80">
+        <div class="decor decor--full">
+            <img src="/assets/img/decor.svg">
+        </div>
+        <div class="col-1 col-desktop-3 col-tablet-2"></div>
+        <div class="decor decor--full mt20 mt-tablet-50 mt-desktop-50">
+            <img src="/assets/img/decor.svg">
+        </div>
+    </div>
+    <section class="services">
+        <div class="row">
+            <div class="col-desktop-1"></div>
+            <h2 class="services__title-main">Популярные услуги</h2>
+            <div class="brand_text-rotated hidden-mobile">
+                <p>услуги</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-tablet-2 col-desktop-1 services__item" *ngFor="let service of services">
+                <div class="services__image">
+                    <img src="{{service.img}}" alt="{{service.alt}}">
+                    <div class="services__link">
+                        <a href="{{service.link}}" class="rotated">
+                            <i class="ic ic--plus">+</i>
+                            Смотреть прайс
+                        </a>
+                    </div>
+                </div>
+                <h3 class="services__title">{{service.title}}</h3>
+                <p class="services__description">{{service.description}}</p>
+            </div>
+        </div>
+        <div class="row services__all">
+            <div class="col-1 col-tablet-3 col-desktop-5"></div>
+            <a href="" class="col-tablet-1 col-desktop-1 services__all-link">
+                Все услуги 
+                <i class="ic ic--more">^</i>
+            </a>
+        </div>
+    </section>
+    <div class="decor-bar decor-bar--sm">
+        <div class="col-2 col-desktop-4 col-tablet-3"></div>
+        <div class="decor decor--full">
+            <img src="/assets/img/decor.svg">
+        </div>
+    </div>
+    <div class="decor-bar decor-bar--sm decor-bar--down">
+        <div class="col-1"></div>
+        <div class="decor decor--full">
+            <img src="/assets/img/decor.svg">
+        </div>
+    </div>
+</div>
+<!-- END OF SERVICES -->
+
+<!-- BLACK-TIE -->
+<div class="container-outer blacktie__outer">
+    <div class="container-inner">
+        <section class="blacktie">
+            <div class="blacktie__poster">
+                <img src="/assets/img/home/black-tie@2x.png" srcset="/assets/img/home/black-tie@1x.png 1x, /assets/img/home/black-tie@2x.png 2x, /assets/img/home/black-tie@3x.png 3x" alt="black tie service">
+            </div>
+            <div class="decor-bar decor-bar--sm">
+                <div class="col-1 col-desktop-3 col-tablet-1"></div>
+                <div class="decor decor--full mt20 mt-tablet-40">
+                    <img src="/assets/img/decor.svg">
+                </div>
+                <div class="decor decor--full decor-bar--top">
+                    <img src="/assets/img/decor.svg">
+                </div>
+            </div>
+            <div class="decor-bar hidden-desktop mt20 mt-tablet-50">
+                <div class="col-3"></div>
+                <div class="decor decor--full">
+                    <img src="/assets/img/decor.svg">
+                </div>
+            </div>
+            <div class="row blacktie__main-info">
+                <div class="decor decor--full align-self-end hidden-mobile hidden-tablet">
+                    <img src="/assets/img/decor.svg">
+                </div>
+                <div class="col-desktop-3">
+                    <h2 class="blacktie__title-main">Услуга Black tie</h2>
+                    <p class="blacktie__description-main">
+                        Black Tie - это лучшее что может случиться с вашей вещью. Дизайнерская одежда, одежда из комбинированных тканей, элементами декора или специальной обработки требует тщательного подхода на каждом этапе обработки с применением самой эффективной и безопасной экочистки.
+                    </p>
+                </div>
+                <div class="col-1 hidden-tablet hidden-mobile"></div>
+                <div class="decor decor--full align-self-start mt30 mb50 mt-tablet-0 mt-desktop-0 mb-tablet-0 mb-desktop-0">
+                    <img src="/assets/img/decor.svg">
+                </div>
+                <div class="brand_text-rotated hidden-mobile">
+                    <p>Black Tie</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 col-desktop-3 blacktie__item" *ngFor="let blacktie of blackTie_items">
+                    <h3 class="blacktie__title">{{blacktie.title}}</h3>
+                    <div class="blacktie__texts">
+                        <div class="blacktie__icon">
+                            <img src="{{blacktie.icon}}" alt="{{blacktie.alt}}">
+                        </div>
+                        <p class="blacktie__description">
+                            {{blacktie.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="decor-bar decor-bar--down">
+                <div class="decor decor--full decor-to--left decor-to--top hidden-tablet hidden-mobile">
+                    <img src="/assets/img/decor.svg">
+                </div>
+                <div class="col-desktop-5 col-tablet-3"></div>
+                <a href="" class="col-tablet-1 col-desktop-1 blacktie__all-link">
+                    Детальнее 
+                    <i class="ic ic--more">^</i>
+                </a>
+            </div>
+            <div class="decor-bar decor-bar--sm">
+                <div class="decor decor--half mt-tablet-80 mt-desktop-80"></div>
+                <div class="decor decor--full hidden-tablet hidden-mobile">
+                    <img src="/assets/img/decor.svg">
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- END OF BLACK-TIE -->
+
+<!-- PRIORITY -->
+<div class="container-inner">
+    <section class="priority">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-desktop-5 d-flex flex-wrap">
+                <div class="priority__texts">
+                    <h2 class="priority__title">программа лояльности «priority&nbsp;club» </h2>
+                    <div class="priority__image hidden-desktop">
+                        <img src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
+                    </div>
+                    <p class="priority__description">
+                        Используйте безграничные возможности сети эко-чисток Vesch. Станьте участником программы лояльности Priority Club и получите индивидуальные скидки, персонального менеджера и другие привилегии VIP-клиента.
+                    </p>
+                    <div class="btn-container priorty__buttons d-flex">
+                        <a href="" class="btn btn-secondary">Узнать больше</a>
+                        <a href="" class="btn btn-primary">Присоединиться</a>
+                    </div>
+                </div>
+                <div class="priority__image hidden-tablet hidden-mobile">
+                    <img src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="decor-bar decor-bar--sm">
+        <div class="col-desktop-3 col-tablet-2 col-1"></div>
+        <div class="decor decor--half decor--bottom"></div>
+    </div>
+</div>
+<!-- END OF PRIORITY -->
+
+<!-- MAP -->
+<div class="container-inner">
+    <div class="decor-bar decor-bar--sm mt30">
+        <div class="col-desktop-4 col-tablet-3 col-2"></div>
+        <div class="decor decor--full">
+            <img src="/assets/img/decor.svg">
+        </div>
+    </div>
+    <app-map></app-map>
+</div>
+<!-- END OF MAP -->
+
+<div class="container-inner">
+    <div class="decor-bar decor-bar--sm decor-bar-absolute">
+        <div class="decor decor--half decor--top"></div>
+    </div>
+    <!-- CALLBACK -->
+    <app-callback mode="subscribe"></app-callback>
+    <!-- END OF CALLBACK -->
+    <div class="decor-bar decor-bar--sm">
+        <div class="col-desktop-2 col-1"></div>
+        <div class="decor decor--half decor--bottom"></div>
+    </div>
+</div>

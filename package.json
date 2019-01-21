@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
+    "@types/underscore": "^1.8.9",
     "angular2-text-mask": "^9.0.0",
     "core-js": "^2.5.4",
     "ng2-bootstrap-modal": "^1.0.1",
@@ -32,12 +33,15 @@
     "@angular/cli": "~7.1.4",
     "@angular/compiler-cli": "~7.1.0",
     "@angular/language-service": "~7.1.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jquery": "^3.3.29",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "html2canvas": "^1.0.0-alpha.12",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
+    "jquery": "^3.3.1",
     "karma": "~3.1.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
@@ -46,6 +50,8 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "underscore": "^1.9.1",
+    "wowjs": "^1.1.3"
   }
 }

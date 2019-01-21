@@ -6,15 +6,15 @@
     --grid-outer-count: 5;
     --grid-outer-padding: calc(100% / var(--grid-outer-count) * .5)
 }
-@media(min-width:768px) {
-    :root{
-        --grid-count: 4;
-        // --grid-max: 960px;
-        --grid-max: 1280px;
-        --grid-outer-count: 5;
-        --grid-outer-padding: calc(100% / var(--grid-outer-count) * .5)
-    }
-}
+// @media(min-width:768px) {
+//     :root{
+//         --grid-count: 4;
+//         // --grid-max: 960px;
+//         --grid-max: 1280px;
+//         --grid-outer-count: 5;
+//         --grid-outer-padding: calc(100% / var(--grid-outer-count) * .5)
+//     }
+// }
 @media (min-width:1280px) {
     :root{
         --grid-count: 6;
@@ -36,7 +36,10 @@
 
     /* colors */
     --color_primary: #d6da4a;
+    --color_primary-static: #c9cf2a;
+    --color_primary-hover: #C9CF2A;
     --color_secondary: #2e3848;
+    --color_secondary-hover: #242c39;
     --color_text: #343a49;
     --color_white: #ffffff;
     --color_placeholder: #c6c7c9;

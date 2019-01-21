@@ -17,6 +17,7 @@ import { MapComponent } from './shared/map/map.component';
 import { HomeComponent  } from './pages/home/home.component';
 import { VideoComponent } from './shared/video/video.component';
 import { SearchModalComponent } from './shared/modals/search-modal/search-modal.component';
+import { LinesComponent } from './layout/lines/lines.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SearchModalComponent } from './shared/modals/search-modal/search-modal.
     HeaderDesktopComponent,
     MapComponent,
     VideoComponent,
-    SearchModalComponent
+    SearchModalComponent,
+    LinesComponent
   ],
   imports: [
     BrowserModule,

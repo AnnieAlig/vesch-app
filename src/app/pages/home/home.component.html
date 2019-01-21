@@ -8,16 +8,16 @@
       <div class="decor decor--half decor--top"></div>
   </div>
   <div class="slider__container">
-      <div class="slider__inner">
+      <div class="slider__inner" #slides>
             <div class="slider__slide" *ngFor="let slide of slider; let index = index;" 
               [ngClass]="{ 'active': (index + 1) === activeSlide}">
-                  <div class="slider__images hidden-mobile hidden-tablet" [style.background-image]='getSliderImage("desktop")'></div>
-                  <div class="slider__images hidden-mobile hidden-desktop" [style.background-image]='getSliderImage("tablet")'></div>
-                  <div class="slider__images hidden-desktop hidden-tablet" [style.background-image]='getSliderImage("mobile")'></div>
-                  <div class="slider__text">
-                      <h1 class="slder__title" innerHtml="{{slide.title}}"></h1>
-                  </div>
-              </div>
+                <div class="slider__images hidden-mobile hidden-tablet" [style.background-image]='getSliderImage("desktop", index)'></div>
+                <div class="slider__images hidden-mobile hidden-desktop" [style.background-image]='getSliderImage("tablet", index)'></div>
+                <div class="slider__images hidden-desktop hidden-tablet" [style.background-image]='getSliderImage("mobile", index)'></div>
+                <div class="slider__text">
+                    <h1 class="slder__title" innerHtml="{{slide.title}}"></h1>
+                </div>
+            </div>
             <ul class="slider__controls">
                 <li class="slider__control" *ngFor="let item of slider; let index = index"
                   [ngClass]="{ 'active': (index + 1) === activeSlide}" (click)='activeSlide = (index + 1)'>
@@ -51,8 +51,8 @@
             <img src="/assets/img/decor.svg">
         </div>
     </div>
-    <section class="benefits row">
-        <div class="col-tablet-2 col-desktop-2 benefits__item" *ngFor="let benefit of benefits">
+    <section class="benefits row wow child-animation">
+        <div class="col-tablet-2 col-desktop-2 benefits__item" *ngFor="let benefit of benefits, let i = index">
             <h3 class="benefits__title">{{benefit.title}}</h3>
             <p class="benefits__description">
                 {{benefit.description}}
@@ -115,7 +115,7 @@
                 Мобильная экочистка &ndash; <br> как это работает
             </h2>
             <div class="col-tablet-2 col-desktop-2 steps__image">
-                <img src="/assets/img/home/mobile_bus.png" alt="mobile cleaning">
+                <img class="wow slideInLeft" data-wow-duration="1s" src="/assets/img/home/mobile_bus.png" alt="mobile cleaning">
             </div>
             <div class="brand_text-rotated hidden-mobile">
                 <p>мобильная экочистка</p>
@@ -291,13 +291,14 @@
 <!-- PRIORITY -->
 <div class="container-inner">
     <section class="priority">
+        <div class="priority__rounded-text wow rotateIn1" data-wow-duration="1s"></div>
         <div class="row">
             <div class="col-1"></div>
             <div class="col-desktop-5 d-flex flex-wrap">
                 <div class="priority__texts">
                     <h2 class="priority__title">программа лояльности «priority&nbsp;club» </h2>
                     <div class="priority__image hidden-desktop">
-                        <img src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
+                        <img class="wow slideInLeft" data-wow-duration=".8s" data-wow-delay=".5s" src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
                     </div>
                     <p class="priority__description">
                         Используйте безграничные возможности сети эко-чисток Vesch. Станьте участником программы лояльности Priority Club и получите индивидуальные скидки, персонального менеджера и другие привилегии VIP-клиента.
@@ -308,7 +309,7 @@
                     </div>
                 </div>
                 <div class="priority__image hidden-tablet hidden-mobile">
-                    <img src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
+                    <img class="wow slideInLeft" data-wow-duration=".8s" data-wow-delay=".5s" src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
                 </div>
             </div>
         </div>

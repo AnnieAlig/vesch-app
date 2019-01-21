@@ -1,15 +1,16 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { modeOrder } from './callback.data';
 import { modeSubscribe } from './callback.data';
 import { CallbackService} from '../../core/services/callback.service';
+import { WOW } from 'wowjs/dist/wow.min';
 
 @Component({
   selector: 'app-callback',
   templateUrl: './callback.component.html',
   styleUrls: ['./callback.component.scss']
 })
-export class CallbackComponent implements OnInit {
+export class CallbackComponent implements OnInit, AfterViewInit {
 
   @Input() mode: any;
   public data: any;
@@ -33,6 +34,10 @@ export class CallbackComponent implements OnInit {
 
   ngOnInit() {
     this.handleData();
+  }
+
+  ngAfterViewInit() {
+    new WOW().init();
   }
 
   handleData() {

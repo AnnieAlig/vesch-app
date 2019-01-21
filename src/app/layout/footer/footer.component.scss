@@ -34,6 +34,9 @@
     font-size: var(--text-small);
     color: var(--color_light);
     padding: 4px 0;
+    &:hover{
+        color: var(--color_text);
+    }
 }
 @media(min-width:768px){
     .footer__nav-link{

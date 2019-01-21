@@ -5,7 +5,7 @@
     padding: 60px calc(var(--grid-column) * .5) 105px;
     position: relative;
 }
-.priority::before{
+.priority__rounded-text{
     content: '';
     display: block;
     height: 160px;
@@ -17,6 +17,8 @@
     top: -5px;
     margin-left: 10px;
     z-index: 2;
+    animation-name: rotateIn1;
+    visability: hidden;
 }
 .priority::after{
     content: '';
@@ -80,6 +82,7 @@
         /* width: 100%; */
         margin-top: 40px;
         margin-bottom: 40px;
+        overflow: hidden;
     }
     .priority__description{
         margin-bottom: 50px;
@@ -105,5 +108,19 @@
     }
     .priorty__buttons .btn{
         width: 195px;
+    }
+}
+
+@keyframes rotateIn1{
+    from {
+        transform-origin: left;
+        transform: rotate(-180deg);
+        opacity: 0;
+      }
+    
+    to {
+        transform-origin: left;
+        transform: rotate(0);
+        opacity: 1;
     }
 }

@@ -1,6 +1,7 @@
 .benefits{
     position: relative;
     margin-bottom: 50px;
+    visibility: visible;
 }
 .benefits__item{
     padding-right: 20px;
@@ -52,14 +53,22 @@
 }
 .benefits__link .ic{
     margin-left: 4px;
-    color: var(--color_text)
+    color: var(--color_text);
+    background-color: var(--color_primary-static);
+    transition: var(--transition);
 }
 .benefits__link:hover .ic,
 .benefits__link:focus .ic{
-    color: var(--color_text)
+    color: var(--color_text);
+    background-color: var(--color_primary-hover);
+    margin-left: 16px;
 }
 .benefits__image{
     max-width: 66.6%;
+    overflow: hidden;
+    img{
+        visibility: hidden;
+    }
 }
 @media(min-width:768px){
     .benefits__image{
@@ -89,3 +98,32 @@
         right: 5px;
     }
 }
+
+.child-animation.animated{
+    .benefits__item  img{
+        animation-name: slideInLeft;
+        animation-duration: 1s;
+        visibility: visible;
+    }
+}
+$elements: 3;
+@for $i from 0 to $elements {
+    .child-animation.animated{
+        .benefits__item:nth-child(#{$i + 1}) {
+            img{
+                animation-delay: #{($i + 1) * .5}s
+            }
+        }
+  }
+}
+
+@keyframes slideInLeft {
+    from {
+      transform: translate3d(-100%, 0, 0);
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+  }

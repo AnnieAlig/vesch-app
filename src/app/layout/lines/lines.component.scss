@@ -1,0 +1,27 @@
+.lines-container{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: var(--grid-outer-padding);
+    padding-right: var(--grid-outer-padding);
+    max-width: var(--grid-max);
+    margin: auto;
+    pointer-events: none;
+}
+
+/deep/ .decolines {
+	pointer-events: none;
+    max-width: var(--grid-max);
+    margin: auto;
+    position: relative;
+    height: 100%;
+}
+
+/deep/ .decoline {
+	position: absolute;
+    z-index: 9999;
+}

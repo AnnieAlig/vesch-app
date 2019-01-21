@@ -1,13 +1,16 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HomeService } from '../../core/services/home.service';
+import html2canvas from 'html2canvas';
+import * as _ from 'underscore';
+import { WOW } from 'wowjs/dist/wow.min';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   public slider;
   public activeSlide: number;
@@ -17,6 +20,8 @@ export class HomeComponent implements OnInit {
   public steps;
   public services;
   public blackTie_items;
+
+  @ViewChild('slides') slides: ElementRef;
 
   constructor(
     private homeService: HomeService,
@@ -37,18 +42,34 @@ export class HomeComponent implements OnInit {
     this.createBlackTie();
   }
 
+  ngAfterViewInit() {
+    new WOW().init();
+  }
+
   createSlider() {
     this.homeService.getSlides().subscribe(
       (slides) => {
         this.slider = slides.slider;
         this.activeSlide = 1;
+
+        setTimeout( () => {
+          const that = this;
+          console.log('slide 1', this.slides.nativeElement.children, this.slides.nativeElement.children.length)
+          _.each(this.slides.nativeElement.children, function(slide: any) {
+            if (slide.classList.contains('slider__slide')) {
+              console.log('slide', slide)
+              // that.createSlidesPieces(slide);
+            }
+          });
+        }, 0);
+
       }
     );
   }
   changeSlide() {
     (this.activeSlide < this.slider.length) ? this.activeSlide += 1 : this.activeSlide = 1;
   }
-  getSliderImage(mode: string) {
+  getSliderImage(mode: string, index: number) {
     let image: string;
     if (mode === 'mobile') {
       image = 'mobile_img';
@@ -58,6 +79,15 @@ export class HomeComponent implements OnInit {
       image = 'desktop_img';
     }
     return this._sanitizer.bypassSecurityTrustStyle(`url(${this.slider[this.activeSlide - 1][image]})`);
+  }
+  createSlidesPieces(slide) {
+    html2canvas(slide).then(function(canvas) {
+      console.log('canvas', canvas);
+      // const img = new Image();
+      // const imageSource = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+      // img.src = imageSource;
+      // document.body.appendChild(img);
+    });
   }
 
   createBenefits() {

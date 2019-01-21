@@ -119,9 +119,13 @@
 
 .blacktie__all-link .ic {
     margin-left: 8px;
+    background-color: var(--color_primary-static);
+    transition: var(--transition);
 }
-.blacktie__all-link .ic,
-.blacktie__all-link:hover .ic{
+.blacktie__all-link:hover .ic,
+.blacktie__all-link:focus .ic{
     color: var(--color_text);
+    background-color: var(--color_primary-hover);
+    margin-left: 20px;
 }
 

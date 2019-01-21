@@ -107,8 +107,12 @@
 }
 .services__all-link .ic {
     margin-left: 8px;
+    background-color: var(--color_primary-static);
+    transition: var(--transition);
 }
-.services__all-link .ic,
-.services__all-link:hover .ic{
+.services__all-link:hover .ic,
+.services__all-link:focus .ic{
     color: var(--color_text);
+    background-color: var(--color_primary-hover);
+    margin-left: 20px;
 }

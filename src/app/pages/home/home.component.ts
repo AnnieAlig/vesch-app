@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef,
+  ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HomeService } from '../../core/services/home.service';
 import html2canvas from 'html2canvas';
@@ -27,11 +28,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private homeService: HomeService,
     private ref: ChangeDetectorRef,
     private _sanitizer: DomSanitizer,
+    private renderer: Renderer2
   ) {
     this.sliderInterval = setInterval(() => {
       this.changeSlide();
       this.ref.markForCheck();
-    }, 6000);
+    }, 10000);
   }
 
   ngOnInit() {
@@ -54,11 +56,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
         setTimeout( () => {
           const that = this;
-          console.log('slide 1', this.slides.nativeElement.children, this.slides.nativeElement.children.length)
-          _.each(this.slides.nativeElement.children, function(slide: any) {
+          _.each(this.slides.nativeElement.children, (slide: any, index: number) => {
             if (slide.classList.contains('slider__slide')) {
-              console.log('slide', slide)
-              // that.createSlidesPieces(slide);
+              // console.log('slide', slide)
+              that.clipImage(this.slider[index].desktop_img, 6, slide).then(dataUrls => {
+                _.each(dataUrls, (dataUrl: any) => {
+                  that.createSliderPieces(dataUrl, slide);
+                });
+              });
             }
           });
         }, 0);
@@ -66,6 +71,42 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
     );
   }
+
+  clipImage(imageSrc: string, slicesNumber: number, container: any) {
+    return new Promise( (resolve, reject) => {
+      const img = new Image;
+      img.src = imageSrc;
+      const dataUrls = [];
+      const height = container.parentNode.clientHeight;
+      const width = container.parentNode.clientWidth;
+
+      img.onload = function() {
+        for (let i = 0; i < slicesNumber; i++) {
+          const slicePosition = width / slicesNumber * -i;
+          const canvas = <HTMLCanvasElement> document.createElement('CANVAS');
+          canvas.height = height;
+          canvas.width = width / slicesNumber;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, slicePosition, 0, width, height);
+          const dataURL = canvas.toDataURL();
+          dataUrls.push(dataURL);
+          // console.log('dataURL', dataURL.length)
+          if (dataUrls.length === slicesNumber) {
+            resolve(dataUrls);
+          }
+        }
+      };
+    });
+  }
+  createSliderPieces(dataUrl: string, container: any) {
+    const imgElement = this.renderer.createElement('img');
+    this.renderer.setProperty(imgElement, 'src', dataUrl);
+    this.renderer.setProperty(imgElement, 'src', dataUrl);
+    this.renderer.addClass(imgElement, 'slide__slice');
+    this.renderer.appendChild(container, imgElement);
+    // console.log('imgElement', imgElement)
+  }
+
   changeSlide() {
     (this.activeSlide < this.slider.length) ? this.activeSlide += 1 : this.activeSlide = 1;
   }

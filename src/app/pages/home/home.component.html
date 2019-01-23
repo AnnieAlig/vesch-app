@@ -11,9 +11,9 @@
       <div class="slider__inner" #slides>
             <div class="slider__slide" *ngFor="let slide of slider; let index = index;" 
               [ngClass]="{ 'active': (index + 1) === activeSlide}">
-                <div class="slider__images hidden-mobile hidden-tablet" [style.background-image]='getSliderImage("desktop", index)'></div>
+                <!-- <div class="slider__images hidden-mobile hidden-tablet" [style.background-image]='getSliderImage("desktop", index)'></div>
                 <div class="slider__images hidden-mobile hidden-desktop" [style.background-image]='getSliderImage("tablet", index)'></div>
-                <div class="slider__images hidden-desktop hidden-tablet" [style.background-image]='getSliderImage("mobile", index)'></div>
+                <div class="slider__images hidden-desktop hidden-tablet" [style.background-image]='getSliderImage("mobile", index)'></div> -->
                 <div class="slider__text">
                     <h1 class="slder__title" innerHtml="{{slide.title}}"></h1>
                 </div>

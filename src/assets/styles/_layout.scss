@@ -97,6 +97,11 @@
     vertical-align: middle;
     overflow: hidden;
     z-index: 1;
+    img{
+        transform-origin: 0 0;
+        animation: decorFromLeft .6s ease-in-out;
+        animation-fill-mode: forwards;
+    }
 }
 .decor svg{
     display: inline-block;
@@ -380,5 +385,14 @@
     }
     .order-desktop-4{
         order: 4;
+    }
+}
+
+@keyframes decorFromLeft{
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
     }
 }

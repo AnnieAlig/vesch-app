@@ -166,3 +166,16 @@
         fill: var(--color_secondary);
     }
 }
+
+svg {
+    .icon-fill{
+        fill:#d5db38;
+        fill-rule:evenodd;
+        transition: var(--transition);
+    }
+    &:hover {
+        .icon-fill{
+            fill:#c9cf2a;
+        }
+    }
+}

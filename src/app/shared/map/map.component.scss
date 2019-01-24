@@ -115,9 +115,14 @@
         align-items: center;
         .ic--arrow{
             opacity: 0;
-            font-size: 16px;
-            margin-left: 4px;
             transition: var(--transition);
+            background-image: url(/assets/img/icons/ic_arrow_right.svg);
+            width: 10px;
+            height: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 1px;
+            margin-left: 4px;
         }
         &:hover{
             .ic--arrow{

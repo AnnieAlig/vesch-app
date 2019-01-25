@@ -133,29 +133,32 @@
 }
 
 /deep/ .slide__slice{
+    --slice-width: calc(100% / 5);
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     z-index: -1;
+    @media(min-width:1280px){
+        --slice-width: calc(100% / 6);
+    }
     &:nth-of-type(2){
-        left: calc(100% / 6);
+        left: var(--slice-width);
     }
     &:nth-of-type(3){
-        left: calc(100% / 6 * 2);
+        left: calc(var(--slice-width) * 2);
     }
     &:nth-of-type(4){
-        left: calc(100% / 6 * 3);
+        left: calc(var(--slice-width) * 3);
     }
     &:nth-of-type(5){
-        left: calc(100% / 6 * 4);
+        left: calc(var(--slice-width) * 4);
     }
     &:nth-of-type(6){
-        left: calc(100% / 6 * 5);
+        left: calc(var(--slice-width) * 5);
     }
     .active &{  
         width: 0; 
-        // width: var(--grid-column);
         animation: sliderPiece 1s ease-in-out;
         animation-fill-mode: forwards;
         &:nth-of-type(2){
@@ -170,8 +173,31 @@
         &:nth-of-type(5){
             animation-delay: 0.4s;
         }
+        @media(max-width:1279px){
+            &:first-of-type,
+            &:last-of-type{
+                animation: sliderPieceHalf 1s ease-in-out;
+                animation-fill-mode: forwards;
+            }
+        }
     }
-    
+    @media(max-width:1279px){
+        &:nth-of-type(2){
+            left: calc(var(--slice-width) / 2);
+        }
+        &:nth-of-type(3){
+            left: calc(var(--slice-width) / 2 + var(--slice-width));
+        }
+        &:nth-of-type(4){
+            left: calc(var(--slice-width) / 2 + var(--slice-width) * 2);
+        }
+        &:nth-of-type(5){
+            left: calc(var(--slice-width) / 2 + var(--slice-width) * 3);
+        }
+        &:nth-of-type(6){
+            left: calc(var(--slice-width) / 2 + var(--slice-width) * 4);
+        }
+    }
 }
 
 @keyframes sliderPiece {
@@ -180,6 +206,15 @@
     }
   
     to {
-      width: var(--grid-column);
+      width: var(--slice-width);
+    }
+  }
+@keyframes sliderPieceHalf {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: calc(var(--slice-width) / 2);
     }
   }

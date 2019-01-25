@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.sliderInterval = setInterval(() => {
       this.changeSlide();
       this.ref.markForCheck();
-    }, 10000);
+    }, 100000);
   }
 
   ngOnInit() {
@@ -56,15 +56,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
         setTimeout( () => {
           const that = this;
-          _.each(this.slides.nativeElement.children, (slide: any, index: number) => {
-            if (slide.classList.contains('slider__slide')) {
-              // console.log('slide', slide)
-              that.clipImage(this.slider[index].desktop_img, 6, slide).then(dataUrls => {
+          const allSlides = this.slides.nativeElement.querySelectorAll('.slider__slide');
+          const sliderPieces = 6;
+          let sliderMode: string;
+          if (window.innerWidth < 768) {
+            sliderMode = 'mobile_img';
+          } else if (window.innerWidth >= 768 && window.innerWidth <= 1280) {
+            sliderMode = 'tablet_img';
+          } else {
+            sliderMode = 'desktop_img';
+          }
+
+          _.each(allSlides, (slide: any, index: number) => {
+              that.clipImage(this.slider[index][sliderMode], sliderPieces, slide, sliderMode).then(dataUrls => {
                 _.each(dataUrls, (dataUrl: any) => {
                   that.createSliderPieces(dataUrl, slide);
                 });
               });
-            }
           });
         }, 0);
 
@@ -72,20 +80,56 @@ export class HomeComponent implements OnInit, AfterViewInit {
     );
   }
 
-  clipImage(imageSrc: string, slicesNumber: number, container: any) {
+  clipImage(imageSrc: string, slicesNumber: number, container: any, mode: string) {
     return new Promise( (resolve, reject) => {
       const img = new Image;
       img.src = imageSrc;
       const dataUrls = [];
-      const height = container.parentNode.clientHeight;
-      const width = container.parentNode.clientWidth;
+      // const height = container.parentNode.clientHeight;
+      // const width = container.parentNode.clientWidth;
 
-      img.onload = function() {
+      img.onload = function(event) {
+        const loadedImage: any = event.currentTarget;
+        console.log('loadedImage', loadedImage.width)
+        const width = loadedImage.width;
+        const height = loadedImage.height;
+
+        const slicePositionsNotEqual = [];
+        let slicePositionHelper;
+        const sliceWidthNotEqual = [];
         for (let i = 0; i < slicesNumber; i++) {
-          const slicePosition = width / slicesNumber * -i;
+          if (i === 0) {
+            slicePositionHelper = 0;
+            sliceWidthNotEqual.push(width / (slicesNumber - 1) / 2);
+          } else if ( i === 1 ) {
+            slicePositionHelper += width / (slicesNumber - 1) / 2;
+            sliceWidthNotEqual.push(width / (slicesNumber - 1));
+          } else if (i === slicesNumber - 1) {
+            slicePositionHelper += width / (slicesNumber - 1);
+            sliceWidthNotEqual.push(width / (slicesNumber - 1) / 2);
+          } else {
+            slicePositionHelper += width / (slicesNumber - 1);
+            sliceWidthNotEqual.push(width / (slicesNumber - 1));
+          }
+          slicePositionsNotEqual.push(slicePositionHelper);
+        }
+        console.log('sliceWidthNotEqual', sliceWidthNotEqual)
+        console.log('slicePositionsNotEqual', slicePositionsNotEqual)
+
+        for (let i = 0; i < slicesNumber; i++) {
+          let slicePosition;
+          if (mode === 'desktop_img') {
+            slicePosition = width / slicesNumber * -i;
+          } else {
+            slicePosition = slicePositionsNotEqual[i] * -1;
+          }
           const canvas = <HTMLCanvasElement> document.createElement('CANVAS');
           canvas.height = height;
-          canvas.width = width / slicesNumber;
+          if (mode === 'desktop_img') {
+            canvas.width = width / slicesNumber;
+          } else {
+            canvas.width = sliceWidthNotEqual[i];
+          }
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, slicePosition, 0, width, height);
           const dataURL = canvas.toDataURL();
@@ -110,6 +154,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   changeSlide() {
     (this.activeSlide < this.slider.length) ? this.activeSlide += 1 : this.activeSlide = 1;
   }
+
   getSliderImage(mode: string, index: number) {
     let image: string;
     if (mode === 'mobile') {
@@ -121,15 +166,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
     return this._sanitizer.bypassSecurityTrustStyle(`url(${this.slider[this.activeSlide - 1][image]})`);
   }
-  createSlidesPieces(slide) {
-    html2canvas(slide).then(function(canvas) {
-      console.log('canvas', canvas);
-      // const img = new Image();
-      // const imageSource = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-      // img.src = imageSource;
-      // document.body.appendChild(img);
-    });
-  }
+
 
   createBenefits() {
     this.homeService.getBenefits().subscribe(

@@ -45,7 +45,7 @@ export class LinesComponent implements OnInit, AfterViewInit {
 
   setLines(width) {
     let lines;
-    if (width < 1280) {
+    if (width < 1200) {
       lines = [
         {top: 0, left: '0', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 100, direction: 'TopBottom' }},

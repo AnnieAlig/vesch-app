@@ -56,7 +56,7 @@
         padding-top: 40px;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .map__frame{
         margin-left: 0;
         margin-right: 0;
@@ -89,7 +89,7 @@
         background-color: var(--color_secondary);
         padding: 40px calc(var(--grid-column) * .5);
     }
-    @media(min-width:1280px){
+    @media(min-width:1200px){
         padding: 40px var(--grid-column);
         margin: 0;
     }
@@ -117,11 +117,10 @@
             opacity: 0;
             transition: var(--transition);
             background-image: url(/assets/img/icons/ic_arrow_right.svg);
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background-repeat: no-repeat;
             background-position: center;
-            margin-top: 1px;
             margin-left: 4px;
         }
         &:hover{

@@ -3,7 +3,7 @@
     margin-top: 50px;
 }
 .services .brand_text-rotated {
-    top: 0;
+    top: -20px;
 }
 .services__title-main{
     margin-bottom: 50px;
@@ -23,7 +23,7 @@
     width: 66.6%;
     max-height: 190px;
     img{
-        object-fit: contain;
+        object-fit: cover;
         object-position: 0 0;
     }
 }
@@ -40,7 +40,7 @@
         margin-bottom: 60px;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .services__item{
         padding-right: 20px;
         margin-bottom: 0;

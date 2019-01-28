@@ -10,17 +10,14 @@
   <div class="slider__container">
       <div class="slider__inner" #slides>
             <div class="slider__slide" *ngFor="let slide of slider; let index = index;" 
-              [ngClass]="{ 'active': (index + 1) === activeSlide}">
-                <!-- <div class="slider__images hidden-mobile hidden-tablet" [style.background-image]='getSliderImage("desktop", index)'></div>
-                <div class="slider__images hidden-mobile hidden-desktop" [style.background-image]='getSliderImage("tablet", index)'></div>
-                <div class="slider__images hidden-desktop hidden-tablet" [style.background-image]='getSliderImage("mobile", index)'></div> -->
+              [ngClass]="{ 'active': (index + 1) === activeSlide, 'prev': (index + 1) === prevSlide}">
                 <div class="slider__text">
                     <h1 class="slder__title" innerHtml="{{slide.title}}"></h1>
                 </div>
             </div>
             <ul class="slider__controls">
                 <li class="slider__control" *ngFor="let item of slider; let index = index"
-                  [ngClass]="{ 'active': (index + 1) === activeSlide}" (click)='activeSlide = (index + 1)'>
+                  [ngClass]="{ 'active': (index + 1) === activeSlide}" (click)='changeSlide(index + 1)'>
                     <div class="slider__line"></div>
                     <div class="slider__number">{{index+1}}</div>
                 </li>
@@ -88,7 +85,7 @@
 <!-- VIDEO -->
 <div class="container-inner">
     <div class="decor-bar decor-bar--sm decor-bar--down">
-        <div class="col-1"></div>
+        <div class="col-1 hidden-tablet hidden-mobile"></div>
         <div class="decor decor--full">
             <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s">
         </div>
@@ -97,7 +94,7 @@
     <div class="decor-bar decor-bar--sm">
         <div class="col-tablet-1 col-desktop-1"></div>
         <div class="decor decor--half decor--bottom"></div>
-        <div class="col-2">
+        <div class="col-2 col-tablet-1 col-desktop-2">
         </div>
         <div class="decor decor--full decor-bar--top">
             <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".5s">
@@ -292,7 +289,7 @@
 <div class="container-inner">
     <section class="priority">
         <div class="priority__rounded-text wow rotateIn1" data-wow-duration="1s"></div>
-        <div class="row">
+        <div class="row priority__row">
             <div class="col-1"></div>
             <div class="col-desktop-5 d-flex flex-wrap">
                 <div class="priority__texts">
@@ -311,6 +308,9 @@
                 <div class="priority__image hidden-tablet hidden-mobile">
                     <img class="wow slideInLeft" data-wow-duration=".8s" data-wow-delay=".5s" src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
                 </div>
+            </div>
+            <div class="brand_text-rotated hidden-mobile">
+                <p>Priority club</p>
             </div>
         </div>
     </section>

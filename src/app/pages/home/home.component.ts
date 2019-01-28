@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public slider;
   public activeSlide: number;
   private sliderInterval: any;
+  public prevSlide: number;
 
   public benefits;
   public steps;
@@ -33,7 +34,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.sliderInterval = setInterval(() => {
       this.changeSlide();
       this.ref.markForCheck();
-    }, 100000);
+    }, 6000);
   }
 
   ngOnInit() {
@@ -61,7 +62,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
           let sliderMode: string;
           if (window.innerWidth < 768) {
             sliderMode = 'mobile_img';
-          } else if (window.innerWidth >= 768 && window.innerWidth <= 1280) {
+          } else if (window.innerWidth >= 768 && window.innerWidth <= 1200) {
             sliderMode = 'tablet_img';
           } else {
             sliderMode = 'desktop_img';
@@ -90,7 +91,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
       img.onload = function(event) {
         const loadedImage: any = event.currentTarget;
-        console.log('loadedImage', loadedImage.width)
+        // console.log('loadedImage', loadedImage.width)
         const width = loadedImage.width;
         const height = loadedImage.height;
 
@@ -113,8 +114,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
           }
           slicePositionsNotEqual.push(slicePositionHelper);
         }
-        console.log('sliceWidthNotEqual', sliceWidthNotEqual)
-        console.log('slicePositionsNotEqual', slicePositionsNotEqual)
+        // console.log('sliceWidthNotEqual', sliceWidthNotEqual)
+        // console.log('slicePositionsNotEqual', slicePositionsNotEqual)
 
         for (let i = 0; i < slicesNumber; i++) {
           let slicePosition;
@@ -134,7 +135,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
           ctx.drawImage(img, slicePosition, 0, width, height);
           const dataURL = canvas.toDataURL();
           dataUrls.push(dataURL);
-          // console.log('dataURL', dataURL.length)
           if (dataUrls.length === slicesNumber) {
             resolve(dataUrls);
           }
@@ -148,11 +148,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.renderer.setProperty(imgElement, 'src', dataUrl);
     this.renderer.addClass(imgElement, 'slide__slice');
     this.renderer.appendChild(container, imgElement);
-    // console.log('imgElement', imgElement)
   }
 
-  changeSlide() {
-    (this.activeSlide < this.slider.length) ? this.activeSlide += 1 : this.activeSlide = 1;
+  changeSlide(index?) {
+    this.prevSlide = this.activeSlide;
+    if (index) {
+      this.activeSlide = index;
+    } else {
+      (this.activeSlide < this.slider.length) ? this.activeSlide += 1 : this.activeSlide = 1;
+    }
   }
 
   getSliderImage(mode: string, index: number) {

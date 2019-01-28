@@ -33,7 +33,7 @@
         padding-bottom: 20px;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .blacktie__outer{
         top: 210px
     }
@@ -92,7 +92,7 @@
         width: 75%;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .blacktie__item{
         &:nth-child(2){
             margin-left: calc(var(--grid-column) * 3);

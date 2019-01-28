@@ -20,7 +20,7 @@
     margin-top: 115px;
 } */
 .steps__item:first-child{
-    margin-top: -50px;
+    // margin-top: -50px;
 }
 .steps__main-title{
     margin-bottom: 30px;
@@ -55,7 +55,7 @@
         padding-right: 15px;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .steps__container{
         margin-top: 0;
     }
@@ -98,7 +98,7 @@
         margin-top: -50px;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .mobile-app{
         padding-top: 95px;
         margin-top: 0;

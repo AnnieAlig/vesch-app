@@ -11,12 +11,12 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
     onResize(event) {
-      this.mobile = window.innerWidth < 1280;
+      this.mobile = window.innerWidth < 1200;
   }
   constructor() { }
 
   ngOnInit() {
-    this.mobile = window.innerWidth < 1280;
+    this.mobile = window.innerWidth < 1200;
   }
 
 }

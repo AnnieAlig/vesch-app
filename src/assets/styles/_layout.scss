@@ -64,7 +64,7 @@
         width: calc(var(--grid-column) * 6)!important;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .col-desktop-1{
         width:  var(--grid-column)!important;
     }
@@ -136,10 +136,10 @@
 @media(min-width:768px){
     .decor-bar--lg{
         padding: 30px 0 50px;
-        left: calc(var(--grid-column) * -.5);
+        left: calc(var(--grid-column) * -1);
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .decor-bar--lg{
         padding: 65px 0 20px;
         left: 0;
@@ -164,13 +164,13 @@
     margin-top: calc(var(--decor-height) / -2);
 }
 .decor-to-right{
-    right: calc(var(--grid-column) * -.5);
+    // right: calc(var(--grid-column) * -.5);
 }
 .decor-bar-absolute{
     position: relative;
     width: 100%;
     top: calc(var(--decor-height) / -2);
-    left: -2px;
+    // left: -2px;
     .decor{
         position: absolute;
         left: 0;
@@ -245,12 +245,12 @@
         display: none!important;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .hidden-desktop{
         display: none!important;
     }
 }
-@media(min-width:768px) and (max-width:1279px){
+@media(min-width:768px) and (max-width:1199px){
     .hidden-tablet{
         display: none!important;
     }
@@ -286,7 +286,7 @@
     margin-bottom: 80px;
 }
 
-@media(min-width:768px) and (max-width:1279px){
+@media(min-width:768px) and (max-width:1199px){
     .mt-tablet-0{
         margin-top: 0px;
     }
@@ -316,7 +316,7 @@
     }
 }
 
-@media(min-width:1280px){
+@media(min-width:1200px){
     .mt-desktop-0{
         margin-top: 0px;
     }
@@ -359,7 +359,7 @@
 .order-4{
     order: 4;
 }
-@media(min-width:768px) and (max-width:1279px){
+@media(min-width:768px) and (max-width:1199px){
     .order-tablet-1{
         order: 1;
     }
@@ -373,7 +373,7 @@
         order: 4;
     } 
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .order-desktop-1{
         order: 1;
     }
@@ -395,4 +395,7 @@
     to {
         transform: scaleX(1);
     }
+}
+.wow{
+    visibility: hidden;
 }

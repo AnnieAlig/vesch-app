@@ -4,6 +4,20 @@
     margin-right: calc(var(--grid-column) * -.5);
     padding: 60px calc(var(--grid-column) * .5) 105px;
     position: relative;
+    &__row{
+        position: relative;
+    }
+    .brand_text-rotated{
+        position: absolute;
+        right: 5px;
+        top: -40px;
+        bottom: unset;
+        p {
+            transform: rotate(-90deg);
+            transform-origin: right;
+            color: var(--color_white);
+        }
+    }
 }
 .priority__rounded-text{
     content: '';
@@ -38,7 +52,7 @@
         padding: 95px calc(var(--grid-column) * .5) 105px;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .priority::after{
         height: 120px;
         width: 140px;
@@ -94,7 +108,7 @@
         margin-bottom: 0;
     }
 }
-@media(min-width:1280px){
+@media(min-width:1200px){
     .priority__texts{
         width: 55%;
     }

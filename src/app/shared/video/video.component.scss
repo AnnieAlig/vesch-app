@@ -21,6 +21,7 @@
     border: none;
     cursor: pointer;
     transition: var(--transition);
+    z-index: 2;
     &:hover{
         transform: scale(1.1);
     }

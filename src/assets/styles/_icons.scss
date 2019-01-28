@@ -78,11 +78,11 @@
 }
 
 .ic--collapse{
-    width: 22px;
+    width: 18px;
     position: relative;
     height: 1px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: var(--color_secondary);
 }
 .ic--collapse::before, 
@@ -91,15 +91,15 @@
     position: absolute;
     left: 0;
     right: 0;
-    width: 22px;
+    width: 18px;
     height: 1px;
     background-color: var(--color_secondary);
 } 
 .ic--collapse::before{
-    top: -5px;
+    top: -6px;
 }
 .ic--collapse::after{
-    bottom: -5px;
+    bottom: -6px;
 }
 @media(min-width:768px){
     .ic--collapse,

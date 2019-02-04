@@ -5,7 +5,18 @@ import { HomeComponent } from './pages/home/home.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent, },
+    component: HomeComponent,
+  },
+  { path: 'services', loadChildren: './pages/services/services.module#ServicesModule' },
+  { path: 'promos', loadChildren: './pages/promos/promos.module#PromosModule' },
+  { path: 'offers', loadChildren: './pages/offers/offers.module#OffersModule' },
+  { path: 'loyalty', loadChildren: './pages/loyalty/loyalty.module#LoyaltyModule' },
+  { path: 'points', loadChildren: './pages/points/points.module#PointsModule' },
+  { path: 'company', loadChildren: './pages/company/company.module#CompanyModule' },
+  { path: 'how-we-work', loadChildren: './pages/how-we-work/how-we-work.module#HowWeWorkModule' },
+  { path: 'vacancies', loadChildren: './pages/vacancies/vacancies.module#VacanciesModule' },
+  { path: 'faq', loadChildren: './pages/faq/faq.module#FaqModule' },
+  { path: 'news', loadChildren: './pages/news/news.module#NewsModule' },
 ];
 
 @NgModule({

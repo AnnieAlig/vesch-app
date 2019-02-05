@@ -19,6 +19,7 @@ import { VideoComponent } from './shared/video/video.component';
 import { SearchModalComponent } from './shared/modals/search-modal/search-modal.component';
 import { LinesComponent } from './layout/lines/lines.component';
 
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,7 @@ import { LinesComponent } from './layout/lines/lines.component';
     MapComponent,
     VideoComponent,
     SearchModalComponent,
-    LinesComponent
+    LinesComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,10 +42,13 @@ import { LinesComponent } from './layout/lines/lines.component';
     HttpClientModule,
     BrowserAnimationsModule,
     BootstrapModalModule.forRoot({container: document.body}),
+    SharedModule
   ],
   providers: [
   ],
-  entryComponents: [SearchModalComponent],
+  entryComponents: [
+    SearchModalComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

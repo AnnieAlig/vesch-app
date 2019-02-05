@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 import { VacanciesRouting } from './vacancies.routing';
 import { VacanciesComponent } from './vacancies.component';
@@ -8,7 +10,9 @@ import { VacanciesComponent } from './vacancies.component';
   declarations: [VacanciesComponent],
   imports: [
     CommonModule,
-    VacanciesRouting
+    SharedModule,
+    VacanciesRouting,
+    FormsModule
   ]
 })
 export class VacanciesModule { }

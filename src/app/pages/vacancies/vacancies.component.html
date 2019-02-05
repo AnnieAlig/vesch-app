@@ -1,3 +1,88 @@
-<p>
-  vacancies works!
-</p>
+<app-breadcrumbs currentPage="Вакансии"></app-breadcrumbs>
+<div class="container-inner">
+  <div class="row position-relative">
+    <div class="col-desktop-1"></div>
+    <h1 class="page__title">Вакансии</h1>
+    <div class="brand_text-rotated hidden-mobile">
+        <p>вакансии</p>
+    </div>
+  </div>
+  <div class="page__description">
+    <p>
+      Мы предлагаем идеальный вариант трудоустройства для тех, кто хочет работать в крупной, интенсивно развивающейся компании!
+    </p>
+    <p>
+      Во первых, официальное оформление! Во вторых, обучение всем профессиям за счёт компании! Также, оплачиваемый отпуск и больничный!
+    </p>
+    <p>
+      И конечно, стабильная заработная плата: ставка + премии
+      <br>
+      А ещё, у нас: дружный коллектив, гибкий график работы, карьерный рост!
+    </p>
+  </div>
+  <div class="search">
+      <div class="row align-items-center justify-content-between">
+          <form class="search__form" #form="ngForm">
+              <div class="search__element col-desktop-3 col-4">
+                  <input type="text" class="search__input" placeholder="Начните вводить название города" name="city_input">
+                  <i class="ic ic--search"></i>
+              </div>
+              <div class="col-desktop-1"></div>
+              <div class="col-2 col-desktop-1 d-flex align-items-center">
+                <p class="searh__label">Выберите город:</p>
+              </div>
+              <div class="search__element col-2 col-desktop-1">
+                  <select name="city_select" class="search__select">
+                    <option value="" selected disabled>Все города</option>
+                  </select>
+                  <i class="ic ic--dropdown">^</i>
+              </div>
+          </form>
+      </div>
+    </div>
+    <div class="results">
+      <div class="results__item" *ngFor="let vacancy of vacancies">
+        <h3 class="vacancy-title">{{vacancy.title}}
+          <span class="vacancy-salary" *ngIf="vacancy.salary">{{vacancy.salary}}</span>
+        </h3>
+        <a href="{{vacancy.link}}" class="vacancy-link"> 
+          Детальнее
+          <i class="ic ic--more">^</i>
+        </a>
+      </div>
+    </div>
+    <div class="resume">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-desktop-3 resume__texts">
+                <h3 class="resume__title">
+                  Мы ждем вас в нашей дружной команде!
+                </h3>
+                <p class="resume__description">
+                  Обращайтесь по телефону 0949533909
+                  <br/>
+                  Контактное лицо: Надежда
+                </p>
+            </div>
+            <!-- <div class="col-1"></div> -->
+            <form class="resume__form" #form="ngForm" (ngSubmit)="onSubmit(form)" 
+              [ngClass]="{'validated': validated}">
+                <input type="text" class="resume__input" placeholder="Ваше имя" name="name" required 
+                  [(ngModel)]="resume.name">
+                <input type="text" class="resume__input" placeholder="Ваш Email" name="email" required
+                  [(ngModel)]="resume.email">
+                <button class="resume__submit btn btn-primary" type="submit">Отправить</button>
+                <label class="resume__file">
+                  <input type="file" name="file" [(ngModel)]="resume.file" required>
+                  <i class="fas fa-paperclip"></i>
+                  Прикрепить резюме
+                </label>
+            </form>
+        </div>
+    </div>
+    <div class="decor-bar decor-bar--top decor-to-right">
+      <div class="col-desktop-5 col-2 hidden-mobile"></div>
+      <div class="decor decor--full">
+        <img class="wow slideInLeft" data-wow-duration="1s" src="/assets/img/decor.svg">
+      </div>
+  </div>
+</div>

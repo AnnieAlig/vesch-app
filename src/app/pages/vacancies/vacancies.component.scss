@@ -1,0 +1,206 @@
+.brand_text-rotated{
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.brand_text-rotated p{
+    transform: rotate(-90deg);
+    transform-origin: right;
+    color: var(--color_primary);
+}
+.page__title{
+    margin-bottom: 40px;
+}
+.page__description{
+    p{
+        margin-bottom: 20px;
+    }
+}
+
+.search, 
+.resume{
+    margin-left: calc(var(--grid-column) * -.5);
+    margin-right: calc(var(--grid-column) * -.5);
+    padding: 80px calc(var(--grid-column) * .5);
+    position: relative;
+    margin-top: 70px;
+}
+.search{
+    background-color: var(--color_primary);
+    margin-bottom: 90px;
+} 
+.resume{
+    background-color: var(--color_secondary-dark);
+    color: var(--color_white);
+    margin-bottom: 40px;
+}
+.search::after{
+    content: '';
+    display: block;
+    height: 50px;
+    width: 65px;
+    background-image: url(/assets/img/brand/watermark.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: -33px;
+    right: 13px;
+    z-index: 2;
+}
+
+@media(min-width:1200px){
+    .search::after{
+        height: 120px;
+        width: 140px;
+        bottom: -59px;
+        right: 30px;
+    }
+}
+
+.search__form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.search__input{
+    width: 100%;
+    margin-bottom: 30px;
+    transition: var(--transition);
+}
+.search__select{
+    width: var(--grid-column);
+    color: var(--color_placeholder);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font: inherit;
+    color: var(--color_placeholder);
+    opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font: inherit;
+    color: var(--color_placeholder);
+} 
+::-ms-input-placeholder { /* Microsoft Edge */
+    font: inherit;
+    color: var(--color_placeholder);
+}
+    
+@media(min-width:768px){
+    .search__input{
+        margin-bottom: 25px;
+    }
+}
+@media(min-width:1200px){
+    .search__input{
+        margin-bottom: 0;
+    }
+}
+
+.search__element{
+    position: relative;
+    .search__input,
+    .search__select{
+        width: 100%;
+    }
+    .ic{
+        position: absolute;
+        top: calc(50% - 8px);
+        right: 10px;
+    }
+}
+
+.results__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.vacancy-salary{
+    color: var(--color_primary-dark);
+    display: block;
+    @media(min-width:1200px){
+        margin-left: 30px;
+        display: inline;
+    }
+}
+.vacancy-link{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    &:hover{
+        color: inherit;
+    }
+}
+.vacancy-link .ic{
+    margin-left: 4px;
+    margin-right: 0;
+    color: var(--color_text);
+    background-color: var(--color_primary-static);
+    transition: var(--transition);
+}
+.vacancy-link:hover .ic,
+.vacancy-link:focus .ic{
+    color: var(--color_text);
+    background-color: var(--color_primary-hover);
+    margin-left: 20px;
+    margin-right: -16px;
+}
+
+.resume__description{
+    padding-right: 50px;
+    margin-bottom: 25px;
+    @media(min-width:1200px){
+        padding-right: 10px;
+        margin-bottom: 0;
+    }
+}
+
+.resume__form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    @media(min-width:1200px){
+        width: calc(var(--grid-column) * 3);
+    }
+}
+.resume__input{
+    width: 100%;
+    margin-bottom: 30px;
+    transition: var(--transition);
+    @media(min-width:768px){
+        width: calc(33.3% - 10px);
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+}
+.resume__submit{
+    width: 100%;
+    background-color: var(--color_primary);
+    &::after {
+        background-color: var(--color_primary-hover);
+    }
+    @media(min-width:768px){
+        width: calc(33.3% - 10px);
+        margin-right: 10px;
+    }
+}
+.resume__file{
+    padding-top: 10px;
+    cursor: pointer;
+   input{
+       display: none;
+   }
+}
+.validated{
+    input.ng-invalid{
+        border: 1px solid red;
+    }
+}
+    
+.decor-to-right{
+    right: calc(var(--grid-column) * -1);
+    top: calc(var(--decor-height) / -2 - 40px);
+    z-index: -1;
+}

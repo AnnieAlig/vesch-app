@@ -80,7 +80,7 @@ button[type="submit"]{
     margin-right: 10px;
     display: inline-block;
 } */
-input{
+input, select{
     background-color: var(--color_white);
     font: inherit;
     height: 50px;
@@ -90,6 +90,10 @@ input{
     border: 1px solid var(--color_white);
     line-height: 20px;
     vertical-align: middle;
+}
+select{
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 button[type="submit"] {

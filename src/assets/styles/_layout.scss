@@ -98,9 +98,9 @@
     overflow: hidden;
     z-index: 1;
     img{
-        transform-origin: 0 0;
-        animation: decorFromLeft .6s ease-in-out;
-        animation-fill-mode: forwards;
+        // transform-origin: 0 0;
+        // animation: decorFromLeft .6s ease-in-out;
+        // animation-fill-mode: forwards;
     }
 }
 .decor svg{
@@ -113,7 +113,7 @@
 }
 .decor--full{
     height: var(--decor-height);
-    overflow: visible;
+    // overflow: visible;
     /* background-size: 100% 100%; */
 }
 .decor--half{
@@ -164,7 +164,7 @@
     margin-top: calc(var(--decor-height) / -2);
 }
 .decor-to-right{
-    // right: calc(var(--grid-column) * -.5);
+    right: calc(var(--grid-column) * -.5);
 }
 .decor-bar-absolute{
     position: relative;
@@ -398,4 +398,7 @@
 }
 .wow{
     visibility: hidden;
+}
+.position-relative{
+    position: relative;
 }

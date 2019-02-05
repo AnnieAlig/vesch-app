@@ -1,0 +1,10 @@
+.breadcrumbs{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &__separator{
+        padding: 0 20px;
+    }
+    &-active{
+        color: var(--color_primary-dark);
+    }
+}

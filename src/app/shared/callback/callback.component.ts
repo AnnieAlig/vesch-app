@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { modeOrder } from './callback.data';
 import { modeSubscribe } from './callback.data';
 import { CallbackService} from '../../core/services/callback.service';

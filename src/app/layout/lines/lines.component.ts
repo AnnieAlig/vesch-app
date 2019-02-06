@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-import * as LineMaker from '../../../assets/scripts/lineMaker.js';
+import * as LineMaker from '../../../assets/scripts/linemaker.js';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 declare var LineMaker: any;

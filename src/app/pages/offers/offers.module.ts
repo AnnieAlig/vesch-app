@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 import { OffersRouting } from './offers.routing';
 import { OffersComponent } from './offers.component';
@@ -8,7 +10,9 @@ import { OffersComponent } from './offers.component';
   declarations: [OffersComponent],
   imports: [
     CommonModule,
-    OffersRouting
+    SharedModule,
+    OffersRouting,
+    FormsModule
   ]
 })
 export class OffersModule { }

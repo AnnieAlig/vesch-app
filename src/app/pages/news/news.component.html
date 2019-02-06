@@ -1,3 +1,35 @@
-<p>
-  new works!
-</p>
+<app-breadcrumbs currentPage="Новости"></app-breadcrumbs>
+<div class="container-inner">
+  <div class="row position-relative">
+    <div class="col-desktop-1"></div>
+    <h1 class="page__title">Новости</h1>
+    <div class="page__brand_text-rotated hidden-mobile">
+        <p>новости</p>
+    </div>
+  </div>
+  <div class="row">
+      <app-news-card *ngFor="let news_item of news | paginate: { itemsPerPage: 6, currentPage: p }" [news_item]="news_item" class="col-2"></app-news-card>
+  </div>
+  <div class="row pagination">
+      <div class="col-1"></div>
+      <div class="col-4">
+          <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel=""></pagination-controls>
+      </div>
+  </div>
+  <div class="decor-bar decor-bar--sm decor-bar-absolute">
+      <div class="decor decor--half decor--top"></div>
+  </div>
+  <!-- CALLBACK -->
+  <app-callback mode="subscribe" referrer="news"></app-callback>
+  <!-- END OF CALLBACK -->
+  <div class="decor-bar decor-bar--sm">
+      <div class="col-desktop-2 col-1"></div>
+      <div class="decor decor--half decor--bottom"></div>
+  </div>
+  <div class="decor-bar decor-bar--top decor-to-right">
+    <div class="col-desktop-5 col-2 hidden-mobile"></div>
+    <div class="decor decor--full">
+      <img class="wow slideInLeft" data-wow-duration="1s" src="/assets/img/decor.svg">
+    </div>
+  </div>
+</div>

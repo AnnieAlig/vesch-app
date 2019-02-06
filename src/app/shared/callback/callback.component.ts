@@ -13,6 +13,7 @@ import { WOW } from 'wowjs/dist/wow.min';
 export class CallbackComponent implements OnInit, AfterViewInit {
 
   @Input() mode: any;
+  @Input() referrer: any;
   public data: any;
   private modeOrder: any;
   private modeSubscribe: any;

@@ -1,22 +1,3 @@
-.brand_text-rotated{
-    position: absolute;
-    right: 5px;
-    top: 0;
-}
-.brand_text-rotated p{
-    transform: rotate(-90deg);
-    transform-origin: right;
-    color: var(--color_primary);
-}
-.page__title{
-    margin-bottom: 40px;
-}
-.page__description{
-    p{
-        margin-bottom: 20px;
-    }
-}
-
 .search, 
 .resume{
     margin-left: calc(var(--grid-column) * -.5);
@@ -124,26 +105,8 @@
         display: inline;
     }
 }
-.vacancy-link{
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    margin-bottom: 35px;
-    &:hover{
-        color: inherit;
-    }
-}
-.vacancy-link .ic{
-    margin-left: 4px;
-    margin-right: 0;
-    color: var(--color_text);
-    background-color: var(--color_primary-static);
-    transition: var(--transition);
-}
 .vacancy-link:hover .ic,
 .vacancy-link:focus .ic{
-    color: var(--color_text);
-    background-color: var(--color_primary-hover);
     margin-left: 20px;
     margin-right: -16px;
 }
@@ -197,10 +160,4 @@
     input.ng-invalid{
         border: 1px solid red;
     }
-}
-    
-.decor-to-right{
-    right: calc(var(--grid-column) * -1);
-    top: calc(var(--decor-height) / -2 - 40px);
-    z-index: -1;
 }

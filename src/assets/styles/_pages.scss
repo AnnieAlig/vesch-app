@@ -1,0 +1,46 @@
+.page__brand_text-rotated{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    p{
+        transform: rotate(-90deg);
+        transform-origin: right;
+        color: var(--color_primary);
+    }
+}
+.page__title{
+    margin-bottom: 40px;
+}
+.page__description{
+    p{
+        margin-bottom: 20px;
+    }
+}
+.page__more-link{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    &:hover{
+        color: inherit;
+    }
+}
+.page__more-link .ic{
+    margin-left: 4px;
+    margin-right: 0;
+    color: var(--color_text);
+    background-color: var(--color_primary-static);
+    transition: var(--transition);
+}
+.page__more-link:hover .ic,
+.page__more-link:focus .ic{
+    color: var(--color_text);
+    background-color: var(--color_primary-hover);
+    margin-left: 16px;
+}
+    
+.decor-to-right{
+    right: calc(var(--grid-column) * -1);
+    top: calc(var(--decor-height) / -2 - 40px);
+    z-index: -1;
+}

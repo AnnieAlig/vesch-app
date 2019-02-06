@@ -4,7 +4,10 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-vacancies',
   templateUrl: './vacancies.component.html',
-  styleUrls: ['./vacancies.component.scss']
+  styleUrls: [
+    '../../../assets/styles/_pages.scss',
+    './vacancies.component.scss',
+]
 })
 export class VacanciesComponent implements OnInit {
   public vacancies: any;

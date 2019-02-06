@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { CallbackComponent } from './shared/callback/callback.component';
 import { HeaderMobileComponent } from './layout/header/header-mobile/header-mobile.component';
 import { HeaderDesktopComponent } from './layout/header/header-desktop/header-desktop.component';
 import { MapComponent } from './shared/map/map.component';
@@ -26,7 +25,6 @@ import { SharedModule } from './shared/shared.module';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CallbackComponent,
     HeaderMobileComponent,
     HeaderDesktopComponent,
     MapComponent,

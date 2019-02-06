@@ -1,0 +1,26 @@
+.card{
+    padding-right: 15px;
+    &__title{
+        margin-top: 45px;
+        margin-bottom: 10px;
+        padding-right: 15px;
+        min-height: 56px;
+    }
+    &__date{
+        color: var(--color_text-light);
+        margin-bottom: 10px;
+        padding-right: 15px;
+    }
+    &__text{
+        margin-bottom: 10px;
+        padding-right: 15px;
+    }
+}
+
+.card__link .ic{
+    color: var(--color_white);
+}
+.card__link:hover .ic,
+.card__link:focus .ic{
+    color: var(--color_white);
+}

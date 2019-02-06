@@ -7,5 +7,5 @@ export const modeOrder = {
 export const modeSubscribe = {
     title: 'Подписка на рассылку',
     description: 'Будьте в курсе новостей, акций, приятных бонусов и рекомендаций по уходу за вещами.',
-    button: 'Заказать'
+    button: 'Подписаться'
 };

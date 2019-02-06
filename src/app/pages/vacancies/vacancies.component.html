@@ -3,7 +3,7 @@
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
     <h1 class="page__title">Вакансии</h1>
-    <div class="brand_text-rotated hidden-mobile">
+    <div class="page__brand_text-rotated hidden-mobile">
         <p>вакансии</p>
     </div>
   </div>
@@ -45,7 +45,7 @@
         <h3 class="vacancy-title">{{vacancy.title}}
           <span class="vacancy-salary" *ngIf="vacancy.salary">{{vacancy.salary}}</span>
         </h3>
-        <a href="{{vacancy.link}}" class="vacancy-link"> 
+        <a href="{{vacancy.link}}" class="page__more-link vacancy-link"> 
           Детальнее
           <i class="ic ic--more">^</i>
         </a>

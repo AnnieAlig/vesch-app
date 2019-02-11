@@ -12,7 +12,7 @@
     margin-bottom: 40px;
 }
 .page__description{
-    p{
+    /deep/ p{
         margin-bottom: 20px;
     }
 }
@@ -43,4 +43,17 @@
     right: calc(var(--grid-column) * -1);
     top: calc(var(--decor-height) / -2 - 40px);
     z-index: -1;
+}
+
+.add_to_cart{
+    background-color: var(--color_secondary);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    margin-right: 15px;
+    cursor: pointer;
+    background-image: url(/assets/img/icons/ic_cart.png);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: center;
 }

@@ -43,7 +43,7 @@ export class MapComponent implements OnInit {
   createMapList() {
     this.homeService.getMapList().subscribe(
       (maplist: any) => {
-        this.mapList = maplist.list;
+        this.mapList = maplist;
       }
     );
   }

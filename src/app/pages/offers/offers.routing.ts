@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OffersComponent } from './offers.component';
+import { OfferPageComponent } from './offer-page/offer-page.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,11 @@ const routes: Routes = [
     //     description: meta.pages.faq.description,
     //   }
     // },
-  }
+  },
+  {
+  path: ':id',
+  component: OfferPageComponent
+ },
 ];
 
 @NgModule({

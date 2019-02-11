@@ -2,9 +2,9 @@ import { Component, OnInit, AfterViewInit, ChangeDetectorRef,
   ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HomeService } from '../../core/services/home.service';
-import html2canvas from 'html2canvas';
 import * as _ from 'underscore';
 import { WOW } from 'wowjs/dist/wow.min';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +29,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private homeService: HomeService,
     private ref: ChangeDetectorRef,
     private _sanitizer: DomSanitizer,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private router: Router
   ) {
     this.sliderInterval = setInterval(() => {
       this.changeSlide();
@@ -52,7 +53,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   createSlider() {
     this.homeService.getSlides().subscribe(
       (slides) => {
-        this.slider = slides.slider;
+        this.slider = slides;
         this.activeSlide = 1;
 
         setTimeout( () => {
@@ -175,7 +176,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   createBenefits() {
     this.homeService.getBenefits().subscribe(
       (benefits) => {
-        this.benefits = benefits.benefits;
+        this.benefits = benefits;
       }
     );
   }
@@ -183,7 +184,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   createSteps() {
     this.homeService.getSteps().subscribe(
       (steps) => {
-        this.steps = steps.steps;
+        this.steps = steps;
       }
     );
   }
@@ -191,7 +192,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   createServices() {
     this.homeService.getServices().subscribe(
       (services) => {
-        this.services = services.services;
+        this.services = services;
       }
     );
   }
@@ -199,8 +200,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   createBlackTie() {
     this.homeService.getBlackTie().subscribe(
       (blackTie) => {
-        this.blackTie_items = blackTie.blacktie;
+        this.blackTie_items = blackTie;
       }
     );
+  }
+
+  navigateTo(url) {
+    this.router.navigate([url]);
   }
 }

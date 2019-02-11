@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { WOW } from 'wowjs/dist/wow.min';
 
 @Component({
@@ -8,12 +9,20 @@ import { WOW } from 'wowjs/dist/wow.min';
 })
 export class BreadcrumbsComponent implements OnInit, AfterViewInit {
   @Input() currentPage: string;
-  constructor() { }
+  @Input() parentPage: string;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
     new WOW().init();
+  }
+
+  getParentPage() {
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 }

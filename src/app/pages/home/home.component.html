@@ -177,7 +177,7 @@
                 <div class="services__image">
                     <img src="{{service.img}}" alt="{{service.alt}}">
                     <div class="services__link">
-                        <a href="{{service.link}}" class="rotated">
+                        <a href="javascript:void(0)" class="rotated" (click)="navigateTo(service.link)">
                             <i class="ic ic--plus">+</i>
                             Смотреть прайс
                         </a>

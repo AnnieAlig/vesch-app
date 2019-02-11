@@ -15,6 +15,12 @@
     <span class="breadcrumbs__separator">
       <i class="fas fa-angle-right"></i>
     </span>
+    <ng-container *ngIf="parentPage">
+        <a href="javascript:void(0)" class="breadcrumbs-home" (click)="getParentPage()">{{parentPage}}</a>
+        <span class="breadcrumbs__separator">
+          <i class="fas fa-angle-right"></i>
+        </span>
+    </ng-container>
     <span class="breadcrumbs-active">{{currentPage}}</span>
   </div>
 </div>

@@ -5,9 +5,11 @@ import { FormsModule } from '@angular/forms';
 
 import { OffersRouting } from './offers.routing';
 import { OffersComponent } from './offers.component';
+import { OfferPageComponent } from './offer-page/offer-page.component';
+import { BlacktieComponent } from './blacktie/blacktie.component';
 
 @NgModule({
-  declarations: [OffersComponent],
+  declarations: [OffersComponent, OfferPageComponent, BlacktieComponent],
   imports: [
     CommonModule,
     SharedModule,

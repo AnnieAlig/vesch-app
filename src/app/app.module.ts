@@ -14,7 +14,6 @@ import { HeaderMobileComponent } from './layout/header/header-mobile/header-mobi
 import { HeaderDesktopComponent } from './layout/header/header-desktop/header-desktop.component';
 import { MapComponent } from './shared/map/map.component';
 import { HomeComponent  } from './pages/home/home.component';
-import { VideoComponent } from './shared/video/video.component';
 import { SearchModalComponent } from './shared/modals/search-modal/search-modal.component';
 import { LinesComponent } from './layout/lines/lines.component';
 
@@ -28,7 +27,6 @@ import { SharedModule } from './shared/shared.module';
     HeaderMobileComponent,
     HeaderDesktopComponent,
     MapComponent,
-    VideoComponent,
     SearchModalComponent,
     LinesComponent,
   ],

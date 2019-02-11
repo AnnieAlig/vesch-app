@@ -30,14 +30,16 @@
               "src/styles.scss",
               "node_modules/wowjs/css/libs/animate.css",
               "node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/solid.min.css"
+              "node_modules/@fortawesome/fontawesome-free/css/solid.min.css",
+              "src/assets/styles/juxtapose.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "src/assets/scripts/anime.min.js",
               "src/assets/scripts/linemaker.js",
               "node_modules/html2canvas/dist/html2canvas.min.js",
-              "node_modules/wowjs/dist/wow.js"
+              "node_modules/wowjs/dist/wow.js",
+              "src/assets/scripts/juxtapose.js"
             ]
           },
           "configurations": {

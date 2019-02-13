@@ -10,6 +10,7 @@ import { NewsService } from '../../core/services/news.service';
 })
 export class NewsComponent implements OnInit {
   public news: any;
+  public itemsPerPage: number;
   constructor(
     private newsService: NewsService,
   ) { }
@@ -20,6 +21,7 @@ export class NewsComponent implements OnInit {
         this.news = news;
       }
     );
+    this.itemsPerPage = window.innerWidth >= 1024 ? 6 : 3;
   }
 
 }

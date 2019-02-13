@@ -1,10 +1,14 @@
 .card{
-    padding-right: 15px;
+    @media(min-width: 1024px){
+        padding-right: 15px;
+    }
     &__title{
         margin-top: 45px;
         margin-bottom: 10px;
         padding-right: 15px;
-        min-height: 56px;
+        @media(min-width: 768px){
+            min-height: 56px;
+        }
     }
     &__date{
         color: var(--color_text-light);
@@ -14,6 +18,14 @@
     &__text{
         margin-bottom: 10px;
         padding-right: 15px;
+        @media(min-width: 768px) and (max-width: 1023px){
+            max-width: 400px;
+        }
+    }
+    &__link{
+        @media(max-width: 1023px){
+            margin-bottom: 45px;
+        }
     }
 }
 

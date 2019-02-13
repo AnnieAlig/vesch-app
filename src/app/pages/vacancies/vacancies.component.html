@@ -24,14 +24,14 @@
       <div class="row align-items-center justify-content-between">
           <form class="search__form" #form="ngForm">
               <div class="search__element col-desktop-3 col-4">
-                  <input type="text" class="search__input" placeholder="Начните вводить название города" name="city_input">
+                  <input type="text" class="search__input" placeholder="{{!isMobile ? 'Начните вводить название города' : 'Название города'}}" name="city_input">
                   <i class="ic ic--search"></i>
               </div>
               <div class="col-desktop-1"></div>
-              <div class="col-2 col-desktop-1 d-flex align-items-center">
+              <div class="col-4 col-tablet-2 col-desktop-1 d-flex align-items-center">
                 <p class="searh__label">Выберите город:</p>
               </div>
-              <div class="search__element col-2 col-desktop-1">
+              <div class="search__element col-4 col-tablet-2 col-desktop-1">
                   <select name="city_select" class="search__select">
                     <option value="" selected disabled>Все города</option>
                   </select>
@@ -57,7 +57,7 @@
                 <h3 class="resume__title">
                   Мы ждем вас в нашей дружной команде!
                 </h3>
-                <p class="resume__description">
+                <p class="resume__description hidden-tablet hidden-mobile">
                   Обращайтесь по телефону 0949533909
                   <br/>
                   Контактное лицо: Надежда
@@ -66,12 +66,12 @@
             <!-- <div class="col-1"></div> -->
             <form class="resume__form" #form="ngForm" (ngSubmit)="onSubmit(form)" 
               [ngClass]="{'validated': validated}">
-                <input type="text" class="resume__input" placeholder="Ваше имя" name="name" required 
+                <input type="text" class="resume__input order-1" placeholder="Ваше имя" name="name" required 
                   [(ngModel)]="resume.name">
-                <input type="text" class="resume__input" placeholder="Ваш Email" name="email" required
+                <input type="text" class="resume__input order-2" placeholder="Ваш Email" name="email" required
                   [(ngModel)]="resume.email">
-                <button class="resume__submit btn btn-primary" type="submit">Отправить</button>
-                <label class="resume__file">
+                <button class="resume__submit btn btn-primary order-4 order-tablet-3 order-desktop-3" type="submit">Отправить</button>
+                <label class="resume__file order-3 order-tablet-4 order-desktop-4">
                   <input type="file" name="file" [(ngModel)]="resume.file" required>
                   <i class="fas fa-paperclip"></i>
                   Прикрепить резюме
@@ -79,8 +79,8 @@
             </form>
         </div>
     </div>
-    <div class="decor-bar decor-bar--top decor-to-right">
-      <div class="col-desktop-5 col-2 hidden-mobile"></div>
+    <div class="decor-bar decor-bar--top decor-to-right hidden-mobile">
+      <div class="col-desktop-5 col-2"></div>
       <div class="decor decor--full">
         <img class="wow slideInLeft" data-wow-duration="1s" src="/assets/img/decor.svg">
       </div>

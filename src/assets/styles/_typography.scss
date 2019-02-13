@@ -172,6 +172,15 @@ img, video{
         width: 100%;
     }
 }
+.btn-secondary-inverted{
+    height: 48px;
+    background-color: transparent;
+    border: 2px solid var(--color_secondary);
+    color: var(--color_text);
+    &::after{
+        background-color: transparent;
+    }
+}
 .btn-container .btn{
     margin-right: 15px;
 }

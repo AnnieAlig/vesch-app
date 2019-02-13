@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card__img">
-    <img src="{{news_item.img}}" alt="{{news_item.title}}">
+    <img src="{{isMobile ? news_item.img_mobile : news_item.img}}" alt="{{news_item.title}}">
   </div>
   <h3 class="card__title">{{news_item.title}}</h3>
   <p class="card__date">{{news_item.date}}</p>

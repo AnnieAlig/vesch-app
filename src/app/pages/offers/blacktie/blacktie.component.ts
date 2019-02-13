@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HomeService } from '../../../core/services/home.service';
 @Component({
   selector: 'app-blacktie',
   templateUrl: './blacktie.component.html',
@@ -9,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class BlacktieComponent implements OnInit {
-
-  constructor() { }
+  public blackTie_items;
+  constructor(
+    private homeService: HomeService,
+  ) { }
 
   ngOnInit() {
+    this.createBlackTie();
   }
 
+  createBlackTie() {
+    this.homeService.getBlackTie().subscribe(
+      (blackTie) => {
+        this.blackTie_items = blackTie;
+      }
+    );
+  }
 }

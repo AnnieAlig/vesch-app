@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { VacanciesService } from '../../core/services/vacancies.service';
 import { NgForm } from '@angular/forms';
 @Component({
@@ -16,6 +16,11 @@ export class VacanciesComponent implements OnInit {
     email: '',
     file: ''
   };
+  public isMobile: boolean;
+  @HostListener('window:resize', ['$event'])
+    onResize(event) {
+      this.isMobile = window.innerWidth < 768;
+  }
 
   constructor(
     private vacanciesService: VacanciesService,
@@ -25,8 +30,9 @@ export class VacanciesComponent implements OnInit {
     this.vacanciesService.getVacancies().subscribe(
     (vacancies: any) => {
       this.vacancies = vacancies;
-    }
-  );
+    });
+
+    this.isMobile = window.innerWidth < 768;
   }
 
 }

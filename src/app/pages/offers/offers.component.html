@@ -18,6 +18,17 @@
         </div>
         <div class="decor decor--half decor--bottom"></div>
     </div>
+    <div class="decor-bar hidden-tablet hidden-desktop">
+        <div class="decor decor--full">
+            <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s">
+        </div>
+    </div>
+    <div class="decor-bar decor-bar--sm decor-bar--top hidden-tablet hidden-desktop">
+        <div class="col-2"></div>
+        <div class="decor decor--full">
+            <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+        </div>
+    </div>
     <div class="offers__category" *ngFor="let offer of offers; let i = index">
       <div class="row">
           <div class="col-1"></div>
@@ -31,27 +42,31 @@
               </div>
           </div>
         </ng-container>
-          <div class="col-tablet-2 col-desktop-1 offer__item" *ngFor="let offer_item of offer.offers">
-              <div class="offer__image">
-                  <img src="{{offer_item.img}}" alt="{{offer_item.alt}}">
-                  <div class="offer__link">
-                      <a href="javascript:void(0)" class="rotated" (click)="navigateTo(offer_item.link)">
-                          <i class="ic ic--plus">+</i>
-                          Смотреть прайс
-                      </a>
-                  </div>
-              </div>
-              <h3 class="offer__title">{{offer_item.title}}</h3>
-              <p class="offer__description">{{offer_item.description}}</p>
-          </div>
-      </div>
+
+        <ng-container *ngFor="let offer_item of offer.offers; let index = index">
+            <div class="col-tablet-2 col-desktop-1 offer__item" [ngClass]="{'hidden': isMobile && index >= 2 && offer.hidden}">
+                <div class="offer__image">
+                        <img src="{{offer_item.img}}" alt="{{offer_item.alt}}">
+                        <div class="offer__link">
+                            <a href="javascript:void(0)" class="rotated" (click)="navigateTo(offer_item.link)">
+                                <i class="ic ic--plus">+</i>
+                                Смотреть прайс
+                            </a>
+                        </div>
+                </div>
+                <h3 class="offer__title">{{offer_item.title}}</h3>
+                <p class="offer__description">{{offer_item.description}}</p>
+            </div>
+            <div class="btn btn-secondary-inverted" *ngIf="isMobile && index === 1 && offer.hidden" (click)="offer.hidden = false">Показать больше услуг</div>
+        </ng-container>
+    </div>
       <ng-container *ngIf="i === 1">
           <div class="decor-bar">
             <div class="decor decor--full">
                   <img src="/assets/img/decor.svg" class="slideInLeft" data-wow-duration="1s">
             </div>
           </div>
-          <div class="decor-bar">
+          <div class="decor-bar hidden-tablet">
             <div class="decor decor--full decor-to--left">
                   <img src="/assets/img/decor.svg" class="slideInLeft" data-wow-duration="1s">
             </div>
@@ -60,7 +75,7 @@
     </div>
 
     <div class="decor-bar decor-bar--sm decor-bar--down">
-        <div class="col-4"></div>
+        <div class="col-desktop-4 col-2"></div>
         <div class="decor decor--full">
             <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".5s">
         </div>
@@ -69,13 +84,13 @@
     <app-blacktie></app-blacktie>
 
     <div class="decor-bar">
-      <div class="col-1"></div>
+      <div class="col-1 hidden-mobile hidden-tablet"></div>
       <div class="decor decor--full decor-bar--top">
           <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s">
       </div>
     </div>
     <div class="decor-bar decor-bar--sm decor-bar--top">
-        <div class="col-1 col-desktop-3 col-tablet-1"></div>
+        <div class="col-1 col-desktop-3 col-tablet-2"></div>
         <div class="decor decor--full">
             <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s">
         </div>

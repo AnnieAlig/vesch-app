@@ -1,44 +1,63 @@
 <div class="blacktie">
   <div class="row">
-    <div class="col-1">
+      <div class="blacktie__poster">
+          <img src="/assets/img/home/black-tie@2x.png" srcset="/assets/img/home/black-tie@1x.png 1x, /assets/img/home/black-tie@2x.png 2x, /assets/img/home/black-tie@3x.png 3x" alt="black tie service">
+      </div>
+      <div class="col-4 hidden-tablet hidden-desktop">
+          <div class="decor-bar decor-bar--sm">
+              <div class="col-1"></div>
+              <div class="decor decor--full mt10">
+                  <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+              </div>
+              <div class="decor decor--full decor-bar--top">
+                  <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s">
+              </div>
+          </div>
+          <div class="decor-bar mt10">
+              <div class="col-3"></div>
+              <div class="decor decor--full">
+                  <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+              </div>
+          </div>
+      </div>
+    <div class="col-1 hidden-mobile hidden-tablet">
       <img src="/assets/img/services/blacktie.png" alt="blacktie">
     </div>
-    <div class="col-1"></div>
-    <div class="col-3 blacktie__texts">
+    <div class="col-1 hidden-mobile"></div>
+    <div class="col-4 col-tablet-3 col-desktop-3 blacktie__texts">
         <h2 class="blacktie__title">Услуга Black tie</h2>
         <p class="blacktie__description"> Black Tie - это лучшее что может случиться с вашей вещью. 
           <br>
           Дизайнерская одежда, одежда из комбинированных тканей, элементами декора или специальной обработки требует тщательного подхода на каждом этапе обработки с применением самой эффективной и безопасной экочистки.
         </p>
-        <div class="d-flex">
-          <div class="blacktie__item">
-              <div class="blacktie__icon">
-                <img src="/assets/img/icons/ic_check.svg" alt="check icon">
+        <div class="decor-bar mb50 hidden-desktop hidden-tablet">
+            <div class="decor decor--full">
+                <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+            </div>
+        </div>
+        <div class="col-3 hidden-tablet hidden-desktop"></div>
+        <div class="d-flex blacktie__items">
+          <div class="blacktie__item" *ngFor="let blacktie of blackTie_items">
+              <div class="blacktie__icon order-2 order-tablet-1 order-desktop-1">
+                <img src="{{blacktie.icon}}" alt="{{blacktie.alt}}">
               </div>
-              <p class="blacktie__text">
-                личный контроль главного технолога
+              <p class="blacktie__text order-1 order-tablet-2 order-desktop-2">
+                  {{blacktie.title}}
+              </p>
+              <p class="blacktie__description hidden-desktop hidden-tablet order-3">
+                  {{blacktie.description}}
               </p>
           </div>
-          <div class="blacktie__item">
-              <div class="blacktie__icon">
-                <img src="/assets/img/icons/ic_quality.svg" alt="quality icon">
-              </div>
-              <p class="blacktie__text">                
-                индивидуальная программа чистки
-              </p>
-          </div>
-          <div class="blacktie__item">
-              <div class="blacktie__icon">
-                <img src="/assets/img/icons/ic_trempel.svg" alt="trempel icon">
-              </div>
-              <p class="blacktie__text">
-                любимым вещам – красивая оправа
-              </p>
+          <div class="blacktie__item hidden-desktop align-self-end">
+            <a href="" class="page__more-link blacktie__link mb0">
+                Детальнее 
+                <i class="ic ic--more">^</i>
+            </a>
           </div>
         </div>
     </div>
-    <div class="col-1 blacktie__link-container">
-        <div class="page__brand_text-rotated hidden-mobile">
+    <div class="col-1 blacktie__link-container hidden-tablet hidden-mobile">
+        <div class="page__brand_text-rotated">
             <p>Black Tie</p>
         </div>
         <a href="" class="page__more-link blacktie__link">

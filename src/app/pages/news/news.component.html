@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="row">
-      <app-news-card *ngFor="let news_item of news | paginate: { itemsPerPage: 6, currentPage: p }" [news_item]="news_item" class="col-2"></app-news-card>
+      <app-news-card *ngFor="let news_item of news | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" [news_item]="news_item" class="news_card col-4 col-desktop-2"></app-news-card>
   </div>
   <div class="row pagination">
       <div class="col-1"></div>
@@ -16,18 +16,18 @@
           <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel=""></pagination-controls>
       </div>
   </div>
-  <div class="decor-bar decor-bar--sm decor-bar-absolute">
+  <div class="decor-bar decor-bar--sm decor-bar-absolute hidden-mobile hidden-tablet">
       <div class="decor decor--half decor--top"></div>
   </div>
   <!-- CALLBACK -->
-  <app-callback mode="subscribe" referrer="news"></app-callback>
+  <app-callback mode="subscribe" referrer="news" class="hidden-mobile hidden-tablet"></app-callback>
   <!-- END OF CALLBACK -->
-  <div class="decor-bar decor-bar--sm">
+  <div class="decor-bar decor-bar--sm hidden-mobile hidden-tablet">
       <div class="col-desktop-2 col-1"></div>
       <div class="decor decor--half decor--bottom"></div>
   </div>
-  <div class="decor-bar decor-bar--top decor-to-right">
-    <div class="col-desktop-5 col-2 hidden-mobile"></div>
+  <div class="decor-bar decor-bar--top decor-to-right hidden-mobile">
+    <div class="col-desktop-5 col-2"></div>
     <div class="decor decor--full">
       <img class="wow slideInLeft" data-wow-duration="1s" src="/assets/img/decor.svg">
     </div>

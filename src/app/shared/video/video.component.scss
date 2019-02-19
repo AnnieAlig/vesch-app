@@ -39,3 +39,10 @@
         left: calc(50% - 35px);
     }
 }
+
+.full-width{
+    @media(max-width:1199px){
+        margin-left: calc(var(--grid-column) * -.5);
+        margin-right: calc(var(--grid-column) * -.5);
+    }
+}

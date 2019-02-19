@@ -49,37 +49,37 @@
   }
 
   FlickrGraphic.prototype = {
-    getFlickrID: function(url) {
-      var idx = url.indexOf("flickr.com/photos/");
-      var pos = idx + "flickr.com/photos/".length;
-      var photo_info = url.substr(pos);
-      if (photo_info.indexOf('/') == -1) return null;
-      if (photo_info.indexOf('/') === 0) photo_info = photo_info.substr(1);
-      id = photo_info.split("/")[1];
-      return id;
-    },
+    // getFlickrID: function(url) {
+    //   var idx = url.indexOf("flickr.com/photos/");
+    //   var pos = idx + "flickr.com/photos/".length;
+    //   var photo_info = url.substr(pos);
+    //   if (photo_info.indexOf('/') == -1) return null;
+    //   if (photo_info.indexOf('/') === 0) photo_info = photo_info.substr(1);
+    //   id = photo_info.split("/")[1];
+    //   return id;
+    // },
 
-    callFlickrAPI: function(id, self) {
-      var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.getSizes' +
-          '&api_key=' + flickr_key +
-          '&photo_id=' + id + '&format=json&nojsoncallback=1';
+    // callFlickrAPI: function(id, self) {
+    //   var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.getSizes' +
+    //       '&api_key=' + flickr_key +
+    //       '&photo_id=' + id + '&format=json&nojsoncallback=1';
 
-      var request = new XMLHttpRequest();
-      request.open('GET', url, true);
-      request.onload = function() {
-        if (request.status >= 200 && request.status < 400){
-          data = JSON.parse(request.responseText);
-          var flickr_url = self.bestFlickrUrl(data.sizes.size);
-          self.setFlickrImage(flickr_url);
-        } else {
-          console.error("There was an error getting the picture from Flickr");
-        }
-      };
-      request.onerror = function() {
-        console.error("There was an error getting the picture from Flickr");
-      };
-      request.send();
-    },
+    //   var request = new XMLHttpRequest();
+    //   request.open('GET', url, true);
+    //   request.onload = function() {
+    //     if (request.status >= 200 && request.status < 400){
+    //       data = JSON.parse(request.responseText);
+    //       var flickr_url = self.bestFlickrUrl(data.sizes.size);
+    //       self.setFlickrImage(flickr_url);
+    //     } else {
+    //       console.error("There was an error getting the picture from Flickr");
+    //     }
+    //   };
+    //   request.onerror = function() {
+    //     console.error("There was an error getting the picture from Flickr");
+    //   };
+    //   request.send();
+    // },
 
     setFlickrImage: function(src) {
       this.image.src = src;

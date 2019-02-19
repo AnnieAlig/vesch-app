@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OffersService } from '../../../core/services/offers.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import * as juxtapose from '../../../../assets/scripts/juxtapose.js';
+import * as _ from 'underscore';
 
 declare var juxtapose: any;
 
@@ -19,6 +20,12 @@ export class OfferPageComponent implements OnInit {
   public WOW: WOW;
   public activeSectionIndex: number;
   public activeSection: any;
+  public filterSections: any = [];
+  public isMobile: boolean;
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.isMobile = window.innerWidth < 768;
+}
 
   constructor(
     private route: ActivatedRoute,
@@ -32,10 +39,13 @@ export class OfferPageComponent implements OnInit {
       this.WOW.init();
       this.createSlider();
       this.filterSection(0);
+      _.each(this.offer.filter_sections, (section: any, index: number) => {
+        this.filterSections.push({ value: index, text: section.name});
+      });
     });
 
     this.WOW = new WOW();
-
+    this.isMobile = window.innerWidth < 768;
   }
 
   createSlider() {

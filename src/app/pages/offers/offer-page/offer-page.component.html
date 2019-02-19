@@ -18,10 +18,10 @@
                   <i class="ic ic--search"></i>
               </div>
               <div class="col-desktop-1"></div>
-              <div class="col-2 col-desktop-1 d-flex align-items-center">
+              <div class="col-4 col-tablet-2 col-desktop-1 d-flex align-items-center">
                 <p class="searh__label">Сортировать по:</p>
               </div>
-              <div class="search__element col-2 col-desktop-1">
+              <div class="search__element col-4 col-tablet-2 col-desktop-1">
                   <select name="city_select" class="search__select">
                     <option value="" selected disabled>Возрастанию цены</option>
                   </select>
@@ -33,7 +33,8 @@
 
     <div class="filter">
       <div class="row">
-        <div class="col-2 filter__sections">
+          <!-- Desktop layout -->
+        <div class="col-2 filter__sections hidden-tablet hidden-mobile">
           <h3 class="filter__title">{{offer.filter_label}}</h3>
           <div class="filter__section" *ngFor="let section of offer.filter_sections; let index = index" 
             [attr.data-index]="index" (click)="filterSection(index)" [ngClass]="{'active': activeSectionIndex === index}">
@@ -43,9 +44,16 @@
             <h4 class="section__name">{{section.name}}</h4>
           </div>
         </div>
+        <!-- End of Desktop layout -->
+        <!-- Mobile and Tablet layout -->
+        <div class="filter__sections col-4 hidden-desktop" *ngIf="filterSections">
+            <ng-select class="sections-select" [items]="filterSections" placeholder="{{offer.filter_label}}" [clearable]='false'
+            [searchable]='false' bindLabel="text" bindValue="value" (change)='filterSection($event.value)'></ng-select>
+        </div>
+        <!-- End of Mobile and Tablet layout -->
         <div class="col-4 filter__items">
           <div class="d-flex flex-wrap">
-              <div class="item" *ngFor="let item of activeSection.items">
+              <div class="item" *ngFor="let item of activeSection.items; let index = index" [ngClass]="{'hidden': isMobile && index >= 2}">
                 <div class="item__img">
                   <img src="{{item.photo}}" alt="{{item.name}}">
                 </div>
@@ -55,10 +63,12 @@
                   <div class="price">{{item.price}}</div>
                 </div>
               </div>
-              <div class="decor decor--full" *ngIf="(activeSection.items.length + 1) % 3 === 0 || (activeSection.items.length + 2) % 3 === 0">
+              <div class="btn btn-secondary-inverted mb35" *ngIf="isMobile && activeSection.items.length > 3" (click)="offer.hidden = false">Показать больше услуг</div>
+              <div class="decor decor--full hidden-mobile" *ngIf="(activeSection.items.length + 1) % 3 === 0 || (activeSection.items.length + 2) % 3 === 0">
                   <img src="/assets/img/decor.svg" class="slideInLeft" data-wow-duration="1s">
               </div>
           </div>
+
           <div class="d-flex flex-wrap">
               <div class="item related_item" *ngFor="let item of offer.related_items">
                   <div class="item__img">
@@ -83,16 +93,16 @@
     <!-- END OF BLACKTIE -->
 
     <div class="decor-bar decor-bar--sm decor-bar--down">
-        <div class="col-1"></div>
+        <div class="col-1 hidden-mobile hidden-tablet"></div>
         <div class="decor decor--full">
             <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".5s">
         </div>
     </div>
     <!-- VIDEO -->
-    <app-video></app-video>
+    <app-video page="offer-page"></app-video>
     <!-- END OF VIDEO -->
     <div class="decor-bar decor-bar--sm">
-        <div class="col-2 col-tablet-1 col-desktop-4">
+        <div class="col-2 col-tablet-3 col-desktop-4">
         </div>
         <div class="decor decor--full decor-bar--top">
             <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".5s">

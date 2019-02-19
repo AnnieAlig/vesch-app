@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
     "@fortawesome/fontawesome-free": "^5.7.1",
+    "@ng-select/ng-select": "^2.15.3",
     "@types/underscore": "^1.8.9",
     "angular2-text-mask": "^9.0.0",
     "core-js": "^2.5.4",
@@ -33,7 +34,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.12.3",
     "@angular/cli": "~7.1.4",
-    "@angular/compiler-cli": "~7.1.0",
+    "@angular/compiler-cli": "^7.2.5",
     "@angular/language-service": "~7.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",

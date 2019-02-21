@@ -16,7 +16,19 @@
 .navbar__link{
     padding-bottom: 5px;
 }
-
+.navbar--dropdown{
+    .ic--dropdown{
+        transition: var(--transition);
+    }
+    &.active{
+        &::after{
+            display: none;
+        }
+        .ic--dropdown{
+            transform: rotate(0);
+        }
+    }
+}
 .about-us{
     background-color: var(--color_secondary);
     padding: 50px 0;

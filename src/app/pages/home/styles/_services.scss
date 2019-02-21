@@ -102,8 +102,10 @@
     align-items: center;
     padding: 10px 0;
     margin-bottom: 15px;
-    margin-top: 25px;
     margin-left: auto;
+    @media(min-width:1200px){
+        margin-top: 25px;
+    }
 }
 .services__all-link .ic {
     margin-left: 8px;

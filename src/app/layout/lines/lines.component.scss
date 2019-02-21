@@ -11,6 +11,7 @@
     max-width: var(--grid-max);
     margin: auto;
     pointer-events: none;
+    z-index: 100;
 }
 
 /deep/ .decolines {

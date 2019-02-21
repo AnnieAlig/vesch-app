@@ -50,6 +50,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 35px;
+    color: inherit;
 }
 .benefits__link .ic{
     margin-left: 4px;
@@ -86,6 +87,7 @@
     transform: rotate(-90deg);
     transform-origin: right;
     color: var(--color_primary);
+    font-weight: bold;
 }
 
 // @media(min-width:768px){

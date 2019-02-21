@@ -33,9 +33,11 @@
     font-style: normal;
     text-align: center;
     transform: rotate(180deg);
-    transform-origin:50% 45%;
+    transform-origin:50% 55%;
     font-size: var(--text-normal);
     margin-right: 0;
+    padding-top: 7px;
+    transition: var(--transition);
 }
 .ic--user{
     /* width: 16px */
@@ -109,7 +111,7 @@
     }
 }
 .ic--close{
-    border: 2px solid var(--color_white);
+    // border: 2px solid var(--color_white);
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -122,15 +124,16 @@
     height: 2px;
     background-color: var(--color_white);
     position: absolute;
-    top: 22px;
+    top: 28px;
+    transition: .7s cubic-bezier(.77,0,.175,1) .3s;
 }
 .ic--close::before{
-    left: 13px;
+    left: 20px;
     transform: rotate(45deg);
     /* transform-origin: 50% 50%; */
 }
 .ic--close::after{
-    right: 13px;
+    right: 9px;
     transform: rotate(-45deg);
     /* transform-origin: 0 0; */
 }

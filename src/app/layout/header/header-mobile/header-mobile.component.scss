@@ -3,7 +3,6 @@
     padding: 10px;
 }
 .mobile_collapsed{
-    background-color: var(--color_secondary);
     color: var(--color_white);
 }
 .mobile__container{
@@ -155,5 +154,159 @@
     .mobile__link--colored{
         padding-left: 25px;
         color: var(--color_primary);
+    }
+}
+
+.mobile_collapsed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    visibility: hidden;
+    &.collapsed{
+        visibility: visible;
+    }
+}
+.header_content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.header_bg-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    .header_bg-item{
+        --slice-width: calc(100% / 5);
+        position: absolute;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        width: var(--slice-width);
+        overflow: hidden;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            transform: translate3d(100%,0,0);
+            perspective: 1000;
+            backface-visibility: hidden;
+            transition: .5s cubic-bezier(.25,.46,.45,.94);
+            background-color: var(--color_secondary);
+        }
+        &:nth-child(1){
+            width: calc(var(--slice-width) / 2);
+            left: 0;
+            &::after{
+                transition-delay: 20ms;
+            }
+            // background-color: green;
+        }
+        &:nth-child(2){
+            left: calc(var(--slice-width) / 2);
+            // background-color: yellow;
+        }
+        &:nth-child(3){
+            left: calc(var(--slice-width) / 2 + var(--slice-width));
+            // background-color: green;
+        }
+        &:nth-child(4){
+            left: calc(var(--slice-width) / 2 + var(--slice-width) * 2);
+            // background-color: yellow;
+        }
+        &:nth-child(5){
+            left: calc(var(--slice-width) / 2 + var(--slice-width) * 3);
+            // background-color: green;
+        }
+        &:nth-child(6){
+            width: calc(var(--slice-width) / 2);
+            left: calc(var(--slice-width) / 2 + var(--slice-width) * 4);
+            // background-color: yellow;
+            animation: sliderPieceHalf 1s ease-in-out;
+        }
+    }
+}
+
+.mobile__close{
+    border: none;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    .circle, .circle-hover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+        // transition: 1s cubic-bezier(.77,0,.175,1);
+        path{
+            stroke-dashoffset: 122.592px;
+            transition: .9s cubic-bezier(.77,0,.175,1) .3s;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2;
+            stroke-dasharray: 122.592,122.592;
+        }
+    }
+    .circle-hover path{
+        transition: .7s cubic-bezier(.77,0,.175,1) .3s;
+    }
+  
+}
+.collapsed{
+    .header_bg-item::after{
+        transform: translate3d(0,0,0);
+    }
+    .header_content{
+        animation: fadeIn .5s ease-in-out .5s;
+        animation-fill-mode: forwards;
+    }
+    .mobile__close{
+        .circle{
+            opacity: 1;
+            path{
+                stroke-dashoffset: 0;
+            }
+        }
+        .circle-hover{
+            opacity: 1;
+            path{
+                stroke: var(--color_primary);
+            }
+        }
+        &:hover{
+            .circle path{
+                stroke-dashoffset: -122.592px;
+            }
+            .circle-hover path{
+                stroke-dashoffset: 0;
+            }
+            .ic--close::before,
+            .ic--close::after{
+                background-color: var(--color_primary);
+            }
+            .ic--close::before{
+                transform: rotate(90deg);
+            }
+            .ic--close::after{
+                transform: rotate(0deg);
+            }
+        }
+
     }
 }

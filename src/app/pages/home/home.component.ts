@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
+  public WOW: WOW;
+
   public slider;
   public activeSlide: number;
   private sliderInterval: any;
@@ -47,7 +49,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    new WOW().init();
+    this.WOW = new WOW();
+    this.WOW.init();
   }
 
   createSlider() {
@@ -146,9 +149,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   createSliderPieces(dataUrl: string, container: any) {
     const imgElement = this.renderer.createElement('img');
     this.renderer.setProperty(imgElement, 'src', dataUrl);
-    this.renderer.setProperty(imgElement, 'src', dataUrl);
-    this.renderer.addClass(imgElement, 'slide__slice');
-    this.renderer.appendChild(container, imgElement);
+    const imgWrapper = this.renderer.createElement('div');
+    this.renderer.addClass(imgWrapper, 'slide__slice');
+    this.renderer.appendChild(imgWrapper, imgElement);
+    this.renderer.appendChild(container, imgWrapper);
   }
 
   changeSlide(index?) {
@@ -177,6 +181,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.homeService.getBenefits().subscribe(
       (benefits) => {
         this.benefits = benefits;
+        this.WOW.sync();
       }
     );
   }
@@ -185,6 +190,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.homeService.getSteps().subscribe(
       (steps) => {
         this.steps = steps;
+        this.WOW.sync();
       }
     );
   }
@@ -193,6 +199,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.homeService.getServices().subscribe(
       (services) => {
         this.services = services;
+        this.WOW.sync();
       }
     );
   }
@@ -201,6 +208,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.homeService.getBlackTie().subscribe(
       (blackTie) => {
         this.blackTie_items = blackTie;
+        this.WOW.sync();
       }
     );
   }

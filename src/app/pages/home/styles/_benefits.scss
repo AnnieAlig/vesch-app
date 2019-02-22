@@ -67,9 +67,6 @@
 .benefits__image{
     max-width: 66.6%;
     overflow: hidden;
-    img{
-        visibility: hidden;
-    }
 }
 // @media(min-width:768px){
 //     .benefits__image{
@@ -101,31 +98,31 @@
 //     }
 // }
 
-.child-animation.animated{
-    .benefits__item  img{
-        animation-name: slideInLeft;
-        animation-duration: 1s;
-        visibility: visible;
-    }
-}
-$elements: 3;
-@for $i from 0 to $elements {
-    .child-animation.animated{
-        .benefits__item:nth-child(#{$i + 1}) {
-            img{
-                animation-delay: #{($i + 1) * .5}s
-            }
-        }
-  }
-}
+// .child-animation.animated{
+//     .benefits__item  img{
+//         animation-name: slideInLeft;
+//         animation-duration: 1s;
+//         visibility: visible;
+//     }
+// }
+// $elements: 3;
+// @for $i from 0 to $elements {
+//     .child-animation.animated{
+//         .benefits__item:nth-child(#{$i + 1}) {
+//             img{
+//                 animation-delay: #{($i + 1) * .5}s
+//             }
+//         }
+//   }
+// }
 
-@keyframes slideInLeft {
-    from {
-      transform: translate3d(-100%, 0, 0);
-    }
+// @keyframes slideInLeft {
+//     from {
+//       transform: translate3d(-100%, 0, 0);
+//     }
   
-    to {
-      transform: translate3d(0, 0, 0);
-      visibility: visible;
-    }
-  }
+//     to {
+//       transform: translate3d(0, 0, 0);
+//       visibility: visible;
+//     }
+//   }

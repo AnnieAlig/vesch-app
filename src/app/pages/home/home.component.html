@@ -48,17 +48,17 @@
             <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s">
         </div>
     </div>
-    <section class="benefits row wow child-animation">
+    <section class="benefits row">
         <div class="col-tablet-2 col-desktop-2 benefits__item" *ngFor="let benefit of benefits, let i = index">
-            <h3 class="benefits__title">{{benefit.title}}</h3>
-            <p class="benefits__description">
+            <h3 class="benefits__title wow fadeInRight" data-wow-duration=".6s">{{benefit.title}}</h3>
+            <p class="benefits__description wow fadeInRight" data-wow-duration=".6s" data-wow-delay=".4s">
                 {{benefit.description}}
             </p>
-            <a href="{{benefit.link}}" class="benefits__link">
+            <a href="{{benefit.link}}" class="benefits__link wow fadeInRight" data-wow-duration=".6s" data-wow-delay=".4s">
                 Детальнее
                 <i class="ic ic--more">^</i>
             </a>
-            <div class="benefits__image">
+            <div class="benefits__image wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".6s">
                 <img src="{{benefit.img}}" alt="{{benefit.alt}}">
             </div>
         </div>
@@ -83,7 +83,7 @@
 <!-- END OF BENEFITS -->
 
 <!-- VIDEO -->
-<div class="container-inner">
+<div class="container-inner wow fadeInUp" data-wow-duration=".6s" data-wow-delay=".5s">
     <div class="decor-bar decor-bar--sm decor-bar--down">
         <div class="col-1 hidden-tablet hidden-mobile"></div>
         <div class="decor decor--full">

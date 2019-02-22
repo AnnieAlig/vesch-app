@@ -184,12 +184,11 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+    display: flex;
     .header_bg-item{
         --slice-width: calc(100% / 5);
-        position: absolute;
+        position: relative;
         height: 100%;
-        top: 0;
-        bottom: 0;
         width: var(--slice-width);
         overflow: hidden;
         &::after{
@@ -209,33 +208,13 @@
         }
         &:nth-child(1){
             width: calc(var(--slice-width) / 2);
-            left: 0;
             &::after{
                 transition-delay: 20ms;
             }
             // background-color: green;
         }
-        &:nth-child(2){
-            left: calc(var(--slice-width) / 2);
-            // background-color: yellow;
-        }
-        &:nth-child(3){
-            left: calc(var(--slice-width) / 2 + var(--slice-width));
-            // background-color: green;
-        }
-        &:nth-child(4){
-            left: calc(var(--slice-width) / 2 + var(--slice-width) * 2);
-            // background-color: yellow;
-        }
-        &:nth-child(5){
-            left: calc(var(--slice-width) / 2 + var(--slice-width) * 3);
-            // background-color: green;
-        }
         &:nth-child(6){
             width: calc(var(--slice-width) / 2);
-            left: calc(var(--slice-width) / 2 + var(--slice-width) * 4);
-            // background-color: yellow;
-            animation: sliderPieceHalf 1s ease-in-out;
         }
     }
 }

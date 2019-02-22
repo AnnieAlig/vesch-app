@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { VacanciesService } from '../../core/services/vacancies.service';
-import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-vacancies',
   templateUrl: './vacancies.component.html',
@@ -11,11 +11,6 @@ import { NgForm } from '@angular/forms';
 })
 export class VacanciesComponent implements OnInit {
   public vacancies: any;
-  public resume = {
-    name: '',
-    email: '',
-    file: ''
-  };
   public isMobile: boolean;
   @HostListener('window:resize', ['$event'])
     onResize(event) {
@@ -24,6 +19,7 @@ export class VacanciesComponent implements OnInit {
 
   constructor(
     private vacanciesService: VacanciesService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -35,4 +31,7 @@ export class VacanciesComponent implements OnInit {
     this.isMobile = window.innerWidth < 768;
   }
 
+  navigateTo(url) {
+    this.router.navigate([url]);
+  }
 }

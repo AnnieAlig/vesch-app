@@ -1,0 +1,34 @@
+.modal-dialog{
+    width: 545px;
+    max-width: 100%;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.modal-content{
+    background-color: var(--color_secondary);
+    color: var(--color_white);
+    width: 100%;
+}
+.modal-header {
+    border-bottom: none;
+}
+.modal-body{
+    padding-top: 5px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+.modal-img{
+    margin: 0 auto 40px;
+}
+.modal-title{
+    margin-bottom: 15px;
+    font-size: var(--text-big);
+}
+.modal-subtitle{
+    color: var(--color_primary);
+}
+.close{
+    float: right;
+}

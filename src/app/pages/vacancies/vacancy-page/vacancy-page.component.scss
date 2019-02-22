@@ -1,0 +1,7 @@
+.vacancy-salary{
+    color: var(--color_primary-dark);
+}
+.decor-to-right {
+    top: calc(var(--decor-height) / -2 - 1px);
+    margin-top: calc(var(--decor-height) / -2);
+}

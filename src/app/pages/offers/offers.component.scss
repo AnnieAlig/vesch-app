@@ -15,6 +15,7 @@
 .offer__title{
     // min-height: 58px;
     hyphens: auto;
+    cursor: pointer;
 }
 .offer__image{
     margin-bottom: 40px;
@@ -23,6 +24,7 @@
     justify-content: flex-start;
     width: 66.6%;
     max-height: 190px;
+    cursor: pointer;
     img{
         object-fit: cover;
         object-position: 0 0;

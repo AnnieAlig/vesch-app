@@ -175,7 +175,7 @@
         <div class="row">
             <div class="col-tablet-2 col-desktop-1 services__item" *ngFor="let service of services">
                 <div class="services__image">
-                    <img src="{{service.img}}" alt="{{service.alt}}">
+                    <img src="{{service.img}}" alt="{{service.alt}}" (click)="navigateTo(service.link)">
                     <div class="services__link">
                         <a href="javascript:void(0)" class="rotated" (click)="navigateTo(service.link)">
                             <i class="ic ic--plus">+</i>
@@ -183,7 +183,7 @@
                         </a>
                     </div>
                 </div>
-                <h3 class="services__title">{{service.title}}</h3>
+                <h3 class="services__title" (click)="navigateTo(service.link)">{{service.title}}</h3>
                 <p class="services__description">{{service.description}}</p>
             </div>
         </div>

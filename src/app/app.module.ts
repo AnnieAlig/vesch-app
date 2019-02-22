@@ -15,6 +15,7 @@ import { HeaderDesktopComponent } from './layout/header/header-desktop/header-de
 import { MapComponent } from './shared/map/map.component';
 import { HomeComponent  } from './pages/home/home.component';
 import { SearchModalComponent } from './shared/modals/search-modal/search-modal.component';
+import { SuccessModalComponent } from './shared/modals/success-modal/success-modal.component';
 import { LinesComponent } from './layout/lines/lines.component';
 
 import { SharedModule } from './shared/shared.module';
@@ -28,6 +29,7 @@ import { SharedModule } from './shared/shared.module';
     HeaderDesktopComponent,
     MapComponent,
     SearchModalComponent,
+    SuccessModalComponent,
     LinesComponent,
   ],
   imports: [
@@ -44,6 +46,7 @@ import { SharedModule } from './shared/shared.module';
   ],
   entryComponents: [
     SearchModalComponent,
+    SuccessModalComponent
   ],
   bootstrap: [AppComponent]
 })

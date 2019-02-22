@@ -45,7 +45,7 @@
 
         <ng-container *ngFor="let offer_item of offer.offers; let index = index">
             <div class="col-tablet-2 col-desktop-1 offer__item" [ngClass]="{'hidden': isMobile && index >= 2 && offer.hidden}">
-                <div class="offer__image">
+                <div class="offer__image" (click)="navigateTo(offer_item.link)">
                         <img src="{{offer_item.img}}" alt="{{offer_item.alt}}">
                         <div class="offer__link">
                             <a href="javascript:void(0)" class="rotated" (click)="navigateTo(offer_item.link)">
@@ -54,7 +54,7 @@
                             </a>
                         </div>
                 </div>
-                <h3 class="offer__title">{{offer_item.title}}</h3>
+                <h3 class="offer__title" (click)="navigateTo(offer_item.link)">{{offer_item.title}}</h3>
                 <p class="offer__description">{{offer_item.description}}</p>
             </div>
             <div class="btn btn-secondary-inverted" *ngIf="isMobile && index === 1 && offer.hidden" (click)="offer.hidden = false">Показать больше услуг</div>

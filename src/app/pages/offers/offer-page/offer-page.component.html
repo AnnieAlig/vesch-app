@@ -23,7 +23,9 @@
               </div>
               <div class="search__element col-4 col-tablet-2 col-desktop-1">
                   <select name="city_select" class="search__select">
-                    <option value="" selected disabled>Возрастанию цены</option>
+                    <option value="" selected>Алфавиту</option>
+                    <option value="">Возрастанию цены</option>
+                    <option value="">Убыванию цены</option>
                   </select>
                   <i class="ic ic--dropdown">^</i>
               </div>
@@ -37,7 +39,7 @@
         <div class="col-2 filter__sections hidden-tablet hidden-mobile">
           <h3 class="filter__title">{{offer.filter_label}}</h3>
           <div class="filter__section" *ngFor="let section of offer.filter_sections; let index = index" 
-            [attr.data-index]="index" (click)="filterSection(index)" [ngClass]="{'active': activeSectionIndex === index}">
+            [attr.data-index]="index" (click)="filterSection(index)" [ngClass]="{'active': sectionIsActive(index)}">
             <div class="section__icon">
                 <img src="{{section.icon}}" alt="{{section.name}} icon">
             </div>
@@ -52,8 +54,8 @@
         </div>
         <!-- End of Mobile and Tablet layout -->
         <div class="col-4 filter__items">
-          <div class="d-flex flex-wrap">
-              <div class="item" *ngFor="let item of activeSection.items; let index = index" [ngClass]="{'hidden': isMobile && index >= 2}">
+          <div class="d-flex flex-wrap" *ngIf="filteredItems">
+              <div class="item" *ngFor="let item of filteredItems; let index = index" [ngClass]="{'hidden': isMobile && index >= 2}">
                 <div class="item__img">
                   <img src="{{item.photo}}" alt="{{item.name}}">
                 </div>
@@ -63,8 +65,8 @@
                   <div class="price">{{item.price}}</div>
                 </div>
               </div>
-              <div class="btn btn-secondary-inverted mb35" *ngIf="isMobile && activeSection.items.length > 3" (click)="offer.hidden = false">Показать больше услуг</div>
-              <div class="decor decor--full hidden-mobile" *ngIf="(activeSection.items.length + 1) % 3 === 0 || (activeSection.items.length + 2) % 3 === 0">
+              <div class="btn btn-secondary-inverted mb35" *ngIf="isMobile && filteredItems.length > 3" (click)="offer.hidden = false">Показать больше услуг</div>
+              <div class="decor decor--full hidden-mobile" *ngIf="(filteredItems.length + 1) % 3 === 0 || (filteredItems.length + 2) % 3 === 0">
                   <img src="/assets/img/decor.svg" class="slideInLeft" data-wow-duration="1s">
               </div>
           </div>

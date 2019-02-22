@@ -1,5 +1,4 @@
-.search, 
-.resume{
+.search{
     margin-left: calc(var(--grid-column) * -.5);
     margin-right: calc(var(--grid-column) * -.5);
     padding: 40px calc(var(--grid-column) * .5);
@@ -14,11 +13,6 @@
     background-color: var(--color_primary);
     margin-bottom: 90px;
 } 
-.resume{
-    background-color: var(--color_secondary-dark);
-    color: var(--color_white);
-    margin-bottom: 40px;
-}
 .search::after{
     content: '';
     display: block;
@@ -138,57 +132,7 @@
     margin-right: -16px;
 }
 
-.resume__description{
-    padding-right: 50px;
-    margin-bottom: 25px;
-    @media(min-width:1200px){
-        padding-right: 10px;
-        margin-bottom: 0;
-    }
-}
-
-.resume__form{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    @media(min-width:1200px){
-        width: calc(var(--grid-column) * 3);
-    }
-}
-.resume__input{
-    width: 100%;
-    margin-bottom: 30px;
-    transition: var(--transition);
-    @media(min-width:768px){
-        width: calc(33.3% - 10px);
-        margin-bottom: 0;
-        margin-right: 10px;
-    }
-}
-.resume__submit{
-    width: 100%;
-    background-color: var(--color_primary);
-    &::after {
-        background-color: var(--color_primary-hover);
-    }
-    @media(min-width:768px){
-        width: calc(33.3% - 10px);
-        margin-right: 10px;
-    }
-}
-.resume__file{
-    padding-top: 10px;
-    cursor: pointer;
-    @media(max-width: 767px){
-        position: relative;
-        top: -20px;
-    }
-   input{
-       display: none;
-   }
-}
-.validated{
-    input.ng-invalid{
-        border: 1px solid red;
-    }
+.decor-to-right {
+    top: calc(var(--decor-height) / -2 - 1px);
+    margin-top: calc(var(--decor-height) / -2);
 }

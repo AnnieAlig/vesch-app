@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VacanciesComponent } from './vacancies.component';
+import { VacancyPageComponent } from './vacancy-page/vacancy-page.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,11 @@ const routes: Routes = [
     //     description: meta.pages.faq.description,
     //   }
     // },
-  }
+  },
+  {
+  path: ':id',
+  component: VacancyPageComponent
+ },
 ];
 
 @NgModule({

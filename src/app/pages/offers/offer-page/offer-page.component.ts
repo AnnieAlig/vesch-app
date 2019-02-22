@@ -18,8 +18,8 @@ declare var juxtapose: any;
 export class OfferPageComponent implements OnInit {
   public offer: any;
   public WOW: WOW;
-  public activeSectionIndex: number;
-  public activeSection: any;
+  public activeSectionIndexes: any = [];
+  public filteredItems: any = [];
   public filterSections: any = [];
   public isMobile: boolean;
   @HostListener('window:resize', ['$event'])
@@ -38,7 +38,7 @@ export class OfferPageComponent implements OnInit {
       this.offer = offer;
       this.WOW.init();
       this.createSlider();
-      this.filterSection(0);
+      this.filterSection();
       _.each(this.offer.filter_sections, (section: any, index: number) => {
         this.filterSections.push({ value: index, text: section.name});
       });
@@ -63,9 +63,26 @@ export class OfferPageComponent implements OnInit {
     });
   }
 
-  filterSection(index: number) {
-    this.activeSectionIndex = index;
-    this.activeSection = this.offer.filter_sections[index];
+  filterSection(index?: number) {
+    this.filteredItems = [];
+    if (typeof index !== 'undefined') {
+      if (_.contains(this.activeSectionIndexes, index)) {
+        const key = this.activeSectionIndexes.indexOf(index);
+        this.activeSectionIndexes.splice(key, 1);
+      } else {
+        this.activeSectionIndexes.push(index);
+      }
+    }
+    _.each(this.offer.filter_sections, (section: any, i: number) => {
+      if (typeof index === 'undefined' || (index >= 0 && _.contains(this.activeSectionIndexes, i))) {
+        this.filteredItems = _.union(this.filteredItems, section.items);
+      }
+    });
+
     this.WOW.sync();
+  }
+
+  sectionIsActive(index) {
+    return _.contains(this.activeSectionIndexes, index);
   }
 }

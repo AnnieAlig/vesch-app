@@ -6,17 +6,6 @@
 .modal-content{
     color: var(--color_white);
 }
-.ic--close::before,
-.ic--close::after{
-    width: 30px;
-    top: 21px;
-}
-.ic--close::before{
-    left: 8px;
-}
-.ic--close::after{
-    right: 8px;
-}
 .modal-header{
     border-bottom: none;
     display: flex;
@@ -59,4 +48,56 @@
     text-align: right;
     padding-right: 40px;
     margin-top: 20px;
+}
+
+.modal__close{
+    border: none;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    .circle, .circle-hover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        path{
+            stroke-dashoffset: 122.592px;
+            transition: .9s cubic-bezier(.77,0,.175,1) .3s;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2;
+            stroke-dasharray: 122.592,122.592;
+        }
+    }
+    .circle{
+        path{
+            stroke-dashoffset: 0;
+        }
+    }
+    .circle-hover{
+        path{
+            stroke: var(--color_primary);
+        }
+    }
+    &:hover{
+        .circle path{
+            stroke-dashoffset: -122.592px;
+        }
+        .circle-hover path{
+            stroke-dashoffset: 0;
+        }
+        .ic--close::before,
+        .ic--close::after{
+            background-color: var(--color_primary);
+        }
+        .ic--close::before{
+            transform: rotate(90deg);
+        }
+        .ic--close::after{
+            transform: rotate(0deg);
+        }
+    }
+
 }

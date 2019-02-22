@@ -5,9 +5,11 @@ import { FormsModule } from '@angular/forms';
 
 import { VacanciesRouting } from './vacancies.routing';
 import { VacanciesComponent } from './vacancies.component';
+import { VacancyPageComponent } from './vacancy-page/vacancy-page.component';
+import { SendResumeComponent } from './send-resume/send-resume.component';
 
 @NgModule({
-  declarations: [VacanciesComponent],
+  declarations: [VacanciesComponent, VacancyPageComponent, SendResumeComponent],
   imports: [
     CommonModule,
     SharedModule,

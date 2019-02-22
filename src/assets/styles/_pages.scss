@@ -22,6 +22,33 @@
     /deep/ p{
         margin-bottom: 20px;
     }
+    /deep/ ol{
+        padding-left: 25px;
+        li{
+            margin-bottom: 20px;
+        }
+    }
+}
+.page__image{
+    margin-left: calc(var(--grid-column) * -.5);
+    margin-right: calc(var(--grid-column) * -.5);
+    margin-bottom: 30px;
+    @media(min-width:768px){
+        margin-left: 0;
+        margin-right: 0;
+    }
+    @media(min-width:1200px){
+        margin-bottom: 60px;
+    }
+    img{
+        width: 100%;
+    }
+}
+.page__text-block{
+    margin-bottom: 30px;
+    @media(min-width:1200px){
+        margin-bottom: 60px;
+    }
 }
 .page__more-link{
     font-weight: bold;

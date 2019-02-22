@@ -16,4 +16,8 @@ export class VacanciesService {
   getVacancies() {
     return this.http.get(apiUrl + 'vacancies.json');
   }
+
+  getPage(id: number): Observable<any> {
+    return this.http.get(apiUrl + 'vacancy_' + id + '.json');
+  }
 }

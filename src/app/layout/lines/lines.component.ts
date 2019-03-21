@@ -47,33 +47,33 @@ export class LinesComponent implements OnInit, AfterViewInit {
     let lines;
     if (width < 1200) {
       lines = [
-        {top: 0, left: '0', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: '0', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 100, direction: 'TopBottom' }},
-        {top: 0, left: 'calc(100% / 4)', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: 'calc(100% / 4)', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 300, direction: 'TopBottom' }},
-        {top: 0, left: 'calc(100% / 4 * 2)', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: 'calc(100% / 4 * 2)', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 0, direction: 'TopBottom' }},
-        {top: 0, left: 'calc(100% / 4 * 3)', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: 'calc(100% / 4 * 3)', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 200, direction: 'TopBottom' }},
-        {top: 0, left: '100%', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: '100%', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 0, direction: 'TopBottom' }},
       ];
 
     } else {
       lines = [
-        {top: 0, left: '0', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: '0', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 100, direction: 'TopBottom' }},
-        {top: 0, left: 'calc(100% / 6)', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: 'calc(100% / 6)', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 300, direction: 'TopBottom' }},
-        {top: 0, left: 'calc(100% / 6 * 2)', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: 'calc(100% / 6 * 2)', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 0, direction: 'TopBottom' }},
-        {top: 0, left: 'calc(100% / 6 * 3)', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: 'calc(100% / 6 * 3)', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 200, direction: 'TopBottom' }},
-        {top: 0, left: 'calc(100% / 6 * 4)', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: 'calc(100% / 6 * 4)', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 400, direction: 'TopBottom' }},
-        {top: 0, left: 'calc(100% / 6* 5)', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: 'calc(100% / 6* 5)', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 0, direction: 'TopBottom' }},
-        {top: 0, left: '100%', width: 1, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
+        {top: 0, left: '100%', width: 0, height: '100vh', color: 'rgba(52, 58, 73,.1)', hidden: true,
         animation: { duration: 2000, easing: 'easeInOutExpo', delay: 200, direction: 'TopBottom' }},
       ];
     }

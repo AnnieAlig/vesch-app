@@ -5,22 +5,30 @@
           <path d="M212,1c3.1-0.6,2,1.7,2,3c0,19.7,0,39.3,0,59c-3,0.9-6.1,1.7-9.1,2.6c-19.7,6.1-39.8,9.9-60.4,9.1    c-16.8-0.6-33.4-3.4-50-6c-18.9-2.9-37.8-6.6-57-3.6C25.4,67,13.6,69.5,3,76c-3,0.6-2-1.7-2-3c0-19.7,0-39.4,0-59    C11.4,9.6,22.1,5.9,33.3,3.8C53,0.2,72.4,3.5,91.8,6.4c25,3.8,49.9,8.7,75.3,5.5C182.5,9.9,197.6,7,212,1z" fill="#d5db38"></path>
         </svg>
       </div>
-      <div class="col-desktop-5 col-2"></div>
-      <div class="hidden-tablet decor decor--full">
+      <!-- mobile:  -->
+      <div class="col-3 hidden-desktop hidden-tablet"></div>
+      <div class="hidden-desktop hidden-tablet decor decor--full">
+        <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s">
+      </div>
+      <!-- tablet & desktop:  -->
+      <div class="col-desktop-1"></div>
+      <div class="col-desktop-3 col-tablet-3 col-4 breadcrumbs__container">
+        <div class="breadcrumbs__links">
+          <a routerLink="/" class="breadcrumbs-home">Главная</a>
+          <span class="breadcrumbs__separator">
+            <i class="fas fa-angle-right"></i>
+          </span>
+          <ng-container *ngIf="parentPage">
+              <a href="javascript:void(0)" class="breadcrumbs-home" (click)="getParentPage()">{{parentPage}}</a>
+              <span class="breadcrumbs__separator">
+                <i class="fas fa-angle-right"></i>
+              </span>
+          </ng-container>
+          <span class="breadcrumbs-active">{{currentPage}}</span>
+        </div>
+      </div>
+      <div class="hidden-mobile decor decor--full">
           <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s">
       </div>
-  </div>
-  <div class="breadcrumbs__links">
-    <a routerLink="/" class="breadcrumbs-home">Главная</a>
-    <span class="breadcrumbs__separator">
-      <i class="fas fa-angle-right"></i>
-    </span>
-    <ng-container *ngIf="parentPage">
-        <a href="javascript:void(0)" class="breadcrumbs-home" (click)="getParentPage()">{{parentPage}}</a>
-        <span class="breadcrumbs__separator">
-          <i class="fas fa-angle-right"></i>
-        </span>
-    </ng-container>
-    <span class="breadcrumbs-active">{{currentPage}}</span>
   </div>
 </div>

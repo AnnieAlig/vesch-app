@@ -11,6 +11,10 @@
     &-active{
         color: var(--color_primary-dark);
     }
+    &__container{
+        display: flex;
+        align-items: center;
+    }
 }
 
 .decor{

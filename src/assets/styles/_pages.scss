@@ -1,9 +1,9 @@
 .page__brand_text-rotated{
     position: absolute;
     right: 5px;
-    top: -50%;
+    top: -50px;
     @media(min-width: 1200px){
-        top: 0;
+        top: -100px;
     }
     p{
         transform: rotate(-90deg);

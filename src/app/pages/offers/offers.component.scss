@@ -6,6 +6,10 @@
     }
 }
 
+.offer__page{
+    margin-top: -45px;
+}
+
 .offer__item{
     margin-bottom: 50px;
     @media(min-width:768px){
@@ -131,4 +135,8 @@
     .btn-secondary-inverted{
         width: 100%;
     }
+}
+
+.page__brand_text-rotated{
+    top: 100px;
 }

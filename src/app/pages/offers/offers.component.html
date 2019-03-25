@@ -1,24 +1,24 @@
 <app-breadcrumbs currentPage="Услуги"></app-breadcrumbs>
-<div class="container-inner">
+<div class="container-inner offer__page">
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
-    <h1 class="page__title">Услуги</h1>
+    <!-- <h1 class="page__title">Услуги</h1> -->
     <div class="page__brand_text-rotated hidden-mobile">
         <p>услуги</p>
     </div>
   </div>
-    <div class="decor-bar decor-bar--sm">
+    <!-- <div class="decor-bar decor-bar--sm">
         <div class="decor decor--half decor--top"></div>
-    </div>
+    </div> -->
     <!-- CALLBACK -->
-    <app-callback mode="order" referrer="offers"></app-callback>
+    <!-- <app-callback mode="order" referrer="offers"></app-callback> -->
     <!-- END OF CALLBACK -->
-    <div class="decor-bar decor-bar--sm">
+    <!-- <div class="decor-bar decor-bar--sm">
         <div class="col-1">
         </div>
         <div class="decor decor--half decor--bottom"></div>
-    </div>
-    <div class="decor-bar hidden-tablet hidden-desktop">
+    </div> -->
+    <!-- <div class="decor-bar hidden-tablet hidden-desktop">
         <div class="decor decor--full">
             <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s">
         </div>
@@ -28,20 +28,13 @@
         <div class="decor decor--full">
             <img src="/assets/img/decor.svg" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s">
         </div>
-    </div>
+    </div> -->
     <div class="offers__category" *ngFor="let offer of offers; let i = index">
       <div class="row">
           <div class="col-1"></div>
           <h2 class="category__title" [innerHtml]="offer.category_name"></h2>
       </div>
       <div class="row category__offers">
-        <ng-container *ngIf="i === 0">
-          <div class="decor--absolute">
-              <div class="hidden-mobile hidden-tablet decor decor--full">
-                  <img src="/assets/img/decor.svg" class="slideInLeft" data-wow-duration="1s">
-              </div>
-          </div>
-        </ng-container>
 
         <ng-container *ngFor="let offer_item of offer.offers; let index = index">
             <div class="col-tablet-2 col-desktop-1 offer__item" [ngClass]="{'hidden': isMobile && index >= 2 && offer.hidden}">

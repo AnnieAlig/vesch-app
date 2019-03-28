@@ -11,7 +11,7 @@ import { SearchModalComponent } from '../../../shared/modals/search-modal/search
 export class HeaderDesktopComponent implements OnInit {
   @ViewChild('dropdown_menu') private dropdown: ElementRef;
   @ViewChild('dropdown_link') private dropdown_link: ElementRef;
-  private collapsed;
+  collapsed;
 
   @HostListener('document:click', ['$event'])
   clickout(event) {

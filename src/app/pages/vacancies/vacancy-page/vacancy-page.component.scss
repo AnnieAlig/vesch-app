@@ -5,3 +5,8 @@
     top: calc(var(--decor-height) / -2 - 1px);
     margin-top: calc(var(--decor-height) / -2);
 }
+.page__brand_text-rotated{
+    @media(min-width: 1200px){
+        top: -100px;
+    }
+}

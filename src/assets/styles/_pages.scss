@@ -2,9 +2,9 @@
     position: absolute;
     right: 5px;
     top: -50px;
-    @media(min-width: 1200px){
-        top: -100px;
-    }
+    // @media(min-width: 1200px){
+    //     top: -100px;
+    // }
     p{
         transform: rotate(-90deg);
         transform-origin: right;

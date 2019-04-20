@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Renderer2 } from '@angular/core';
 import {DialogService} from 'ng2-bootstrap-modal';
 import { SearchModalComponent } from '../../../shared/modals/search-modal/search-modal.component';
 
@@ -21,6 +21,7 @@ export class HeaderMobileComponent implements OnInit {
 
   constructor(
     private dialogService: DialogService,
+    private renderer: Renderer2
     ) { }
 
   ngOnInit() {
@@ -28,6 +29,11 @@ export class HeaderMobileComponent implements OnInit {
 
   toggleMenu() {
     this.isCollapsed = !this.isCollapsed;
+    if (this.isCollapsed) {
+      this.renderer.addClass(document.body, 'modal-open');
+    } else {
+      this.renderer.removeClass(document.body, 'modal-open');
+    }
     return false;
   }
 

@@ -169,8 +169,9 @@
             margin-bottom: 70px;
         }
         @media(min-width:1200px){
-            margin-left: calc(var(--item-width) / 3);
+            // margin-left: calc(var(--item-width) / 3);
             margin-right: 0;
+            padding-right: calc(var(--item-width) * .15);
         }
     }
     .item__img{
@@ -186,6 +187,9 @@
     }
     .item__name{
         padding-right: 10px;
+        @media(min-width:1200px){
+            hyphens: auto;
+        }
     }
     .item__price{
         display: flex;

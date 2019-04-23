@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectorRef,
-  ViewChild, ElementRef, Renderer2 } from '@angular/core';
+  ViewChild, ElementRef, Renderer2, HostListener } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HomeService } from '../../core/services/home.service';
 import * as _ from 'underscore';
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit, AfterViewInit {
 
   public WOW: WOW;
+  public mobile: boolean;
 
   public slider;
   public activeSlide: number;
@@ -26,6 +27,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public blackTie_items;
 
   @ViewChild('slides') slides: ElementRef;
+  @HostListener('window:resize', ['$event'])
+    onResize(event) {
+      const mobile = window.innerWidth < 768;
+      if (this.mobile !== mobile) {
+        this.mobile = mobile;
+        this.createSlider();
+      }
+  }
 
   constructor(
     private homeService: HomeService,
@@ -41,7 +50,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.createSlider();
+    this.getSlider();
     this.createBenefits();
     this.createSteps();
     this.createServices();
@@ -53,36 +62,47 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.WOW.init();
   }
 
-  createSlider() {
+  getSlider() {
     this.homeService.getSlides().subscribe(
       (slides) => {
         this.slider = slides;
         this.activeSlide = 1;
 
         setTimeout( () => {
-          const that = this;
-          const allSlides = this.slides.nativeElement.querySelectorAll('.slider__slide');
-          const sliderPieces = 6;
-          let sliderMode: string;
-          if (window.innerWidth < 768) {
-            sliderMode = 'mobile_img';
-          } else if (window.innerWidth >= 768 && window.innerWidth <= 1200) {
-            sliderMode = 'tablet_img';
-          } else {
-            sliderMode = 'desktop_img';
-          }
-
-          _.each(allSlides, (slide: any, index: number) => {
-              that.clipImage(this.slider[index][sliderMode], sliderPieces, slide, sliderMode).then(dataUrls => {
-                _.each(dataUrls, (dataUrl: any) => {
-                  that.createSliderPieces(dataUrl, slide);
-                });
-              });
-          });
+          this.createSlider();
         }, 0);
 
       }
     );
+  }
+
+  createSlider() {
+    const that = this;
+
+    const slices = this.slides.nativeElement.querySelectorAll('.slide__slice');
+    if (slices.length) {
+      _.each(slices, (slice: any) => {
+        slice.parentNode.removeChild(slice);
+      });
+    }
+    const allSlides = this.slides.nativeElement.querySelectorAll('.slider__slide');
+    const sliderPieces = 6;
+    let sliderMode: string;
+    if (window.innerWidth < 768) {
+      sliderMode = 'mobile_img';
+    } else if (window.innerWidth >= 768 && window.innerWidth <= 1200) {
+      sliderMode = 'tablet_img';
+    } else {
+      sliderMode = 'desktop_img';
+    }
+
+    _.each(allSlides, (slide: any, index: number) => {
+        that.clipImage(this.slider[index][sliderMode], sliderPieces, slide, sliderMode).then(dataUrls => {
+          _.each(dataUrls, (dataUrl: any) => {
+            that.createSliderPieces(dataUrl, slide);
+          });
+        });
+    });
   }
 
   clipImage(imageSrc: string, slicesNumber: number, container: any, mode: string) {

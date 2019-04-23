@@ -171,10 +171,12 @@
         }
     }
     .active &{
-        img{
-            width: 0; 
-            animation: sliderPiece 1s ease-in-out;
-            animation-fill-mode: forwards;
+        @media(min-width:768px){
+            img{
+                width: 0; 
+                animation: sliderPiece 1s ease-in-out;
+                animation-fill-mode: forwards;
+            }
         }
     }
 }

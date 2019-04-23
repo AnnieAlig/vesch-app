@@ -1,23 +1,23 @@
 [
-    { "mobile_img": "/assets/img/home/slider@3x.png",
+    { "mobile_img": "/assets/img/home/slider_mobile.png",
         "tablet_img": "/assets/img/home/slider@3x.png",
         "desktop_img": "/assets/img/home/slider@3x.png",
         "title": "исключительно передовые <br/> эко-френдли технологии очищения и реновании вещей"
     },
     {
-        "mobile_img": "/assets/img/home/video_poster.png",
+        "mobile_img": "/assets/img/home/video_poster_mobile.png",
         "tablet_img": "/assets/img/home/video_poster.png",
         "desktop_img": "/assets/img/home/video_poster.png",
         "title": "slide 2"
     },
     {
-        "mobile_img": "/assets/img/home/slider@3x.png",
+        "mobile_img": "/assets/img/home/slider_mobile.png",
         "tablet_img": "/assets/img/home/slider@3x.png",
         "desktop_img": "/assets/img/home/slider@3x.png",
         "title": "slide 3"
     },
     {
-        "mobile_img": "/assets/img/home/video_poster.png",
+        "mobile_img": "/assets/img/home/video_poster_mobile.png",
         "tablet_img": "/assets/img/home/video_poster.png",
         "desktop_img": "/assets/img/home/video_poster.png",
         "title": "slide 4"

@@ -1,0 +1,26 @@
+<app-breadcrumbs [currentPage]="news.title" parentPage="Новости" *ngIf="news?.title"></app-breadcrumbs>
+<div class="container-inner" *ngIf="news">
+  
+  <div class="row position-relative">
+    <div class="col-desktop-1"></div>
+    <div class="page__brand_text-rotated hidden-mobile">
+        <p>новости</p>
+    </div>
+  </div>
+  <div class="page__image">
+    <img src="{{news.image}}" alt="{{news.title}} image">
+  </div>
+  <div class="page__text-block" [innerHtml]="news?.text">
+  </div>
+
+  <div class="decor-bar decor-bar--sm decor-bar-absolute">
+      <div class="decor decor--half decor--top"></div>
+  </div>
+  <!-- CALLBACK -->
+  <app-callback mode="subscribe" referrer="home"></app-callback>
+  <!-- END OF CALLBACK -->
+  <div class="decor-bar decor-bar--sm">
+      <div class="col-desktop-2 col-1"></div>
+      <div class="decor decor--half decor--bottom"></div>
+  </div>
+</div>

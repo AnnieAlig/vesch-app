@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewsComponent } from './news.component';
+import { NewsPageComponent } from './news-page/news-page.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,11 @@ const routes: Routes = [
     //     description: meta.pages.faq.description,
     //   }
     // },
-  }
+  },
+  {
+  path: ':id',
+  component: NewsPageComponent
+ },
 ];
 
 @NgModule({

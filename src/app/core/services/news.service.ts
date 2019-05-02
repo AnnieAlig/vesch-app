@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 const apiUrl = '../assets/backend-data/';
 
@@ -14,5 +15,9 @@ export class NewsService {
 
   getNews() {
     return this.http.get(apiUrl + 'news.json');
+  }
+
+  getPage(id: number): Observable<any> {
+    return this.http.get(apiUrl + 'news_' + id + '.json');
   }
 }

@@ -28,6 +28,9 @@
             margin-bottom: 20px;
         }
     }
+    /deep/ h3{
+        margin-top:25px;
+    }
 }
 .page__image{
     margin-left: calc(var(--grid-column) * -.5);
@@ -43,6 +46,11 @@
     img{
         width: 100%;
     }
+}
+.page__date{
+    font-size: 14px;
+    color: var(--color_text-light);
+    margin-bottom: 20px;
 }
 .page__text-block{
     margin-bottom: 30px;

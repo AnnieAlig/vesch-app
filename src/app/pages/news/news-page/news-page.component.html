@@ -10,7 +10,20 @@
   <div class="page__image">
     <img src="{{news.image}}" alt="{{news.title}} image">
   </div>
-  <div class="page__text-block" [innerHtml]="news?.text">
+  <div class="page__date">{{news.date}}</div>
+  <div class="page__description">
+      <div class="page__text-block" [innerHtml]="news?.text"></div>
+  </div>
+  <div class="share-block"> 
+    <div class="press col-2">
+      <div class="pdf_icon">
+        <img src="/assets/img/icons/ic_pdf.svg" alt="pdf" class="img-fluid">
+      </div>
+      <a href="{{news.press_link}}" class="press__btn" target="_blank">Скачать пресс-релиз</a>
+    </div>
+    <div class="sharing">
+
+    </div>
   </div>
 
   <div class="decor-bar decor-bar--sm decor-bar-absolute">

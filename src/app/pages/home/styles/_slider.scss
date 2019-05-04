@@ -170,15 +170,15 @@
             width: calc(var(--slice-width) / 2);
         }
     }
-    .active &{
-        @media(min-width:768px){
-            img{
-                width: 0; 
-                animation: sliderPiece 1s ease-in-out;
-                animation-fill-mode: forwards;
-            }
-        }
-    }
+    // .active &{
+    //     @media(min-width:768px){
+    //         img{
+    //             width: 0; 
+    //             animation: sliderPiece 1s ease-in-out;
+    //             animation-fill-mode: forwards;
+    //         }
+    //     }
+    // }
 }
 /deep/ :not(.slide__slice) + .slide__slice{
     @media(max-width:1199px){

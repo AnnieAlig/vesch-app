@@ -166,6 +166,9 @@
 .decor-to-right{
     right: calc(var(--grid-column) * -.5);
 }
+.decor-on-top{
+    top: 0!important;
+}
 .decor-bar-absolute{
     position: relative;
     width: 100%;

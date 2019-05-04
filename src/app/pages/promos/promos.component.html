@@ -1,3 +1,29 @@
-<p>
-  promos works!
-</p>
+<app-breadcrumbs currentPage="Акции"></app-breadcrumbs>
+<div class="container-inner">
+  <div class="row position-relative">
+    <div class="col-desktop-1"></div>
+    <div class="page__brand_text-rotated hidden-mobile">
+        <p>акции</p>
+    </div>
+  </div>
+  <div class="row promos_container">
+      <app-promo-card *ngFor="let promo_item of promos" [promo_item]="promo_item" class="promo_card col-4 col-desktop-3"></app-promo-card>
+  </div>
+  
+  <div class="decor-bar decor-bar--sm decor-bar-absolute hidden-mobile hidden-tablet">
+      <div class="decor decor--half decor--top"></div>
+  </div>
+  <!-- CALLBACK -->
+  <app-callback mode="subscribe" referrer="promos" class="hidden-mobile hidden-tablet"></app-callback>
+  <!-- END OF CALLBACK -->
+  <div class="decor-bar decor-bar--sm hidden-mobile hidden-tablet">
+      <div class="col-desktop-2 col-1"></div>
+      <div class="decor decor--half decor--bottom"></div>
+  </div>
+  <div class="decor-bar decor-bar--top decor-to-right hidden-mobile">
+    <div class="col-desktop-5 col-2"></div>
+    <div class="decor decor--full">
+      <img src="/assets/img/decor.svg">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+@media(min-width:768px){
+    .page__image{
+        margin-left: calc(var(--grid-column) * -.5);
+        margin-right: calc(var(--grid-column) * -.5);
+    }
+    .page__text-block {
+        margin-bottom: 80px;
+    } 
+}
+@media (min-width: 1200px){
+    .page__text-block {
+        margin-bottom: 120px;
+    }  
+    .page__image{
+        margin-bottom: 100px;
+    }  
+}
+
+.page__brand_text-rotated{
+    top: -60px;
+}

@@ -15,14 +15,17 @@
       <div class="page__text-block" [innerHtml]="news?.text"></div>
   </div>
   <div class="share-block"> 
-    <div class="press col-2">
+    <div class="press col-4 col-desktop-2">
       <div class="pdf_icon">
         <img src="/assets/img/icons/ic_pdf.svg" alt="pdf" class="img-fluid">
       </div>
       <a href="{{news.press_link}}" class="press__btn" target="_blank">Скачать пресс-релиз</a>
     </div>
-    <div class="sharing">
-
+    <div class="social-sharing col-tablet-2 col-desktop-2 col-4">
+      <a class="social-icon social--share" href=""></a>
+      <a class="social-icon social--tg" href=""></a>
+      <a class="social-icon social--tw" href=""></a>
+      <a class="social-icon social--fb" href=""></a>
     </div>
   </div>
 
@@ -30,10 +33,17 @@
       <div class="decor decor--half decor--top"></div>
   </div>
   <!-- CALLBACK -->
-  <app-callback mode="subscribe" referrer="home"></app-callback>
+  <app-callback mode="subscribe" referrer="news"></app-callback>
   <!-- END OF CALLBACK -->
   <div class="decor-bar decor-bar--sm">
-      <div class="col-desktop-2 col-1"></div>
+      <div class="col-desktop-2 col-tablet-2 col-1"></div>
       <div class="decor decor--half decor--bottom"></div>
+  </div>
+
+  <div class="decor-bar decor-on-top decor-to-right hidden-mobile mt40">
+    <div class="col-desktop-5 col-2"></div>
+    <div class="decor decor--full">
+      <img src="/assets/img/decor.svg">
+    </div>
   </div>
 </div>

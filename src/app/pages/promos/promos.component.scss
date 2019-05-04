@@ -1,0 +1,10 @@
+.promos_container{
+    margin-bottom: 80px;
+}
+
+.page__brand_text-rotated{
+    top: -60px;
+    @media(min-width:1200px){
+        top: -100px;
+    }
+}

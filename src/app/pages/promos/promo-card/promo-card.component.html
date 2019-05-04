@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card__img">
+    <img src="{{isMobile ? promo_item.img_mobile : promo_item.img}}" alt="{{promo_item.title}}">
+    <h3 class="expired" *ngIf="!promo_item.active">акция завершена</h3>
+  </div>
+  <h3 class="card__title">{{promo_item.title}}</h3>
+  <p class="card__text">{{promo_item.excerpt}}</p>
+  <a href="{{promo_item.link}}" class="card__link page__more-link"> 
+    Детальнее
+    <i class="ic ic--more">^</i>
+  </a>
+</div>

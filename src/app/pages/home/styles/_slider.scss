@@ -144,47 +144,53 @@
     padding-right: 20px;
 }
 
-/deep/ .slide__slice{
-    --slice-width: calc(100% / 5);
-    position: relative;
+.slider__image{
+    width: 100%;
     height: 100%;
-    z-index: -1;
-    width: var(--slice-width);
-    overflow: hidden;
-    img{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        backface-visibility: hidden;
-    }
-    @media(min-width:1200px){
-        --slice-width: calc(100% / 6);
-    }
-    @media(max-width:1199px){
-        &:first-of-type,
-        &:last-of-type, {
-            width: calc(var(--slice-width) / 2);
-        }
-    }
-    // .active &{
-    //     @media(min-width:768px){
-    //         img{
-    //             width: 0; 
-    //             animation: sliderPiece 1s ease-in-out;
-    //             animation-fill-mode: forwards;
-    //         }
-    //     }
-    // }
+    object-fit: cover;
 }
-/deep/ :not(.slide__slice) + .slide__slice{
-    @media(max-width:1199px){
-        width: calc(var(--slice-width) / 2);
-    }
-}
+
+// /deep/ .slide__slice{
+//     --slice-width: calc(100% / 5);
+//     position: relative;
+//     height: 100%;
+//     z-index: -1;
+//     width: var(--slice-width);
+//     overflow: hidden;
+//     img{
+//         position: absolute;
+//         width: 100%;
+//         height: 100%;
+//         left: 0;
+//         top: 0;
+//         right: 0;
+//         bottom: 0;
+//         backface-visibility: hidden;
+//     }
+//     @media(min-width:1200px){
+//         --slice-width: calc(100% / 6);
+//     }
+//     @media(max-width:1199px){
+//         &:first-of-type,
+//         &:last-of-type, {
+//             width: calc(var(--slice-width) / 2);
+//         }
+//     }
+//     // .active &{
+//     //     @media(min-width:768px){
+//     //         img{
+//     //             width: 0; 
+//     //             animation: sliderPiece 1s ease-in-out;
+//     //             animation-fill-mode: forwards;
+//     //         }
+//     //     }
+//     // }
+// }
+// /deep/ :not(.slide__slice) + .slide__slice{
+//     @media(max-width:1199px){
+//         width: calc(var(--slice-width) / 2);
+//     }
+// }
 
 
 @keyframes sliderPiece {

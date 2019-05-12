@@ -14,6 +14,7 @@
                 <div class="slider__text">
                     <h1 class="slder__title" innerHtml="{{slide.title}}"></h1>
                 </div>
+                <img class="slider__image" src="{{slide.desktop_img}}" srcset="{{slide.mobile_img}} 320w, {{slide.tablet_img}} 768w, {{slide.desktop_img}} 1200w" alt="{{slide.title}}">
             </div>
             <ul class="slider__controls">
                 <li class="slider__control" *ngFor="let item of slider; let index = index"
@@ -288,14 +289,14 @@
 <!-- PRIORITY -->
 <div class="container-inner">
     <section class="priority">
-        <div class="priority__rounded-text wow rotateIn1" data-wow-duration="1s"></div>
+        <div class="priority__rounded-text"></div>
         <div class="row priority__row">
             <div class="col-1"></div>
             <div class="col-desktop-5 d-flex flex-wrap">
                 <div class="priority__texts">
                     <h2 class="priority__title">программа лояльности «priority&nbsp;club» </h2>
                     <div class="priority__image hidden-desktop">
-                        <img class="wow slideInLeft" data-wow-duration=".8s" data-wow-delay=".5s" src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
+                        <img src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
                     </div>
                     <p class="priority__description">
                         Используйте безграничные возможности сети эко-чисток Vesch. Станьте участником программы лояльности Priority Club и получите индивидуальные скидки, персонального менеджера и другие привилегии VIP-клиента.
@@ -306,7 +307,7 @@
                     </div>
                 </div>
                 <div class="priority__image hidden-tablet hidden-mobile">
-                    <img class="wow slideInLeft" data-wow-duration=".8s" data-wow-delay=".5s" src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
+                    <img src="/assets/img/home/priority_card@2x.png" srcset="/assets/img/home/priority_card@1x.png 1x, /assets/img/home/priority_card@2x.png 2x, /assets/img/home/priority_card@3x.png 3x" alt="priority card">
                 </div>
             </div>
             <div class="brand_text-rotated hidden-mobile">

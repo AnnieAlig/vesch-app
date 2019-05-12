@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       const mobile = window.innerWidth < 768;
       if (this.mobile !== mobile) {
         this.mobile = mobile;
-        this.createSlider();
+        // this.createSlider();
       }
   }
 
@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.activeSlide = 1;
 
         setTimeout( () => {
-          this.createSlider();
+          // this.createSlider();
         }, 0);
 
       }

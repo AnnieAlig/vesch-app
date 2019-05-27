@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OffersComponent } from './offers.component';
 import { OfferPageComponent } from './offer-page/offer-page.component';
+import { MobileEcoComponent } from './mobile-eco/mobile-eco.component';
 
 const routes: Routes = [
   {
@@ -15,9 +16,13 @@ const routes: Routes = [
     // },
   },
   {
+   path: 'mobile-eco-cleaning',
+   component: MobileEcoComponent
+  },
+  {
   path: ':id',
   component: OfferPageComponent
- },
+ }
 ];
 
 @NgModule({

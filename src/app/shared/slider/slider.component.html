@@ -1,0 +1,23 @@
+<div class="slider__container">
+  <div class="slider__inner" #slides>
+        <div class="slider__slide" *ngFor="let slide of slider; let index = index;" 
+          [ngClass]="{ 'active': (index + 1) === activeSlide, 'prev': (index + 1) === prevSlide}">
+            <div class="slider__text">
+                <ng-container *ngIf="mode === 'home'">
+                    <h1 class="slider__title" innerHtml="{{slide.title}}"></h1>
+                </ng-container>
+                <ng-container *ngIf="mode === 'loyalty'">
+                    <div class="slider__title--block" innerHtml="{{slide.title}}"></div>
+                </ng-container>
+            </div>
+            <img class="slider__image" src="{{slide.desktop_img}}" srcset="{{slide.mobile_img}} 320w, {{slide.tablet_img}} 768w, {{slide.desktop_img}} 1200w" alt="{{slide.title}}">
+        </div>
+        <ul class="slider__controls">
+            <li class="slider__control" *ngFor="let item of slider; let index = index"
+              [ngClass]="{ 'active': (index + 1) === activeSlide}" (click)='changeSlide(index + 1)'>
+                <div class="slider__line"></div>
+                <div class="slider__number">{{index+1}}</div>
+            </li>
+        </ul>
+  </div>
+</div>

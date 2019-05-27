@@ -1,0 +1,70 @@
+<app-breadcrumbs [currentPage]="offer.title" parentPage="Услуги" *ngIf="offer?.title"></app-breadcrumbs>
+<div class="container-inner" *ngIf="offer">
+  
+  <div class="row position-relative">
+    <div class="col-desktop-1"></div>
+    <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
+        <p>услуги</p>
+    </div>
+  </div>
+  <div class="page__image">
+    <img src="{{offer.image}}" alt="{{offer.title}} image" class="hidden-mobile">
+    <img src="{{offer.image_mobile}}" alt="{{offer.title}} image" class="hidden-tablet hidden-desktop">
+    <div class="page__image_text">
+      <h1 class="">{{offer.image_text}}</h1>
+    </div>
+  </div>
+  <div class="page__description">
+      <div class="page__text-block" [innerHtml]="offer?.text"></div>
+  </div>
+</div>
+
+  <!-- STEPS -->
+<div class="container-inner">
+  <section class="steps">
+      <div class="row">
+          <div class="col-desktop-1"></div>
+          <h2 class="col-tablet-3 col-desktop-3 steps__main-title">
+              Мобильная экочистка &ndash; как это работает
+          </h2>
+          <div class="col-tablet-2 col-desktop-2 steps__image">
+              <img class="wow slideInLeft" data-wow-duration="1s" src="/assets/img/home/mobile_bus.png" alt="mobile cleaning">
+          </div>
+          <div class="page__brand_text-rotated hidden-mobile">
+              <p>как это работает</p>
+          </div>
+          <div class="steps__container col-4">
+              <div class="steps__item" *ngFor="let step of steps; let index = index">
+                  <div class="steps__number">{{index+1}}</div>
+                  <h3 class="steps__title">{{step.title}}</h3>
+                  <p class="steps__description">{{step.description}}</p>
+              </div>
+          </div>
+          <div class="col-tablet-2 col-desktop-1"></div>
+          <div class="col-tablet-2 col-desktop-1 mobile-app">
+              <h3 class="mobile-app__title">Скачайте приложение через</h3>
+              <a href="" class="mobile-app__link">
+                  <img src="/assets/img/home/apple@2x.png" srcset="/assets/img/home/apple@1x.png 1x, /assets/img/home/apple@2x.png 2x, /assets/img/home/apple@3x.png 3x" alt="app store">
+              </a>
+              <a href="" class="mobile-app__link">
+                  <img src="/assets/img/home/google@2x.png" srcset="/assets/img/home/google@1x.png 1x, /assets/img/home/google@2x.png 2x, /assets/img/home/google@3x.png 3x" alt="google play">
+              </a>
+          </div>
+      </div>
+  </section>
+</div>
+<!-- END OF STEPS -->
+
+<div class="container-inner">
+    <div class="decor-bar decor-bar--sm">
+        <div class="decor decor--half decor--top"></div>
+    </div>
+    <!-- CALLBACK -->
+    <app-callback mode="order" referrer="home"></app-callback>
+    <!-- END OF CALLBACK -->
+    <div class="decor-bar decor-bar--sm">
+        <div class="col-1 col-tablet-2">
+        </div>
+        <div class="decor decor--half decor--bottom"></div>
+    </div>
+</div>

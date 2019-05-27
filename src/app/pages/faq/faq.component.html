@@ -1,3 +1,37 @@
-<p>
-  faq works!
-</p>
+<app-breadcrumbs currentPage="FAQ" parentPage="О нас"></app-breadcrumbs>
+
+<div class="container-inner">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-5 position-relative">
+      <!-- <h1 class="page__title">Часто задаваемые вопросы</h1> -->
+      <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
+        <p>FAQ</p>
+      </div>
+    </div>
+  </div>
+  <div class="questions-block" *ngIf="faq?.length">
+    <div class="questions-block__item" *ngFor="let item of faq; let index = index;">
+      <h3 class="question" (click)="chooseQuestion(index)" [ngClass]="{'active': activeQuestion === index}">
+        <div class="question-number">{{index + 1}}</div>
+        {{item.question}}
+      </h3>
+      <div class="answer" [innerHtml]="item.answer"></div>
+    </div>
+  </div>
+
+  <div class="row share-block">
+    <div class="col-tablet-2 col-desktop-4"></div>
+    <app-social-share class="col-tablet-2 col-desktop-2 col-4"></app-social-share>
+  </div>
+  <div class="decor-bar decor-bar--sm decor-bar-absolute hidden-mobile hidden-tablet">
+    <div class="decor decor--half decor--top"></div>
+  </div>
+  <!-- CALLBACK -->
+  <app-callback mode="subscribe" referrer="faq" class="hidden-mobile hidden-tablet"></app-callback>
+  <!-- END OF CALLBACK -->
+  <div class="decor-bar decor-bar--sm hidden-mobile hidden-tablet">
+      <div class="col-desktop-1 col-1"></div>
+      <div class="decor decor--half decor--bottom"></div>
+  </div>
+</div>

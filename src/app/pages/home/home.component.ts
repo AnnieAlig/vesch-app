@@ -43,10 +43,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private renderer: Renderer2,
     private router: Router
   ) {
-    this.sliderInterval = setInterval(() => {
-      this.changeSlide();
-      this.ref.markForCheck();
-    }, 6000);
+    // this.sliderInterval = setInterval(() => {
+    //   this.changeSlide();
+    //   this.ref.markForCheck();
+    // }, 6000);
   }
 
   ngOnInit() {

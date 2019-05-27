@@ -59,6 +59,13 @@ h4 {
     line-height: 1.5;
 }
 
+h5{
+    font-family: var(--titles_font);
+    font-size: 18px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
 p{
     margin: 0;
     /* TODO: check margins */

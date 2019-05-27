@@ -83,47 +83,6 @@
     }
 }
 
-.social-sharing{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @media(min-width:768px){
-        justify-content: flex-end;
-    }
-}
-
-.social-icon{
-    width: 52px;
-    height: 52px;
-    background-color: var(--color_primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5px;
-    background-repeat: no-repeat;
-    background-size: auto 20px;
-    background-position: center;
-    &:hover{
-        background-color: var(--color_primary-hover);
-    }
-    @media(min-width: 768px){
-        margin: 0 0 0 8px;
-    }
-}
-.social--share{
-    background-image: url(/assets/img/icons/ic_share.svg);
-}
-.social--tg{
-    background-image: url(/assets/img/icons/ic_tg_dark.svg);
-}
-.social--tw{
-    background-image: url(/assets/img/icons/ic_tw_dark.svg);
-}
-.social--fb{
-    background-image: url(/assets/img/icons/ic_fb_dark.svg);
-}
-
 .page__brand_text-rotated{
     top: -100px;
 }

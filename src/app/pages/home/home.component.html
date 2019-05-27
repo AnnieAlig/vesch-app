@@ -7,24 +7,7 @@
       <div class="col-desktop-4 col-tablet-2 col-2"></div>
       <div class="decor decor--half decor--top"></div>
   </div>
-  <div class="slider__container">
-      <div class="slider__inner" #slides>
-            <div class="slider__slide" *ngFor="let slide of slider; let index = index;" 
-              [ngClass]="{ 'active': (index + 1) === activeSlide, 'prev': (index + 1) === prevSlide}">
-                <div class="slider__text">
-                    <h1 class="slder__title" innerHtml="{{slide.title}}"></h1>
-                </div>
-                <img class="slider__image" src="{{slide.desktop_img}}" srcset="{{slide.mobile_img}} 320w, {{slide.tablet_img}} 768w, {{slide.desktop_img}} 1200w" alt="{{slide.title}}">
-            </div>
-            <ul class="slider__controls">
-                <li class="slider__control" *ngFor="let item of slider; let index = index"
-                  [ngClass]="{ 'active': (index + 1) === activeSlide}" (click)='changeSlide(index + 1)'>
-                    <div class="slider__line"></div>
-                    <div class="slider__number">{{index+1}}</div>
-                </li>
-            </ul>
-      </div>
-  </div>
+    <app-slider [slider]="slider" mode="home"></app-slider>
 </div>
 <!-- END OF SLIDER -->
 <div class="container-inner">

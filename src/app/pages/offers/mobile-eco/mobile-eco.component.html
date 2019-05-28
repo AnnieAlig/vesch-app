@@ -7,18 +7,25 @@
         <p>услуги</p>
     </div>
   </div>
-  <div class="page__image">
-    <img src="{{offer.image}}" alt="{{offer.title}} image" class="hidden-mobile">
-    <img src="{{offer.image_mobile}}" alt="{{offer.title}} image" class="hidden-tablet hidden-desktop">
-    <div class="page__image_text">
-      <h1 class="">{{offer.image_text}}</h1>
-    </div>
-  </div>
-  <div class="page__description">
-      <div class="page__text-block" [innerHtml]="offer?.text"></div>
-  </div>
 </div>
 
+
+<div class="page__image">
+    <img src="{{offer.image}}" alt="{{offer.title}} image" class="hidden-mobile">
+    <img src="{{offer.image_mobile}}" alt="{{offer.title}} image" class="hidden-tablet hidden-desktop">
+    <div class="position-absolute">
+        <div class="container-inner">
+            <div class="page__image_text">
+                <h1 class="">{{offer.image_text}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-inner">
+    <div class="page__description">
+        <div class="page__text-block" [innerHtml]="offer?.text"></div>
+    </div>
+</div>
   <!-- STEPS -->
 <div class="container-inner">
   <section class="steps">

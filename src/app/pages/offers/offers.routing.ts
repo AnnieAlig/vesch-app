@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { OffersComponent } from './offers.component';
 import { OfferPageComponent } from './offer-page/offer-page.component';
 import { MobileEcoComponent } from './mobile-eco/mobile-eco.component';
+import { BlacktiePageComponent } from './blacktie-page/blacktie-page.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
    path: 'mobile-eco-cleaning',
    component: MobileEcoComponent
+  },
+  {
+   path: 'black-tie',
+   component: BlacktiePageComponent
   },
   {
   path: ':id',

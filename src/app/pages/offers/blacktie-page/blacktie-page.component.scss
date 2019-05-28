@@ -1,0 +1,60 @@
+@import '../../home/styles/black-tie';
+
+.page__image{
+    position: relative;
+    margin-bottom: 0;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        left: 0;
+        right: 0;
+        height: 135px;
+        width: 100%;
+        background-image: url(/assets/img/offers/blacktie_wave.png);
+        background-position: bottom;
+        background-repeat: repeat-x;
+    }
+    .position-absolute{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .container-inner{
+        height: 100%;
+    }
+}
+.page__image_text{
+    color: var(--color_white);
+    margin: 0;
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    @media(min-width:768px){
+        max-width: calc(var(--grid-column) * 2);
+    }
+    @media(max-width:1199px) {
+        padding-left: calc(100% / 5 / 2);
+    }
+}
+
+.blacktie__outer{
+    position: static;
+}
+.blacktie{
+    position: static;
+}
+.page__brand_text-rotated{
+    top: 200px;
+    p{
+        color: var(--color_white);
+    }
+}
+.blacktie__main-info{
+    @media (min-width: 1200px) {
+        padding-bottom: 20px;
+    }
+}

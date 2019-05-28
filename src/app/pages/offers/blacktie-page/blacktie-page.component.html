@@ -1,0 +1,73 @@
+<app-breadcrumbs [currentPage]="'Black Tie'" parentPage="Услуги"></app-breadcrumbs>
+<div class="container-inner">
+  <div class="row position-relative">
+    <div class="col-desktop-1"></div>
+    <!-- <h1 class="page__title">{{offer.title}}</h1> -->
+    <div class="page__brand_text-rotated hidden-mobile">
+        <p>Black Tie</p>
+    </div>
+  </div>
+</div>
+
+<div class="page__image">
+    <img src="assets/img/offers/blacktie_banner.jpg" alt="blacktie banner image">
+    <!-- <img src="{{offer.image_mobile}}" alt="{{offer.title}} image" class="hidden-tablet hidden-desktop"> -->
+    <div class="position-absolute">
+        <div class="container-inner">
+            <div class="page__image_text">
+                <h1 class="">Эксклюзивная  экочистка  дизайнерских  вещей</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BLACK-TIE -->
+<div class="container-outer blacktie__outer">
+    <div class="container-inner">
+        <section class="blacktie">
+            <div class="row blacktie__main-info">
+              <p class="description col-5">Black Tie – это лучшее что может случиться с вашими вещами. Дизайнерская одежда, одежда из комбинированных тканей, с элементами декора или специальной обработки требует тщательного подхода на каждом этапе с применением самой эффективной и безопасной экочистки. </p>
+              <div class="decor decor--full mt20 mt-tablet-40">
+                  <img src="/assets/img/decor.svg">
+              </div>
+              <div class="col-4"></div>
+              <div class="decor decor--full">
+                  <img src="/assets/img/decor.svg">
+              </div>
+
+              <div class="col-1 hidden-tablet hidden-mobile"></div>
+              <div class="page__brand_text-rotated hidden-mobile">
+                  <p>преимущества</p>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-4 col-desktop-3 blacktie__item" *ngFor="let blacktie of blackTie_items">
+                    <h3 class="blacktie__title">{{blacktie.title}}</h3>
+                    <div class="blacktie__texts">
+                        <div class="blacktie__icon">
+                            <img src="{{blacktie.icon}}" alt="{{blacktie.alt}}">
+                        </div>
+                        <p class="blacktie__description">
+                            {{blacktie.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="decor-bar decor-bar--sm decor-bar--down">
+              <div class="col-1 col-desktop-3 col-tablet-"></div>
+              <div class="decor decor--full mt20 mt-tablet-40">
+                <img src="/assets/img/decor.svg">
+              </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div class="container-inner">
+    <div class="decor-bar decor-bar--sm mb-tablet-80">
+        <div class="col-1 col-desktop-2 col-tablet-2"></div>
+        <div class="decor decor--full mt20 mt-tablet-40">
+            <img src="/assets/img/decor.svg">
+        </div>
+    </div>
+</div>
+<!-- END OF BLACK-TIE -->

@@ -3,17 +3,29 @@
 .page__image{
     position: relative;
     margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
     &::after{
         content: '';
         position: absolute;
-        bottom: -80px;
+        bottom: -10px;
         left: 0;
         right: 0;
-        height: 135px;
+        height: 21px;
         width: 100%;
-        background-image: url(/assets/img/offers/blacktie_wave.png);
+        background-image: url(/assets/img/offers/blacktie_wave_mob.png);
         background-position: bottom;
         background-repeat: repeat-x;
+        @media(min-width:768px){
+            height: 54px;
+            bottom: -34px;
+            background-image: url(/assets/img/offers/blacktie_wave_tablet.png);
+        }
+        @media(min-width:1200px){
+            height: 135px;
+            bottom: -80px;
+            background-image: url(/assets/img/offers/blacktie_wave.png);
+        }
     }
     .position-absolute{
         position: absolute;
@@ -46,15 +58,72 @@
 }
 .blacktie{
     position: static;
+    .description{
+        @media (min-width: 1200px) {
+            padding-right: 10%;
+        }
+    }
+}
+.blacktie__description{
+    @media (min-width: 768px) and (max-width: 1199px) {
+        padding-right: 15%;
+    }
 }
 .page__brand_text-rotated{
     top: 200px;
+    @media (min-width: 768px){
+        top: 250px;
+    }
     p{
         color: var(--color_white);
     }
 }
+
+.decor-tablet-top{
+    @media(min-width: 768px) and (max-width: 1199px){
+        top: calc(var(--decor-height) / -2)
+    }
+}
 .blacktie__main-info{
+    padding-top: 70px;
+    padding-bottom: 35px;
+    @media(min-width:768px){
+        padding-bottom: 70px;
+    }
     @media (min-width: 1200px) {
         padding-bottom: 20px;
+        padding-top: 40px;
+    }
+}
+
+
+.blacktie-offers{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @media(min-width:768px){
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    @media(min-width:1200px){
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+    .offer__title,
+    .offer__description{
+        @media(max-width:767px){
+            width: calc(var(--grid-column) * 3);
+        }
+    }
+}
+.offer__item{
+    @media (min-width: 1200px){
+        padding-right: 0;
+        margin-right: calc(var(--grid-column) / 2);
+    }
+    @media(max-width:767px){
+        margin-bottom: 0;
+    }
+    .offer__description{
+        margin-bottom: 20px;
     }
 }

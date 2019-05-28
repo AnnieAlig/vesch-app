@@ -10,8 +10,9 @@
 </div>
 
 <div class="page__image">
-    <img src="assets/img/offers/blacktie_banner.jpg" alt="blacktie banner image">
-    <!-- <img src="{{offer.image_mobile}}" alt="{{offer.title}} image" class="hidden-tablet hidden-desktop"> -->
+    <img src="assets/img/offers/blacktie_banner.jpg" alt="blacktie banner image" class="hidden-mobile hidden-tablet">
+    <img src="assets/img/offers/blacktie_banner_tablet.jpg" alt="blacktie banner image" class="hidden-mobile hidden-desktop">
+    <img src="assets/img/offers/blacktie_banner_mob.jpg" alt="blacktie banner image" class="hidden-tablet hidden-desktop">
     <div class="position-absolute">
         <div class="container-inner">
             <div class="page__image_text">
@@ -27,11 +28,12 @@
         <section class="blacktie">
             <div class="row blacktie__main-info">
               <p class="description col-5">Black Tie – это лучшее что может случиться с вашими вещами. Дизайнерская одежда, одежда из комбинированных тканей, с элементами декора или специальной обработки требует тщательного подхода на каждом этапе с применением самой эффективной и безопасной экочистки. </p>
-              <div class="decor decor--full mt20 mt-tablet-40">
+              <div class="col-3 hidden-tablet hidden-desktop"></div>
+              <div class="decor decor--full mt20 mt-tablet-40 hidden-tablet">
                   <img src="/assets/img/decor.svg">
               </div>
-              <div class="col-4"></div>
-              <div class="decor decor--full">
+              <div class="col-2 col-desktop-4"></div>
+              <div class="decor decor--full hidden-tablet">
                   <img src="/assets/img/decor.svg">
               </div>
 
@@ -53,8 +55,8 @@
                     </div>
                 </div>
             </div>
-            <div class="decor-bar decor-bar--sm decor-bar--down">
-              <div class="col-1 col-desktop-3 col-tablet-"></div>
+            <div class="decor-bar decor-bar--sm decor-bar--down decor-tablet-top hidden-mobile">
+              <div class="col-3"></div>
               <div class="decor decor--full mt20 mt-tablet-40">
                 <img src="/assets/img/decor.svg">
               </div>
@@ -63,11 +65,51 @@
     </div>
 </div>
 <div class="container-inner">
-    <div class="decor-bar decor-bar--sm mb-tablet-80">
-        <div class="col-1 col-desktop-2 col-tablet-2"></div>
-        <div class="decor decor--full mt20 mt-tablet-40">
+    <div class="decor-bar decor-bar--sm mb-desktop-80 decor-tablet-top hidden-mobile">
+        <div class="col-1 col-tablet-2"></div>
+        <div class="decor decor--full mt-desktop-40">
             <img src="/assets/img/decor.svg">
         </div>
     </div>
 </div>
 <!-- END OF BLACK-TIE -->
+<div class="container-inner">
+  <div class="row blacktie-offers">
+    <div class="col-tablet-2 col-desktop-1 offer__item" *ngFor="let offer_item of offers; let index = index">
+        <div class="offer__image" (click)="navigateTo(offer_item.link)">
+                <img src="{{offer_item.img}}" alt="{{offer_item.alt}}">
+                <div class="offer__link">
+                    <a href="javascript:void(0)" class="rotated" (click)="navigateTo(offer_item.link)">
+                        <i class="ic ic--plus">+</i>
+                        Смотреть прайс
+                    </a>
+                </div>
+        </div>
+        <h3 class="offer__title" (click)="navigateTo(offer_item.link)">{{offer_item.title}}</h3>
+        <p class="offer__description">{{offer_item.description}}</p>
+        <a href="{{offer_item.link}}" class="card__link page__more-link"> 
+            Детальнее
+            <i class="ic ic--more">^</i>
+          </a>
+    </div>
+  </div>
+</div>
+
+<div class="container-inner">
+  <div class="decor-bar decor-bar--sm">
+      <div class="decor decor--half decor--top"></div>
+  </div>
+  <!-- CALLBACK -->
+  <app-callback mode="order" referrer="offers"></app-callback>
+  <!-- END OF CALLBACK -->
+  <div class="decor-bar decor-bar--sm">
+      <div class="col-1 col-tablet-2 col-desktop-3"></div>
+      <div class="decor decor--half decor--bottom"></div>
+  </div>
+  <div class="decor-bar hidden-tablet">
+      <div class="col-desktop-2"></div>
+      <div class="decor decor--full">
+          <img src="/assets/img/decor.svg">
+      </div>
+  </div>
+</div>

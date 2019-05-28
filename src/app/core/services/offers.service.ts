@@ -17,6 +17,10 @@ export class OffersService {
     return this.http.get(apiUrl + 'offers.json');
   }
 
+  getSomeOffers(): Observable<any> {
+    return this.http.get(apiUrl + 'offers-some.json');
+  }
+
   getPage(id: number|string): Observable<any> {
     return this.http.get(apiUrl + 'offer_' + id + '.json');
   }

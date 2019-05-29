@@ -1,0 +1,106 @@
+<app-breadcrumbs currentPage="Оформление заказа"></app-breadcrumbs>
+
+
+<div class="container-inner">
+    <div class="row">
+      <div class="col-1 hidden-mobile"></div>
+      <div class="col-4 col-tablet-3 col-desktop-5 position-relative">
+        <h1 class="page__title">заказ № {{cart?.id}}</h1>
+        <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
+          <p>Оформление заказа</p>
+        </div>
+      </div>
+    </div>
+
+    <form action="" class="checkout__form">
+      <div class="checkout-form-container">
+        <div class="form-group-lg">
+          <div class="form-group">
+              <h3 class="form-group-title">
+                  контактные данные
+              </h3>
+              <input type="text" class="checkout__input" placeholder="Ваше имя" name="name" required 
+                [(ngModel)]="checkout.name">
+              <input type="text" class="checkout__input" placeholder="Ваша фамилия" name="surname" required 
+                [(ngModel)]="checkout.surname">
+              <input type="text" class="checkout__input" placeholder="+38(0__)___-__-__" name="phone" required
+                [textMask]="{mask: phoneMask}" [(ngModel)]="checkout.phone">
+              <input type="text" class="checkout__input email" placeholder="Ваш Email" name="email" required 
+                [(ngModel)]="checkout.email">
+            </div>
+          <div class="form-group">
+              <h3 class="form-group-title">
+                  выберите способ доставки
+              </h3>
+              <div class="checkout__select">
+                  <select name="delivery" class="select" [(ngModel)]="checkout.delivery">
+                    <option value="Курьером до двери" selected>Курьером до двери</option>
+                    <option value="Другой вариант">Другой вариант</option>
+                  </select>
+                  <i class="ic ic--dropdown">^</i>
+              </div>
+            </div>
+        </div>
+        <div class="form-group-sm">
+          <div class="form-group">
+            <h3 class="form-group-title">
+                адрес доставки
+            </h3>
+            <div class="checkout__select">
+                <select name="region" class="select" [(ngModel)]="checkout.region">
+                  <option value="Киевская область" selected>Киевская область</option>
+                  <option value="Другой вариант">Другой вариант</option>
+                </select>
+                <i class="ic ic--dropdown">^</i>
+            </div>
+            <div class="checkout__select">
+                <select name="city" class="select" [(ngModel)]="checkout.city">
+                  <option value="Киев" selected>Киев</option>
+                  <option value="Другой вариант">Другой вариант</option>
+                </select>
+                <i class="ic ic--dropdown">^</i>
+            </div>
+            <input type="text" class="checkout__input" placeholder="Улица" name="street" required 
+              [(ngModel)]="checkout.street">
+            <div class="checkout__input-row">
+                <input type="text" class="checkout__input" placeholder="Дом" name="house" required 
+                  [(ngModel)]="checkout.house">
+                <input type="text" class="checkout__input" placeholder="Этаж" name="floor" required 
+                  [(ngModel)]="checkout.floor">
+                <input type="text" class="checkout__input" placeholder="Кв." name="flat" required 
+                  [(ngModel)]="checkout.flat">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkout-info-container">
+        <div class="info-col">
+          <p class="info-text h5">Количество вещей:
+            <span>{{cart?.quantity}}</span>
+          </p>
+          <p class="info-text h5">Общая стоимость:
+            <span class="info-price">{{cart?.price}}</span>
+          </p>
+        </div>
+        <div class="info-col order-mobile-last">
+          <p>*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</p>
+        </div>
+        <div class="info-col">
+          <button class="checkout__submit btn btn-primary" type="submit">Оформить заказ</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="decor-bar decor-bar--top hidden-mobile">
+      <div class="col-desktop-5 col-3"></div>
+      <div class="decor decor--full">
+        <img src="/assets/img/decor.svg">
+      </div>
+    </div>
+    <div class="decor-bar decor-bar--top hidden-mobile hidden-tablet">
+      <div class="col-desktop-4 col-2"></div>
+      <div class="decor decor--full">
+        <img src="/assets/img/decor.svg">
+      </div>
+    </div>
+</div>

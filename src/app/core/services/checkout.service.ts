@@ -7,13 +7,13 @@ const apiUrl = '../assets/backend-data/';
 @Injectable({
   providedIn: 'root'
 })
-export class FaqService {
+export class CheckoutService {
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  getQuestions(): Observable<any> {
-    return this.http.get(apiUrl + 'faq.json');
+  getCart(): Observable<any> {
+    return this.http.get(apiUrl + 'cart.json');
   }
 }

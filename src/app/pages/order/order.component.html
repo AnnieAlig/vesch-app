@@ -1,0 +1,169 @@
+<app-breadcrumbs currentPage="Корзина"></app-breadcrumbs>
+
+<div class="container-inner">
+  <div class="row">
+    <div class="col-1 hidden-mobile"></div>
+    <div class="col-4 col-tablet-3 col-desktop-5 position-relative">
+      <h1 class="page__title">Корзина</h1>
+      <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
+        <p>Корзина</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-content">
+    <div class="order__head hidden-mobile">
+      <div class="order__product">
+        &nbsp;
+      </div>
+      <div class="order__quantity">
+        Количество
+      </div>
+      <div class="order__price-one">
+        Цена  
+      </div>
+      <div class="order__price-total">
+        Сумма
+      </div>
+      <div class="order__remove">
+        Удалить
+      </div>
+  
+    </div>
+    <div class="order__item hidden-mobile">
+        <div class="order__product">
+          <div class="product-image">
+            <img src="" alt="">
+          </div>
+          <div class="product-name">
+            Example
+          </div>
+        </div>
+        <div class="order__quantity">
+          <div class="quantity-box">
+            <i class="ic ic--plus">-</i>
+            <div class="number">2</div>
+            <i class="ic ic--plus">+</i>
+          </div>
+        </div>
+        <div class="order__price-one">
+          200 hrn
+        </div>
+        <div class="order__price-total">
+          <strong>400 hrn</strong>  
+        </div>
+        <div class="order__remove">
+          <i class="ic ic--remove ic--close"></i>
+        </div>
+    </div>
+    <div class="order__item hidden-tablet hidden-desktop">
+      <div class="col-1 order__image--mob">
+        <img src="" alt="">
+      </div>
+      <div class="col-3">
+        <div class="order-row">
+          <div class="product-name">
+            Example
+          </div>
+          <i class="ic ic--remove ic--close"></i>
+        </div>
+        <div class="order-row">
+          <div class="quantity-box">
+            <i class="ic ic--plus">-</i>
+            <div class="number">2</div>
+            <i class="ic ic--plus">+</i>
+          </div>
+          <div class="order-price--mob">
+              200 hrn<br><strong>400 hrn</strong>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order__item hidden-mobile">
+        <div class="order__product">
+          <div class="product-image">
+            <img src="" alt="">
+          </div>
+          <div class="product-name">
+            Example
+          </div>
+        </div>
+        <div class="order__quantity">
+          <div class="quantity-box">
+            <i class="ic ic--plus">-</i>
+            <div class="number">2</div>
+            <i class="ic ic--plus">+</i>
+          </div>
+        </div>
+        <div class="order__price-one">
+          200 hrn
+        </div>
+        <div class="order__price-total">
+          <strong>400 hrn</strong>  
+        </div>
+        <div class="order__remove">
+          <i class="ic ic--remove ic--close"></i>
+        </div>
+    </div>
+    <div class="order__item hidden-tablet hidden-desktop">
+      <div class="col-1 order__image--mob">
+        <img src="" alt="">
+      </div>
+      <div class="col-3">
+        <div class="order-row">
+          <div class="product-name">
+            Example
+          </div>
+          <i class="ic ic--remove ic--close"></i>
+        </div>
+        <div class="order-row">
+          <div class="quantity-box">
+            <i class="ic ic--plus">-</i>
+            <div class="number">2</div>
+            <i class="ic ic--plus">+</i>
+          </div>
+          <div class="order-price--mob">
+              200 hrn<br><strong>400 hrn</strong>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="additional-content">
+    <div class="col-4 col-tablet-2 col-desktop-3">
+      <h4>Выберите дополнительный сервис</h4>
+    </div>
+    <div class="col-4 col-tablet-2 col-desktop-3">
+      <div class="order__select">
+          <select name="additional" class="select" [(ngModel)]="order.additional">
+            <option value="0" selected>Выбор дополнительного сервиса</option>
+            <option value="Другой вариант">Другой вариант</option>
+          </select>
+          <i class="ic ic--dropdown">^</i>
+      </div>
+    </div>
+  </div>
+
+  <div class="row info-row">
+    <div class="col-tablet-2 col-desktop-4">
+      <p>Оператор контакт центра свяжется с вами для подтверждениязаказа и уточнения необходимых деталей в течении 15 минут</p>
+    </div>
+    <div class="col-4 col-tablet-2 col-desktop-2 order-mobile-1">
+        <button class="order__submit btn btn-primary" type="submit">Отправить заказ</button>
+    </div>
+  </div>
+
+  <div class="decor-bar decor-bar--top hidden-mobile">
+      <div class="col-3"></div>
+      <div class="decor decor--full">
+        <img src="/assets/img/decor.svg">
+      </div>
+    </div>
+    <div class="decor-bar decor-bar--top hidden-mobile hidden-tablet">
+      <div class="col-2"></div>
+      <div class="decor decor--full">
+        <img src="/assets/img/decor.svg">
+      </div>
+    </div>
+</div>

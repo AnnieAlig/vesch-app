@@ -143,6 +143,35 @@
     width: 20px;
 }
 
+.ic--remove{
+    background-color: var(--color_light);
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    transition: var(--transition);
+    @media(min-width:768px){
+        width: 29px;
+        height: 29px;
+    }
+    @media(min-width:1200px){
+        width: 52px;
+        height: 52px;
+    }
+    &::before,
+    &::after{
+        width: 8px;
+        left: calc(50% - 4px);
+        top: calc(50%);
+        @media(min-width:768px){
+            width: 14px;
+            left: calc(50% - 7px);
+            top: calc(50%);
+        }
+    }
+    &:hover{
+        background-color: var(--color_text);
+    }
+}
 
 .social{
     display: block;

@@ -35,42 +35,58 @@
                 {
                     "name": "Горнолыжные штаны",
                     "photo": "/assets/img/offers/item_37.png",
-                    "price": "200 грн"
+                    "price": 200,
+                    "currency": "грн",
+                    "id": 105
                 },
                 {
                     "name": "Горнолыжная куртка",
                     "photo": "/assets/img/offers/item_43.png",
-                    "price": "200 грн"
+                    "price": 200,
+                    "currency": "грн",
+                    "id": 106
                 },
                 {
                     "name": "Комбинезон лыжный",
                     "photo": "/assets/img/offers/item_36.png",
-                    "price": "200 грн"
+                    "price": 200,
+                    "currency": "грн",
+                    "id": 107
                 },
                 {
                     "name": "Спортивная кофта / пайта",
                     "photo": "/assets/img/offers/item_38.png",
-                    "price": "200 грн"
+                    "price": 200,
+                    "currency": "грн",
+                    "id": 108
                 },
                 {
                     "name": "Купальник",
                     "photo": "/assets/img/offers/item_39.png",
-                    "price": "200 грн"
+                    "price": 200,
+                    "currency": "грн",
+                    "id": 109
                 },
                 {
                     "name": "Плавки, плавательные шорты",
                     "photo": "/assets/img/offers/item_40.png",
-                    "price": "200 грн"
+                    "price": 200,
+                    "currency": "грн",
+                    "id": 110
                 },
                 {
                     "name": "Пляжное платье, туника",
                     "photo": "/assets/img/offers/item_41.png",
-                    "price": "200 грн"
+                    "price": 200,
+                    "currency": "грн",
+                    "id": 111
                 },
                 {
                     "name": "Спортивные брюки, штаны",
                     "photo": "/assets/img/offers/item_33.png",
-                    "price": "200 грн"
+                    "price": 200,
+                    "currency": "грн",
+                    "id": 112
                 }
             ]
         },

@@ -33,11 +33,14 @@ export class OrderService {
     const itemInCart: any = _.findWhere(this.orderDataValue, {id: item.id});
     const itemKey = _.indexOf(this.orderDataValue, itemInCart);
     // remove one from quantity
-    this.orderDataValue[itemKey].quantity -= 1;
-    if (this.orderDataValue[itemKey].quantity <= 0) {
+    if (number) {
+      this.orderDataValue[itemKey].quantity -= number;
+    }
+    if (!number || this.orderDataValue[itemKey].quantity <= 0) {
       // remove all
       this.orderDataValue = _.without(this.orderDataValue, _.findWhere(this.orderDataValue, {id: item.id}));
     }
+    this.update(this.orderDataValue);
   }
 
   update(data: any) {
@@ -51,5 +54,10 @@ export class OrderService {
 
   saveToStorage(data) {
     this.$localStorage.store('order-data', JSON.stringify(data));
+  }
+
+  getFromStorage() {
+   this.orderDataValue = JSON.parse(this.$localStorage.retrieve('order-data'));
+   this.orderDataSource.next(this.orderDataValue);
   }
 }

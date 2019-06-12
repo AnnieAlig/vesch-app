@@ -19,6 +19,7 @@ import { SuccessModalComponent } from './shared/modals/success-modal/success-mod
 import { LinesComponent } from './layout/lines/lines.component';
 
 import { SharedModule } from './shared/shared.module';
+import { Ng2Webstorage } from 'ngx-webstorage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     BrowserAnimationsModule,
     BootstrapModalModule.forRoot({container: document.body}),
+    Ng2Webstorage.forRoot({ prefix: 'v', separator: '-', caseSensitive: true }),
     SharedModule
   ],
   providers: [

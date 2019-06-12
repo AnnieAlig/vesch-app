@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OrderService } from './core/order/order.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'vesch-app';
+
+  constructor(
+    private orderService: OrderService
+  ) {
+    this.orderService.getFromStorage();
+  }
+
 }

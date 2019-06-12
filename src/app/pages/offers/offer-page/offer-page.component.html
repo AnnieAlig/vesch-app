@@ -61,8 +61,8 @@
                 </div>
                 <h4 class="item__name">{{item.name}}</h4>
                 <div class="item__price">
-                  <button class="add_to_cart"></button>
-                  <div class="price">{{item.price}}</div>
+                  <button class="add_to_cart" (click)="addToCart(item);"></button>
+                  <div class="price">{{item.price}} {{item.currency}}</div>
                 </div>
               </div>
               <div class="btn btn-secondary-inverted mb35" *ngIf="isMobile && filteredItems.length > 3" (click)="offer.hidden = false">Показать больше услуг</div>

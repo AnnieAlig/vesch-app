@@ -10,7 +10,6 @@ import { VideoComponent } from './video/video.component';
 import { SliderComponent } from './slider/slider.component';
 import { SocialShareComponent } from './social-share/social-share.component';
 // import { SuccessModalComponent } from './modals/success-modal/success-modal.component';
-import { Ng2Webstorage } from 'ngx-webstorage';
 
 export const components = [
   BreadcrumbsComponent,
@@ -26,7 +25,6 @@ export const components = [
     CommonModule,
     FormsModule,
     TextMaskModule,
-    Ng2Webstorage.forRoot({ prefix: 'v', separator: '-', caseSensitive: true }),
   ],
   declarations: [
     ...components,

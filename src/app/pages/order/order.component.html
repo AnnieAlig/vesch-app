@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div class="order-content">
+  <div class="order-content" *ngIf="orderItems && orderItems?.length">
     <div class="order__head hidden-mobile">
       <div class="order__product">
         &nbsp;
@@ -30,100 +30,51 @@
       </div>
   
     </div>
-    <div class="order__item hidden-mobile">
-        <div class="order__product">
-          <div class="product-image">
-            <img src="" alt="">
-          </div>
-          <div class="product-name">
-            Example
-          </div>
+    <div class="order__item hidden-mobile" *ngFor="let item of orderItems">
+      <div class="order__product">
+        <div class="product-image">
+          <img src="{{item?.photo}}" alt="{{item?.name}} photo">
         </div>
-        <div class="order__quantity">
-          <div class="quantity-box">
-            <i class="ic ic--plus">-</i>
-            <div class="number">2</div>
-            <i class="ic ic--plus">+</i>
-          </div>
+        <div class="product-name">
+          {{item?.name}}
         </div>
-        <div class="order__price-one">
-          200 hrn
+      </div>
+      <div class="order__quantity">
+        <div class="quantity-box">
+          <i class="ic ic--plus" (click)="orderService.remove(item, 1)">-</i>
+          <div class="number">{{item?.quantity}}</div>
+          <i class="ic ic--plus" (click)="orderService.add(item)">+</i>
         </div>
-        <div class="order__price-total">
-          <strong>400 hrn</strong>  
-        </div>
-        <div class="order__remove">
-          <i class="ic ic--remove ic--close"></i>
-        </div>
+      </div>
+      <div class="order__price-one">
+        {{item?.price}} {{item?.currency}}
+      </div>
+      <div class="order__price-total">
+        <strong>{{item?.price * item?.quantity}} {{item?.currency}}</strong>  
+      </div>
+      <div class="order__remove">
+        <i class="ic ic--remove ic--close" (click)="orderService.remove(item)"></i>
+      </div>
     </div>
-    <div class="order__item hidden-tablet hidden-desktop">
+    <div class="order__item hidden-tablet hidden-desktop" *ngFor="let item of orderItems">
       <div class="col-1 order__image--mob">
-        <img src="" alt="">
+        <img src="{{item?.photo}}" alt="{{item?.name}} photo">
       </div>
       <div class="col-3">
         <div class="order-row">
           <div class="product-name">
-            Example
+            {{item?.name}}
           </div>
-          <i class="ic ic--remove ic--close"></i>
+          <i class="ic ic--remove ic--close" (click)="orderService.remove(item)"></i>
         </div>
         <div class="order-row">
           <div class="quantity-box">
-            <i class="ic ic--plus">-</i>
-            <div class="number">2</div>
-            <i class="ic ic--plus">+</i>
+            <i class="ic ic--plus" (click)="orderService.remove(item, 1)">-</i>
+            <div class="number">{{item?.quantity}}</div>
+            <i class="ic ic--plus" (click)="orderService.add(item)">+</i>
           </div>
           <div class="order-price--mob">
-              200 hrn<br><strong>400 hrn</strong>  
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="order__item hidden-mobile">
-        <div class="order__product">
-          <div class="product-image">
-            <img src="" alt="">
-          </div>
-          <div class="product-name">
-            Example
-          </div>
-        </div>
-        <div class="order__quantity">
-          <div class="quantity-box">
-            <i class="ic ic--plus">-</i>
-            <div class="number">2</div>
-            <i class="ic ic--plus">+</i>
-          </div>
-        </div>
-        <div class="order__price-one">
-          200 hrn
-        </div>
-        <div class="order__price-total">
-          <strong>400 hrn</strong>  
-        </div>
-        <div class="order__remove">
-          <i class="ic ic--remove ic--close"></i>
-        </div>
-    </div>
-    <div class="order__item hidden-tablet hidden-desktop">
-      <div class="col-1 order__image--mob">
-        <img src="" alt="">
-      </div>
-      <div class="col-3">
-        <div class="order-row">
-          <div class="product-name">
-            Example
-          </div>
-          <i class="ic ic--remove ic--close"></i>
-        </div>
-        <div class="order-row">
-          <div class="quantity-box">
-            <i class="ic ic--plus">-</i>
-            <div class="number">2</div>
-            <i class="ic ic--plus">+</i>
-          </div>
-          <div class="order-price--mob">
-              200 hrn<br><strong>400 hrn</strong>  
+            {{item?.price}} {{item?.currency}}<br><strong>{{item?.price * item?.quantity}} {{item?.currency}}</strong>  
           </div>
         </div>
       </div>
@@ -147,7 +98,7 @@
 
   <div class="row info-row">
     <div class="col-tablet-2 col-desktop-4">
-      <p>Оператор контакт центра свяжется с вами для подтверждениязаказа и уточнения необходимых деталей в течении 15 минут</p>
+      <p>Оператор контакт центра свяжется с вами для подтверждения заказа и уточнения необходимых деталей в течении 15 минут</p>
     </div>
     <div class="col-4 col-tablet-2 col-desktop-2 order-mobile-1">
         <button class="order__submit btn btn-primary" type="submit">Отправить заказ</button>

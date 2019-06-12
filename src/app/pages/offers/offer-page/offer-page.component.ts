@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OffersService } from '../../../core/services/offers.service';
+import { OrderService } from '../../../core/order/order.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import * as juxtapose from '../../../../assets/scripts/juxtapose.js';
 import * as _ from 'underscore';
@@ -30,6 +31,7 @@ export class OfferPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private offersService: OffersService,
+    private orderService: OrderService
   ) { }
 
   ngOnInit() {
@@ -84,5 +86,9 @@ export class OfferPageComponent implements OnInit {
 
   sectionIsActive(index) {
     return _.contains(this.activeSectionIndexes, index);
+  }
+
+  addToCart(item) {
+    this.orderService.add(item);
   }
 }

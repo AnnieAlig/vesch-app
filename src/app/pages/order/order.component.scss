@@ -58,21 +58,6 @@
     }
 }
 
-.quantity-box{
-    width: 70px;
-    @media(min-width:768px) {
-        width: 150px;
-        border: 1px solid #eaebec;
-        padding: 10px;
-    }
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .ic--plus{
-        margin-right: 0;
-        cursor: pointer;
-    }
-}
 .order__item{
     margin-bottom: 50px;
     @media(min-width:768px) and (max-width:1199px){

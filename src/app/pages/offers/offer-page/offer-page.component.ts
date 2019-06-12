@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OffersService } from '../../../core/services/offers.service';
 import { OrderService } from '../../../core/order/order.service';
 import { WOW } from 'wowjs/dist/wow.min';
@@ -30,6 +30,7 @@ export class OfferPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private offersService: OffersService,
     private orderService: OrderService
   ) { }
@@ -90,5 +91,9 @@ export class OfferPageComponent implements OnInit {
 
   addToCart(item) {
     this.orderService.add(item);
+  }
+
+  navigateTo(url) {
+    this.router.navigate([url]);
   }
 }

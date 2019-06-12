@@ -37,6 +37,7 @@
                     "photo": "/assets/img/offers/item_37.png",
                     "price": 200,
                     "currency": "грн",
+                    "link": "/offers/1/1",
                     "id": 105
                 },
                 {
@@ -44,6 +45,7 @@
                     "photo": "/assets/img/offers/item_43.png",
                     "price": 200,
                     "currency": "грн",
+                    "link": "",
                     "id": 106
                 },
                 {
@@ -51,6 +53,7 @@
                     "photo": "/assets/img/offers/item_36.png",
                     "price": 200,
                     "currency": "грн",
+                    "link": "",
                     "id": 107
                 },
                 {
@@ -58,6 +61,7 @@
                     "photo": "/assets/img/offers/item_38.png",
                     "price": 200,
                     "currency": "грн",
+                    "link": "",
                     "id": 108
                 },
                 {
@@ -65,6 +69,7 @@
                     "photo": "/assets/img/offers/item_39.png",
                     "price": 200,
                     "currency": "грн",
+                    "link": "",
                     "id": 109
                 },
                 {
@@ -72,6 +77,7 @@
                     "photo": "/assets/img/offers/item_40.png",
                     "price": 200,
                     "currency": "грн",
+                    "link": "",
                     "id": 110
                 },
                 {
@@ -79,6 +85,7 @@
                     "photo": "/assets/img/offers/item_41.png",
                     "price": 200,
                     "currency": "грн",
+                    "link": "",
                     "id": 111
                 },
                 {
@@ -86,6 +93,7 @@
                     "photo": "/assets/img/offers/item_33.png",
                     "price": 200,
                     "currency": "грн",
+                    "link": "",
                     "id": 112
                 }
             ]

@@ -4,6 +4,7 @@ import { OffersComponent } from './offers.component';
 import { OfferPageComponent } from './offer-page/offer-page.component';
 import { MobileEcoComponent } from './mobile-eco/mobile-eco.component';
 import { BlacktiePageComponent } from './blacktie-page/blacktie-page.component';
+import { OfferItemPageComponent } from './offer-item-page/offer-item-page.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,16 @@ const routes: Routes = [
   },
   {
   path: ':id',
-  component: OfferPageComponent
+  children: [
+    {
+      path: '',
+      component: OfferPageComponent,
+    },
+    {
+      path: ':itemId',
+      component: OfferItemPageComponent,
+    }
+  ]
  }
 ];
 

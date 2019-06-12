@@ -10,6 +10,7 @@ import { WOW } from 'wowjs/dist/wow.min';
 export class BreadcrumbsComponent implements OnInit, AfterViewInit {
   @Input() currentPage: string;
   @Input() parentPage: string;
+  @Input() subParent: string;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -22,7 +23,12 @@ export class BreadcrumbsComponent implements OnInit, AfterViewInit {
     new WOW().init();
   }
 
-  getParentPage() {
-    this.router.navigate(['../'], { relativeTo: this.route });
+  getParentPage(level?) {
+    console.log('this.activeRoute.parent', this.route.parent)
+    if (level === 2) {
+      this.router.navigate(['../../'], { relativeTo: this.route });
+    } else {
+      this.router.navigate(['../'], { relativeTo: this.route });
+    }
   }
 }

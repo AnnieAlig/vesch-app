@@ -117,6 +117,9 @@ button[type="submit"] {
     line-height: 20px;
     vertical-align: middle;
 }
+button {
+    cursor: pointer;
+}
 
 img, video{
     max-width: 100%;

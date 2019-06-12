@@ -1,0 +1,80 @@
+{
+    "parent": "Одежда",
+    "name": "Горнолыжные штаны",
+    "photo": "/assets/img/offers/offer_1_1_photo.jpg",
+    "price": 200,
+    "currency": "грн",
+    "id": 105,
+    "related": [
+        {
+            "name": "Горнолыжные штаны",
+            "photo": "/assets/img/offers/item_37.png",
+            "link": ""
+        },
+        {
+            "name": "Горнолыжная куртка",
+            "photo": "/assets/img/offers/item_43.png",
+            "link": ""
+        },
+        {
+            "name": "Комбинезон лыжный",
+            "photo": "/assets/img/offers/item_36.png",
+            "link": ""
+        },
+        {
+            "name": "Спортивная кофта / пайта",
+            "photo": "/assets/img/offers/item_38.png",
+            "link": ""
+        },
+        {
+            "name": "Купальник",
+            "photo": "/assets/img/offers/item_39.png",
+            "link": ""
+        },
+        {
+            "name": "Плавки, плавательные шорты",
+            "photo": "/assets/img/offers/item_40.png",
+            "link": ""
+        },
+        {
+            "name": "Пляжное платье, туника",
+            "photo": "/assets/img/offers/item_41.png",
+            "link": ""
+        },
+        {
+            "name": "Спортивные брюки, штаны",
+            "photo": "/assets/img/offers/item_33.png",
+            "link": ""
+        },
+        {
+            "name": "Горнолыжная куртка",
+            "photo": "/assets/img/offers/item_43.png",
+            "link": ""
+        },
+        {
+            "name": "Комбинезон лыжный",
+            "photo": "/assets/img/offers/item_36.png",
+            "link": ""
+        }
+    ],
+    "extra": [
+        {
+            "title": "полировка меха",
+            "subtitle": "Профессиональные технологии Vesch вернут бесценным вещам чистоту и первоначальный вид.",
+            "photo": "/assets/img/offers/offer_extra_1.jpg",
+            "link": ""
+        },
+        {
+            "title": "антимолевая обработка",
+            "subtitle": "Профессиональные технологии Vesch вернут бесценным вещам чистоту и первоначальный вид.",
+            "photo": "/assets/img/offers/offer_extra_2.jpg",
+            "link": ""
+        },
+        {
+            "title": "ремонт одежды",
+            "subtitle": "Профессиональные технологии Vesch вернут бесценным вещам чистоту и первоначальный вид.",
+            "photo": "/assets/img/offers/offer_extra_3.jpg",
+            "link": ""
+        }
+    ]
+}

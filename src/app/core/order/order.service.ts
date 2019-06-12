@@ -3,9 +3,19 @@ import { BehaviorSubject } from 'rxjs';
 import { LocalStorageService } from 'ngx-webstorage';
 import * as _ from 'underscore';
 
+export class OrderItem {
+  name = '';
+  photo = '';
+  price: number = null;
+  currency = '';
+  id: number = null;
+  quantity: number = null;
+}
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class OrderService {
   private orderDataSource = new BehaviorSubject<any>([]);
   private orderDataValue = [];
@@ -15,16 +25,26 @@ export class OrderService {
     private $localStorage: LocalStorageService
   ) { }
 
-  add(item: any) {
+  add(item: any, number?: number) {
     const itemInCart: any = _.findWhere(this.orderDataValue, {id: item.id});
     const itemKey = _.indexOf(this.orderDataValue, itemInCart);
-    if (itemInCart) {
-      // add quantity
-      this.orderDataValue[itemKey].quantity += 1;
+    if (!number) {
+      if (itemInCart) {
+        // add quantity
+        this.orderDataValue[itemKey].quantity += 1;
+      } else {
+        // add new item
+        item.quantity = 1;
+        this.orderDataValue.push(item);
+      }
     } else {
-      // add new item
-      item.quantity = 1;
-      this.orderDataValue.push(item);
+      if (itemInCart) {
+        // add quantity
+        this.orderDataValue[itemKey].quantity = number;
+      } else {
+        // add new item
+        this.orderDataValue.push(item);
+      }
     }
     this.update(this.orderDataValue);
   }
@@ -60,4 +80,5 @@ export class OrderService {
    this.orderDataValue = JSON.parse(this.$localStorage.retrieve('order-data'));
    this.orderDataSource.next(this.orderDataValue);
   }
+
 }

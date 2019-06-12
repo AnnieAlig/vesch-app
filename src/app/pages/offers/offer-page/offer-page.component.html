@@ -56,10 +56,10 @@
         <div class="col-4 filter__items">
           <div class="d-flex flex-wrap" *ngIf="filteredItems">
               <div class="item" *ngFor="let item of filteredItems; let index = index" [ngClass]="{'hidden': isMobile && index >= 2}">
-                <div class="item__img">
+                <div class="item__img" (click)="navigateTo(item.link)">
                   <img src="{{item.photo}}" alt="{{item.name}}">
                 </div>
-                <h4 class="item__name">{{item.name}}</h4>
+                <h4 class="item__name" (click)="navigateTo(item.link)">{{item.name}}</h4>
                 <div class="item__price">
                   <button class="add_to_cart" (click)="addToCart(item);"></button>
                   <div class="price">{{item.price}} {{item.currency}}</div>

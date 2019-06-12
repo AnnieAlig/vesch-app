@@ -10,9 +10,10 @@ import { OfferPageComponent } from './offer-page/offer-page.component';
 import { BlacktieComponent } from './blacktie/blacktie.component';
 import { MobileEcoComponent } from './mobile-eco/mobile-eco.component';
 import { BlacktiePageComponent } from './blacktie-page/blacktie-page.component';
+import { OfferItemPageComponent } from './offer-item-page/offer-item-page.component';
 
 @NgModule({
-  declarations: [OffersComponent, OfferPageComponent, BlacktieComponent, MobileEcoComponent, BlacktiePageComponent],
+  declarations: [OffersComponent, OfferPageComponent, BlacktieComponent, MobileEcoComponent, BlacktiePageComponent, OfferItemPageComponent],
   imports: [
     CommonModule,
     SharedModule,

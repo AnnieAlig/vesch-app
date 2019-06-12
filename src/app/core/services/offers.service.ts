@@ -24,4 +24,8 @@ export class OffersService {
   getPage(id: number|string): Observable<any> {
     return this.http.get(apiUrl + 'offer_' + id + '.json');
   }
+
+  getItemPage(id: number|string, parentId: number|string): Observable<any> {
+    return this.http.get(apiUrl + 'offer-item_' + parentId + '_' + id + '.json');
+  }
 }

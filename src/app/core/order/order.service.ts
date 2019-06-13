@@ -23,7 +23,7 @@ export class OrderService {
 
   constructor(
     private $localStorage: LocalStorageService
-  ) { }
+  ) {}
 
   add(item: any, number?: number) {
     const itemInCart: any = _.findWhere(this.orderDataValue, {id: item.id});
@@ -77,7 +77,11 @@ export class OrderService {
   }
 
   getFromStorage() {
-   this.orderDataValue = JSON.parse(this.$localStorage.retrieve('order-data'));
+    if (this.$localStorage.retrieve('order-data')) {
+      this.orderDataValue = JSON.parse(this.$localStorage.retrieve('order-data'));
+    } else {
+      this.orderDataValue = [];
+    }
    this.orderDataSource.next(this.orderDataValue);
   }
 

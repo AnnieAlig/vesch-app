@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy, ComponentRef, HostListener, Renderer2 } from '@angular/core';
 import { DialogComponent, DialogService, DialogOptions} from 'ng2-bootstrap-modal';
 
-export interface SuccessModel {}
+export interface SuccessModel {
+  title: string;
+}
 
 @Component({
   selector: 'app-success-modal',
@@ -10,6 +12,8 @@ export interface SuccessModel {}
 })
 export class SuccessModalComponent  extends DialogComponent<SuccessModel, boolean>
 implements SuccessModel, OnInit, OnDestroy {
+
+  public title: string;
 
   @HostListener('document:keydown', ['$event'])
   onKeydownHandler(event: KeyboardEvent) {

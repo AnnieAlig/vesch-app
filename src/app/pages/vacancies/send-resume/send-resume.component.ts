@@ -48,7 +48,7 @@ export class SendResumeComponent implements OnInit {
       closeByClickingOutside: true,
       backdropColor: 'rgba(0,0,0,.64)'
     };
-    const disposable = this.dialogService.addDialog(SuccessModalComponent, {}, options)
+    const disposable = this.dialogService.addDialog(SuccessModalComponent, {title: 'Ваше резюме успешно отправлено!'}, options)
       .subscribe((result) => {
 
       });

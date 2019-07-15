@@ -1,3 +1,25 @@
-<p>
-  services works!
-</p>
+<app-breadcrumbs currentPage="Сервисы"></app-breadcrumbs>
+<div class="container-inner">
+  <div class="row">
+    <div class="col-1 hidden-mobile"></div>
+    <div class="col-4 col-tablet-3 col-desktop-5 position-relative">
+      <h1 class="page__title">Дополнительные сервисы</h1>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="services?.length">
+    <div class="col-4 col-tablet-1 col-desktop-1 service" *ngFor="let service of services; let index = index">
+      <div class="service__img" (click)="navigateTo(service.link)">
+        <img src="{{service.img}}" alt="{{service.alt}}">
+        <div class="service__link">
+          <a href="javascript:void(0)" class="rotated" (click)="navigateTo(service.link)">
+              <i class="ic ic--plus">+</i>
+              Смотреть прайс
+          </a>
+        </div>
+      </div>
+      <h4 class="service__name" (click)="navigateTo(service.link)">{{service.title}}</h4>
+      <p class="service__description">{{service.description}}</p>
+    </div>
+</div>
+</div>

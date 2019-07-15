@@ -4,6 +4,9 @@ import { modeOrder } from './callback.data';
 import { modeSubscribe } from './callback.data';
 import { CallbackService} from '../../core/services/callback.service';
 import { WOW } from 'wowjs/dist/wow.min';
+import {DialogService} from 'ng2-bootstrap-modal';
+import { SuccessModalComponent } from '../../shared/modals/success-modal/success-modal.component';
+
 
 @Component({
   selector: 'app-callback',
@@ -27,6 +30,7 @@ export class CallbackComponent implements OnInit, AfterViewInit {
   public validated: boolean;
 
   constructor(
+    private dialogService: DialogService,
     private callbackService: CallbackService
   ) {
     this.modeOrder = modeOrder;
@@ -55,8 +59,15 @@ export class CallbackComponent implements OnInit, AfterViewInit {
       const formData = JSON.stringify(form.value);
       this.callbackService.send(formData)
         .subscribe( (result) => {
-          this.callbackForm.reset();
-          this.validated = false;
+          const options = {
+            closeByClickingOutside: true,
+            backdropColor: 'rgba(0,0,0,.64)',
+          };
+          const disposable = this.dialogService.addDialog(SuccessModalComponent, {title: 'Ваша заявка успешно отправлена!'}, options)
+            .subscribe((modal) => {
+              this.callbackForm.reset();
+              this.validated = false;
+            });
       });
     }
   }

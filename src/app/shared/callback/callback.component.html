@@ -12,15 +12,15 @@
       <!-- <div class="col-1"></div> -->
       <form class="callback__form" #form="ngForm" (ngSubmit)="onSubmit(form)" 
         [ngClass]="{'validated': validated}">
-            <ng-container *ngIf="referrer !== 'news' && referrer !== 'promos' && referrer !== 'faq'">
+            <ng-container *ngIf="referrer !== 'news' && referrer !== 'promos' && referrer !== 'faq' && referrer !== 'service'">
                 <input type="text" class="callback__input" placeholder="Введите имя" name="name" required 
                     [(ngModel)]="callback.name">
                 <input type="text" class="callback__input" placeholder="+38(0__)___-__-__" name="phone" required
                     [textMask]="{mask: phoneMask}" [(ngModel)]="callback.phone">
             </ng-container>
-            <ng-container *ngIf="referrer === 'news' || referrer === 'promos' || referrer === 'faq'">
-                    <input type="text" class="callback__input email" placeholder="Ваша эл. почта" name="email" required 
-                        [(ngModel)]="callback.email">
+            <ng-container *ngIf="referrer === 'news' || referrer === 'promos' || referrer === 'faq' || referrer === 'service'">
+                    <input type="email" class="callback__input email" placeholder="Ваша эл. почта" name="email" required 
+                        [(ngModel)]="callback.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                 </ng-container>
           <button class="callback__submit btn btn-primary" type="submit">{{data.button}}</button>
       </form>

@@ -1,0 +1,35 @@
+<app-breadcrumbs currentPage="Социальные проекты"></app-breadcrumbs>
+<div class="container-inner">
+  <div class="row position-relative">
+    <div class="col-desktop-1"></div>
+    <!-- <h1 class="page__title">Новости</h1> -->
+    <div class="page__brand_text-rotated hidden-mobile">
+        <p>социальные проекты</p>
+    </div>
+  </div>
+  <div class="row">
+      <app-project-card *ngFor="let project_item of projects | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" [project_item]="project_item" class="project_card col-4 col-desktop-3"></app-project-card>
+  </div>
+  <div class="row pagination">
+      <div class="col-1"></div>
+      <div class="col-4">
+          <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel="" maxSize="3"></pagination-controls>
+      </div>
+  </div>
+  <div class="decor-bar decor-bar--sm decor-bar-absolute hidden-mobile hidden-tablet">
+      <div class="decor decor--half decor--top"></div>
+  </div>
+  <!-- CALLBACK -->
+  <app-callback mode="subscribe" referrer="projects" class="hidden-mobile hidden-tablet"></app-callback>
+  <!-- END OF CALLBACK -->
+  <div class="decor-bar decor-bar--sm hidden-mobile hidden-tablet">
+      <div class="col-desktop-2 col-1"></div>
+      <div class="decor decor--half decor--bottom"></div>
+  </div>
+  <div class="decor-bar decor-bar--top decor-to-right hidden-mobile">
+    <div class="col-desktop-5 col-2"></div>
+    <div class="decor decor--full">
+      <img src="/assets/img/decor.svg">
+    </div>
+  </div>
+</div>

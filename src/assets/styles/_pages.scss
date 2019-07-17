@@ -116,3 +116,73 @@
         cursor: pointer;
     }
 }
+
+
+/deep/ .ngx-pagination{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    li{
+        width: 40px;
+        height: 40px;
+        border: 1px solid #f1f0f6;
+        margin-left: 8px;
+        margin-right: 8px;
+        @media(min-width:768px){
+            width: 50px;
+            height: 50px;
+        }
+        a{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover{
+                background-color: #f1f0f6;
+            }
+        }
+        &.current{
+            background: var(--color_secondary);
+            border-color: var(--color_secondary);
+            display: flex!important;
+            align-items: center;
+            justify-content: center;
+        }
+        &.disabled{
+            display: flex!important;
+            align-items: center;
+            justify-content: center;
+        }
+        &.pagination-previous{
+            margin-right: auto;
+            margin-left: 0;
+            a::before{
+                content: "\f053";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+            }
+            &.disabled::before{
+                content: "\f053";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+            }
+        }
+        &.pagination-next{
+            margin-left: auto;
+            margin-right: 0;
+            a::after{
+                content: "\f054";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+            }
+            &.disabled::after{
+                content: "\f054";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+            }
+        }
+    }
+}

@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'vacancies', loadChildren: './pages/vacancies/vacancies.module#VacanciesModule' },
   { path: 'faq', loadChildren: './pages/faq/faq.module#FaqModule' },
   { path: 'news', loadChildren: './pages/news/news.module#NewsModule' },
+  { path: 'social-projects', loadChildren: './pages/social-projects/social-projects.module#SocialProjectsModule' },
   { path: 'checkout', loadChildren: './pages/checkout/checkout.module#CheckoutModule' },
   { path: 'order', loadChildren: './pages/order/order.module#OrderModule' },
 ];

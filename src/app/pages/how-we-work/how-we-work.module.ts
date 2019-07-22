@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../shared/shared.module';
 
 import { HowWeWorkRoutingModule } from './how-we-work.routing';
 import { HowWeWorkComponent } from './how-we-work.component';
@@ -8,7 +9,8 @@ import { HowWeWorkComponent } from './how-we-work.component';
   declarations: [HowWeWorkComponent],
   imports: [
     CommonModule,
-    HowWeWorkRoutingModule
+    HowWeWorkRoutingModule,
+    SharedModule,
   ]
 })
 export class HowWeWorkModule { }

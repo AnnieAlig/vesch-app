@@ -1,3 +1,104 @@
-<p>
-  how-we-work works!
-</p>
+<app-breadcrumbs currentPage="Как мы работаем"></app-breadcrumbs>
+<div class="container-inner" *ngIf="data">
+  <section class="image">
+    <div class="row">
+      <div class="w100 decor-bar">
+          <div class="decor decor--half decor--top"></div>
+      </div>
+        <div class="w100 page__image-container">
+          <div class="page__image-text">
+            <h1 innerHtml="{{data.title}}"></h1>
+          </div>
+          <img class="page__img" src="{{data.desktop_img}}" srcset="{{data.mobile_img}} 320w, {{data.tablet_img}} 768w, {{data.desktop_img}} 1200w" alt="{{data.title}}">
+        </div>
+        <div class="w100 decor-bar">
+          <div class="col-2 col-desktop-3"></div>
+          <div class="decor decor--half decor--bottom"></div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section class="technologies">
+    <div class="row" *ngIf="data?.technologies">
+      <div class="page__brand_text-rotated hidden-mobile">
+          <p>Как мы работаем</p>
+      </div>
+      <div class="col-desktop-3">
+        <h2 class="section__title">{{data?.technologies?.title}}</h2>
+        <p class="section__subtitle">{{data?.technologies?.subtitle}}</p>
+      </div>
+      <div class="technologies-container">
+        <div class="technology__item" *ngFor="let item of data?.technologies?.items">
+          <h3 class="item__title">{{item.title}}</h3>
+          <p class="item__description">{{item.description}}</p>
+          <a href="{{item.link}}" class="page__more-link"> 
+            Детальнее
+            <i class="ic ic--more">^</i>
+          </a>
+          <div class="item__image">
+            <img src="{{item.image}}" alt="{{item.title}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Of Technologies -->
+
+  <!-- Video -->
+  <section class="video">
+    <div class="row" *ngIf="data?.video">
+        <div class="hidden-mobile decor decor--full decor-to--left">
+          <svg xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" style="enable-background:new 0 0 213 75;" version="1.1" viewBox="0 0 213 75" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+            <path _ngcontent-c7="" d="M212,1c3.1-0.6,2,1.7,2,3c0,19.7,0,39.3,0,59c-3,0.9-6.1,1.7-9.1,2.6c-19.7,6.1-39.8,9.9-60.4,9.1    c-16.8-0.6-33.4-3.4-50-6c-18.9-2.9-37.8-6.6-57-3.6C25.4,67,13.6,69.5,3,76c-3,0.6-2-1.7-2-3c0-19.7,0-39.4,0-59    C11.4,9.6,22.1,5.9,33.3,3.8C53,0.2,72.4,3.5,91.8,6.4c25,3.8,49.9,8.7,75.3,5.5C182.5,9.9,197.6,7,212,1z" fill="#d5db38"></path>
+          </svg>
+        </div>
+        <h2 class="section__title">{{data?.video?.title}}</h2>
+        <div class="video-container">
+          <app-video></app-video>
+        </div>
+    </div>
+  </section>
+  <!-- END OF VIDEO -->
+
+  <!-- Ecology -->
+  <section class="ecology">
+    <div class="row"*ngIf="data?.ecology">
+      <h2 class="section__title">{{data?.ecology?.title}}</h2>
+      <div class="col-4 col-tablet-2 col-desktop-2 ecology__item" *ngFor="let item of data?.ecology?.items">
+        <div class="item__image">
+            <img src="{{item.image}}" alt="{{item.title}}">
+        </div>
+        <h3 class="item__title">{{item.title}}</h3>
+      </div>
+    </div>
+  </section>
+  <!-- End Of Ecology -->
+
+  <!-- Growth -->
+  <section class="growth">
+    <div class="row" *ngIf="data?.growth">
+      <h2 class="section__title">{{data?.growth?.title}}</h2>
+      <div class="growth__item" *ngFor="let item of data?.growth?.items">
+        <div class="item__image">
+          <img src="{{item.icon}}" alt="{{item.title}}">
+        </div>
+        <h3 class="item__title">{{item.title}}</h3>
+        <p class="item__description">{{item.description}}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="row">
+    <div class="decor-bar decor-bar--sm decor-bar-absolute">
+        <div class="decor decor--half decor--top"></div>
+    </div>
+    <!-- CALLBACK -->
+    <app-callback mode="subscribe" referrer="how-we-work"></app-callback>
+    <!-- END OF CALLBACK -->
+    <div class="w100 decor-bar decor-bar--sm">
+        <div class="col-desktop-1 col-tablet-2 col-1"></div>
+        <div class="decor decor--half decor--bottom"></div>
+    </div>
+  </div>
+</div>

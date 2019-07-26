@@ -13,10 +13,10 @@ const routes: Routes = [
     //   }
     // },
   },
-//   {
-//   path: ':id',
-//   component: SocialProjectsComponent
-//  },
+  {
+  path: ':id',
+  component: SocialProjectsComponent
+ },
 ];
 
 

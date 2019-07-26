@@ -28,6 +28,7 @@ export class CallbackComponent implements OnInit, AfterViewInit {
   };
   public phoneMask = ['+', '3', '8', '(', '0', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/];
   public validated: boolean;
+  public showError = false;
 
   constructor(
     private dialogService: DialogService,
@@ -56,6 +57,7 @@ export class CallbackComponent implements OnInit, AfterViewInit {
   onSubmit(form: NgForm) {
     this.validated = true;
     if (form.valid) {
+      this.showError = false;
       const formData = JSON.stringify(form.value);
       this.callbackService.send(formData)
         .subscribe( (result) => {
@@ -69,6 +71,8 @@ export class CallbackComponent implements OnInit, AfterViewInit {
               this.validated = false;
             });
       });
+    } else {
+      this.showError = true;
     }
   }
 }

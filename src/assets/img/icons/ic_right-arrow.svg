@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 18" width="10" height="18">
+	<defs>
+		<image width="10" height="18" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAAvklEQVQoU4XSvQ4BQRSG4fe7GK2r8FMgKnSo9p5E46dDhURQuAaJinArR1Z2ZOzsrGnnyZxvzjkysydwk9Sl5MjMEmACLCUNY1bphZm1gV0Z/sAMd4BtDH/hP/wDczEWkkauYgAz3AL2foxCmHt5KimJwgxXgStw+AcrwB24lJWuAydgLmkc+0wNOAMrSYM0RlF7GsDRRwE0M4fWkvr+3P0RunIbSb38crilCDIF0MzSMc3ymYrgC3hIapYt7hsgzFmBBtAaYQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="carier">
+		<use id="right-arrow" href="#img1" transform="matrix(1,0,0,1,0,0)"/>
+	</g>
+</svg>

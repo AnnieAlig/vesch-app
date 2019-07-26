@@ -41,15 +41,15 @@
       </div>
     </div>
     <div class="results">
-      <div class="results__item" *ngFor="let vacancy of vacancies">
+      <a class="results__item block-link" *ngFor="let vacancy of vacancies" [routerLink]="vacancy.link">
         <h3 class="vacancy-title">{{vacancy.title}}
           <span class="vacancy-salary" *ngIf="vacancy.salary">{{vacancy.salary}}</span>
         </h3>
-        <a href="javascript:void(0)" class="page__more-link vacancy-link" (click)="navigateTo(vacancy.link)"> 
+        <span class="page__more-link vacancy-link link"> 
           Детальнее
           <i class="ic ic--more">^</i>
-        </a>
-      </div>
+        </span>
+      </a>
     </div>
     
     <app-send-resume></app-send-resume>

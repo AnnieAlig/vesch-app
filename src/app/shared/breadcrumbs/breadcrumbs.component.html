@@ -19,17 +19,17 @@
             <i class="fas fa-angle-right"></i>
           </span>
           <ng-container *ngIf="parentPage && !subParent">
-              <a href="javascript:void(0)" class="breadcrumbs-home" (click)="getParentPage()">{{parentPage}}</a>
+              <a routerLink="../" class="breadcrumbs-home">{{parentPage}}</a>
               <span class="breadcrumbs__separator">
                 <i class="fas fa-angle-right"></i>
               </span>
           </ng-container>
           <ng-container *ngIf="parentPage && subParent">
-              <a href="javascript:void(0)" class="breadcrumbs-home" (click)="getParentPage(2)">{{parentPage}}</a>
+              <a routerLink="../../" class="breadcrumbs-home">{{parentPage}}</a>
               <span class="breadcrumbs__separator">
                 <i class="fas fa-angle-right"></i>
               </span>
-              <a href="javascript:void(0)" class="breadcrumbs-home" (click)="getParentPage()">{{subParent}}</a>
+              <a routerLink="../" class="breadcrumbs-home">{{subParent}}</a>
               <span class="breadcrumbs__separator">
                 <i class="fas fa-angle-right"></i>
               </span>

@@ -9,35 +9,37 @@ import { OfferItemPageComponent } from './offer-item-page/offer-item-page.compon
 const routes: Routes = [
   {
     path: '',
-    component: OffersComponent,
+    // component: OffersComponent,
     // data: {
     //   meta: {
     //     title: meta.pages.faq.title,
     //     description: meta.pages.faq.description,
     //   }
     // },
-  },
-  {
-   path: 'mobile-eco-cleaning',
-   component: MobileEcoComponent
-  },
-  {
-   path: 'black-tie',
-   component: BlacktiePageComponent
-  },
-  {
-  path: ':id',
-  children: [
-    {
-      path: '',
+    children: [
+      {
+        path: '',
+        component: OffersComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'mobile-eco-cleaning',
+        component: MobileEcoComponent
+      },
+      {
+       path: 'black-tie',
+       component: BlacktiePageComponent
+      },
+      {
+      path: ':id',
       component: OfferPageComponent,
-    },
-    {
-      path: ':itemId',
-      component: OfferItemPageComponent,
-    }
-  ]
- }
+     },
+     {
+      path: ':id/:itemId',
+      component: OfferItemPageComponent
+     }
+    ]
+  },
 ];
 
 @NgModule({

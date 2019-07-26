@@ -1,3 +1,139 @@
-<p>
-  company works!
-</p>
+<app-breadcrumbs currentPage="Компания"></app-breadcrumbs>
+<div class="container-inner" *ngIf="data">
+  <section class="image">
+    <div class="row">
+      <div class="w100 decor-bar">
+          <div class="decor decor--half decor--top"></div>
+      </div>
+        <div class="w100 page__image-container">
+          <div class="page__image-text">
+            <h1 innerHtml="{{data.title}}"></h1>
+          </div>
+          <img class="page__img" src="{{data.desktop_img}}" srcset="{{data.mobile_img}} 320w, {{data.tablet_img}} 768w, {{data.desktop_img}} 1200w" alt="{{data.title}}">
+        </div>
+        <div class="w100 decor-bar">
+          <div class="col-2 col-desktop-3"></div>
+          <div class="decor decor--half decor--bottom"></div>
+        </div>
+    </div>
+  </section>
+  <section class="description" *ngIf="data?.description">
+    <div class="row">
+      <div class="col-desktop-5">
+          <div class="description-text" [innerHtml]="data.description"></div>
+      </div>
+      <div class="page__brand_text-rotated hidden-mobile">
+          <p>компания</p>
+      </div>
+    </div>
+  </section>
+  <!-- OUR MISSION -->
+  <section class="mission" *ngIf="data?.mission">
+    <div class="row">
+      <div class="col-desktop-3 col-tablet-2"></div>
+      <div class="col-desktop-3 col-tablet-2">
+          <h2 class="section__title mission__title">{{data.mission.title}}</h2>
+          <p class="section__desctiption">{{data.mission.description}}</p>
+      </div>
+    </div>
+  </section>
+  <!-- END OF OUR MISSION -->
+  <!-- VALUES -->
+  <section class="values" *ngIf="data?.values">
+    <div class="row">
+      <div class="col-desktop-1 hidden-mobile hidden-tablet"></div>
+      <div class="col-desktop-5">
+          <h2 class="section__title values__title">{{data.values.title}}</h2>
+      </div>
+      <div class="steps__container">
+        <div class="steps__item" *ngFor="let item of data.values.items; let index = index">
+          <div class="steps__number">{{index+1}}</div>
+          <h3 class="steps__title">{{item.title}}</h3>
+          <p class="steps__description">{{item.description}}</p>
+        </div>
+      </div>
+      <div class="col-desktop-6"></div>
+      <div class="hidden-mobile hidden-tablet decor decor--full decor-to--right values__decor">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 213 75" style="enable-background:new 0 0 213 75;" xml:space="preserve">
+              <path fill="#d5db38" d="M212,1c3.1-0.6,2,1.7,2,3c0,19.7,0,39.3,0,59c-3,0.9-6.1,1.7-9.1,2.6c-19.7,6.1-39.8,9.9-60.4,9.1    c-16.8-0.6-33.4-3.4-50-6c-18.9-2.9-37.8-6.6-57-3.6C25.4,67,13.6,69.5,3,76c-3,0.6-2-1.7-2-3c0-19.7,0-39.4,0-59    C11.4,9.6,22.1,5.9,33.3,3.8C53,0.2,72.4,3.5,91.8,6.4c25,3.8,49.9,8.7,75.3,5.5C182.5,9.9,197.6,7,212,1z"/>
+          </svg>
+      </div>
+    </div>
+  </section>
+  <!-- END OF VALUES -->
+
+  <!-- RELATED LINKS -->
+  <section class="related-links" *ngIf="data?.related_links">
+    <div class="row">
+      <div class="col-desktop-3" *ngFor="let item of data.related_links.items">
+        <a class="related-links__item" [routerLink]="item.link">
+          <div class="related-links__image">
+            <img [src]="item.image" alt="{{item.title}} photo">
+          </div>
+          <div class="related-links__text">
+            <h3 class="related-links__title">
+              {{item.title}}
+              <img src="/assets/img/icons/ic_right-arrow.svg" alt=">">
+            </h3>
+            <p class="related-links__description">{{item.subtitle}}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- END OF RELATED LINKS -->
+
+  <!-- PARTNERS -->
+  <section class="partners" *ngIf="data?.partners">
+    <h2 class="section__title partners__title">{{data.partners.title}}</h2>
+    <div class="row">
+      <div class="col-2 col-tablet-1"*ngFor="let item of data.partners.items">
+        <div class="partners__logo">
+          <img [src]="item.logo" alt="{{item.title}} logo">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END OF PARTNERS -->
+
+  <!-- GALLERY -->
+  <section class="gallery" *ngIf="data?.gallery">
+    <div class="row">
+      <h2 class="section__title gallery__title w100">{{data.gallery.title}}</h2>
+      <div class="hidden-mobile hidden-tablet decor decor--full decor-to--right">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 213 75" style="enable-background:new 0 0 213 75;" xml:space="preserve">
+              <path fill="#d5db38" d="M212,1c3.1-0.6,2,1.7,2,3c0,19.7,0,39.3,0,59c-3,0.9-6.1,1.7-9.1,2.6c-19.7,6.1-39.8,9.9-60.4,9.1    c-16.8-0.6-33.4-3.4-50-6c-18.9-2.9-37.8-6.6-57-3.6C25.4,67,13.6,69.5,3,76c-3,0.6-2-1.7-2-3c0-19.7,0-39.4,0-59    C11.4,9.6,22.1,5.9,33.3,3.8C53,0.2,72.4,3.5,91.8,6.4c25,3.8,49.9,8.7,75.3,5.5C182.5,9.9,197.6,7,212,1z"/>
+          </svg>
+      </div>
+      <div class="col-4 col-tablet-2 col-desktop-3 gallery__item-container" *ngFor="let item of data.gallery.items | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+        <div class="gallery__item">
+          <div class="gallery__content">
+            <img [src]="item.content" alt="{{item.title}} image" *ngIf="item.type === 'image'">
+            <app-video page="company" *ngIf="item.type === 'video'" [source]="item.content" [poster]="item.poster"></app-video>
+          </div>
+          <h3 class="gallery__item-title">{{item.title}}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row pagination">
+        <div class="col-desktop-2 col-tablet-1"></div>
+        <div class="col-2 pagination-container">
+            <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel=""></pagination-controls>
+        </div>
+    </div>
+  </section>
+  <!-- END OF GALLERY -->
+
+  <div class="row">
+      <div class="decor-bar decor-bar--sm decor-bar-absolute">
+          <div class="decor decor--half decor--top"></div>
+      </div>
+      <!-- CALLBACK -->
+      <app-callback mode="subscribe" referrer="company"></app-callback>
+      <!-- END OF CALLBACK -->
+      <div class="w100 decor-bar decor-bar--sm">
+          <div class="col-desktop-1 col-tablet-2 col-1"></div>
+          <div class="decor decor--half decor--bottom"></div>
+      </div>
+    </div>
+</div>

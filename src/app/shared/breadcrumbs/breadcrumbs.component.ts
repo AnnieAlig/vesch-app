@@ -24,7 +24,6 @@ export class BreadcrumbsComponent implements OnInit, AfterViewInit {
   }
 
   getParentPage(level?) {
-    console.log('this.activeRoute.parent', this.route.parent)
     if (level === 2) {
       this.router.navigate(['../../'], { relativeTo: this.route });
     } else {

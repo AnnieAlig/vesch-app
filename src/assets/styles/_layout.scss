@@ -160,6 +160,9 @@
 .decor-to--left{
     margin-left: calc(var(--grid-column) * -1);
 }
+.decor-to--right{
+    margin-right: calc(var(--grid-column) * -1);
+}
 .decor-to--top{
     margin-top: calc(var(--decor-height) / -2);
 }

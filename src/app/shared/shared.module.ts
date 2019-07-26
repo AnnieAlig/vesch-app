@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
+import { ShareModule } from '@ngx-share/core';
 
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { CallbackComponent } from './callback/callback.component';
@@ -25,6 +26,7 @@ export const components = [
     CommonModule,
     FormsModule,
     TextMaskModule,
+    ShareModule
   ],
   declarations: [
     ...components,

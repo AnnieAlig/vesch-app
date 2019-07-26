@@ -15,11 +15,13 @@
       <div class="page__text-block" [innerHtml]="news?.text"></div>
   </div>
   <div class="share-block"> 
-    <div class="press col-4 col-desktop-2">
-      <div class="pdf_icon">
-        <img src="/assets/img/icons/ic_pdf.svg" alt="pdf" class="img-fluid">
-      </div>
-      <a href="{{news.press_link}}" class="press__btn" target="_blank">Скачать пресс-релиз</a>
+    <div class="col-4 col-desktop-2">
+      <a href="{{news.press.link}}" class="block-link press" *ngIf="news?.press" target="_blank">
+          <div class="pdf_icon">
+            <img src="/assets/img/icons/ic_pdf.svg" alt="pdf" class="img-fluid">
+          </div>
+          <span class="press__btn link">{{news.press.title}}</span>
+      </a>
     </div>
     <app-social-share class="col-tablet-2 col-desktop-2 col-4"></app-social-share>
   </div>

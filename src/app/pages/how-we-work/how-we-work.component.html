@@ -55,7 +55,7 @@
         </div>
         <h2 class="section__title">{{data?.video?.title}}</h2>
         <div class="video-container">
-          <app-video></app-video>
+          <app-video [source]="data?.video?.url" [poster]="data?.video?.poster"></app-video>
         </div>
     </div>
   </section>

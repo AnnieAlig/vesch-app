@@ -60,6 +60,7 @@
     pointer-events: none;
     opacity: 0;
     transition: var(--transition);
+    min-width: 150px;
 }
 .services__link .rotated{
     transform: translateX(100%) rotate(-90deg);

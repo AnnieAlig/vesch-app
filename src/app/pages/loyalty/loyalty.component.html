@@ -14,7 +14,7 @@
 <div class="container-inner">
   <div class="row">
       <div class="loyalty-description col-desktop-5">
-        <p>{{loyalty.description}}</p>
+        <p>{{loyalty?.description}}</p>
       </div>
       <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
           <p>программа лояльности</p>
@@ -22,8 +22,8 @@
   </div>
   <div class="loyalty-content col-desktop-5">
     <h3>для наших клиентов действуют такие программы лояльности: </h3>
-    <ul class="loyalties-list" *ngIf="loyalty.loyalties">
-      <li *ngFor="let item of loyalty.loyalties">{{item}}</li>
+    <ul class="loyalties-list" *ngIf="loyalty?.loyalties">
+      <li *ngFor="let item of loyalty?.loyalties">{{item}}</li>
     </ul>
   </div>
   <div class="decor-bar decor-on-top decor-to-right hidden-mobile hidden-desktop">

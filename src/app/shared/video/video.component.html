@@ -1,8 +1,7 @@
 <section class="video" [ngClass]="{'full-width': page === 'offer-page'}">
-  <button class="video__play"></button>
-  <video poster="/assets/img/home/video_poster.png">
-      <!-- <source src="movie.mp4" type="video/mp4">
-      <source src="movie.ogg" type="video/ogg">
-      Your browser does not support the video tag. -->
+  <button class="video__play" #play_btn (click)="playVideo(video.paused)" [ngClass]="{'hidden': !video.paused}"></button>
+  <video #video [poster]="poster ? poster : '/assets/img/home/video_poster.png'">
+      <source [src]="source" type="video/mp4">
+      Your browser does not support the video tag.
   </video>
 </section>

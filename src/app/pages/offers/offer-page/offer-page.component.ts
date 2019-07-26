@@ -66,8 +66,11 @@ export class OfferPageComponent implements OnInit {
     });
   }
 
-  filterSection(index?: number) {
+  filterSection(index?: number, mode?: string) {
     this.filteredItems = [];
+    if (mode === 'mobile') {
+      this.activeSectionIndexes = [];
+    }
     if (typeof index !== 'undefined') {
       if (_.contains(this.activeSectionIndexes, index)) {
         const key = this.activeSectionIndexes.indexOf(index);

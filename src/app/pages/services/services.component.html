@@ -8,18 +8,18 @@
   </div>
 
   <div class="row" *ngIf="services?.length">
-    <div class="col-4 col-tablet-1 col-desktop-1 service" *ngFor="let service of services; let index = index">
-      <div class="service__img" (click)="navigateTo(service.link)">
+    <a class="col-4 col-tablet-1 col-desktop-1 service block-link" [routerLink]="service.link" *ngFor="let service of services; let index = index">
+      <div class="service__img">
         <img src="{{service.img}}" alt="{{service.alt}}">
         <div class="service__link">
-          <a href="javascript:void(0)" class="rotated" (click)="navigateTo(service.link)">
+          <span class="link rotated">
               <i class="ic ic--plus">+</i>
               Смотреть прайс
-          </a>
+          </span>
         </div>
       </div>
-      <h4 class="service__name" (click)="navigateTo(service.link)">{{service.title}}</h4>
+      <h4 class="service__name">{{service.title}}</h4>
       <p class="service__description">{{service.description}}</p>
-    </div>
+    </a>
 </div>
 </div>

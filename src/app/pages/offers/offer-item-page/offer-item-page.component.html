@@ -35,24 +35,24 @@
   </div>
 
   <div class="d-flex flex-wrap related-items" *ngIf="offerItem.related">
-      <div class="item" *ngFor="let item of offerItem.related; let index = index" [ngClass]="{'hidden-tablet': index > 7, 'hidden-mobile': index > 3}">
-        <div class="item__img" (click)="navigateTo(item.link)">
+      <a class="item block-link" *ngFor="let item of offerItem.related; let index = index" [routerLink]="item.link" [ngClass]="{'hidden-tablet': index > 7, 'hidden-mobile': index > 3}">
+        <div class="item__img">
           <img src="{{item.photo}}" alt="{{item.name}}">
         </div>
-        <h4 class="item__name" (click)="navigateTo(item.link)">{{item.name}}</h4>
-      </div>
+        <h4 class="item__name">{{item.name}}</h4>
+      </a>
       <button class="item__btn btn btn-primary" (click)="navigateToParent()">Вся одежда</button>
   </div>
 
   <div class="row extra-items" *ngIf="offerItem.extra">
     <div class="d-flex flex-wrap col-4 extra-items-inner">
-      <div class="item" *ngFor="let item of offerItem.extra; let index = index">
-        <div class="item__img" (click)="navigateTo(item.link)">
+      <a class="item block-link" *ngFor="let item of offerItem.extra; let index = index" [routerLink]="item.link">
+        <div class="item__img">
           <img src="{{item.photo}}" alt="{{item.title}}">
         </div>
-        <h4 class="item__name" (click)="navigateTo(item.link)">{{item.title}}</h4>
+        <h4 class="item__name">{{item.title}}</h4>
         <p class="item__subtitle">{{item.subtitle}}</p>
-      </div>
+      </a>
     </div>
   </div>
 

@@ -80,7 +80,16 @@ a{
     text-decoration: none;
     transition: var(--transition);
 }
-a:hover{
+a:not(.block-link):hover{
+    color: var(--color_primary);
+}
+.block-link{
+    display: block;
+}
+.link{
+    transition: var(--transition);
+}
+.link:hover{
     color: var(--color_primary);
 }
 

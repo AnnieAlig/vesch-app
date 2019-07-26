@@ -74,7 +74,7 @@
             <img src="/assets/img/decor.svg">
         </div>
     </div>
-    <app-video></app-video>
+    <app-video source="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4" [poster]=""></app-video>
     <div class="decor-bar decor-bar--sm">
         <div class="col-tablet-1 col-desktop-1"></div>
         <div class="decor decor--half decor--bottom"></div>
@@ -157,19 +157,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-tablet-2 col-desktop-1 services__item" *ngFor="let service of services">
+            <a class="col-tablet-2 col-desktop-1 block-link services__item" *ngFor="let service of services" [routerLink]="service.link">
                 <div class="services__image">
-                    <img src="{{service.img}}" alt="{{service.alt}}" (click)="navigateTo(service.link)">
+                    <img src="{{service.img}}" alt="{{service.alt}}">
                     <div class="services__link">
-                        <a href="javascript:void(0)" class="rotated" (click)="navigateTo(service.link)">
+                        <span class="rotated link">
                             <i class="ic ic--plus">+</i>
                             Смотреть прайс
-                        </a>
+                        </span>
                     </div>
                 </div>
-                <h3 class="services__title" (click)="navigateTo(service.link)">{{service.title}}</h3>
+                <h3 class="services__title">{{service.title}}</h3>
                 <p class="services__description">{{service.description}}</p>
-            </div>
+            </a>
         </div>
         <div class="row services__all">
             <div class="col-1 col-tablet-3 col-desktop-5"></div>

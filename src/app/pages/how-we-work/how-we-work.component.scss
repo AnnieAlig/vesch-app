@@ -135,4 +135,9 @@
             margin: auto;
         }
     }
+    .item__title{
+        @media(min-width:1200px){
+            padding: 0 8px;
+        }
+    }
 }

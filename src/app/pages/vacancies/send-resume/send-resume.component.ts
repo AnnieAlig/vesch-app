@@ -14,7 +14,6 @@ import { SuccessModalComponent } from '../../../shared/modals/success-modal/succ
 export class SendResumeComponent implements OnInit {
 
   public resume = {
-    name: '',
     email: '',
     file: ''
   };

@@ -43,7 +43,7 @@
     flex-wrap: wrap;
     position: relative;
     @media(min-width:1200px){
-        width: calc(var(--grid-column) * 3);
+        width: calc(var(--grid-column) * 2);
     }
 }
 .resume__input{
@@ -51,7 +51,7 @@
     margin-bottom: 30px;
     transition: var(--transition);
     @media(min-width:768px){
-        width: calc(33.3% - 10px);
+        width: calc(50% - 10px);
         margin-bottom: 0;
         margin-right: 10px;
     }
@@ -63,7 +63,7 @@
         background-color: var(--color_primary-hover);
     }
     @media(min-width:768px){
-        width: calc(33.3% - 10px);
+        width: calc(50% - 10px);
         margin-right: 10px;
     }
 }

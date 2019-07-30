@@ -55,16 +55,17 @@
     --transition: all .3s ease;
     // transition: .5s cubic-bezier(.25,.46,.45,.94);
     --shadow: 0 3px 6px rgba(52,58,73,0.16), 0 3px 6px rgba(52,58,73,0.23);
-    --decor-height: 28px
+    // --decor-height: 28px
+    --decor-height: calc(var(--grid-max) / var(--grid-count) * 106 / 300)
 }
 
-@media (min-width:768px) {
-    :root{
-        --decor-height: 60px
-    }
-}
-@media (min-width:1200px) {
-    :root{
-        --decor-height: 80px
-    }
-}
+// @media (min-width:768px) {
+//     :root{
+//         --decor-height: 60px
+//     }
+// }
+// @media (min-width:1200px) {
+//     :root{
+//         --decor-height: 80px
+//     }
+// }

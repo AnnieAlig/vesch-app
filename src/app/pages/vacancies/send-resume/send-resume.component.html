@@ -13,8 +13,6 @@
       <!-- <div class="col-1"></div> -->
       <form class="resume__form" #form="ngForm" (ngSubmit)="form.form.valid && onSubmit(form)" 
         [ngClass]="{'validated': form.submitted}">
-          <input type="text" class="resume__input order-1" placeholder="Ваше имя" name="name" required 
-            [(ngModel)]="resume.name">
           <input type="text" class="resume__input order-2" placeholder="Ваш Email" name="email" required
             [(ngModel)]="resume.email">
           <button class="resume__submit btn btn-primary order-4 order-tablet-3 order-desktop-3" type="submit" (click)="checkFile()">Отправить</button>

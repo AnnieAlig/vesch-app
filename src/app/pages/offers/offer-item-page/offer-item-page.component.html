@@ -46,7 +46,8 @@
 
   <div class="row extra-items" *ngIf="offerItem.extra">
     <div class="d-flex flex-wrap col-4 extra-items-inner">
-      <a class="item block-link" *ngFor="let item of offerItem.extra; let index = index" [routerLink]="item.link">
+      <h3 class="w100">{{offerItem.extra.title}}</h3>
+      <a class="item block-link" *ngFor="let item of offerItem.extra.items; let index = index" [routerLink]="item.link">
         <div class="item__img">
           <img src="{{item.photo}}" alt="{{item.title}}">
         </div>

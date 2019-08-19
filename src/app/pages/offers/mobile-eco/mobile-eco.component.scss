@@ -2,40 +2,74 @@
     max-width: 100vw;
     overflow: hidden;
 }
-.page__image{
+// .page__image{
+//     position: relative;
+//     @media(max-width:767px){
+//         margin-bottom: 50px;
+//     }
+//     .position-absolute{
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         bottom: 0;
+//         left: 0;
+//     }
+//     .container-inner{
+//         height: 100%;
+//     }
+// }
+// .page__image_text{
+//     color: var(--color_white);
+//     margin: 0;
+//     padding-right: 50px;
+//     display: flex;
+//     align-items: center;
+//     height: 100%;
+//     @media(min-width:768px){
+//         max-width: calc(var(--grid-column) * 3);
+//     }
+//     @media(max-width:1199px) {
+//         padding-left: calc(100% / 5 / 2);
+//     }
+//     @media(min-width:1200px){
+//         margin: 0 var(--grid-column);
+//         padding-right: 10px;
+//     }
+// }
+.page__image-container{
     position: relative;
-    @media(max-width:767px){
-        margin-bottom: 50px;
+    margin-bottom: 50px;
+    margin-right: calc(var(--grid-column) * -.5);
+    margin-left: calc(var(--grid-column) * -.5);
+    width: calc(100% + var(--grid-column));
+    @media(min-width:1200px){
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
     }
-    .position-absolute{
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-    .container-inner{
+    img{
+        width: 100%;
         height: 100%;
+        object-fit: cover;
     }
 }
-.page__image_text{
-    color: var(--color_white);
-    margin: 0;
-    padding-right: 50px;
+.page__image-text{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(100% / 5 / 2);
+    width: calc(var(--grid-column) * 3);
     display: flex;
     align-items: center;
-    height: 100%;
-    @media(min-width:768px){
-        max-width: calc(var(--grid-column) * 3);
-    }
-    @media(max-width:1199px) {
-        padding-left: calc(100% / 5 / 2);
-    }
     @media(min-width:1200px){
-        margin: 0 var(--grid-column);
-        padding-right: 10px;
+        left: var(--grid-column);
+    }
+    h1{
+        color: var(--color_white);
+        // text-shadow: 0px 0px 2px #000;
     }
 }
+
 .page__brand_text-rotated{
     top: -80px;
 }

@@ -54,9 +54,7 @@
           </svg>
         </div>
         <h2 class="section__title">{{data?.video?.title}}</h2>
-        <div class="video-container">
-          <app-video [source]="data?.video?.url" [poster]="data?.video?.poster"></app-video>
-        </div>
+        <app-video [source]="data?.video?.url" [poster]="data?.video?.poster"></app-video>
     </div>
   </section>
   <!-- END OF VIDEO -->

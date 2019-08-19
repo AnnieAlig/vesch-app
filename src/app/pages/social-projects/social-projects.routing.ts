@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SocialProjectsComponent} from './social-projects.component';
+import { ProjectPageComponent } from './project-page/project-page.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
   },
   {
   path: ':id',
-  component: SocialProjectsComponent
+  component: ProjectPageComponent
  },
 ];
 

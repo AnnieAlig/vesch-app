@@ -88,9 +88,9 @@
     <h2 class="section__title partners__title">{{data.partners.title}}</h2>
     <div class="row">
       <div class="col-2 col-tablet-1"*ngFor="let item of data.partners.items">
-        <div class="partners__logo">
+        <a class="partners__logo" [href]="item.link" target="_blank" rel="noreferrer nofollow">
           <img [src]="item.logo" alt="{{item.title}} logo">
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -124,7 +124,7 @@
   </section>
   <!-- END OF GALLERY -->
 
-  <div class="row">
+  <section class="subscribe">
       <div class="decor-bar decor-bar--sm decor-bar-absolute">
           <div class="decor decor--half decor--top"></div>
       </div>
@@ -135,5 +135,5 @@
           <div class="col-desktop-1 col-tablet-2 col-1"></div>
           <div class="decor decor--half decor--bottom"></div>
       </div>
-    </div>
+    </section>
 </div>

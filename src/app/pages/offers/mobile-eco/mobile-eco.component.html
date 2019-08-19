@@ -2,32 +2,24 @@
 <div class="container-inner" *ngIf="offer">
   
   <div class="row position-relative">
-    <div class="col-desktop-1"></div>
-    <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
-        <p>услуги</p>
-    </div>
-  </div>
-</div>
-
-
-<div class="page__image">
-    <img src="{{offer.image}}" alt="{{offer.title}} image" class="hidden-mobile">
-    <img src="{{offer.image_mobile}}" alt="{{offer.title}} image" class="hidden-tablet hidden-desktop">
-    <div class="position-absolute">
-        <div class="container-inner">
-            <div class="page__image_text">
-                <h1 class="">{{offer.image_text}}</h1>
-            </div>
+        <div class="col-desktop-1"></div>
+        <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
+            <p>услуги</p>
         </div>
     </div>
-</div>
-<div class="container-inner">
+
+    <div class="page__image-container">
+        <div class="page__image-text">
+          <h1 innerHtml="{{offer.image_text}}"></h1>
+        </div>
+        <img class="page__img" src="{{offer.image}}" srcset="{{offer.image_mobile}} 320w, {{offer.image}} 768w" alt="{{offer.title}}">
+    </div>
+    
     <div class="page__description">
         <div class="page__text-block" [innerHtml]="offer?.text"></div>
     </div>
-</div>
+
   <!-- STEPS -->
-<div class="container-inner">
   <section class="steps">
       <div class="row">
           <div class="col-desktop-1"></div>
@@ -59,10 +51,9 @@
           </div>
       </div>
   </section>
-</div>
+
 <!-- END OF STEPS -->
 
-<div class="container-inner">
     <div class="decor-bar decor-bar--sm">
         <div class="decor decor--half decor--top"></div>
     </div>

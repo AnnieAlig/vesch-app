@@ -55,51 +55,63 @@
         "items": [
             {
                 "title": "hallowil",
-                "logo": "/assets/img/company/hallowi@3x.png"
+                "logo": "/assets/img/company/hallowi@3x.png",
+                "link": "https://hallowil.ch"
             },
             {
                 "title": "наш киев",
-                "logo": "/assets/img/company/nash_kiev@3x.png"
+                "logo": "/assets/img/company/nash_kiev@3x.png",
+                "link": "https://hallowil.ch"
             },
             {
                 "title": "lenovo",
-                "logo": "/assets/img/company/lenov@3x.png"
+                "logo": "/assets/img/company/lenov@3x.png",
+                "link": "https://www.lenovo.com/ua/uk/"
             },
             {
                 "title": "фармак",
-                "logo": "/assets/img/company/farma@3x.png"
+                "logo": "/assets/img/company/farma@3x.png",
+                "link": "https://farmak.ua"
             },
             {
                 "title": "wuxal",
-                "logo": "/assets/img/company/wuxa@3x.png"
+                "logo": "/assets/img/company/wuxa@3x.png",
+                "link": "https://www.wuxal.com"
             },
             {
                 "title": "m1",
-                "logo": "/assets/img/company/m1@3x.png"
+                "logo": "/assets/img/company/m1@3x.png",
+                "link": "https://m1.tv"
             },
             {
                 "title": "hallowil",
-                "logo": "/assets/img/company/hallowi@3x.png"
+                "logo": "/assets/img/company/hallowi@3x.png",
+                "link": "https://hallowil.ch"
             },
             {
                 "title": "наш киев",
-                "logo": "/assets/img/company/nash_kiev@3x.png"
+                "logo": "/assets/img/company/nash_kiev@3x.png",
+                "link": "https://hallowil.ch"
             },
             {
                 "title": "lenovo",
-                "logo": "/assets/img/company/lenov@3x.png"
+                "logo": "/assets/img/company/lenov@3x.png",
+                "link": "https://www.lenovo.com/ua/uk/"
             },
             {
                 "title": "фармак",
-                "logo": "/assets/img/company/farma@3x.png"
+                "logo": "/assets/img/company/farma@3x.png",
+                "link": "https://farmak.ua"
             },
             {
                 "title": "wuxal",
-                "logo": "/assets/img/company/wuxa@3x.png"
+                "logo": "/assets/img/company/wuxa@3x.png",
+                "link": "https://www.wuxal.com"
             },
             {
                 "title": "m1",
-                "logo": "/assets/img/company/m1@3x.png"
+                "logo": "/assets/img/company/m1@3x.png",
+                "link": "https://m1.tv"
             }
         ]
     },

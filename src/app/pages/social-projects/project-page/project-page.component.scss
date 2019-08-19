@@ -1,0 +1,28 @@
+@media(min-width:768px){
+    .page__image{
+        margin-left: calc(var(--grid-column) * -.5);
+        margin-right: calc(var(--grid-column) * -.5);
+    }
+}
+@media(min-width:1200px){
+    .page__image{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+.share-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    @media(min-width:768px){
+        margin-bottom: 100px;
+        flex-wrap: nowrap;
+    }
+    @media(min-width:1200px){
+        margin-bottom: 140px;
+    }
+}

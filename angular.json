@@ -31,7 +31,8 @@
               "node_modules/wowjs/css/libs/animate.css",
               "node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/solid.min.css",
-              "src/assets/styles/juxtapose.css"
+              "src/assets/styles/juxtapose.css",
+              "node_modules/lightgallery.js/dist/css/lightgallery.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -39,7 +40,8 @@
               "src/assets/scripts/linemaker.js",
               "node_modules/html2canvas/dist/html2canvas.min.js",
               "node_modules/wowjs/dist/wow.js",
-              "src/assets/scripts/juxtapose.js"
+              "src/assets/scripts/juxtapose.js",
+              "node_modules/lightgallery.js/dist/js/lightgallery.min.js"
             ]
           },
           "configurations": {

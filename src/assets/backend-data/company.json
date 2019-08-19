@@ -121,12 +121,20 @@
             {
                 "type": "image",
                 "title": "название альбома",
-                "content": "/assets/img/promos/promos-1.png"
+                "content": "/assets/img/promos/promos-1.png",
+                "images": [
+                    "/assets/img/promos/promos-1.png", "/assets/img/promos/promos-3.png",
+                    "/assets/img/promos/promos-3.png", "/assets/img/promos/promos-4.png"
+                ]
             },
             {
                 "type": "image",
                 "title": "название альбома",
-                "content": "/assets/img/promos/promos-6.png"
+                "content": "/assets/img/promos/promos-6.png",
+                "images": [
+                    "/assets/img/promos/promos-5.png", "/assets/img/promos/promos-6.png",
+                    "/assets/img/promos/promos-7.png", "/assets/img/promos/promos-8.png"
+                ]
             },
             {
                 "type": "video",
@@ -137,7 +145,11 @@
             {
                 "type": "image",
                 "title": "название альбома",
-                "content": "/assets/img/promos/promos-1.png"
+                "content": "/assets/img/promos/promos-1.png",
+                "images": [
+                    "/assets/img/promos/promos-1.png", "/assets/img/promos/promos-3.png",
+                    "/assets/img/promos/promos-3.png", "/assets/img/promos/promos-4.png"
+                ]
             }
         ]
     }

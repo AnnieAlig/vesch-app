@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyService } from '../../core/services/company.service';
+import * as _ from 'underscore';
+
+declare var lightGallery: any;
 
 @Component({
   selector: 'app-company',
@@ -23,4 +26,14 @@ export class CompanyComponent implements OnInit {
     this.itemsPerPage = window.innerWidth >= 1024 ? 4 : 2;
   }
 
+  startGallery(index: number, images: any) {
+    const imageSet = [];
+    _.each(images, (image) => {
+      imageSet.push({'src': image});
+    });
+    lightGallery(document.getElementById(`gallery-${index}`), {
+        dynamic: true,
+        dynamicEl: imageSet
+    });
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/core/services/home.service';
 import { trigger, style, animate, transition } from '@angular/animations';
+import * as _ from 'underscore';
 
 @Component({
   selector: 'app-map',
@@ -24,10 +25,12 @@ import { trigger, style, animate, transition } from '@angular/animations';
 export class MapComponent implements OnInit {
 
   public mode: string;
+  public map: any;
   public mapList: any;
+  public filterOption = 'all';
 
   constructor(
-    private homeService: HomeService
+    protected homeService: HomeService
   ) { }
 
   ngOnInit() {
@@ -42,9 +45,22 @@ export class MapComponent implements OnInit {
 
   createMapList() {
     this.homeService.getMapList().subscribe(
-      (maplist: any) => {
-        this.mapList = maplist;
+      (map: any) => {
+        console.log('map', map)
+        this.map = map;
+        this.filter(this.filterOption);
       }
     );
+  }
+
+  filter(option: string) {
+    this.filterOption = option;
+    if (option === 'all') {
+      this.mapList = this.map.maplist;
+    } else {
+      this.mapList = _.filter(this.map.maplist, (item: any) => {
+        return item.type === option;
+      });
+    }
   }
 }

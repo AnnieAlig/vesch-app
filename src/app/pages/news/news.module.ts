@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../../shared/shared.module';
+import * as sharedModule from '../../shared/shared.module';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -13,7 +13,7 @@ import { NewsPageComponent } from './news-page/news-page.component';
   declarations: [NewsComponent, NewsCardComponent, NewsPageComponent],
   imports: [
     CommonModule,
-    SharedModule,
+    sharedModule.SharedModule,
     NewsRouting,
     NgxPaginationModule,
   ]

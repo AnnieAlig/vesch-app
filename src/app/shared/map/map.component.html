@@ -1,19 +1,25 @@
 <div class="map">
     <div class="row">
         <div class="col-desktop-1"></div>
-        <h2 class="map__title col-3 col-tablet-4 col-desktop-4">ждем вас по адресам</h2>
+        <h2 class="map__title col-3 col-tablet-4 col-desktop-4">{{map?.subtitle_short}}</h2>
     </div>
     <div class="map__menu row">
         <div class="col-3 hidden-mobile">
             <ul class="menu-list map__sort">
                 <li class="navbar__item">
-                    <a href="" class="navbar__link">Все локации</a>
+                    <a href="javascript:void(0);" class="navbar__link" (click)="filter('all')" [ngClass]="{'active': filterOption === 'all'}">
+                        Все локации
+                    </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="" class="navbar__link active">Приемные пункты</a>
+                    <a href="javascript:void(0);" class="navbar__link" (click)="filter('point')" [ngClass]="{'active': filterOption === 'point'}">
+                        Приемные пункты
+                    </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="" class="navbar__link">Чистоматы</a>
+                    <a href="javascript:void(0);" class="navbar__link" (click)="filter('atm')" [ngClass]="{'active': filterOption === 'atm'}">
+                        Чистоматы
+                    </a>
                 </li>
             </ul>
         </div>

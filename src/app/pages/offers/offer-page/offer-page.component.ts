@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OffersService } from '../../../core/services/offers.service';
 import { OrderService } from '../../../core/order/order.service';
@@ -23,17 +23,19 @@ export class OfferPageComponent implements OnInit {
   public filteredItems: any = [];
   public filterSections: any = [];
   public isMobile: boolean;
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.isMobile = window.innerWidth < 768;
-}
+
+  public sliderConfig = {
+    activeSlide: 1,
+    sliderInterval: null,
+    prevSlide: null,
+  };
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private offersService: OffersService,
-    private orderService: OrderService
-  ) { }
+    private orderService: OrderService,
+  ) {}
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
@@ -52,18 +54,30 @@ export class OfferPageComponent implements OnInit {
   }
 
   createSlider() {
-    const slider = new juxtapose.JXSlider('#before_after',
-    [
-      {src: this.offer.after_img},
-      {src: this.offer.before_img},
-    ],
-    {
-        animate: true,
-        showLabels: true,
-        showCredits: true,
-        startingPosition: '75%',
-        makeResponsive: true
+    this.offer.header_img.forEach((item, index) => {
+      const slider = new juxtapose.JXSlider(`#before_after_${index}`,
+      [
+        {src: this.offer.header_img[index].after_img},
+        {src: this.offer.header_img[index].before_img},
+      ],
+      {
+          animate: true,
+          showLabels: true,
+          showCredits: true,
+          startingPosition: '75%',
+          makeResponsive: true
+      });
     });
+  }
+
+  changeSlide(index?) {
+    this.sliderConfig.prevSlide = this.sliderConfig.activeSlide;
+    if (index) {
+      this.sliderConfig.activeSlide = index;
+    } else {
+      (this.sliderConfig.activeSlide < this.offer.header_img.length) ?
+        this.sliderConfig.activeSlide += 1 : this.sliderConfig.activeSlide = 1;
+    }
   }
 
   filterSection(index?: number, mode?: string) {

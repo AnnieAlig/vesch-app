@@ -1,6 +1,21 @@
 <app-breadcrumbs [currentPage]="offer.title" parentPage="Услуги" *ngIf="offer?.title"></app-breadcrumbs>
 <div class="container-inner" *ngIf="offer">
-  <div class="offer__before-after" id="before_after"></div>
+  <div class="slider__container">
+    <div class="slider__inner">
+        <div class="slider__slide" *ngFor="let slide of offer.header_img; let index = index;" 
+          [ngClass]="{ 'active': (index + 1) === sliderConfig.activeSlide, 'prev': (index + 1) === sliderConfig.prevSlide}">
+          <div class="offer__before-after" id="before_after_{{index}}"></div>
+        </div>
+        <ul class="slider__controls">
+            <li class="slider__control" *ngFor="let item of offer.header_img; let index = index"
+              [ngClass]="{ 'active': (index + 1) === sliderConfig.activeSlide}" (click)='changeSlide(index + 1)'>
+                <div class="slider__line"></div>
+                <div class="slider__number">{{index+1}}</div>
+            </li>
+        </ul>
+    </div>
+  </div>
+
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
     <!-- <h1 class="page__title">{{offer.title}}</h1> -->

@@ -5,6 +5,9 @@
     position: relative;
     margin-left: calc(var(--grid-column) * -.5);
     margin-right: calc(var(--grid-column) * -.5);
+    video{
+        width: 100%;
+    }
 }
 .video__play{
     height: 50px;

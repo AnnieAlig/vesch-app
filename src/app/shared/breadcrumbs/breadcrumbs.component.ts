@@ -20,7 +20,7 @@ export class BreadcrumbsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    new WOW().init();
+    // new WOW().init();
   }
 
   getParentPage(level?) {

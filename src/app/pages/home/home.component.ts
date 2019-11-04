@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.WOW = new WOW();
+    this.WOW = new WOW({live: false});
     this.WOW.init();
   }
 
@@ -70,6 +70,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
         setTimeout( () => {
           // this.createSlider();
+          this.WOW.sync();
         }, 0);
 
       }

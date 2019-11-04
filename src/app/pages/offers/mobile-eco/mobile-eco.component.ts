@@ -23,6 +23,7 @@ export class MobileEcoComponent implements OnInit {
   ngOnInit() {
     this.offersService.getPage('mobile-eco').subscribe( (offer) => {
       this.offer = offer;
+      this.WOW = new WOW();
       this.WOW.init();
     });
     this.homeService.getSteps().subscribe(
@@ -31,7 +32,6 @@ export class MobileEcoComponent implements OnInit {
         this.WOW.sync();
       }
     );
-    this.WOW = new WOW();
   }
 
 }

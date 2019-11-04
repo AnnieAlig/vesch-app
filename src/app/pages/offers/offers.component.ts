@@ -38,7 +38,7 @@ export class OffersComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    new WOW().init();
+    // new WOW().init();
   }
 
   navigateTo(url) {

@@ -25,8 +25,8 @@ export class VacancyPageComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.vacanciesService.getPage(id).subscribe( (vacancy) => {
       this.vacancy = vacancy;
-      this.WOW.init();
+      // this.WOW = new WOW();
+      // this.WOW.init();
     });
-    this.WOW = new WOW();
   }
 }

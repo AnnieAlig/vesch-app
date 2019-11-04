@@ -26,7 +26,8 @@ export class BlacktiePageComponent implements OnInit {
     this.homeService.getBlackTie().subscribe(
       (blackTie) => {
         this.blackTie_items = blackTie;
-        this.WOW.init();
+        // this.WOW = new WOW();
+        // this.WOW.init();
       }
     );
     this.offersService.getSomeOffers().subscribe(
@@ -34,7 +35,6 @@ export class BlacktiePageComponent implements OnInit {
         this.offers = offers;
       }
     );
-    this.WOW = new WOW();
   }
 
 }

@@ -46,7 +46,6 @@ export class MapComponent implements OnInit {
   createMapList() {
     this.homeService.getMapList().subscribe(
       (map: any) => {
-        console.log('map', map)
         this.map = map;
         this.filter(this.filterOption);
       }

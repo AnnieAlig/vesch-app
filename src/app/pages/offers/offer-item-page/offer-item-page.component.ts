@@ -41,15 +41,17 @@ export class OfferItemPageComponent implements OnInit, OnDestroy {
           }
         }
       );
-      this.WOW.init();
+      // this.WOW = new WOW();
+      // this.WOW.init();
     });
 
 
-    this.WOW = new WOW();
   }
 
   ngOnDestroy() {
-    this._orderSubs.unsubscribe();
+    if (this._orderSubs) {
+      this._orderSubs.unsubscribe();
+    }
   }
 
   changeQuantity(mode) {

@@ -43,7 +43,7 @@ export class CallbackComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    new WOW().init();
+    // new WOW().init();
   }
 
   handleData() {

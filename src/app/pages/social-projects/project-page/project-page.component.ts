@@ -23,9 +23,9 @@ export class ProjectPageComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.socialProjectsService.getPage(id).subscribe( (project) => {
       this.project = project;
-      this.WOW.init();
+      // this.WOW = new WOW();
+      // this.WOW.init();
     });
-    this.WOW = new WOW();
   }
 
 }

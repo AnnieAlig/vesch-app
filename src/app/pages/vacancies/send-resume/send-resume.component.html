@@ -9,7 +9,7 @@
           </p>
       </div>
       <!-- <div class="col-1"></div> -->
-      <form class="resume__form" #form="ngForm" (ngSubmit)="form.form.valid && onSubmit(form)" 
+      <form class="resume__form" #form="ngForm" (ngSubmit)="form.form.valid && onSubmit()" 
         [ngClass]="{'validated': form.submitted}">
           <input type="text" class="resume__input order-2" placeholder="Ваш Email" name="email" required
             [(ngModel)]="resume.email">

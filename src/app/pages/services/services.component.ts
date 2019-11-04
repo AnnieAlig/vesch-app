@@ -27,7 +27,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    new WOW().init();
+    // new WOW().init();
   }
 
   navigateTo(url) {

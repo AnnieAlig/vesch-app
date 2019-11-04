@@ -11,6 +11,7 @@ import { SocialProjectsService } from '.././../core/services/social-projects.ser
 export class SocialProjectsComponent implements OnInit {
   public projects: any;
   public itemsPerPage: number;
+  public page: any;
   constructor(
     private socialProjectsService: SocialProjectsService,
   ) { }

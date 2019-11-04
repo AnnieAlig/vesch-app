@@ -23,9 +23,9 @@ export class PromoPageComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.promosService.getPage(id).subscribe( (promo) => {
       this.promo = promo;
-      this.WOW.init();
+      // this.WOW = new WOW();
+      // this.WOW.init();
     });
-    this.WOW = new WOW();
   }
 
 }

@@ -83,35 +83,37 @@
   </div>
 </header>
 
-<div class="about-us" [ngClass]="{'collapsed': !collapsed}" #dropdown_menu>
-    <div class="container-inner">
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="about-us__title">о нас</div>
-            <div class="col-1"></div>
-            <ul class="menu-list about-us__menu col-1">
-                <li class="about-us-item">
-                    <a routerLink="/company" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Компания</a>
-                </li>
-                <li class="about-us-item">
-                    <a routerLink="/how-we-work" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Как мы работаем</a>
-                </li>
-                <li class="about-us-item">
-                    <a routerLink="/loyalty" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Программа лояльности</a>
-                </li>
-                <li class="about-us-item">
-                    <a routerLink="/news" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Новости</a>
-                </li>
-                <li class="about-us-item">
-                    <a routerLink="/social-projects" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Социальные проекты</a>
-                </li>
-                <li class="about-us-item">
-                    <a routerLink="/vacancies" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Вакансии </a>
-                </li>
-                <li class="about-us-item">
-                    <a routerLink="/faq" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">FAQ</a>
-                </li>
-            </ul>
+<div class="about-us-container">
+    <div class="about-us" [ngClass]="{'collapsed': !collapsed}" #dropdown_menu>
+        <div class="container-inner">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="about-us__title">о нас</div>
+                <div class="col-1"></div>
+                <ul class="menu-list about-us__menu col-1">
+                    <li class="about-us-item">
+                        <a routerLink="/company" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Компания</a>
+                    </li>
+                    <li class="about-us-item">
+                        <a routerLink="/how-we-work" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Как мы работаем</a>
+                    </li>
+                    <li class="about-us-item">
+                        <a routerLink="/loyalty" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Программа лояльности</a>
+                    </li>
+                    <li class="about-us-item">
+                        <a routerLink="/news" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Новости</a>
+                    </li>
+                    <li class="about-us-item">
+                        <a routerLink="/social-projects" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Социальные проекты</a>
+                    </li>
+                    <li class="about-us-item">
+                        <a routerLink="/vacancies" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Вакансии </a>
+                    </li>
+                    <li class="about-us-item">
+                        <a routerLink="/faq" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">FAQ</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

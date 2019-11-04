@@ -8,12 +8,12 @@
     </div>
   </div>
   <div class="row">
-      <app-news-card *ngFor="let news_item of news | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" [news_item]="news_item" class="news_card col-4 col-desktop-2"></app-news-card>
+      <app-news-card *ngFor="let news_item of news | paginate: { itemsPerPage: itemsPerPage, currentPage: page }" [news_item]="news_item" class="news_card col-4 col-desktop-2"></app-news-card>
   </div>
   <div class="row pagination">
       <div class="col-1"></div>
       <div class="col-4">
-          <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel=""></pagination-controls>
+          <pagination-controls (pageChange)="page = $event" previousLabel="" nextLabel=""></pagination-controls>
       </div>
   </div>
   <div class="decor-bar decor-bar--sm decor-bar-absolute hidden-mobile hidden-tablet">

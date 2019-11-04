@@ -41,7 +41,8 @@ export class OfferPageComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.offersService.getPage(id).subscribe( (offer) => {
       this.offer = offer;
-      this.WOW.init();
+      // this.WOW = new WOW();
+      // this.WOW.init();
       this.createSlider();
       this.filterSection();
       _.each(this.offer.filter_sections, (section: any, index: number) => {
@@ -49,7 +50,6 @@ export class OfferPageComponent implements OnInit {
       });
     });
 
-    this.WOW = new WOW();
     this.isMobile = window.innerWidth < 768;
   }
 
@@ -99,7 +99,7 @@ export class OfferPageComponent implements OnInit {
       }
     });
 
-    this.WOW.sync();
+    // this.WOW.sync();
   }
 
   sectionIsActive(index) {

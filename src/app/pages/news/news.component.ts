@@ -11,6 +11,7 @@ import { NewsService } from '../../core/services/news.service';
 export class NewsComponent implements OnInit {
   public news: any;
   public itemsPerPage: number;
+  public page: any;
   constructor(
     private newsService: NewsService,
   ) { }

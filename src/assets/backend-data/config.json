@@ -1,0 +1,38 @@
+{
+    "phone_numbers_header": ["(093) 170•09•09", "(094) 953•39•09"],
+    "phone_numbers_footer": ["(094) 953•39•09"],
+    "phone_number_resume": "0949533909",
+    "email": "info@gmail.com",
+    "social_links": [
+        {
+            "name": "viber",
+            "link": "test"
+        },
+        {
+            "name": "telegram",
+            "link": "test"
+        },
+        {
+            "name": "instagram",
+            "link": "test"
+        },
+        {
+            "name": "facebook",
+            "link": "test"
+        },
+        {
+            "name": "youtube",
+            "link": "test"
+        }
+    ],
+    "apps": [
+        {
+            "name": "app_store",
+            "link": "test"
+        },
+        {
+            "name": "google_play",
+            "link": "test"
+        }
+    ]
+}

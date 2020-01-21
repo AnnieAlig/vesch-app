@@ -18,18 +18,12 @@
           </div>
           <div class="mobile__body">
               <div class="row">
-                  <ul class="menu-list mobile__phones col-3 hidden-mobile">
-                      <li class="mobile__item">
-                          <a class="mobile__link text-small" href="tel:0931700909">
-                              <i class="ic ic--phone ic--mobile"></i>
-                              (093) 170&bull;09&bull;09
-                          </a>
-                      </li>
-                      <li class="mobile__item">
-                          <a class="mobile__link text-small" href="tel:0949533909">
-                              (094) 953&bull;39&bull;09
-                          </a>
-                      </li>
+                  <ul class="menu-list mobile__phones col-3 hidden-mobile" *ngIf="config?.phone_numbers_header?.length">
+                    <li class="mobile__item" *ngFor="let number of config?.phone_numbers_header">
+                        <a class="mobile__link text-small" href="tel:{{number | phone}}">
+                            {{number}}
+                        </a>
+                    </li>
                   </ul>
                   <!-- <a class="location-link mobile__link text-small hidden-tablet" href="">
                       <i class="ic ic--location ic--mobile"></i>
@@ -39,10 +33,12 @@
                   <!-- <div class="col-3"></div> -->
                   <ul class="lang-switcher">
                       <li>
-                          <a href="" class="active text-small">Рус</a>
+                          <a (click)="changeDefaultLanguage('ru')" [ngClass]="{'active': defaultLanguage === 'ru'}"
+                            href="javascript:void(0)" class="text-small">Рус</a>
                       </li>
                       <li>
-                          <a href="" class="text-small">Укр</a>
+                          <a (click)="changeDefaultLanguage('ukr')" [ngClass]="{'active': defaultLanguage === 'ukr'}"
+                            href="javascript:void(0)" class="text-small">Укр</a>
                       </li>
                   </ul>
               </div>
@@ -55,18 +51,11 @@
               </div>
               <div class="row mobile__menu-row">
                   <div class="col-3">
-                      <ul class="menu-list mobile__phones hidden-tablet">
-                          <li class="mobile__item">
-                              <a class="mobile__link text-small" href="tel:0931700909">
+                      <ul class="menu-list mobile__phones hidden-tablet" *ngIf="config?.phone_numbers_header?.length">
+                          <li class="mobile__item" *ngFor="let number of config.phone_numbers_header">
+                              <a class="mobile__link text-small" href="tel:{{number | phone}}">
                                   <i class="ic ic--phone ic--mobile"></i>
-                                  (093) 170&bull;09&bull;09
-                                  <span class="mobile__link--colored">Позвонить</span>
-                              </a>
-                          </li>
-                          <li class="mobile__item">
-                              <a class="mobile__link text-small" href="tel:0949533909">
-                                  <i class="ic ic--phone ic--mobile"></i>
-                                  (094) 953&bull;39&bull;09
+                                  {{number}}
                                   <span class="mobile__link--colored">Позвонить</span>
                               </a>
                           </li>
@@ -127,23 +116,17 @@
                       </ul>
                   </div>
                   <div class="col-1">
-                      <div class="mobile__social-container">
-                          <a href="" class="mobile__social social soc-viber"></a>
-                          <a href="" class="mobile__social social soc-telegram"></a>
-                          <a href="" class="mobile__social social soc-instagram"></a>
-                          <a href="" class="mobile__social social soc-facebook"></a>
-                          <a href="" class="mobile__social social soc-youtube"></a>
+                      <div class="mobile__social-container" *ngIf="config?.social_links">
+                          <a [href]="social?.link" class="mobile__social social soc-{{social?.name}}" *ngFor="let social of config?.social_links"></a>
                       </div>
                   </div>
               </div>
           </div>
-          <div class="mobile__footer">
+          <div class="mobile__footer" *ngIf="config?.apps?.length">
               <p class="mb25">Скачайте приложение через</p>
-              <a href="" class="mobile-app__link">
-                  <img src="/assets/img/home/apple_white.png" alt="app store">
-              </a>
-              <a href="" class="mobile-app__link">
-                  <img src="/assets/img/home/google_white.png" alt="google play">
+              <a [href]="app?.link" class="mobile-app__link" *ngFor="let app of config?.apps">
+                  <img *ngIf="app?.name === 'app_store'" src="/assets/img/home/apple_white.png" [alt]="app?.name">
+                  <img *ngIf="app?.name === 'google_play'" src="/assets/img/home/google_white.png" [alt]="app?.name">
               </a>
           </div>
       </div>

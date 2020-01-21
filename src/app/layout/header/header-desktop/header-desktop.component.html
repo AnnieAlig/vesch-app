@@ -2,18 +2,13 @@
   <div class="top-bar row">
       <div class="decor decor--half decor--bottom"></div>
       <div class="col-4 top-bar__container">
-          <ul class="menu-list top-bar__menu top-bar__menu--main">
-              <li class="top-bar__item">
-                  <a class="top-bar__link text-small" href="tel:0931700909">
-                      <i class="ic ic--phone"></i>
-                      (093) 170&bull;09&bull;09
-                  </a>
-              </li>
-              <li class="top-bar__item">
-                  <a class="top-bar__link text-small" href="tel:0949533909">
-                      (094) 953&bull;39&bull;09
-                  </a>
-              </li>
+          <ul class="menu-list top-bar__menu top-bar__menu--main" *ngIf="config?.phone_numbers_header?.length">
+            <li class="top-bar__item" *ngFor="let number of config.phone_numbers_header; let first = first">
+                <a class="top-bar__link text-small" href="tel:{{number | phone}}">
+                    <i class="ic ic--phone" *ngIf="first"></i>
+                    {{number}}
+                </a>
+            </li>
               <!-- <li class="top-bar__item">
                   <a class="top-bar__link text-small" href="">
                       <i class="ic ic--location"></i>
@@ -42,10 +37,12 @@
               <li class="top-bar__item">
                 <ul class="lang-switcher">
                     <li>
-                        <a href="" class="top-bar__link active text-small">Рус</a>
+                        <a (click)="changeDefaultLanguage('ru')" [ngClass]="{'active': defaultLanguage === 'ru'}"
+                            href="javascript:void(0)" class="top-bar__link text-small">Рус</a>
                     </li>
                     <li>
-                        <a href="" class="top-bar__link text-small">Укр</a>
+                        <a (click)="changeDefaultLanguage('ukr')" [ngClass]="{'active': defaultLanguage === 'ukr'}"
+                        href="javascript:void(0)" class="top-bar__link text-small">Укр</a>
                     </li>
                 </ul>
               </li>

@@ -20,6 +20,7 @@ import { LinesComponent } from './layout/lines/lines.component';
 
 import { SharedModule } from './shared/shared.module';
 import { Ng2Webstorage } from 'ngx-webstorage';
+import { PhonePipe } from './core/pipes/phone.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { Ng2Webstorage } from 'ngx-webstorage';
     SearchModalComponent,
     SuccessModalComponent,
     LinesComponent,
+    PhonePipe
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
-import { Component, OnInit, HostListener, Renderer2 } from '@angular/core';
+import { Component, OnInit, HostListener, Renderer2, Input } from '@angular/core';
 import {DialogService} from 'ng2-bootstrap-modal';
 import { SearchModalComponent } from '../../../shared/modals/search-modal/search-modal.component';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-header-mobile',
@@ -9,9 +10,11 @@ import { SearchModalComponent } from '../../../shared/modals/search-modal/search
               '../header.component.scss']
 })
 export class HeaderMobileComponent implements OnInit {
+  @Input() config: any;
 
   public isCollapsed: boolean;
   public searchInput;
+  public defaultLanguage: string;
   @HostListener('document:keydown', ['$event'])
     onKeydownHandler(event: KeyboardEvent) {
       if (event.key === 'Enter') {
@@ -21,10 +24,12 @@ export class HeaderMobileComponent implements OnInit {
 
   constructor(
     private dialogService: DialogService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private $localStorage: LocalStorageService
     ) { }
 
   ngOnInit() {
+    this.defaultLanguage = this.$localStorage.retrieve('default-language');
   }
 
   toggleMenu() {
@@ -51,5 +56,11 @@ export class HeaderMobileComponent implements OnInit {
       .subscribe((result) => {
 
       });
+  }
+
+  changeDefaultLanguage(lang: string) {
+    this.defaultLanguage = lang;
+    this.$localStorage.store('default-language', lang);
+    window.location.reload();
   }
 }

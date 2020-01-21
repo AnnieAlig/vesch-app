@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { LocalStorageService } from 'ngx-webstorage';
 
-const apiUrl = '../assets/backend-data/';
+let apiUrl = '../assets/backend-data/';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,13 @@ export class HomeService {
 
   constructor(
     private http: HttpClient,
-  ) { }
+    private $localStorage: LocalStorageService
+  ) {
+    if (this.$localStorage.retrieve('default-language') &&
+    this.$localStorage.retrieve('default-language')  === 'ukr') {
+      apiUrl += 'ukr/';
+    }
+  }
 
   getSlides(): Observable<any> {
     return this.http.get(apiUrl + 'slider.json');

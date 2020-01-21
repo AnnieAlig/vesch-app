@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { LocalStorageService } from 'ngx-webstorage';
 
 let apiUrl = '../assets/backend-data/';
@@ -8,7 +8,9 @@ let apiUrl = '../assets/backend-data/';
 @Injectable({
   providedIn: 'root'
 })
-export class PromosService {
+export class ConfigService {
+  private configDataSource = new BehaviorSubject<any>([]);
+  configData = this.configDataSource.asObservable();
 
   constructor(
     private http: HttpClient,
@@ -20,10 +22,11 @@ export class PromosService {
     }
   }
 
-  getPromos() {
-    return this.http.get(apiUrl + 'promos.json');
+  getConfig(): Observable<any> {
+    return this.http.get(apiUrl + 'config.json');
   }
-  getPage(id: number): Observable<any> {
-    return this.http.get(apiUrl + 'promo_' + id + '.json');
+
+  store(data: any) {
+    this.configDataSource.next(data);
   }
 }

@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'vesch-app';
 
   constructor(
-    private orderService: OrderService
+    private orderService: OrderService,
   ) {
     this.orderService.getFromStorage();
   }

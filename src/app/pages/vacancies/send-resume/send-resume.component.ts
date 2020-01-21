@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 // import { NgForm } from '@angular/forms';
 import {DialogService} from 'ng2-bootstrap-modal';
 import { SuccessModalComponent } from '../../../shared/modals/success-modal/success-modal.component';
+import { Subscription } from 'rxjs';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-send-resume',
@@ -12,6 +14,7 @@ import { SuccessModalComponent } from '../../../shared/modals/success-modal/succ
   ]
 })
 export class SendResumeComponent implements OnInit {
+  public config: any;
 
   public resume = {
     email: '',
@@ -20,11 +23,17 @@ export class SendResumeComponent implements OnInit {
   public fileName: string;
   showError = false;
 
+  private subs = new Subscription;
+
   constructor(
     private dialogService: DialogService,
+    private configService: ConfigService
   ) { }
 
   ngOnInit() {
+    this.subs.add(this.configService.configData.subscribe((config) => {
+      this.config = config;
+    }));
   }
 
   onfileChange(event) {

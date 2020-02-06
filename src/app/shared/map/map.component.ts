@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HomeService } from 'src/app/core/services/home.service';
 import { trigger, style, animate, transition } from '@angular/animations';
 import * as _ from 'underscore';
@@ -23,9 +23,9 @@ import * as _ from 'underscore';
   ]
 })
 export class MapComponent implements OnInit {
+  @Input() map: any;
 
   public mode: string;
-  public map: any;
   public mapList: any;
   public filterOption = 'all';
 
@@ -35,7 +35,7 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
     this.setMode('map');
-    this.createMapList();
+    this.filter(this.filterOption);
   }
 
   setMode(mode: string) {
@@ -43,23 +43,16 @@ export class MapComponent implements OnInit {
     return false;
   }
 
-  createMapList() {
-    this.homeService.getMapList().subscribe(
-      (map: any) => {
-        this.map = map;
-        this.filter(this.filterOption);
-      }
-    );
-  }
-
   filter(option: string) {
-    this.filterOption = option;
-    if (option === 'all') {
-      this.mapList = this.map.maplist;
-    } else {
-      this.mapList = _.filter(this.map.maplist, (item: any) => {
-        return item.type === option;
-      });
+    if (this.map) {
+      this.filterOption = option;
+      if (option === 'all') {
+        this.mapList = this.map.maplist;
+      } else {
+        this.mapList = _.filter(this.map.maplist, (item: any) => {
+          return item.type === option;
+        });
+      }
     }
   }
 }

@@ -1,4 +1,9 @@
 {
+    "meta": {
+        "title": "Vesch - сеть экочисток нового поколения",
+        "description": "Больше не придется выкраивать время на правильный уход а одеждой — мы приедем и заберем вещи в чистку, где бы вы не находились.",
+        "image": "assets/img/company/career.png"
+    },
     "slides": [
         { "mobile_img": "assets/img/home/slider_mobile.png",
             "tablet_img": "assets/img/home/slider@3x.png",

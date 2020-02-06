@@ -1,4 +1,9 @@
 {
+    "meta": {
+        "title": "Акция продлена",
+        "description": "Друзья, вы просили и вуаля!",
+        "image": "assets/img/news/news_1_banner.jpg"
+    },
     "title": "Акция продлена",
     "image": "assets/img/news/news_1_banner.jpg",
     "date": "9 декабря",

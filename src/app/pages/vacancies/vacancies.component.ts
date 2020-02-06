@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { VacanciesService } from '../../core/services/vacancies.service';
 import { Router } from '@angular/router';
+import { MetaService } from 'src/app/core/services/meta.service';
 @Component({
   selector: 'app-vacancies',
   templateUrl: './vacancies.component.html',
@@ -19,13 +20,17 @@ export class VacanciesComponent implements OnInit {
 
   constructor(
     private vacanciesService: VacanciesService,
-    private router: Router
+    private router: Router,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     this.vacanciesService.getVacancies().subscribe(
-    (vacancies: any) => {
-      this.vacancies = vacancies;
+    (data: any) => {
+      this.vacancies = data;
+      if (data && data.meta) {
+        this.metaService.set(data.meta);
+      }
     });
 
     this.isMobile = window.innerWidth < 768;

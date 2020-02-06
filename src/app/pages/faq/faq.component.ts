@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FaqService } from '../../core/services/faq.service';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-faq',
@@ -13,13 +14,17 @@ export class FaqComponent implements OnInit {
   public activeQuestion: number;
 
   constructor(
-    private faqService: FaqService
+    private faqService: FaqService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     this.faqService.getQuestions().subscribe(
-      (questions) => {
-        this.faq = questions;
+      (data) => {
+        this.faq = data.questions;
+        if (data && data.meta) {
+          this.metaService.set(data.meta);
+        }
       }
     );
   }

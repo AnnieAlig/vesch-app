@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ServicesService } from '../../../core/services/services.service';
 import { WOW } from 'wowjs/dist/wow.min';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-service-page',
@@ -16,13 +17,17 @@ export class ServicePageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private servicesService: ServicesService
+    private servicesService: ServicesService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.servicesService.getPage(id).subscribe( (service) => {
-      this.service = service;
+    this.servicesService.getPage(id).subscribe( (data) => {
+      this.service = data;
+      if (data && data.meta) {
+        this.metaService.set(data.meta);
+      }
       // this.WOW = new WOW();
       // this.WOW.init();
     });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HowWeWorkService } from 'src/app/core/services/how-we-work.service';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-how-we-work',
@@ -12,12 +13,16 @@ export class HowWeWorkComponent implements OnInit {
   public data: any;
 
   constructor(
-    private howWeWorkServise: HowWeWorkService
+    private howWeWorkServise: HowWeWorkService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     this.howWeWorkServise.getData().subscribe((data) => {
       this.data = data;
+        if (data && data.meta) {
+          this.metaService.set(data.meta);
+        }
     });
   }
 

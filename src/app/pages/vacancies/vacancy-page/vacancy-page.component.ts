@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { VacanciesService } from '../../../core/services/vacancies.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import * as _ from 'underscore';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-vacancy-page',
@@ -19,12 +20,16 @@ export class VacancyPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private vacanciesService: VacanciesService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.vacanciesService.getPage(id).subscribe( (vacancy) => {
-      this.vacancy = vacancy;
+    this.vacanciesService.getPage(id).subscribe( (data) => {
+      this.vacancy = data;
+      if (data && data.meta) {
+        this.metaService.set(data.meta);
+      }
       // this.WOW = new WOW();
       // this.WOW.init();
     });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PromosService } from '../../core/services/promos.service';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-promos',
@@ -13,12 +14,20 @@ export class PromosComponent implements OnInit {
   public itemsPerPage: number;
   constructor(
     private promosService: PromosService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     this.promosService.getPromos().subscribe(
-      (promos: any) => {
-        this.promos = promos;
+      (data: any) => {
+        if (data) {
+          if (data.meta) {
+            this.metaService.set(data.meta);
+          }
+          if (data.promos) {
+            this.promos = data.promos;
+          }
+        }
       }
     );
     this.itemsPerPage = window.innerWidth >= 1024 ? 6 : 3;

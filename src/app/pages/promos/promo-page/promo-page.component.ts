@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PromosService } from '../../../core/services/promos.service';
 import { WOW } from 'wowjs/dist/wow.min';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-promo-page',
@@ -17,12 +18,16 @@ export class PromoPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private promosService: PromosService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.promosService.getPage(id).subscribe( (promo) => {
-      this.promo = promo;
+    this.promosService.getPage(id).subscribe( (data) => {
+      this.promo = data;
+      if (data && data.meta) {
+        this.metaService.set(data.meta);
+      }
       // this.WOW = new WOW();
       // this.WOW.init();
     });

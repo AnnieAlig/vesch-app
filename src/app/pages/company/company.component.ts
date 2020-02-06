@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyService } from '../../core/services/company.service';
 import * as _ from 'underscore';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 declare var lightGallery: any;
 
@@ -16,12 +17,16 @@ export class CompanyComponent implements OnInit {
   public itemsPerPage: number;
 
   constructor(
+    private metaService: MetaService,
     private companyService: CompanyService
     ) { }
 
   ngOnInit() {
     this.companyService.getData().subscribe((data) => {
       this.data = data;
+      if (data && data.meta) {
+        this.metaService.set(data.meta);
+      }
     });
     this.itemsPerPage = window.innerWidth >= 1024 ? 4 : 2;
   }

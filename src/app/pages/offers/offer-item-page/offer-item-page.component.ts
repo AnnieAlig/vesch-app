@@ -5,6 +5,7 @@ import { OrderService, OrderItem } from '../../../core/order/order.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import * as _ from 'underscore';
 import { Subscription } from 'rxjs';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-offer-item-page',
@@ -22,14 +23,18 @@ export class OfferItemPageComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private offersService: OffersService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('itemId');
     const parentId = +this.route.snapshot.paramMap.get('id');
-    this.offersService.getItemPage(id, parentId).subscribe( (offer) => {
-      this.offerItem = offer;
+    this.offersService.getItemPage(id, parentId).subscribe( (data) => {
+      this.offerItem = data;
+      if (data && data.meta) {
+        this.metaService.set(data.meta);
+      }
 
       this._orderSubs = this.orderService.orderData.subscribe(
         (orderItems) => {

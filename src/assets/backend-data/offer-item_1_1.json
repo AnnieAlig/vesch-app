@@ -1,4 +1,9 @@
 {
+    "meta": {
+        "title": "Горнолыжные штаны",
+        "description": "Одежда",
+        "image": "assets/img/offers/offer_1_1_photo.jpg"
+    },
     "parent": "Одежда",
     "to_parent_btn": "Вся одежда",
     "name": "Горнолыжные штаны",

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialProjectsService } from '.././../core/services/social-projects.service';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-social-projects',
@@ -14,12 +15,18 @@ export class SocialProjectsComponent implements OnInit {
   public page: any;
   constructor(
     private socialProjectsService: SocialProjectsService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     this.socialProjectsService.getProjects().subscribe(
-      (projects: any) => {
-        this.projects = projects;
+      (data: any) => {
+        if (data.meta) {
+          this.metaService.set(data.meta);
+        }
+        if (data.projects) {
+          this.projects = data.projects;
+        }
       }
     );
     this.itemsPerPage = window.innerWidth >= 1024 ? 6 : 3;

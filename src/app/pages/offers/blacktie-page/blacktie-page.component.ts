@@ -3,6 +3,7 @@ import { HomeService } from '../../../core/services/home.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import { OffersService } from '../../../core/services/offers.service';
 import * as _ from 'underscore';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-blacktie-page',
@@ -19,7 +20,8 @@ export class BlacktiePageComponent implements OnInit {
 
   constructor(
     private homeService: HomeService,
-    private offersService: OffersService
+    private offersService: OffersService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
@@ -31,8 +33,15 @@ export class BlacktiePageComponent implements OnInit {
       }
     );
     this.offersService.getSomeOffers().subscribe(
-      (offers: any) => {
-        this.offers = offers;
+      (data: any) => {
+        if (data) {
+          if (data.meta) {
+            this.metaService.set(data.meta);
+          }
+          if (data.offers) {
+            this.offers = data.offers;
+          }
+        }
       }
     );
   }

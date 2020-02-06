@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { OffersService } from '../../core/services/offers.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import * as _ from 'underscore';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-offers',
@@ -23,15 +24,23 @@ export class OffersComponent implements OnInit, AfterViewInit {
   constructor(
     private offersService: OffersService,
     private router: Router,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
     this.offersService.getOffers().subscribe(
-      (offers: any) => {
-        this.offers = offers;
-        _.each(this.offers, (offer: any, index: number) => {
-          this.offers[index].hidden = true;
-        });
+      (data: any) => {
+        if (data) {
+          if (data.meta) {
+            this.metaService.set(data.meta);
+          }
+          if (data.offers) {
+            this.offers = data.offers;
+            _.each(this.offers, (offer: any, index: number) => {
+              this.offers[index].hidden = true;
+            });
+          }
+        }
       }
     );
     this.isMobile = window.innerWidth < 768;

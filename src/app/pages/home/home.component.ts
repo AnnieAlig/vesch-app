@@ -5,6 +5,7 @@ import { HomeService } from '../../core/services/home.service';
 import * as _ from 'underscore';
 import { WOW } from 'wowjs/dist/wow.min';
 import { Router } from '@angular/router';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public services;
   public priority;
   public blackTie_section;
+  public map;
 
   @ViewChild('slides') slides: ElementRef;
   @HostListener('window:resize', ['$event'])
@@ -42,7 +44,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private ref: ChangeDetectorRef,
     private _sanitizer: DomSanitizer,
     private renderer: Renderer2,
-    private router: Router
+    private router: Router,
+    private metaService: MetaService
   ) {
     // this.sliderInterval = setInterval(() => {
     //   this.changeSlide();
@@ -52,6 +55,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getHomepage();
+    this.createMapList();
   }
 
   ngAfterViewInit() {
@@ -63,6 +67,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.homeService.getHomepage().subscribe(
       (data) => {
         if (data) {
+          if (data.meta) {
+            this.metaService.set(data.meta);
+          }
           if (data.slides) {
             this.slider = data.slides;
             this.activeSlide = 1;
@@ -88,6 +95,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.WOW.sync();
           }, 0);
         }
+      }
+    );
+  }
+
+  createMapList() {
+    this.homeService.getMapList().subscribe(
+      (map: any) => {
+        this.map = map;
+        setTimeout( () => {
+          this.WOW.sync();
+        }, 0);
       }
     );
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoyaltyService } from '../../core/services/loyalty.service';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 @Component({
   selector: 'app-loyalty',
@@ -13,7 +14,8 @@ export class LoyaltyComponent implements OnInit {
   public loyalty: any;
 
   constructor(
-    private loyaltyService: LoyaltyService
+    private loyaltyService: LoyaltyService,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
@@ -23,8 +25,11 @@ export class LoyaltyComponent implements OnInit {
       }
     );
     this.loyaltyService.getPage().subscribe(
-      (loyalty: any) => {
-        this.loyalty = loyalty;
+      (data: any) => {
+        this.loyalty = data;
+        if (data && data.meta) {
+          this.metaService.set(data.meta);
+        }
       }
     );
   }

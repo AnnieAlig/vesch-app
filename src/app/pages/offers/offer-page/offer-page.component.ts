@@ -5,6 +5,7 @@ import { OrderService } from '../../../core/order/order.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import * as juxtapose from '../../../../assets/scripts/juxtapose.js';
 import * as _ from 'underscore';
+import { MetaService } from 'src/app/core/services/meta.service';
 
 declare var juxtapose: any;
 
@@ -36,12 +37,16 @@ export class OfferPageComponent implements OnInit {
     private router: Router,
     private offersService: OffersService,
     private orderService: OrderService,
+    private metaService: MetaService
   ) {}
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.offersService.getPage(id).subscribe( (offer) => {
-      this.offer = offer;
+    this.offersService.getPage(id).subscribe( (data) => {
+      this.offer = data;
+      if (data && data.meta) {
+        this.metaService.set(data.meta);
+      }
       // this.WOW = new WOW();
       // this.WOW.init();
       this.createSlider();

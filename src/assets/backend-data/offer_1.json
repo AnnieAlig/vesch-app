@@ -1,4 +1,9 @@
 {
+    "meta": {
+        "title": "Oдежда",
+        "description": "чистка одежды",
+        "image": "assets/img/offers/offer_01_after.png"
+    },
     "title": "Oдежда",
     "brand_text": "чистка одежды",
     "header_img": [

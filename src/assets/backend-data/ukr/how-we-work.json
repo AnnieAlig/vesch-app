@@ -1,4 +1,9 @@
 {
+    "meta": {
+        "title": "Vesch - сеть экочисток нового поколения",
+        "description": "Black Tie - это лучшее что может случиться с вашей вещью.",
+        "image": "assets/img/company/how-we-work.jpg"
+    },
     "title": "Vesch - сеть экочисток нового поколения",
     "desktop_img": "assets/img/company/how-we-work.jpg",
     "tablet_img": "assets/img/company/how-we-work.jpg",

@@ -12,7 +12,8 @@
       </div>
     </div>
 
-    <form action="" class="checkout__form">
+    <form class="checkout__form" #form="ngForm" (ngSubmit)="form.form.valid && submitOrder()" 
+    [ngClass]="{'validated': form.submitted}">
       <div class="checkout-form-container">
         <div class="form-group-lg">
           <div class="form-group">

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OrderService } from '../../core/order/order.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-order',
@@ -21,7 +22,8 @@ export class OrderComponent implements OnInit, OnDestroy {
 
   constructor(
     private orderService: OrderService,
-    private router: Router
+    private router: Router,
+    private $localStorage: LocalStorageService
   ) { }
 
   ngOnInit() {

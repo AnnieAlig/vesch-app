@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CheckoutService } from '../../core/services/checkout.service';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-checkout',
@@ -30,7 +31,8 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private checkoutService: CheckoutService
+    private checkoutService: CheckoutService,
+    private $localStorage: LocalStorageService
   ) { }
 
   ngOnInit() {
@@ -38,6 +40,19 @@ export class CheckoutComponent implements OnInit {
     this.checkoutService.getCart(order).subscribe(
       (cart: any) => {
         this.cart = cart;
+      }
+    );
+  }
+
+  submitOrder() {
+    this.checkoutService.submit(this.cart, this.checkout).subscribe(
+      (result) => {
+        if (this.$localStorage.retrieve('customer-id')) {
+          this.$localStorage.clear('customer-id');
+        }
+        if (this.$localStorage.retrieve('order-data')) {
+          this.$localStorage.clear('order-data');
+        }
       }
     );
   }

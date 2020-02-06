@@ -65,8 +65,12 @@ export class OrderService {
   }
 
   update(data: any) {
-    this.orderDataSource.next(data);
-    this.saveToStorage(data);
+    this.sendCart(data).subscribe(
+      (result) => {
+        this.orderDataSource.next(result);
+        this.saveToStorage(result);
+      }
+    );
   }
 
   clear() {
@@ -77,6 +81,19 @@ export class OrderService {
     console.log(data);
     // return this.http.post( environment.apiUrl, data, httpOptions);
     return of({status: 'success', order: 1262});
+  }
+
+  sendCart(cart: any): Observable<any> {
+    if (!this.$localStorage.retrieve('customer-id')) {
+      const id = new Date().getTime() + Math.floor(Math.random() * Math.floor(99));
+      this.$localStorage.store('customer-id', id);
+    }
+    const data = {
+      customer: this.$localStorage.retrieve('customer-id'),
+      cart: cart
+    };
+    // return this.http.post( environment.apiUrl, data, httpOptions);
+    return of(cart);
   }
 
   saveToStorage(data) {
@@ -91,5 +108,11 @@ export class OrderService {
     }
    this.orderDataSource.next(this.orderDataValue);
   }
+
+  getOrder(customer: any): Observable<any> {
+      console.log(customer);
+      // return this.http.post( environment.apiUrl, data, httpOptions);
+      return of(JSON.parse(this.$localStorage.retrieve('order-data')));
+    }
 
 }

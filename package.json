@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration=ru && ng build --configuration=uk",
     "build:ru": "ng build --configuration=ru",
     "build:uk": "ng build --configuration=uk",
     "test": "ng test",

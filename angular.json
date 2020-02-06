@@ -46,7 +46,22 @@
           },
           "configurations": {
             "ru": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
               "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ],
               "outputPath": "dist/ru/",
               "baseHref": "/ru/",
               "i18nFile": "src/locale/messages.ru.xlf",
@@ -61,7 +76,22 @@
               ]
             },
             "uk": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
               "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ],
               "outputPath": "dist/uk/",
               "baseHref": "/uk/",
               "i18nFile": "src/locale/messages.uk.xlf",

@@ -85,8 +85,8 @@ export class OrderService {
 
   sendCart(cart: any): Observable<any> {
     if (!this.$localStorage.retrieve('customer-id')) {
-      const id = new Date().getTime() + Math.floor(Math.random() * Math.floor(99));
-      this.$localStorage.store('customer-id', id);
+      const id = (new Date().getTime()).toString() + (Math.floor(Math.random() * Math.floor(99))).toString();
+      this.$localStorage.store('customer-id', +id);
     }
     const data = {
       customer: this.$localStorage.retrieve('customer-id'),

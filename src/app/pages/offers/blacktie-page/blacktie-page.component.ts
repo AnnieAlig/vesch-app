@@ -13,7 +13,7 @@ import * as _ from 'underscore';
     './blacktie-page.component.scss']
 })
 export class BlacktiePageComponent implements OnInit {
-  public blackTie_items: any;
+  public blackTie_section: any;
   public WOW: WOW;
   public offers: any;
 
@@ -25,7 +25,7 @@ export class BlacktiePageComponent implements OnInit {
   ngOnInit() {
     this.homeService.getBlackTie().subscribe(
       (blackTie) => {
-        this.blackTie_items = blackTie;
+        this.blackTie_section = blackTie;
         // this.WOW = new WOW();
         // this.WOW.init();
       }

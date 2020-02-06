@@ -3,10 +3,12 @@
   <div class="row align-items-center justify-content-between">
       <div class="col-desktop-2 callback__texts">
           <h3 class="callback__title">
-              {{data.title}}
+              <ng-container *ngIf="mode === 'subscribe'" i18n="@@callback__subscribe_title">Подписка на рассылку</ng-container>
+              <ng-container *ngIf="mode !== 'subscribe'" i18n="@@callback__order_title">Заказать мобильную эко-чистку</ng-container>
           </h3>
           <p class="callback__description">
-              {{data.description}}
+            <ng-container *ngIf="mode === 'subscribe'" i18n="@@callback__subscribe_description">Будьте в курсе новостей, акций, приятных бонусов и рекомендаций по уходу за вещами.</ng-container>
+            <ng-container *ngIf="mode !== 'subscribe'" i18n="@@callback__order_description">Мы освободим вас от домашних хлопот - курьер заберет и привезет вещи по адресу.</ng-container>
           </p>
       </div>
       <!-- <div class="col-1"></div> -->
@@ -14,21 +16,26 @@
         [ngClass]="{'validated': validated}">
             <ng-container *ngIf="mode !== 'subscribe'">
                 <input type="text" class="callback__input" placeholder="Введите имя" name="name" required 
-                    [(ngModel)]="callback.name">
+                    [(ngModel)]="callback.name" i18n-placeholder="@@callback__enter_name">
                 <input type="text" class="callback__input" placeholder="+38(0__)___-__-__" name="phone" required
                     [textMask]="{mask: phoneMask}" [(ngModel)]="callback.phone" pattern="^\+38\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
             </ng-container>
             <ng-container *ngIf="mode === 'subscribe'">
                     <input type="email" class="callback__input email" placeholder="Ваша эл. почта" name="email" required 
-                        [(ngModel)]="callback.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                        [(ngModel)]="callback.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" i18n-placeholder="@@callback__enter_email">
                 </ng-container>
-          <button class="callback__submit btn btn-primary" type="submit">{{data.button}}</button>
+          <button class="callback__submit btn btn-primary" type="submit">
+                <ng-container *ngIf="mode === 'subscribe'" i18n="@@callback__subscribe_button">Подписаться</ng-container>
+                <ng-container *ngIf="mode !== 'subscribe'" i18n="@@callback__order_button">Заказать</ng-container>
+          </button>
           <div class="form-error" [ngClass]="{'error': showError}">
+            <ng-container i18n="@@callback__error">
                 Заявка не отправлена! 
-            <ng-container *ngIf="mode !== 'subscribe'">
+            </ng-container>
+            <ng-container *ngIf="mode !== 'subscribe'" i18n="@@callback__error_fill">
                 Заполните поля
             </ng-container>
-            <ng-container *ngIf="mode === 'subscribe'">
+            <ng-container *ngIf="mode === 'subscribe'" i18n="@@callback__error_email">
                 Введите правильный email
             </ng-container>
             <i class="ic ic-close-circle" (click)="showError = !showError"></i>

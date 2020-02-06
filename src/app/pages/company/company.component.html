@@ -1,4 +1,4 @@
-<app-breadcrumbs currentPage="Компания"></app-breadcrumbs>
+<app-breadcrumbs currentPage="Компания" i18n-currentPage="@@nav__company"></app-breadcrumbs>
 <div class="container-inner" *ngIf="data">
   <section class="image">
     <div class="row">
@@ -23,7 +23,7 @@
           <div class="description-text" [innerHtml]="data.description"></div>
       </div>
       <div class="page__brand_text-rotated hidden-mobile">
-          <p>компания</p>
+          <p i18n="@@nav__company">компания</p>
       </div>
     </div>
   </section>
@@ -73,7 +73,7 @@
           <div class="related-links__text">
             <h3 class="related-links__title">
               {{item.title}}
-              <img src="/assets/img/icons/ic_right-arrow.svg" alt=">">
+              <img src="assets/img/icons/ic_right-arrow.svg" alt=">">
             </h3>
             <p class="related-links__description">{{item.subtitle}}</p>
           </div>

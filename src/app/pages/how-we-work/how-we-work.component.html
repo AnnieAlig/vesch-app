@@ -1,4 +1,4 @@
-<app-breadcrumbs currentPage="Как мы работаем"></app-breadcrumbs>
+<app-breadcrumbs currentPage="Как мы работаем" i18n-currentPage="@@nav__how_we_work"></app-breadcrumbs>
 <div class="container-inner" *ngIf="data">
   <section class="image">
     <div class="row">
@@ -22,7 +22,7 @@
   <section class="technologies">
     <div class="row" *ngIf="data?.technologies">
       <div class="page__brand_text-rotated hidden-mobile">
-          <p>Как мы работаем</p>
+          <p i18n="@@nav__how_we_work">Как мы работаем</p>
       </div>
       <div class="col-desktop-3">
         <h2 class="section__title">{{data?.technologies?.title}}</h2>
@@ -33,7 +33,7 @@
           <h3 class="item__title">{{item.title}}</h3>
           <p class="item__description">{{item.description}}</p>
           <a href="{{item.link}}" class="page__more-link"> 
-            Детальнее
+            <span i18n="@@general__more_details">Детальнее</span>
             <i class="ic ic--more">^</i>
           </a>
           <div class="item__image">

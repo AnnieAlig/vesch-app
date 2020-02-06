@@ -1,4 +1,4 @@
-<app-breadcrumbs currentPage="Пункты приема"></app-breadcrumbs>
+<app-breadcrumbs currentPage="Пункты приема" i18n-currentPage="@@nav__points"></app-breadcrumbs>
 
 <div class="container-inner" *ngIf="map">
   <div class="page__description col-desktop-5">
@@ -10,17 +10,17 @@
       <div class="col-desktop-3">
         <ul class="menu-list map__sort">
           <li class="navbar__item">
-              <a href="javascript:void(0);" class="navbar__link" (click)="filter('all')" [ngClass]="{'active': filterOption === 'all'}">
+              <a href="javascript:void(0);" class="navbar__link" (click)="filter('all')" [ngClass]="{'active': filterOption === 'all'}" i18n="@@map__all_locations">
                   Все локации
               </a>
           </li>
           <li class="navbar__item">
-              <a href="javascript:void(0);" class="navbar__link" (click)="filter('point')" [ngClass]="{'active': filterOption === 'point'}">
+              <a href="javascript:void(0);" class="navbar__link" (click)="filter('point')" [ngClass]="{'active': filterOption === 'point'}" i18n="@@map__points">
                   Приемные пункты
               </a>
           </li>
           <li class="navbar__item">
-              <a href="javascript:void(0);" class="navbar__link" (click)="filter('atm')" [ngClass]="{'active': filterOption === 'atm'}">
+              <a href="javascript:void(0);" class="navbar__link" (click)="filter('atm')" [ngClass]="{'active': filterOption === 'atm'}" i18n="@@map__atm">
                   Чистоматы
               </a>
           </li>
@@ -29,8 +29,10 @@
     <div class="map__list row">
       <div class="map__list-item" *ngFor="let item of mapList">
         <h3 class="map__list-address">{{item.address}}</h3>
-        <div class="map__list-schedule">Время работы {{item.schedule}}</div>
-        <a href="{{item.link}}" class="map__list-link">Показать на карте</a>
+        <div class="map__list-schedule">
+          <span i18n="@@map__working_hours">Время работы </span> 
+          {{item.schedule}}</div>
+        <a href="{{item.link}}" class="map__list-link" i18n="@@map__show_on_map">Показать на карте</a>
       </div>
     </div>
     <div class="map__frame">

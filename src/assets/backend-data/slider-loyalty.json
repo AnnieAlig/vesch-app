@@ -1,25 +1,25 @@
 [
-    { "mobile_img": "/assets/img/home/slider_mobile.png",
-        "tablet_img": "/assets/img/loyalty/slider_loyalty-tablet_1.jpg",
-        "desktop_img": "/assets/img/loyalty/slider_loyalty_1.jpg",
+    { "mobile_img": "assets/img/home/slider_mobile.png",
+        "tablet_img": "assets/img/loyalty/slider_loyalty-tablet_1.jpg",
+        "desktop_img": "assets/img/loyalty/slider_loyalty_1.jpg",
         "title": "<h1>программа лояльности «priority club»</h1><p class='hidden-mobile hidden-tablet'>Станьте участником программы лояльности Priority Club и получите индивидуальные скидки, персонального менеджера и другие привилегии VIP-клиента.</p><p class='hidden-mobile hidden-tablet'>Просматривайте скидки и накопленные привилегии в личном кабинете.</p><a class='btn btn-primary'>Перейти в личный кабинет</a>"
     },
     {
-        "mobile_img": "/assets/img/home/video_poster_mobile.png",
-        "tablet_img": "/assets/img/home/video_poster.png",
-        "desktop_img": "/assets/img/home/video_poster.png",
+        "mobile_img": "assets/img/home/video_poster_mobile.png",
+        "tablet_img": "assets/img/home/video_poster.png",
+        "desktop_img": "assets/img/home/video_poster.png",
         "title": "slide 2"
     },
     {
-        "mobile_img": "/assets/img/home/slider_mobile.png",
-        "tablet_img": "/assets/img/home/slider@3x.png",
-        "desktop_img": "/assets/img/home/slider@3x.png",
+        "mobile_img": "assets/img/home/slider_mobile.png",
+        "tablet_img": "assets/img/home/slider@3x.png",
+        "desktop_img": "assets/img/home/slider@3x.png",
         "title": "slide 3"
     },
     {
-        "mobile_img": "/assets/img/home/video_poster_mobile.png",
-        "tablet_img": "/assets/img/home/video_poster.png",
-        "desktop_img": "/assets/img/home/video_poster.png",
+        "mobile_img": "assets/img/home/video_poster_mobile.png",
+        "tablet_img": "assets/img/home/video_poster.png",
+        "desktop_img": "assets/img/home/video_poster.png",
         "title": "slide 4"
     }
 ]

@@ -1,26 +1,26 @@
-<app-breadcrumbs [currentPage]="vacancy.title" parentPage="Вакансии" *ngIf="vacancy?.title"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="vacancy.title" parentPage="Вакансии" *ngIf="vacancy?.title" i18n-parentPage="@@nav__vacancies"></app-breadcrumbs>
 <div class="container-inner" *ngIf="vacancy">
   
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
     <!-- <h1 class="page__title">{{vacancy.title}}</h1> -->
     <div class="page__brand_text-rotated hidden-mobile">
-        <p>вакансии</p>
+        <p i18n="@@nav__vacancies">вакансии</p>
     </div>
   </div>
   <div class="page__image">
     <img src="{{vacancy.image}}" alt="{{vacancy.title}} image">
   </div>
   <div class="page__text-block">
-    <h3 class="page__subtitle">Описание вакансии</h3>
+    <h3 class="page__subtitle" i18n="@@vacancies__vacancy_details">Описание вакансии</h3>
     <div class="page__description" [innerHtml]="vacancy?.description"></div>
   </div>
   <div class="page__text-block">
-    <h3 class="page__subtitle">Условия работы</h3>
+    <h3 class="page__subtitle" i18n="@@vacancies__vacancy_conditions">Условия работы</h3>
     <div class="page__description" [innerHtml]="vacancy?.conditions"></div>
   </div>
   <div class="page__text-block">
-    <h3 class="page__subtitle">Заработная плата</h3>
+    <h3 class="page__subtitle" i18n="@@vacancies__vacancy_salary">Заработная плата</h3>
     <h3 class="page__subtitle">
         <span class="vacancy-salary" *ngIf="vacancy.salary">{{vacancy.salary}}</span>
       </h3>
@@ -31,7 +31,7 @@
   <div class="decor-bar decor-bar--top decor-to-right hidden-mobile">
     <div class="col-desktop-5 col-2"></div>
     <div class="decor decor--full">
-      <img src="/assets/img/decor.svg">
+      <img src="assets/img/decor.svg">
     </div>
   </div>
 </div>

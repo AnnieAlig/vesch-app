@@ -1,4 +1,4 @@
-<app-breadcrumbs currentPage="Программа лояльности"></app-breadcrumbs>
+<app-breadcrumbs currentPage="Программа лояльности" i18n-currentPage="@@nav__loyalty"></app-breadcrumbs>
 <!-- SLIDER -->
 <div class="slider container-inner">
   <div class="decor-bar">
@@ -17,11 +17,11 @@
         <p>{{loyalty?.description}}</p>
       </div>
       <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
-          <p>программа лояльности</p>
+          <p i18n="@@nav__loyalty">программа лояльности</p>
       </div>
   </div>
   <div class="loyalty-content col-desktop-5">
-    <h3>для наших клиентов действуют такие программы лояльности: </h3>
+    <h3>{{loyalty?.subtitle}}</h3>
     <ul class="loyalties-list" *ngIf="loyalty?.loyalties">
       <li *ngFor="let item of loyalty?.loyalties">{{item}}</li>
     </ul>
@@ -29,7 +29,7 @@
   <div class="decor-bar decor-on-top decor-to-right hidden-mobile hidden-desktop">
       <div class="col-desktop-5 col-2"></div>
       <div class="decor decor--full">
-        <img src="/assets/img/decor.svg">
+        <img src="assets/img/decor.svg">
       </div>
     </div>
 </div>

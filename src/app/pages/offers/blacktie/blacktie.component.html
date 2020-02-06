@@ -1,43 +1,43 @@
 <div class="blacktie">
   <div class="row">
       <div class="blacktie__poster hidden-desktop">
-          <img src="/assets/img/home/black-tie@2x.png" srcset="/assets/img/home/black-tie@1x.png 1x, /assets/img/home/black-tie@2x.png 2x, /assets/img/home/black-tie@3x.png 3x" alt="black tie service">
+          <img src="assets/img/home/black-tie@2x.png" srcset="assets/img/home/black-tie@1x.png 1x, /assets/img/home/black-tie@2x.png 2x, /assets/img/home/black-tie@3x.png 3x" alt="black tie service">
       </div>
       <div class="col-4 hidden-tablet hidden-desktop">
           <div class="decor-bar decor-bar--sm">
               <div class="col-1"></div>
               <div class="decor decor--full mt10">
-                  <img src="/assets/img/decor.svg">
+                  <img src="assets/img/decor.svg">
               </div>
               <div class="decor decor--full decor-bar--top">
-                  <img src="/assets/img/decor.svg">
+                  <img src="assets/img/decor.svg">
               </div>
           </div>
           <div class="decor-bar mt10">
               <div class="col-3"></div>
               <div class="decor decor--full">
-                  <img src="/assets/img/decor.svg">
+                  <img src="assets/img/decor.svg">
               </div>
           </div>
       </div>
     <div class="col-1 hidden-mobile hidden-tablet">
-      <img src="/assets/img/services/blacktie.png" alt="blacktie">
+      <img src="assets/img/services/blacktie.png" alt="blacktie">
     </div>
     <div class="col-1 hidden-mobile"></div>
     <div class="col-4 col-tablet-3 col-desktop-3 blacktie__texts">
-        <h2 class="blacktie__title">Услуга Black tie</h2>
-        <p class="blacktie__description"> Black Tie - это лучшее что может случиться с вашей вещью. 
+        <h2 class="blacktie__title">{{blackTie_section?.title}}</h2>
+        <p class="blacktie__description"> {{blackTie_section?.description}}
           <br>
-          Дизайнерская одежда, одежда из комбинированных тканей, элементами декора или специальной обработки требует тщательного подхода на каждом этапе обработки с применением самой эффективной и безопасной экочистки.
+          {{blackTie_section?.description__additional}}
         </p>
         <div class="decor-bar mb50 hidden-desktop hidden-tablet">
             <div class="decor decor--full">
-                <img src="/assets/img/decor.svg">
+                <img src="assets/img/decor.svg">
             </div>
         </div>
         <div class="col-3 hidden-tablet hidden-desktop"></div>
         <div class="d-flex blacktie__items">
-          <div class="blacktie__item" *ngFor="let blacktie of blackTie_items">
+          <div class="blacktie__item" *ngFor="let blacktie of blackTie_section?.items">
               <div class="blacktie__icon order-2 order-tablet-1 order-desktop-1">
                 <img src="{{blacktie.icon}}" alt="{{blacktie.alt}}">
               </div>
@@ -50,7 +50,7 @@
           </div>
           <div class="blacktie__item hidden-desktop align-self-end">
             <a routerLink="/offers/black-tie" class="page__more-link blacktie__link mb0">
-                Детальнее 
+                <span i18n="@@general__more_details">Детальнее</span>
                 <i class="ic ic--more">^</i>
             </a>
           </div>
@@ -61,7 +61,7 @@
             <p>Black Tie</p>
         </div>
         <a routerLink="/offers/black-tie" class="page__more-link blacktie__link">
-            Детальнее 
+            <span i18n="@@general__more_details">Детальнее</span>
             <i class="ic ic--more">^</i>
         </a>
     </div>

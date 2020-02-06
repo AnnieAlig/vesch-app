@@ -1,7 +1,7 @@
-import { Component, OnInit, HostListener, ElementRef, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, ViewChild, Input, Inject } from '@angular/core';
 import {DialogService} from 'ng2-bootstrap-modal';
 import { SearchModalComponent } from '../../../shared/modals/search-modal/search-modal.component';
-import { LocalStorageService } from 'ngx-webstorage';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-header-desktop',
@@ -14,7 +14,8 @@ export class HeaderDesktopComponent implements OnInit {
   @ViewChild('dropdown_menu') private dropdown: ElementRef;
   @ViewChild('dropdown_link') private dropdown_link: ElementRef;
   collapsed;
-  public defaultLanguage: string;
+  public language: string;
+  public currentUrl: string;
 
   @HostListener('document:click', ['$event'])
   clickout(event) {
@@ -27,11 +28,12 @@ export class HeaderDesktopComponent implements OnInit {
   }
   constructor(
     private dialogService: DialogService,
-    private $localStorage: LocalStorageService
+    private location: Location
   ) { }
 
   ngOnInit() {
-    this.defaultLanguage = this.$localStorage.retrieve('default-language');
+    this.currentUrl = this.location.path(true);
+    this.language = this.location['_baseHref'].replace(/\//g, '');
   }
   openSearchDialog() {
     const options = {
@@ -44,9 +46,8 @@ export class HeaderDesktopComponent implements OnInit {
       });
   }
 
-  changeDefaultLanguage(lang: string) {
-    this.defaultLanguage = lang;
-    this.$localStorage.store('default-language', lang);
-    window.location.reload();
+  changeLanguage(lang: string) {
+    this.language = lang;
+    this.currentUrl = this.location.path(true);
   }
 }

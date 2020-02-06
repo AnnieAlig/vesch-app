@@ -1,8 +1,8 @@
 {
     "title": "Vesch - сеть экочисток нового поколения",
-    "desktop_img": "/assets/img/company/how-we-work.jpg",
-    "tablet_img": "/assets/img/company/how-we-work.jpg",
-    "mobile_img": "/assets/img/company/how-we-work.jpg",
+    "desktop_img": "assets/img/company/how-we-work.jpg",
+    "tablet_img": "assets/img/company/how-we-work.jpg",
+    "mobile_img": "assets/img/company/how-we-work.jpg",
     "description": "<p>VESCH – сеть экочисток нового поколения ориентирована на использование принципиально новых, экологичных и безопасных методик обработки ткани.</p><p>Сеть функционирует на базе единственной в Украине эко-фабрики с полным спектром услуг по уходу за одеждой и предметами быта. На общей площади 350 м2 сосредоточены самые передовые технологии европейского уровня.</p><ul><li>Компания Vesch основана и зарегистрирована 1 июня 2017 года.</li><li>Запуск эко-фабрики – 1 сентября 2017 года.</li><li>Коммерческий запуск сети состоялся 1 ноября 2017 года.</li></ul>",
     "mission": {
         "title": "Наша миссия",
@@ -38,13 +38,13 @@
             {
                 "title": "Карьера",
                 "subtitle": "Работа в компании VESCH",
-                "image": "/assets/img/company/career.png",
+                "image": "assets/img/company/career.png",
                 "link": "/vacancies"
             },
             {
                 "title": "Социальная ответственность",
                 "subtitle": "Социальная ответственность в компании VESCH",
-                "image": "/assets/img/company/career.png",
+                "image": "assets/img/company/career.png",
                 "link": "/social-projects"
             }
         ]
@@ -55,62 +55,62 @@
         "items": [
             {
                 "title": "hallowil",
-                "logo": "/assets/img/company/hallowi@3x.png",
+                "logo": "assets/img/company/hallowi@3x.png",
                 "link": "https://hallowil.ch"
             },
             {
                 "title": "наш киев",
-                "logo": "/assets/img/company/nash_kiev@3x.png",
+                "logo": "assets/img/company/nash_kiev@3x.png",
                 "link": "https://hallowil.ch"
             },
             {
                 "title": "lenovo",
-                "logo": "/assets/img/company/lenov@3x.png",
+                "logo": "assets/img/company/lenov@3x.png",
                 "link": "https://www.lenovo.com/ua/uk/"
             },
             {
                 "title": "фармак",
-                "logo": "/assets/img/company/farma@3x.png",
+                "logo": "assets/img/company/farma@3x.png",
                 "link": "https://farmak.ua"
             },
             {
                 "title": "wuxal",
-                "logo": "/assets/img/company/wuxa@3x.png",
+                "logo": "assets/img/company/wuxa@3x.png",
                 "link": "https://www.wuxal.com"
             },
             {
                 "title": "m1",
-                "logo": "/assets/img/company/m1@3x.png",
+                "logo": "assets/img/company/m1@3x.png",
                 "link": "https://m1.tv"
             },
             {
                 "title": "hallowil",
-                "logo": "/assets/img/company/hallowi@3x.png",
+                "logo": "assets/img/company/hallowi@3x.png",
                 "link": "https://hallowil.ch"
             },
             {
                 "title": "наш киев",
-                "logo": "/assets/img/company/nash_kiev@3x.png",
+                "logo": "assets/img/company/nash_kiev@3x.png",
                 "link": "https://hallowil.ch"
             },
             {
                 "title": "lenovo",
-                "logo": "/assets/img/company/lenov@3x.png",
+                "logo": "assets/img/company/lenov@3x.png",
                 "link": "https://www.lenovo.com/ua/uk/"
             },
             {
                 "title": "фармак",
-                "logo": "/assets/img/company/farma@3x.png",
+                "logo": "assets/img/company/farma@3x.png",
                 "link": "https://farmak.ua"
             },
             {
                 "title": "wuxal",
-                "logo": "/assets/img/company/wuxa@3x.png",
+                "logo": "assets/img/company/wuxa@3x.png",
                 "link": "https://www.wuxal.com"
             },
             {
                 "title": "m1",
-                "logo": "/assets/img/company/m1@3x.png",
+                "logo": "assets/img/company/m1@3x.png",
                 "link": "https://m1.tv"
             }
         ]
@@ -121,34 +121,34 @@
             {
                 "type": "image",
                 "title": "название альбома",
-                "content": "/assets/img/promos/promos-1.png",
+                "content": "assets/img/promos/promos-1.png",
                 "images": [
-                    "/assets/img/promos/promos-1.png", "/assets/img/promos/promos-3.png",
-                    "/assets/img/promos/promos-3.png", "/assets/img/promos/promos-4.png"
+                    "assets/img/promos/promos-1.png", "assets/img/promos/promos-3.png",
+                    "assets/img/promos/promos-3.png", "assets/img/promos/promos-4.png"
                 ]
             },
             {
                 "type": "image",
                 "title": "название альбома",
-                "content": "/assets/img/promos/promos-6.png",
+                "content": "assets/img/promos/promos-6.png",
                 "images": [
-                    "/assets/img/promos/promos-5.png", "/assets/img/promos/promos-6.png",
-                    "/assets/img/promos/promos-7.png", "/assets/img/promos/promos-8.png"
+                    "assets/img/promos/promos-5.png", "assets/img/promos/promos-6.png",
+                    "assets/img/promos/promos-7.png", "assets/img/promos/promos-8.png"
                 ]
             },
             {
                 "type": "video",
                 "title": "название видео",
                 "content": "https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4",
-                "poster": "/assets/img/home/video_poster.png"
+                "poster": "assets/img/home/video_poster.png"
             },
             {
                 "type": "image",
                 "title": "название альбома",
-                "content": "/assets/img/promos/promos-1.png",
+                "content": "assets/img/promos/promos-1.png",
                 "images": [
-                    "/assets/img/promos/promos-1.png", "/assets/img/promos/promos-3.png",
-                    "/assets/img/promos/promos-3.png", "/assets/img/promos/promos-4.png"
+                    "assets/img/promos/promos-1.png", "assets/img/promos/promos-3.png",
+                    "assets/img/promos/promos-3.png", "assets/img/promos/promos-4.png"
                 ]
             }
         ]

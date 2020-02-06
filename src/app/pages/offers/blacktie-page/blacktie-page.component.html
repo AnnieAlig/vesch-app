@@ -1,4 +1,4 @@
-<app-breadcrumbs [currentPage]="'Black Tie'" parentPage="Услуги"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="'Black Tie'" parentPage="Услуги" i18n-parentPage="@@nav_offers"></app-breadcrumbs>
 <div class="container-inner">
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
@@ -16,7 +16,7 @@
     <div class="position-absolute">
         <div class="container-inner">
             <div class="page__image_text">
-                <h1 class="">Эксклюзивная  экочистка  дизайнерских  вещей</h1>
+                <h1 class="">{{blackTie_section?.page_title}}</h1>
             </div>
         </div>
     </div>
@@ -27,23 +27,23 @@
     <div class="container-inner">
         <section class="blacktie">
             <div class="row blacktie__main-info">
-              <p class="description col-5">Black Tie – это лучшее что может случиться с вашими вещами. Дизайнерская одежда, одежда из комбинированных тканей, с элементами декора или специальной обработки требует тщательного подхода на каждом этапе с применением самой эффективной и безопасной экочистки. </p>
+              <p class="description col-5">{{blackTie_section?.page_description}} </p>
               <div class="col-3 hidden-tablet hidden-desktop"></div>
               <div class="decor decor--full mt20 mt-tablet-40 hidden-tablet">
-                  <img src="/assets/img/decor.svg">
+                  <img src="assets/img/decor.svg">
               </div>
               <div class="col-2 col-desktop-4"></div>
               <div class="decor decor--full hidden-tablet">
-                  <img src="/assets/img/decor.svg">
+                  <img src="assets/img/decor.svg">
               </div>
 
               <div class="col-1 hidden-tablet hidden-mobile"></div>
               <div class="page__brand_text-rotated hidden-mobile">
-                  <p>преимущества</p>
+                  <p>{{blackTie_section?.brand_text}}</p>
               </div>
             </div>
             <div class="row">
-                <div class="col-4 col-desktop-3 blacktie__item" *ngFor="let blacktie of blackTie_items">
+                <div class="col-4 col-desktop-3 blacktie__item" *ngFor="let blacktie of blackTie_section?.items">
                     <h3 class="blacktie__title">{{blacktie.title}}</h3>
                     <div class="blacktie__texts">
                         <div class="blacktie__icon">
@@ -58,7 +58,7 @@
             <div class="decor-bar decor-bar--sm decor-bar--down decor-tablet-top hidden-mobile">
               <div class="col-3"></div>
               <div class="decor decor--full mt20 mt-tablet-40">
-                <img src="/assets/img/decor.svg">
+                <img src="assets/img/decor.svg">
               </div>
             </div>
         </section>
@@ -68,7 +68,7 @@
     <div class="decor-bar decor-bar--sm mb-desktop-80 decor-tablet-top hidden-mobile">
         <div class="col-1 col-tablet-2"></div>
         <div class="decor decor--full mt-desktop-40">
-            <img src="/assets/img/decor.svg">
+            <img src="assets/img/decor.svg">
         </div>
     </div>
 </div>
@@ -81,14 +81,14 @@
                 <div class="offer__link">
                     <span class="rotated link">
                         <i class="ic ic--plus">+</i>
-                        Смотреть прайс
+                        <span i18n="@@general__view_price">Смотреть прайс</span> 
                     </span>
                 </div>
         </div>
         <h3 class="offer__title">{{offer_item.title}}</h3>
         <p class="offer__description">{{offer_item.description}}</p>
         <span class="card__link page__more-link link"> 
-            Детальнее
+            <span i18n="@@general__more_details">Детальнее</span>
             <i class="ic ic--more">^</i>
         </span>
     </a>
@@ -109,7 +109,7 @@
   <div class="decor-bar hidden-tablet">
       <div class="col-desktop-2"></div>
       <div class="decor decor--full">
-          <img src="/assets/img/decor.svg">
+          <img src="assets/img/decor.svg">
       </div>
   </div>
 </div>

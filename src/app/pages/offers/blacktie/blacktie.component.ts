@@ -9,7 +9,7 @@ import { HomeService } from '../../../core/services/home.service';
   ]
 })
 export class BlacktieComponent implements OnInit {
-  public blackTie_items;
+  public blackTie_section;
   constructor(
     private homeService: HomeService,
   ) { }
@@ -21,7 +21,7 @@ export class BlacktieComponent implements OnInit {
   createBlackTie() {
     this.homeService.getBlackTie().subscribe(
       (blackTie) => {
-        this.blackTie_items = blackTie;
+        this.blackTie_section = blackTie;
       }
     );
   }

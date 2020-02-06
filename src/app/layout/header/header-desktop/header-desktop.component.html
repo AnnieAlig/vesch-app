@@ -37,12 +37,12 @@
               <li class="top-bar__item">
                 <ul class="lang-switcher">
                     <li>
-                        <a (click)="changeDefaultLanguage('ru')" [ngClass]="{'active': defaultLanguage === 'ru'}"
-                            href="javascript:void(0)" class="top-bar__link text-small">Рус</a>
+                        <a (click)="changeLanguage('ru')" [ngClass]="{'active': language === 'ru'}"
+                        href="../ru{{currentUrl}}" class="top-bar__link text-small">Рус</a>
                     </li>
                     <li>
-                        <a (click)="changeDefaultLanguage('ukr')" [ngClass]="{'active': defaultLanguage === 'ukr'}"
-                        href="javascript:void(0)" class="top-bar__link text-small">Укр</a>
+                        <a (click)="changeLanguage('uk')" [ngClass]="{'active': language === 'uk'}"
+                        href="../uk{{currentUrl}}" class="top-bar__link text-small">Укр</a>
                     </li>
                 </ul>
               </li>
@@ -56,25 +56,25 @@
       </a>
       <ul class="menu-list navbar__menu">
           <li class="navbar__item">
-              <a href="javascript:void(0);" class="navbar__link navbar--dropdown" (click)="collapsed = !collapsed" [ngClass]="{'active': collapsed}" #dropdown_link>
+              <a href="javascript:void(0);" class="navbar__link navbar--dropdown" (click)="collapsed = !collapsed" [ngClass]="{'active': collapsed}" #dropdown_link i18n="@@nav__about_us">
                   О нас
                   <i class="ic ic--dropdown">^</i>
               </a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/promos" class="navbar__link" routerLinkActive="active">Акции</a>
+              <a routerLink="/promos" class="navbar__link" routerLinkActive="active" i18n="@@nav__promos">Акции</a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/services" class="navbar__link" routerLinkActive="active">Сервисы</a>
+              <a routerLink="/services" class="navbar__link" routerLinkActive="active" i18n="@@nav_services">Сервисы</a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/offers" class="navbar__link" routerLinkActive="active">Услуги</a>
+              <a routerLink="/offers" class="navbar__link" routerLinkActive="active" i18n="@@nav_offers">Услуги</a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/loyalty" class="navbar__link" routerLinkActive="active">Товары</a>
+              <a routerLink="/loyalty" class="navbar__link" routerLinkActive="active" i18n="@@nav_items">Товары</a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/points" class="navbar__link" routerLinkActive="active">Пункты приема</a>
+              <a routerLink="/points" class="navbar__link" routerLinkActive="active" i18n="@@nav__points">Пункты приема</a>
           </li>
       </ul>
   </div>
@@ -85,26 +85,26 @@
         <div class="container-inner">
             <div class="row">
                 <div class="col-1"></div>
-                <div class="about-us__title">о нас</div>
+                <div class="about-us__title" i18n="@@nav__about_us">о нас</div>
                 <div class="col-1"></div>
                 <ul class="menu-list about-us__menu col-1">
                     <li class="about-us-item">
-                        <a routerLink="/company" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Компания</a>
+                        <a routerLink="/company" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__company">Компания</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/how-we-work" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Как мы работаем</a>
+                        <a routerLink="/how-we-work" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__how_we_work">Как мы работаем</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/loyalty" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Программа лояльности</a>
+                        <a routerLink="/loyalty" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__loyalty">Программа лояльности</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/news" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Новости</a>
+                        <a routerLink="/news" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__news">Новости</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/social-projects" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Социальные проекты</a>
+                        <a routerLink="/social-projects" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__social_projects">Социальные проекты</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/vacancies" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">Вакансии </a>
+                        <a routerLink="/vacancies" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__vacancies">Вакансии </a>
                     </li>
                     <li class="about-us-item">
                         <a routerLink="/faq" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">FAQ</a>

@@ -45,6 +45,36 @@
             ]
           },
           "configurations": {
+            "ru": {
+              "aot": true,
+              "outputPath": "dist/ru/",
+              "baseHref": "/ru/",
+              "i18nFile": "src/locale/messages.ru.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ru",
+              "i18nMissingTranslation": "error",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ru.ts"
+                }
+              ]
+            },
+            "uk": {
+              "aot": true,
+              "outputPath": "dist/uk/",
+              "baseHref": "/uk/",
+              "i18nFile": "src/locale/messages.uk.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "uk",
+              "i18nMissingTranslation": "error",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.uk.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -79,6 +109,12 @@
           "configurations": {
             "production": {
               "browserTarget": "vesch-app:build:production"
+            },
+            "ru": {
+              "browserTarget": "vesch-app:build:ru"
+            },
+            "uk": {
+              "browserTarget": "vesch-app:build:uk"
             }
           }
         },

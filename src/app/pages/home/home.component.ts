@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public benefits;
   public steps;
   public services;
-  public blackTie_items;
+  public blackTie_section;
 
   @ViewChild('slides') slides: ElementRef;
   @HostListener('window:resize', ['$event'])
@@ -228,7 +228,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   createBlackTie() {
     this.homeService.getBlackTie().subscribe(
       (blackTie) => {
-        this.blackTie_items = blackTie;
+        this.blackTie_section = blackTie;
         this.WOW.sync();
       }
     );

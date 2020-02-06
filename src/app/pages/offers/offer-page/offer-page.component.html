@@ -1,4 +1,4 @@
-<app-breadcrumbs [currentPage]="offer.title" parentPage="Услуги" *ngIf="offer?.title"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="offer.title" parentPage="Услуги" *ngIf="offer?.title" i18n-parentPage="@@nav_offers"></app-breadcrumbs>
 <div class="container-inner" *ngIf="offer">
   <div class="slider__container">
     <div class="slider__inner">
@@ -29,18 +29,18 @@
     <div class="row align-items-center justify-content-between">
         <form class="search__form" #form="ngForm">
             <div class="search__element col-desktop-3 col-4">
-                <input type="text" class="search__input" placeholder="Поиск по каталогу услуг" name="search_input">
+                <input type="text" class="search__input" placeholder="Поиск по каталогу услуг" name="search_input" i18n-placeholder="@@offers__search_text">
                 <i class="ic ic--search"></i>
             </div>
             <div class="col-desktop-1"></div>
             <div class="col-4 col-tablet-2 col-desktop-1 d-flex align-items-center">
-              <p class="searh__label">Сортировать по:</p>
+              <p class="searh__label" i18n="@@offers__sort_text">Сортировать по:</p>
             </div>
             <div class="search__element col-4 col-tablet-2 col-desktop-1">
                 <select name="city_select" class="search__select">
-                  <option value="" selected>Алфавиту</option>
-                  <option value="">Возрастанию цены</option>
-                  <option value="">Убыванию цены</option>
+                  <option value="alphabet" selected i18n="@@offers__sort_alphabet">Алфавиту</option>
+                  <option value="ACD" i18n="@@offers__sort_acd">Возрастанию цены</option>
+                  <option value="DESC" i18n="@@offers__sort_desc">Убыванию цены</option>
                 </select>
                 <i class="ic ic--dropdown">^</i>
             </div>
@@ -84,7 +84,7 @@
             </div>
             <div class="btn btn-secondary-inverted mb35" *ngIf="isMobile && filteredItems.length > 3" (click)="offer.hidden = false">Показать больше услуг</div>
             <div class="decor decor--full hidden-mobile" *ngIf="(filteredItems.length + 1) % 3 === 0 || (filteredItems.length + 2) % 3 === 0">
-                <img src="/assets/img/decor.svg">
+                <img src="assets/img/decor.svg">
             </div>
         </div>
       </div>
@@ -109,7 +109,7 @@
   <div class="decor-bar decor-bar--sm decor-bar--down">
       <div class="col-2"></div>
       <div class="decor decor--full">
-          <img src="/assets/img/decor.svg">
+          <img src="assets/img/decor.svg">
       </div>
   </div>
     
@@ -120,7 +120,7 @@
   <div class="decor-bar decor-bar--sm decor-bar--down">
       <div class="col-1 hidden-mobile hidden-tablet"></div>
       <div class="decor decor--full">
-          <img src="/assets/img/decor.svg">
+          <img src="assets/img/decor.svg">
       </div>
   </div>
   <!-- VIDEO -->
@@ -130,7 +130,7 @@
       <div class="col-2 col-tablet-3 col-desktop-4">
       </div>
       <div class="decor decor--full decor-bar--top">
-          <img src="/assets/img/decor.svg">
+          <img src="assets/img/decor.svg">
       </div>
   </div>
 
@@ -147,7 +147,7 @@
   <div class="decor-bar">
       <div class="col-2"></div>
       <div class="decor decor--full">
-          <img src="/assets/img/decor.svg">
+          <img src="assets/img/decor.svg">
       </div>
   </div>
 </div>

@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { modeOrder } from './callback.data';
-import { modeSubscribe } from './callback.data';
 import { CallbackService} from '../../core/services/callback.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import {DialogService} from 'ng2-bootstrap-modal';
@@ -33,25 +31,13 @@ export class CallbackComponent implements OnInit, AfterViewInit {
   constructor(
     private dialogService: DialogService,
     private callbackService: CallbackService
-  ) {
-    this.modeOrder = modeOrder;
-    this.modeSubscribe = modeSubscribe;
-  }
+  ) {}
 
   ngOnInit() {
-    this.handleData();
   }
 
   ngAfterViewInit() {
     // new WOW().init();
-  }
-
-  handleData() {
-    if (this.mode === 'subscribe') {
-      this.data = this.modeSubscribe;
-    } else {
-      this.data = this.modeOrder;
-    }
   }
 
   onSubmit(form: NgForm) {

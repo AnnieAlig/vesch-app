@@ -1,11 +1,11 @@
 <div class="resume">
   <div class="row align-items-center justify-content-between">
       <div class="col-desktop-3 resume__texts">
-          <h3 class="resume__title">
+          <h3 class="resume__title" i18n="@@vacancies__resume_title">
             Мы ждем вас в нашей дружной команде!
           </h3>
           <p class="resume__description hidden-tablet hidden-mobile">
-            Обращайтесь по телефону {{config?.phone_number_resume}}
+            <span i18n="@@vacancies__resume_description">Обращайтесь по телефону </span> {{config?.phone_number_resume}}
           </p>
       </div>
       <!-- <div class="col-1"></div> -->
@@ -13,19 +13,19 @@
         [ngClass]="{'validated': form.submitted}">
           <input type="text" class="resume__input order-2" placeholder="Ваш Email" name="email" required
             [(ngModel)]="resume.email">
-          <button class="resume__submit btn btn-primary order-4 order-tablet-3 order-desktop-3" type="submit" (click)="checkFile()">Отправить</button>
+          <button class="resume__submit btn btn-primary order-4 order-tablet-3 order-desktop-3" type="submit" (click)="checkFile()" i18n="@@vacancies__resume_send">Отправить</button>
           <label class="resume__file order-3 order-tablet-4 order-desktop-4" *ngIf="!fileName">
             <input type="file" name="file"  accept=".pdf,.doc,.docx" required
               [(ngModel)]="resume.file" (change)="onfileChange($event)">
             <i class="fas fa-paperclip"></i>
-            Прикрепить резюме
+            <span i18n="@@vacancies__resume_add">Прикрепить резюме</span>
           </label>
           <div class="file--uploaded resume__file order-3 order-tablet-4 order-desktop-4" *ngIf="fileName">
             <span class="name">{{fileName}}</span>
             <i class="fas fa-times close" (click)="removeFile()"></i>
           </div>
           <div class="noresume" [ngClass]="{'error': showError}">
-            Заявка не отправлена! Прикрепите резюме
+            <span i18n="@@vacancies__resume_error">Заявка не отправлена! Прикрепите резюме</span>
             <i class="ic ic-close-circle" (click)="showError = !showError"></i>
           </div>
       </form>

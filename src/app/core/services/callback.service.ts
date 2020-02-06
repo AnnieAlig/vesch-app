@@ -11,15 +11,13 @@ const httpOptions = {
 })
 export class CallbackService {
 
-  apiUrl = '';
-
   constructor(
     private http: HttpClient,
   ) { }
 
   send(data: any): Observable<any> {
     console.log(data);
-    // return this.http.post( this.apiUrl, data, httpOptions);
+    // return this.http.post( environment.apiUrl, data, httpOptions);
     return of(new HttpResponse({ status: 200, body: 'success' }));
   }
 }

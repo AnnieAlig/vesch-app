@@ -1,63 +1,63 @@
 [
     {
-        "img": "/assets/img/promos/promos-1.png",
-        "img_mobile": "/assets/img/promos/promos-1.png",
+        "img": "assets/img/promos/promos-1.png",
+        "img_mobile": "assets/img/promos/promos-1.png",
         "title": "всем до - 50% на экочистку!",
         "active": true,
         "excerpt": "У нас настоящая инопланетная акция! Ведь на нашей планете такого еще не было. До -50% ВСЕМ! Верхняя одежда, длинные платья, белые блузы, рубашки, кофты и кардиганы - мы уверенны у вас есть, что почистить, и пришло время — это сделать! Мы используем только экофрендли технологии.",
         "link": "/promos/1"
     },
     {
-        "img": "/assets/img/promos/promos-2.png",
-        "img_mobile": "/assets/img/promos/promos-2.png",
+        "img": "assets/img/promos/promos-2.png",
+        "img_mobile": "assets/img/promos/promos-2.png",
         "title": "-25% на изделия из меха",
         "active": true,
         "excerpt": "У нас настоящая инопланетная акция! Ведь на нашей планете такого еще не было. До -50% ВСЕМ! Верхняя одежда, длинные платья, белые блузы, рубашки, кофты и кардиганы - мы уверенны у вас есть, что почистить, и пришло время — это сделать! Мы используем только экофрендли технологии.",
         "link": ""
     },
     {
-        "img": "/assets/img/promos/promos-3.png",
-        "img_mobile": "/assets/img/promos/promos-3.png",
+        "img": "assets/img/promos/promos-3.png",
+        "img_mobile": "assets/img/promos/promos-3.png",
         "title": "-25% на изделия из меха",
         "active": true,
         "excerpt": "У нас настоящая инопланетная акция! Ведь на нашей планете такого еще не было. До -50% ВСЕМ! Верхняя одежда, длинные платья, белые блузы, рубашки, кофты и кардиганы - мы уверенны у вас есть, что почистить, и пришло время — это сделать! Мы используем только экофрендли технологии.",
         "link": ""
     },
     {
-        "img": "/assets/img/promos/promos-4.png",
-        "img_mobile": "/assets/img/promos/promos-4.png",
+        "img": "assets/img/promos/promos-4.png",
+        "img_mobile": "assets/img/promos/promos-4.png",
         "title": "всем до - 50% на экочистку!",
         "active": true,
         "excerpt": "У нас настоящая инопланетная акция! Ведь на нашей планете такого еще не было. До -50% ВСЕМ! Верхняя одежда, длинные платья, белые блузы, рубашки, кофты и кардиганы - мы уверенны у вас есть, что почистить, и пришло время — это сделать! Мы используем только экофрендли технологии.",
         "link": "/promos/1"
     },
     {
-        "img": "/assets/img/promos/promos-5.png",
-        "img_mobile": "/assets/img/promos/promos-5.png",
+        "img": "assets/img/promos/promos-5.png",
+        "img_mobile": "assets/img/promos/promos-5.png",
         "title": "всем до - 50% на экочистку!",
         "active": true,
         "excerpt": "У нас настоящая инопланетная акция! Ведь на нашей планете такого еще не было. До -50% ВСЕМ! Верхняя одежда, длинные платья, белые блузы, рубашки, кофты и кардиганы - мы уверенны у вас есть, что почистить, и пришло время — это сделать! Мы используем только экофрендли технологии.",
         "link": "/promos/1"
     },
     {
-        "img": "/assets/img/promos/promos-6.png",
-        "img_mobile": "/assets/img/promos/promos-6.png",
+        "img": "assets/img/promos/promos-6.png",
+        "img_mobile": "assets/img/promos/promos-6.png",
         "title": "-25% на изделия из меха",
         "active": true,
         "excerpt": "У нас настоящая инопланетная акция! Ведь на нашей планете такого еще не было. До -50% ВСЕМ! Верхняя одежда, длинные платья, белые блузы, рубашки, кофты и кардиганы - мы уверенны у вас есть, что почистить, и пришло время — это сделать! Мы используем только экофрендли технологии.",
         "link": ""
     },
     {
-        "img": "/assets/img/promos/promos-7.png",
-        "img_mobile": "/assets/img/promos/promos-7.png",
+        "img": "assets/img/promos/promos-7.png",
+        "img_mobile": "assets/img/promos/promos-7.png",
         "title": "-25% на изделия из меха",
         "active": true,
         "excerpt": "У нас настоящая инопланетная акция! Ведь на нашей планете такого еще не было. До -50% ВСЕМ! Верхняя одежда, длинные платья, белые блузы, рубашки, кофты и кардиганы - мы уверенны у вас есть, что почистить, и пришло время — это сделать! Мы используем только экофрендли технологии.",
         "link": ""
     },
     {
-        "img": "/assets/img/promos/promos-8.png",
-        "img_mobile": "/assets/img/promos/promos-8.png",
+        "img": "assets/img/promos/promos-8.png",
+        "img_mobile": "assets/img/promos/promos-8.png",
         "title": "всем до - 50% на экочистку!",
         "active": false,
         "excerpt": "У нас настоящая инопланетная акция! Ведь на нашей планете такого еще не было. До -50% ВСЕМ! Верхняя одежда, длинные платья, белые блузы, рубашки, кофты и кардиганы - мы уверенны у вас есть, что почистить, и пришло время — это сделать! Мы используем только экофрендли технологии.",

@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { LocalStorageService } from 'ngx-webstorage';
-
-let apiUrl = '../assets/backend-data/';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +12,10 @@ export class ConfigService {
 
   constructor(
     private http: HttpClient,
-    private $localStorage: LocalStorageService
-  ) {
-    if (this.$localStorage.retrieve('default-language') &&
-    this.$localStorage.retrieve('default-language')  === 'ukr') {
-      apiUrl += 'ukr/';
-    }
-  }
+  ) {}
 
   getConfig(): Observable<any> {
-    return this.http.get(apiUrl + 'config.json');
+    return this.http.get(environment.apiUrl + 'config.json');
   }
 
   store(data: any) {

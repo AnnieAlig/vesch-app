@@ -1,10 +1,10 @@
-<app-breadcrumbs [currentPage]="offer.title" parentPage="Услуги" *ngIf="offer?.title"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="offer.title" parentPage="Услуги" *ngIf="offer?.title" i18n-parentPage="@@nav_offers"></app-breadcrumbs>
 <div class="container-inner" *ngIf="offer">
   
   <div class="row position-relative">
         <div class="col-desktop-1"></div>
         <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
-            <p>услуги</p>
+            <p i18n="@@nav_offers">услуги</p>
         </div>
     </div>
 
@@ -24,10 +24,10 @@
       <div class="row">
           <div class="col-desktop-1"></div>
           <h2 class="col-tablet-3 col-desktop-3 steps__main-title">
-              Мобильная экочистка &ndash; как это работает
+              {{offer?.page_title}}
           </h2>
           <div class="col-tablet-2 col-desktop-2 steps__image">
-              <img class="wow slideInLeft" data-wow-duration="1s" src="/assets/img/home/mobile_bus.png" alt="mobile cleaning">
+              <img class="wow slideInLeft" data-wow-duration="1s" src="assets/img/home/mobile_bus.png" alt="mobile cleaning">
           </div>
           <div class="page__brand_text-rotated hidden-mobile">
               <p>как это работает</p>
@@ -41,12 +41,12 @@
           </div>
           <div class="col-tablet-2 col-desktop-1"></div>
           <div class="col-tablet-2 col-desktop-1 mobile-app">
-              <h3 class="mobile-app__title">Скачайте приложение через</h3>
+              <h3 class="mobile-app__title" i18n="@@general__download_app">Скачайте приложение через</h3>
               <a href="" class="mobile-app__link">
-                  <img src="/assets/img/home/apple@2x.png" srcset="/assets/img/home/apple@1x.png 1x, /assets/img/home/apple@2x.png 2x, /assets/img/home/apple@3x.png 3x" alt="app store">
+                  <img src="assets/img/home/apple@2x.png" srcset="assets/img/home/apple@1x.png 1x, /assets/img/home/apple@2x.png 2x, /assets/img/home/apple@3x.png 3x" alt="app store">
               </a>
               <a href="" class="mobile-app__link">
-                  <img src="/assets/img/home/google@2x.png" srcset="/assets/img/home/google@1x.png 1x, /assets/img/home/google@2x.png 2x, /assets/img/home/google@3x.png 3x" alt="google play">
+                  <img src="assets/img/home/google@2x.png" srcset="assets/img/home/google@1x.png 1x, /assets/img/home/google@2x.png 2x, /assets/img/home/google@3x.png 3x" alt="google play">
               </a>
           </div>
       </div>

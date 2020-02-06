@@ -7,17 +7,17 @@
         <div class="col-3 hidden-mobile">
             <ul class="menu-list map__sort">
                 <li class="navbar__item">
-                    <a href="javascript:void(0);" class="navbar__link" (click)="filter('all')" [ngClass]="{'active': filterOption === 'all'}">
+                    <a href="javascript:void(0);" class="navbar__link" (click)="filter('all')" [ngClass]="{'active': filterOption === 'all'}" i18n="@@map__all_locations">
                         Все локации
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="javascript:void(0);" class="navbar__link" (click)="filter('point')" [ngClass]="{'active': filterOption === 'point'}">
+                    <a href="javascript:void(0);" class="navbar__link" (click)="filter('point')" [ngClass]="{'active': filterOption === 'point'}" i18n="@@map__points">
                         Приемные пункты
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="javascript:void(0);" class="navbar__link" (click)="filter('atm')" [ngClass]="{'active': filterOption === 'atm'}">
+                    <a href="javascript:void(0);" class="navbar__link" (click)="filter('atm')" [ngClass]="{'active': filterOption === 'atm'}" i18n="@@map__atm">
                         Чистоматы
                     </a>
                 </li>
@@ -27,12 +27,12 @@
             <ul class="menu-list map__view">
                 <li class="menu-list-item navbar__item">
                     <a href="" class="menu-list-link navbar__link" 
-                        (click)="setMode('map')" [ngClass]="{'active': mode === 'map'}">Карта</a>
+                        (click)="setMode('map')" [ngClass]="{'active': mode === 'map'}" i18n="@@map__map">Карта</a>
                 </li>
                 <li class="navbar__item">
                     <a href="" class="navbar__link" 
                         (click)="setMode('list')"
-                        [ngClass]="{'active': mode === 'list'}">Список</a>
+                        [ngClass]="{'active': mode === 'list'}" i18n="@@map__list">Список</a>
                 </li>
             </ul>
         </div>
@@ -44,8 +44,10 @@
         <div class="map__list row" *ngIf="mode === 'list'" [@fadeInOut]>
             <div class="map__list-item" *ngFor="let item of mapList">
                 <div class="map__list-address">{{item.address}}</div>
-                <div class="map__list-schedule">Время работы {{item.schedule}}</div>
-                <a href="{{item.link}}" class="map__list-link">Как добраться <i class="ic--arrow"></i></a>
+                <div class="map__list-schedule">
+                    <span i18n="@@map__working_hours">Время работы </span>  {{item.schedule}}</div>
+                <a href="{{item.link}}" class="map__list-link">
+                    <span i18n="@@map__how_to_get">Как добраться </span> <i class="ic--arrow"></i></a>
             </div>
         </div>
     </div>

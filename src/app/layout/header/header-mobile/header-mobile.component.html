@@ -33,19 +33,19 @@
                   <!-- <div class="col-3"></div> -->
                   <ul class="lang-switcher">
                       <li>
-                          <a (click)="changeDefaultLanguage('ru')" [ngClass]="{'active': defaultLanguage === 'ru'}"
-                            href="javascript:void(0)" class="text-small">Рус</a>
+                          <a (click)="changeLanguage('ru')" [ngClass]="{'active': language === 'ru'}"
+                            href="../ru{{currentUrl}}" class="text-small">Рус</a>
                       </li>
                       <li>
-                          <a (click)="changeDefaultLanguage('ukr')" [ngClass]="{'active': defaultLanguage === 'ukr'}"
-                            href="javascript:void(0)" class="text-small">Укр</a>
+                          <a (click)="changeLanguage('uk')" [ngClass]="{'active': language === 'uk'}"
+                            href="../uk{{currentUrl}}" class="text-small">Укр</a>
                       </li>
                   </ul>
               </div>
               <div class="mobile__search-bar hidden-tablet">
                   <label for="" class="search-label"> 
                       <input type="text" class="search-input" placeholder="Поиск по сайту..."
-                        [(ngModel)]="searchInput" name="search">
+                        [(ngModel)]="searchInput" name="search" i18n-placeholder="@@search__placeholder">
                       <i class="ic ic--search ic--mobile" (click)="search()"></i>
                   </label>
               </div>
@@ -56,59 +56,59 @@
                               <a class="mobile__link text-small" href="tel:{{number | phone}}">
                                   <i class="ic ic--phone ic--mobile"></i>
                                   {{number}}
-                                  <span class="mobile__link--colored">Позвонить</span>
+                                  <span class="mobile__link--colored" i18n="@@general__call">Позвонить</span>
                               </a>
                           </li>
                       </ul>
                       <ul class="menu-list mobile__menu-main">
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/promos" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Акции</a>
+                                  <a routerLink="/promos" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__promos">Акции</a>
                               </h5>
                           </li>
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/services" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Сервисы</a>
+                                  <a routerLink="/services" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav_services">Сервисы</a>
                               </h5>
                           </li>
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/offers" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Услуги</a>
+                                  <a routerLink="/offers" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav_offers">Услуги</a>
                               </h5>
                           </li>
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/loyalty" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Товары</a>
+                                  <a routerLink="/loyalty" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav_items">Товары</a>
                               </h5>
                           </li>
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/points" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Пункты приёма</a>
+                                  <a routerLink="/points" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__points">Пункты приёма</a>
                               </h5>
                           </li>
                       </ul>
-                      <h5 class="mobile__title">О нас</h5>
+                      <h5 class="mobile__title" i18n="@@nav__about_us">О нас</h5>
                       <ul class="menu-list mobile__menu-about">    
                           <li class="mobile__menu-item">
-                              <a routerLink="/company" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Компания</a>
+                              <a routerLink="/company" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__company">Компания</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/how-we-work" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Как мы работаем</a>
+                              <a routerLink="/how-we-work" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__how_we_work">Как мы работаем</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/loyalty" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Программа лояльности</a>
+                              <a routerLink="/loyalty" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__loyalty">Программа лояльности</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/loyalty" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Товары</a>
+                              <a routerLink="/loyalty" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav_items">Товары</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/news" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Новости</a>
+                              <a routerLink="/news" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__news">Новости</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/social-projects" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Социальные проекты</a>
+                              <a routerLink="/social-projects" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__social_projects">Социальные проекты</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/vacancies" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">Вакансии </a>
+                              <a routerLink="/vacancies" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__vacancies">Вакансии </a>
                           </li>
                           <li class="mobile__menu-item">
                               <a routerLink="/faq" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">FAQ</a>
@@ -123,10 +123,10 @@
               </div>
           </div>
           <div class="mobile__footer" *ngIf="config?.apps?.length">
-              <p class="mb25">Скачайте приложение через</p>
+              <p class="mb25" i18n="@@general__download_app">Скачайте приложение через</p>
               <a [href]="app?.link" class="mobile-app__link" *ngFor="let app of config?.apps">
-                  <img *ngIf="app?.name === 'app_store'" src="/assets/img/home/apple_white.png" [alt]="app?.name">
-                  <img *ngIf="app?.name === 'google_play'" src="/assets/img/home/google_white.png" [alt]="app?.name">
+                  <img *ngIf="app?.name === 'app_store'" src="assets/img/home/apple_white.png" [alt]="app?.name">
+                  <img *ngIf="app?.name === 'google_play'" src="assets/img/home/google_white.png" [alt]="app?.name">
               </a>
           </div>
       </div>
@@ -148,8 +148,8 @@
   </div>
   <div class="navbar">
       <a routerLink="/" class="navbar__brand">
-          <img class="hidden-mobile" src="/assets/img/brand/logo.svg" alt="VESCH">
-          <img class="hidden-tablet hidden-desktop" src="/assets/img/brand/watermark.svg" alt="VESCH">
+          <img class="hidden-mobile" src="assets/img/brand/logo.svg" alt="VESCH">
+          <img class="hidden-tablet hidden-desktop" src="assets/img/brand/watermark.svg" alt="VESCH">
       </a>
       <ul class="menu-list navbar__menu">
           <!-- <li class="navbar__item hidden-mobile">

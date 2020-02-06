@@ -1,4 +1,4 @@
-<app-breadcrumbs [currentPage]="offerItem.name" parentPage="Услуги" [subParent]="offerItem?.parent" *ngIf="offerItem?.name"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="offerItem.name" parentPage="Услуги" [subParent]="offerItem?.parent" *ngIf="offerItem?.name" i18n-parentPage="@@nav_offers"></app-breadcrumbs>
 <div class="container-inner" *ngIf="offerItem">
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
@@ -17,19 +17,20 @@
     <div class="col-4 col-tablet-2 col-desktop-3">
       <div class="item__info">
         <h3 class="item__name">{{offerItem.name}}</h3>
-        <p class="item__text h5">Цена: 
+        <p class="item__text h5">
+          <span i18n="@@cart__price">Цена: </span>
           <span class="item__price">{{offerItem.price}} {{offerItem.currency}}</span>
         </p>
         <div class="item__text"> 
-          <p class="h5">Количество:</p>
+          <p class="h5" i18n="@@cart__quantity">Количество:</p>
           <div class="quantity-box">
             <i class="ic ic--plus" (click)="changeQuantity('remove')">-</i>
             <div class="number">{{offerItem?.quantity}}</div>
             <i class="ic ic--plus" (click)="changeQuantity('add')">+</i>
           </div>
         </div>
-        <button class="item__btn btn btn-primary" (click)="addToCart(offerItem)">Добавить в корзину</button>
-        <p class="additional-text">*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</p>
+        <button class="item__btn btn btn-primary" (click)="addToCart(offerItem)" i18n="@@cart__add_to_cart">Добавить в корзину</button>
+        <p class="additional-text"i18n="@@cart__additional_text">*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</p>
       </div>
     </div>
   </div>
@@ -41,7 +42,7 @@
         </div>
         <h4 class="item__name">{{item.name}}</h4>
       </a>
-      <button class="item__btn btn btn-primary" (click)="navigateToParent()">Вся одежда</button>
+      <button class="item__btn btn btn-primary" (click)="navigateToParent()">{{offerItem?.to_parent_btn}}</button>
   </div>
 
   <div class="row extra-items" *ngIf="offerItem.extra">
@@ -60,13 +61,13 @@
   <div class="decor-bar decor-bar--sm hidden-mobile">
       <div class="col-tablet-3 col-desktop-5"></div>
       <div class="decor decor--full">
-          <img src="/assets/img/decor.svg">
+          <img src="assets/img/decor.svg">
       </div>
   </div>
   <div class="decor-bar hidden-tablet hidden-mobile">
       <div class="col-4"></div>
       <div class="decor decor--full">
-          <img src="/assets/img/decor.svg">
+          <img src="assets/img/decor.svg">
       </div>
   </div>
 </div>

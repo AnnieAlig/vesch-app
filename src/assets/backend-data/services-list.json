@@ -3,126 +3,126 @@
         "title": "Вакуумирование",
         "description": "Вакуумирование сохранит вещи и значительно сэкономит место в шкафу между сезонами",
         "link": "",
-        "img": "/assets/img/services/list/service_1.png",
+        "img": "assets/img/services/list/service_1.png",
         "alt": ""
     },
     {
         "title": "Пилинг",
         "description": "Пилинг решит проблему образования катышков и вернёт любимой вещи новый вид",
         "link": "",
-        "img": "/assets/img/services/list/service_2.png",
+        "img": "assets/img/services/list/service_2.png",
         "alt": ""
     },
     {
         "title": "Водоотталкивающая пропитка",
         "description": "Дождь — не проблема, если есть водоотталкивающая пропитка от компании VESCH!",
         "link": "",
-        "img": "/assets/img/services/list/service_3.png",
+        "img": "assets/img/services/list/service_3.png",
         "alt": ""
     },
     {
         "title": "Чехление вещей",
         "description": "Персональный чехол защитит почищенные вещи в дороге или при длительном хранении.",
         "link": "",
-        "img": "/assets/img/services/list/service_4.png",
+        "img": "assets/img/services/list/service_4.png",
         "alt": ""
     },
     {
         "title": "Антистатическая обработка",
         "description": "Профессиональная антистатическая обработка решит проблему электризации вашей одежды.",
         "link": "",
-        "img": "/assets/img/services/list/service_5.png",
+        "img": "assets/img/services/list/service_5.png",
         "alt": ""
     },
     {
         "title": "Обработка от моли",
         "description": "Одна обработка — и вы навсегда обезопасите любимую шубку от моли!",
         "link": "",
-        "img": "/assets/img/services/list/service_6.png",
+        "img": "assets/img/services/list/service_6.png",
         "alt": ""
     },
     {
         "title": "Глажка торжественной и карнавальной одежды",
         "description": "Экономьте свои силы с профессиональной глажкой вещей от эко-фабрики VESCH!",
         "link": "",
-        "img": "/assets/img/services/list/service_1.png",
+        "img": "assets/img/services/list/service_1.png",
         "alt": ""
     },
     {
         "title": "Полировка меха",
         "description": "Эта процедура выполняется для улучшения внешнего вида меха и придания ему блеска.",
         "link": "",
-        "img": "/assets/img/services/list/service_8.png",
+        "img": "assets/img/services/list/service_8.png",
         "alt": ""
     },
     {
         "title": "Ремонт одежды",
         "description": "Мы предоставляем спектр услуг по ремонту одежды.",
         "link": "/services/1",
-        "img": "/assets/img/services/list/service_9.png",
+        "img": "assets/img/services/list/service_9.png",
         "alt": ""
     },
     {
         "title": "Полная покраска изделия (из кожи / замши)",
         "description": "Покраска изделий из кожи - восстановление внешнего вида изделия из натуральной кожи",
         "link": "",
-        "img": "/assets/img/services/list/service_10.png",
+        "img": "assets/img/services/list/service_10.png",
         "alt": ""
     },
     {
         "title": "Антибактериальная обработка обуви озоном",
         "description": "Дезинфекция озоном включает антисептическую, антибактериальную, антигрибковую обработку",
         "link": "",
-        "img": "/assets/img/services/list/service_11.png",
+        "img": "assets/img/services/list/service_11.png",
         "alt": ""
     },
     {
         "title": "Глассаж обуви из гладкой кожи",
         "description": "Производится с помощью профессионального немецкого оборудования Hardo",
         "link": "",
-        "img": "/assets/img/services/list/service_12.png",
+        "img": "assets/img/services/list/service_12.png",
         "alt": ""
     },
     {
         "title": "Покраска ранта",
         "description": "Покраска ранта обуви - это процесс ренновации наружной части низа обуви, который соединяет верх обуви с подошвой",
         "link": "",
-        "img": "/assets/img/services/list/service_13.png",
+        "img": "assets/img/services/list/service_13.png",
         "alt": ""
     },
     {
         "title": "Ремонт обуви",
         "description": "Профессиональное устранение деффектов изделия, итальянские материалы, немецкое качество",
         "link": "",
-        "img": "/assets/img/services/list/service_14.png",
+        "img": "assets/img/services/list/service_14.png",
         "alt": ""
     },
     {
         "title": "Black Tie",
         "description": "В рамках услуги Black Tie на каждом этапе ренновации вещь будет под личным контролем главного технолога",
         "link": "",
-        "img": "/assets/img/services/list/service_15.png",
+        "img": "assets/img/services/list/service_15.png",
         "alt": ""
     },
     {
         "title": "Персональный технолог при заказе услуги Black Tie",
         "description": "Персональный чехол защитит почищенные вещи в дороге или при длительном хранении.",
         "link": "",
-        "img": "/assets/img/services/list/service_16.png",
+        "img": "assets/img/services/list/service_16.png",
         "alt": ""
     },
     {
         "title": "Мобильная экочистка",
         "description": "Мы создали для вас невероятно удобный сервис выездного обслуживания",
         "link": "/offers/mobile-eco-cleaning",
-        "img": "/assets/img/services/list/service_17.png",
+        "img": "assets/img/services/list/service_17.png",
         "alt": ""
     },
     {
         "title": "Обработка от моли",
         "description": "Одна обработка — и вы навсегда обезопасите любимую шубку от моли!",
         "link": "",
-        "img": "/assets/img/services/list/service_18.png",
+        "img": "assets/img/services/list/service_18.png",
         "alt": ""
     }
 ]

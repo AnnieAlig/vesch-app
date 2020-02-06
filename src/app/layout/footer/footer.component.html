@@ -13,16 +13,16 @@
           </div>
           <div class="col-tablet-3 hidden-mobile hidden-desktop"></div>
           <div class="col-4 col-tablet-2 col-desktop-1 mt40 order-3 order-tablet-3 order-desktop-1">
-              <h5 class="footer__title">Свяжитесь с нами</h5>
-              <p class="footer__subtitle">По телефону</p>
+              <h5 class="footer__title" i18n="@@footer__contact_us">Свяжитесь с нами</h5>
+              <p class="footer__subtitle" i18n="@@footer__by_phone">По телефону</p>
               <ng-container *ngFor="let number of config?.phone_numbers_footer">
                     <a href="tel:{{number | phone}}" class="footer__link">{{number}}</a>
-                    <a href="tel:{{number | phone}}" class="btn btn-primary hidden-tablet hidden-desktop footer__btn--mobile">Позвонить</a>
+                    <a href="tel:{{number | phone}}" class="btn btn-primary hidden-tablet hidden-desktop footer__btn--mobile" i18n="@@general__call">Позвонить</a>
               </ng-container>
-              <p class="footer__subtitle">Пишите нам на почту</p>
+              <p class="footer__subtitle" i18n>Пишите нам на почту</p>
               <a href="" class="footer__link">{{config?.email}}</a>
-              <a href="" class="btn btn-primary hidden-tablet hidden-desktop footer__btn--mobile">Написать</a>
-              <p class="footer__subtitle" *ngIf="config?.social_links?.length">Мы в соцсетях</p>
+              <a href="" class="btn btn-primary hidden-tablet hidden-desktop footer__btn--mobile" i18n="@@footer__write">Написать</a>
+              <p class="footer__subtitle" *ngIf="config?.social_links?.length" i18n="@@footer__in_social">Мы в соцсетях</p>
               <div class="footer__social-container" *ngIf="config?.social_links?.length">
                   <a [href]="social?.link" class="footer__social social" *ngFor="let social of config?.social_links">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.16 28">
@@ -47,22 +47,22 @@
           </div>
           <div class="col-desktop-1 order-desktop-2"></div>
           <div class="col-4 col-tablet-2 col-desktop-1 mt40 order-1 order-tablet-1 order-desktop-2">
-              <h5 class="footer__title">О нас</h5>
+              <h5 class="footer__title" i18n="@@nav__about_us">О нас</h5>
               <ul class="footer__nav">    
                   <li class="footer__nav-item">
-                      <a routerLink="/company" class="footer__nav-link">Компания</a>
+                      <a routerLink="/company" class="footer__nav-link" i18n="@@nav__company">Компания</a>
                   </li>
                   <li class="footer__nav-item">
-                      <a routerLink="/how-we-work" class="footer__nav-link">Как мы работаем</a>
+                      <a routerLink="/how-we-work" class="footer__nav-link" i18n="@@nav__how_we_work">Как мы работаем</a>
                   </li>
                   <li class="footer__nav-item">
-                      <a routerLink="/loyalty" class="footer__nav-link">Программа лояльности</a>
+                      <a routerLink="/loyalty" class="footer__nav-link" i18n="@@nav__loyalty">Программа лояльности</a>
                   </li>
                   <li class="footer__nav-item">
-                      <a routerLink="/news" class="footer__nav-link">Новости</a>
+                      <a routerLink="/news" class="footer__nav-link" i18n="@@nav__news">Новости</a>
                   </li>
                   <li class="footer__nav-item">
-                      <a routerLink="/vacancies" class="footer__nav-link">Вакансии </a>
+                      <a routerLink="/vacancies" class="footer__nav-link" i18n="@@nav__vacancies">Вакансии </a>
                   </li>
                   <li class="footer__nav-item">
                       <a routerLink="/faq" class="footer__nav-link">FAQ</a>
@@ -73,33 +73,33 @@
               <ul class="footer__nav">
                   <li class="footer__nav-item">
                       <h5 class="footer__title">
-                          <a routerLink="/promos" class="footer__nav-link">Акции</a>
+                          <a routerLink="/promos" class="footer__nav-link" i18n="@@nav__promos">Акции</a>
                       </h5>
                   </li>
                   <li class="footer__nav-item">
                       <h5 class="footer__title">
-                          <a routerLink="/services" class="footer__nav-link">Сервисы</a>
+                          <a routerLink="/services" class="footer__nav-link" i18n="@@nav_services">Сервисы</a>
                       </h5>
                   </li>
                   <li class="footer__nav-item">
                       <h5 class="footer__title">
-                          <a routerLink="/offers" class="footer__nav-link">Услуги</a>
+                          <a routerLink="/offers" class="footer__nav-link" i18n="@@nav_offers">Услуги</a>
                       </h5>
                   </li>
                   <li class="footer__nav-item">
                       <h5 class="footer__title">
-                          <a routerLink="/loyalty" class="footer__nav-link">Программа лояльности</a>
+                          <a routerLink="/loyalty" class="footer__nav-link" i18n="@@nav__loyalty">Программа лояльности</a>
                       </h5>
                   </li>
                   <li class="footer__nav-item">
                       <h5 class="footer__title">
-                          <a routerLink="/points" class="footer__nav-link">Пункты приёма</a>
+                          <a routerLink="/points" class="footer__nav-link" i18n="@@nav__points">Пункты приёма</a>
                       </h5>
                   </li>
               </ul>
           </div>
           <div class="col-tablet-2 col-desktop-1 mt40 order-4" *ngIf="config?.apps?.length">
-              <h5 class="footer__title mb25">Скачайте приложение через</h5>
+              <h5 class="footer__title mb25" i18n="@@general__download_app">Скачайте приложение через</h5>
               <a [href]="app?.link" class="mobile-app__link" *ngFor="let app of config?.apps">
                   <img *ngIf="app?.name === 'app_store'" src="assets/img/home/apple@2x.png" srcset="assets/img/home/apple@1x.png 1x, assets/img/home/apple@2x.png 2x, assets/img/home/apple@3x.png 3x" [alt]="app?.name">
                   <img *ngIf="app?.name === 'google_play'" src="assets/img/home/google@2x.png" srcset="assets/img/home/google@1x.png 1x, assets/img/home/google@2x.png 2x, assets/img/home/google@3x.png 3x" [alt]="app?.name">

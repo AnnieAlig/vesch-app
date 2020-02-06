@@ -1,10 +1,10 @@
-<app-breadcrumbs [currentPage]="promo.title" parentPage="Акции" *ngIf="promo?.title"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="promo.title" parentPage="Акции" *ngIf="promo?.title" i18n-parentPage="@@nav__promos"></app-breadcrumbs>
 <div class="container-inner" *ngIf="promo">
   
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
     <div class="page__brand_text-rotated hidden-mobile">
-        <p>акции</p>
+        <p i18n="@@nav__promos">акции</p>
     </div>
   </div>
   <div class="page__image">
@@ -28,7 +28,7 @@
   <div class="decor-bar decor-on-top decor-to-right hidden-mobile mt40">
     <div class="col-desktop-5 col-2"></div>
     <div class="decor decor--full">
-      <img src="/assets/img/decor.svg">
+      <img src="assets/img/decor.svg">
     </div>
   </div>
 </div>

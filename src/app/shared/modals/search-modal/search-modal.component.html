@@ -23,10 +23,10 @@
               <div class="col-4 search">
                   <label for="" class="search-label"> 
                       <input type="text" class="search-input" placeholder="Поиск по сайту..."
-                        [(ngModel)]="searchInput" name="search">
+                        [(ngModel)]="searchInput" name="search" i18n-placeholder="@@search__placeholder">
                       <i class="ic ic--search ic--mobile" (click)="search()"></i>
                   </label>
-                  <p class="search-help hidden-tablet">Нажмите enter для поиска или esc, чтобы выйти</p>
+                  <p class="search-help hidden-tablet" i18n="@@search__help_text">Нажмите enter для поиска или esc, чтобы выйти</p>
                 </div>
             </div>
           </div>

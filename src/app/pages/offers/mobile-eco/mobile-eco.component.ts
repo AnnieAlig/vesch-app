@@ -13,25 +13,19 @@ import { HomeService } from '../../../core/services/home.service';
 export class MobileEcoComponent implements OnInit {
   public offer: any;
   public WOW: WOW;
-  public steps;
 
   constructor(
     private offersService: OffersService,
-    private homeService: HomeService
   ) { }
 
   ngOnInit() {
     this.offersService.getPage('mobile-eco').subscribe( (offer) => {
-      this.offer = offer;
-      this.WOW = new WOW();
-      this.WOW.init();
-    });
-    this.homeService.getSteps().subscribe(
-      (steps) => {
-        this.steps = steps;
-        this.WOW.sync();
+      if (offer) {
+        this.offer = offer;
+        this.WOW = new WOW();
+        this.WOW.init();
       }
-    );
+    });
   }
 
 }

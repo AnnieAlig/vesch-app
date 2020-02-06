@@ -465,7 +465,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/offers/mobile-eco/mobile-eco.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="general__more_details" datatype="html">
@@ -551,11 +551,23 @@
       <trans-unit id="general__view_price" datatype="html">
         <source>Смотреть прайс</source>
         <target>Дивитись прайс</target>
-        
-        
-        
-        
-      <context-group purpose="location"><context context-type="sourcefile">app/pages/home/home.component.html</context><context context-type="linenumber">166</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/pages/offers/offers.component.html</context><context context-type="linenumber">24</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/pages/offers/blacktie-page/blacktie-page.component.html</context><context context-type="linenumber">84</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/pages/services/services.component.html</context><context context-type="linenumber">17</context></context-group></trans-unit>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/home/home.component.html</context>
+          <context context-type="linenumber">166</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/offers/offers.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/offers/blacktie-page/blacktie-page.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/services/services.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="homepage__all_offers" datatype="html">
         <source>Все услуги</source>
         <target>Усі послуги</target>
@@ -718,6 +730,126 @@
           <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="cart__title" datatype="html">
+        <source>Оформление заказа</source>
+        <target state="new">Оформление заказа</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__order" datatype="html">
+        <source>заказ</source>
+        <target state="new">заказ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__contact_details" datatype="html">
+        <source>
+                контактные данные
+              </source>
+        <target state="new">
+                контактные данные
+              </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__your_first_name" datatype="html">
+        <source>Ваше имя</source>
+        <target state="new">Ваше имя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__your_last_name" datatype="html">
+        <source>Ваша фамилия</source>
+        <target state="new">Ваша фамилия</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__delivery_type" datatype="html">
+        <source>
+                  выберите способ доставки
+              </source>
+        <target state="new">
+                  выберите способ доставки
+              </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__delivery_courier" datatype="html">
+        <source>Курьером до двери</source>
+        <target state="new">Курьером до двери</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__delivery_other" datatype="html">
+        <source>Другой вариант</source>
+        <target state="new">Другой вариант</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__address" datatype="html">
+        <source>
+                адрес доставки
+            </source>
+        <target state="new">
+                адрес доставки
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__street" datatype="html">
+        <source>Улица</source>
+        <target state="new">Улица</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__house" datatype="html">
+        <source>Дом</source>
+        <target state="new">Дом</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__floor" datatype="html">
+        <source>Этаж</source>
+        <target state="new">Этаж</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__flat" datatype="html">
+        <source>Кв.</source>
+        <target state="new">Кв.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="cart__quantity_items" datatype="html">
         <source>Количество вещей:</source>
         <target>Кількість речей:</target>
@@ -726,9 +858,21 @@
           <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="cart__total_price" datatype="html">
+        <source>Общая стоимость:
+            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span>"/><x id="INTERPOLATION" equiv-text="{{cart?.price}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/>
+          </source>
+        <target state="new">Общая стоимость:
+            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span>"/><x id="INTERPOLATION" equiv-text="{{cart?.price}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/>
+          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="cart__quantity" datatype="html">
         <source>Количество:</source>
-        <target>Кількість речей:</target>
+        <target>Кількість:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/offers/offer-item-page/offer-item-page.component.html</context>
           <context context-type="linenumber">25</context>
@@ -740,7 +884,7 @@
       </trans-unit>
       <trans-unit id="cart__additional_text" datatype="html">
         <source>*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</source>
-          <target>*  Оцінка вартості вашого замовлення розрахована за базовими тарифами і є попередньою. Остаточна вартість буде сформована після оцінки виробів при прийомі.</target>
+        <target>*  Оцінка вартості вашого замовлення розрахована за базовими тарифами і є попередньою. Остаточна вартість буде сформована після оцінки виробів при прийомі.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
           <context context-type="linenumber">87</context>
@@ -748,6 +892,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/offers/offer-item-page/offer-item-page.component.html</context>
           <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__submit_order" datatype="html">
+        <source>Оформить заказ</source>
+        <target state="new">Оформить заказ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">90</context>
         </context-group>
       </trans-unit>
       <trans-unit id="offers__search_text" datatype="html">
@@ -808,6 +960,74 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/offers/offer-item-page/offer-item-page.component.html</context>
           <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__cart" datatype="html">
+        <source>Корзина</source>
+        <target state="new">Кошик</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__total" datatype="html">
+        <source>
+        Сумма
+      </source>
+        <target state="new">
+        Сума
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__delete" datatype="html">
+        <source>
+        Удалить
+      </source>
+        <target state="new">
+        Видалити
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__choose_additional_service" datatype="html">
+        <source>Выберите дополнительный сервис</source>
+        <target state="new">Виберіть додатковий сервіс</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__choose_additional_service_placeholder" datatype="html">
+        <source>Выбор дополнительного сервиса</source>
+        <target state="new">Вибір додаткового сервісу</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__contact" datatype="html">
+        <source>Оператор контакт центра свяжется с вами для подтверждения заказа и уточнения необходимых деталей в течении 15 минут</source>
+        <target state="new">Оператор контакт центру зв'яжеться з вами для підтвердження замовлення і уточнення необхідних деталей протягом 15 хвилин</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__submit" datatype="html">
+        <source>Отправить заказ</source>
+        <target state="new">відправити замовлення</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="map__show_on_map" datatype="html">

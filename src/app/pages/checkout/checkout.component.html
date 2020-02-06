@@ -1,13 +1,13 @@
-<app-breadcrumbs currentPage="Оформление заказа"></app-breadcrumbs>
+<app-breadcrumbs currentPage="Оформление заказа" i18n-currentPage="@@cart__title"></app-breadcrumbs>
 
 
 <div class="container-inner">
     <div class="row">
       <div class="col-1 hidden-mobile"></div>
       <div class="col-4 col-tablet-3 col-desktop-5 position-relative">
-        <h1 class="page__title">заказ № {{cart?.id}}</h1>
+        <h1 class="page__title"><span i18n="@@cart__order">заказ</span> № {{cart?.id}}</h1>
         <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
-          <p>Оформление заказа</p>
+          <p i18n="@@cart__title">Оформление заказа</p>
         </div>
       </div>
     </div>
@@ -16,26 +16,26 @@
       <div class="checkout-form-container">
         <div class="form-group-lg">
           <div class="form-group">
-              <h3 class="form-group-title">
-                  контактные данные
+              <h3 class="form-group-title" i18n="@@cart__contact_details">
+                контактные данные
               </h3>
               <input type="text" class="checkout__input" placeholder="Ваше имя" name="name" required 
-                [(ngModel)]="checkout.name">
+                [(ngModel)]="checkout.name" i18n-placeholder="@@cart__your_first_name">
               <input type="text" class="checkout__input" placeholder="Ваша фамилия" name="surname" required 
-                [(ngModel)]="checkout.surname">
+                [(ngModel)]="checkout.surname" i18n-placeholder="@@cart__your_last_name">
               <input type="text" class="checkout__input" placeholder="+38(0__)___-__-__" name="phone" required
                 [textMask]="{mask: phoneMask}" [(ngModel)]="checkout.phone">
               <input type="text" class="checkout__input email" placeholder="Ваш Email" name="email" required 
                 [(ngModel)]="checkout.email">
             </div>
           <div class="form-group">
-              <h3 class="form-group-title">
+              <h3 class="form-group-title" i18n="@@cart__delivery_type">
                   выберите способ доставки
               </h3>
               <div class="checkout__select">
                   <select name="delivery" class="select" [(ngModel)]="checkout.delivery">
-                    <option value="Курьером до двери" selected>Курьером до двери</option>
-                    <option value="Другой вариант">Другой вариант</option>
+                    <option value="Курьером до двери" selected i18n="@@cart__delivery_courier">Курьером до двери</option>
+                    <option value="Другой вариант" i18n="@@cart__delivery_other">Другой вариант</option>
                   </select>
                   <i class="ic ic--dropdown">^</i>
               </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="form-group-sm">
           <div class="form-group">
-            <h3 class="form-group-title">
+            <h3 class="form-group-title" i18n="@@cart__address">
                 адрес доставки
             </h3>
             <div class="checkout__select">
@@ -61,14 +61,14 @@
                 <i class="ic ic--dropdown">^</i>
             </div>
             <input type="text" class="checkout__input" placeholder="Улица" name="street" required 
-              [(ngModel)]="checkout.street">
+              [(ngModel)]="checkout.street" i18n-placeholder="@@cart__street">
             <div class="checkout__input-row">
                 <input type="text" class="checkout__input" placeholder="Дом" name="house" required 
-                  [(ngModel)]="checkout.house">
+                  [(ngModel)]="checkout.house" i18n-placeholder="@@cart__house">
                 <input type="text" class="checkout__input" placeholder="Этаж" name="floor" required 
-                  [(ngModel)]="checkout.floor">
+                  [(ngModel)]="checkout.floor" i18n-placeholder="@@cart__floor">
                 <input type="text" class="checkout__input" placeholder="Кв." name="flat" required 
-                  [(ngModel)]="checkout.flat">
+                  [(ngModel)]="checkout.flat" i18n-placeholder="@@cart__flat">
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@
             <span i18n="@@cart__quantity_items">Количество вещей:</span>
             <span>{{cart?.quantity}}</span>
           </p>
-          <p class="info-text h5">Общая стоимость:
+          <p class="info-text h5" i18n="@@cart__total_price">Общая стоимость:
             <span class="info-price">{{cart?.price}}</span>
           </p>
         </div>
@@ -87,7 +87,7 @@
           <p i18n="@@cart__additional_text">*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</p>
         </div>
         <div class="info-col">
-          <button class="checkout__submit btn btn-primary" type="submit">Оформить заказ</button>
+          <button class="checkout__submit btn btn-primary" type="submit" i18n="@@cart__submit_order">Оформить заказ</button>
         </div>
       </div>
     </form>

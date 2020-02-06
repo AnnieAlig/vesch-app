@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public benefits;
   public steps;
   public services;
+  public priority;
   public blackTie_section;
 
   @ViewChild('slides') slides: ElementRef;
@@ -50,11 +51,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.getSlider();
-    this.createBenefits();
-    this.createSteps();
-    this.createServices();
-    this.createBlackTie();
+    this.getHomepage();
   }
 
   ngAfterViewInit() {
@@ -62,17 +59,35 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.WOW.init();
   }
 
-  getSlider() {
-    this.homeService.getSlides().subscribe(
-      (slides) => {
-        this.slider = slides;
-        this.activeSlide = 1;
+  getHomepage() {
+    this.homeService.getHomepage().subscribe(
+      (data) => {
+        if (data) {
+          if (data.slides) {
+            this.slider = data.slides;
+            this.activeSlide = 1;
 
-        setTimeout( () => {
-          // this.createSlider();
-          this.WOW.sync();
-        }, 0);
-
+          }
+          if (data.benefits) {
+            this.benefits = data.benefits;
+          }
+          if (data.steps) {
+            this.steps =  data.steps;
+          }
+          if (data.services) {
+            this.services = data.services;
+          }
+          if (data.priority) {
+            this.priority = data.priority;
+          }
+          if (data.blacktie) {
+            this.blackTie_section = data.blacktie;
+          }
+          setTimeout( () => {
+            // this.createSlider();
+            this.WOW.sync();
+          }, 0);
+        }
       }
     );
   }
@@ -198,41 +213,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
 
-  createBenefits() {
-    this.homeService.getBenefits().subscribe(
-      (benefits) => {
-        this.benefits = benefits;
-        this.WOW.sync();
-      }
-    );
-  }
-
-  createSteps() {
-    this.homeService.getSteps().subscribe(
-      (steps) => {
-        this.steps = steps;
-        this.WOW.sync();
-      }
-    );
-  }
-
-  createServices() {
-    this.homeService.getServices().subscribe(
-      (services) => {
-        this.services = services;
-        this.WOW.sync();
-      }
-    );
-  }
-
-  createBlackTie() {
-    this.homeService.getBlackTie().subscribe(
-      (blackTie) => {
-        this.blackTie_section = blackTie;
-        this.WOW.sync();
-      }
-    );
-  }
 
   navigateTo(url) {
     this.router.navigate([url]);

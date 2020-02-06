@@ -12,20 +12,8 @@ export class HomeService {
     private http: HttpClient,
   ) {}
 
-  getSlides(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'slider.json');
-  }
-
-  getBenefits(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'benefits.json');
-  }
-
-  getSteps(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'steps.json');
-  }
-
-  getServices(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'services.json');
+  getHomepage(): Observable<any> {
+    return this.http.get(environment.apiUrl + 'homepage.json');
   }
 
   getBlackTie(): Observable<any> {

@@ -22,6 +22,7 @@ export class OfferPageComponent implements OnInit {
   public activeSectionIndexes: any = [];
   public filteredItems: any = [];
   public filterSections: any = [];
+  public sorting: string;
   public isMobile: boolean;
 
   public sliderConfig = {
@@ -94,16 +95,25 @@ export class OfferPageComponent implements OnInit {
       }
     }
     _.each(this.offer.filter_sections, (section: any, i: number) => {
-      if (typeof index === 'undefined' || (index >= 0 && _.contains(this.activeSectionIndexes, i))) {
-        this.filteredItems = _.union(this.filteredItems, section.items);
+      if (typeof index === 'undefined' || (index >= 0 && _.contains(this.activeSectionIndexes, i)) || !this.activeSectionIndexes.length) {
+        this.sort(_.union(this.filteredItems, section.items));
       }
     });
-
-    // this.WOW.sync();
   }
 
   sectionIsActive(index) {
     return _.contains(this.activeSectionIndexes, index);
+  }
+
+  sort(items, event?) {
+    this.sorting = event ? event : this.sorting;
+    if (this.sorting === 'ACD') {
+      this.filteredItems =  _.sortBy(items, (item: any) => item.price);
+    } else if (this.sorting === 'DESC') {
+      this.filteredItems =  _.sortBy(items, (item: any) => -item.price);
+    } else {
+      this.filteredItems =  _.sortBy(items, (item: any) => item.name);
+    }
   }
 
   addToCart(item) {

@@ -37,7 +37,7 @@
               <p class="searh__label" i18n="@@offers__sort_text">Сортировать по:</p>
             </div>
             <div class="search__element col-4 col-tablet-2 col-desktop-1">
-                <select name="city_select" class="search__select">
+                <select name="city_select" class="search__select" (change)="sort(filteredItems, $event.target.value)">
                   <option value="alphabet" selected i18n="@@offers__sort_alphabet">Алфавиту</option>
                   <option value="ACD" i18n="@@offers__sort_acd">Возрастанию цены</option>
                   <option value="DESC" i18n="@@offers__sort_desc">Убыванию цены</option>

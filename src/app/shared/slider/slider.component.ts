@@ -37,11 +37,14 @@ export class SliderComponent implements OnInit {
   ngOnInit() {
   }
   changeSlide(index?) {
-    this.prevSlide = this.activeSlide;
-    if (index) {
-      this.activeSlide = index;
-    } else {
-      (this.activeSlide < this.slider.length) ? this.activeSlide += 1 : this.activeSlide = 1;
+    if (this.slider) {
+      this.prevSlide = this.activeSlide;
+      if (index) {
+        this.activeSlide = index;
+      } else {
+        (this.activeSlide < this.slider.length) ? this.activeSlide += 1 : this.activeSlide = 1;
+      }
+
     }
   }
 

@@ -2,6 +2,94 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="cart__total" datatype="html">
+        <source>
+        Сумма
+      </source>
+        <target state="final">
+        Сумма
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__delete" datatype="html">
+        <source>
+        Удалить
+      </source>
+        <target state="final">
+        Удалить
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__choose_additional_service" datatype="html">
+        <source>Выберите дополнительный сервис</source>
+        <target state="final">Выберите дополнительный сервис</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__choose_additional_service_placeholder" datatype="html">
+        <source>Выбор дополнительного сервиса</source>
+        <target state="final">Выбор дополнительного сервиса</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__contact" datatype="html">
+        <source>Оператор контакт центра свяжется с вами для подтверждения заказа и уточнения необходимых деталей в течении 15 минут</source>
+        <target state="final">Оператор контакт центра свяжется с вами для подтверждения заказа и уточнения необходимых деталей в течении 15 минут</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__submit" datatype="html">
+        <source>Отправить заказ</source>
+        <target state="final">Отправить заказ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="map__show_on_map" datatype="html">
+        <source>Показать на карте</source>
+        <target state="final">Показать на карте</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/points/points.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="promos__finished" datatype="html">
+        <source>акция завершена</source>
+        <target state="final">акция завершена</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/promos/promo-card/promo-card.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="vacancies__choose_city" datatype="html">
+        <source>Выберите город:</source>
+        <target state="final">Выберите город:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/vacancies/vacancies.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="vacancies__all_cities" datatype="html">
+        <source>Все города</source>
+        <target state="final">Все города</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/vacancies/vacancies.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="nav_main" datatype="html">
         <source>Главная</source>
         <target>Главная</target>
@@ -200,13 +288,13 @@
           <context context-type="linenumber">1</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/company/company.component.html</context
-          ><context context-type="linenumber">26</context>
+          <context context-type="sourcefile">app/pages/company/company.component.html</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="nav__how_we_work" datatype="html">
         <source>Как мы работаем</source>
-        <target>Как мы работаем</target>
+        <target state="final">Как мы работаем</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/footer/footer.component.html</context>
           <context context-type="linenumber">56</context>
@@ -230,7 +318,7 @@
       </trans-unit>
       <trans-unit id="nav__loyalty" datatype="html">
         <source>Программа лояльности</source>
-        <target>Программа лояльности</target>
+        <target state="final">Программа лояльности</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/footer/footer.component.html</context>
           <context context-type="linenumber">59</context>
@@ -258,7 +346,7 @@
       </trans-unit>
       <trans-unit id="nav__news" datatype="html">
         <source>Новости</source>
-        <target>Новости</target>
+        <target state="final">Новости</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/footer/footer.component.html</context>
           <context context-type="linenumber">62</context>
@@ -290,7 +378,7 @@
       </trans-unit>
       <trans-unit id="nav__vacancies" datatype="html">
         <source>Вакансии </source>
-        <target>Вакансии </target>
+        <target state="final">Вакансии </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/footer/footer.component.html</context>
           <context context-type="linenumber">65</context>
@@ -322,7 +410,7 @@
       </trans-unit>
       <trans-unit id="nav__promos" datatype="html">
         <source>Акции</source>
-        <target>Акции</target>
+        <target state="final">Акции</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/footer/footer.component.html</context>
           <context context-type="linenumber">76</context>
@@ -354,7 +442,7 @@
       </trans-unit>
       <trans-unit id="nav_services" datatype="html">
         <source>Сервисы</source>
-        <target>Сервисы</target>
+        <target state="final">Сервисы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/footer/footer.component.html</context>
           <context context-type="linenumber">81</context>
@@ -382,7 +470,7 @@
       </trans-unit>
       <trans-unit id="nav_offers" datatype="html">
         <source>Услуги</source>
-        <target>Услуги</target>
+        <target state="final">Услуги</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/footer/footer.component.html</context>
           <context context-type="linenumber">86</context>
@@ -430,7 +518,7 @@
       </trans-unit>
       <trans-unit id="nav__points" datatype="html">
         <source>Пункты приёма</source>
-        <target>Пункты приёма</target>
+        <target state="final">Пункты приёма</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/footer/footer.component.html</context>
           <context context-type="linenumber">96</context>
@@ -450,7 +538,7 @@
       </trans-unit>
       <trans-unit id="general__download_app" datatype="html">
         <source>Скачайте приложение через</source>
-        <target>Скачайте приложение через</target>
+        <target state="final">Скачайте приложение через</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/footer/footer.component.html</context>
           <context context-type="linenumber">102</context>
@@ -465,12 +553,12 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/offers/mobile-eco/mobile-eco.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="general__more_details" datatype="html">
         <source>Детальнее</source>
-        <target>Детальнее</target>
+        <target state="final">Детальнее</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/home/home.component.html</context>
           <context context-type="linenumber">42</context>
@@ -514,7 +602,7 @@
       </trans-unit>
       <trans-unit id="homepage__new_view" datatype="html">
         <source>новый взгляд на вещи</source>
-        <target>новый взгляд на вещи</target>
+        <target state="final">новый взгляд на вещи</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/home/home.component.html</context>
           <context context-type="linenumber">57</context>
@@ -522,7 +610,7 @@
       </trans-unit>
       <trans-unit id="homepage__mobile_eco" datatype="html">
         <source>Мобильная экочистка</source>
-        <target>Мобильная экочистка</target>
+        <target state="final">Мобильная экочистка</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/home/home.component.html</context>
           <context context-type="linenumber">96</context>
@@ -534,7 +622,7 @@
       </trans-unit>
       <trans-unit id="homepage__how_it_works" datatype="html">
         <source>как это работает</source>
-        <target>как это работает</target>
+        <target state="final">как это работает</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/home/home.component.html</context>
           <context context-type="linenumber">96</context>
@@ -542,7 +630,7 @@
       </trans-unit>
       <trans-unit id="homepage__popular_offers" datatype="html">
         <source>Популярные услуги</source>
-        <target>Популярные услуги</target>
+        <target state="final">Популярные услуги</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/home/home.component.html</context>
           <context context-type="linenumber">154</context>
@@ -550,7 +638,7 @@
       </trans-unit>
       <trans-unit id="general__view_price" datatype="html">
         <source>Смотреть прайс</source>
-        <target>Смотреть прайс</target>
+        <target state="final">Смотреть прайс</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/home/home.component.html</context>
           <context context-type="linenumber">166</context>
@@ -570,7 +658,7 @@
       </trans-unit>
       <trans-unit id="homepage__all_offers" datatype="html">
         <source>Все услуги</source>
-        <target>Все услуги</target>
+        <target state="final">Все услуги</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/home/home.component.html</context>
           <context context-type="linenumber">177</context>
@@ -578,7 +666,7 @@
       </trans-unit>
       <trans-unit id="homepage__learn_more" datatype="html">
         <source>Узнать больше</source>
-        <target>Узнать больше</target>
+        <target state="final">Узнать больше</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/home/home.component.html</context>
           <context context-type="linenumber">288</context>
@@ -586,7 +674,7 @@
       </trans-unit>
       <trans-unit id="homepage__join" datatype="html">
         <source>Присоединиться</source>
-        <target>Присоединиться</target>
+        <target state="final">Присоединиться</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/home/home.component.html</context>
           <context context-type="linenumber">289</context>
@@ -594,7 +682,7 @@
       </trans-unit>
       <trans-unit id="search__placeholder" datatype="html">
         <source>Поиск по сайту...</source>
-        <target>Поиск по сайту...</target>
+        <target state="final">Поиск по сайту...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/modals/search-modal/search-modal.component.html</context>
           <context context-type="linenumber">25</context>
@@ -606,7 +694,7 @@
       </trans-unit>
       <trans-unit id="search__help_text" datatype="html">
         <source>Нажмите enter для поиска или esc, чтобы выйти</source>
-        <target>Нажмите enter для поиска или esc, чтобы выйти</target>
+        <target state="final">Нажмите enter для поиска или esc, чтобы выйти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/modals/search-modal/search-modal.component.html</context>
           <context context-type="linenumber">29</context>
@@ -614,7 +702,7 @@
       </trans-unit>
       <trans-unit id="nav_items" datatype="html">
         <source>Товары</source>
-        <target>Товары</target>
+        <target state="final">Товары</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/header/header-mobile/header-mobile.component.html</context>
           <context context-type="linenumber">81</context>
@@ -630,7 +718,7 @@
       </trans-unit>
       <trans-unit id="nav__social_projects" datatype="html">
         <source>Социальные проекты</source>
-        <target>Социальные проекты</target>
+        <target state="final">Социальные проекты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/layout/header/header-mobile/header-mobile.component.html</context>
           <context context-type="linenumber">108</context>
@@ -656,7 +744,9 @@
         <source>
                         Все локации
                     </source>
-        <target>Все локации</target>
+        <target state="final">
+                        Все локации
+                    </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/map/map.component.html</context>
           <context context-type="linenumber">10</context>
@@ -670,7 +760,9 @@
         <source>
                         Приемные пункты
                     </source>
-        <target>Приемные пункты</target>
+        <target state="final">
+                        Приемные пункты
+                    </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/map/map.component.html</context>
           <context context-type="linenumber">15</context>
@@ -684,7 +776,9 @@
         <source>
                         Чистоматы
                     </source>
-        <target>Чистоматы</target>
+        <target state="final">
+                        Чистоматы
+                    </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/map/map.component.html</context>
           <context context-type="linenumber">20</context>
@@ -696,7 +790,7 @@
       </trans-unit>
       <trans-unit id="map__map" datatype="html">
         <source>Карта</source>
-        <target>Карта</target>
+        <target state="final">Карта</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/map/map.component.html</context>
           <context context-type="linenumber">30</context>
@@ -704,7 +798,7 @@
       </trans-unit>
       <trans-unit id="map__list" datatype="html">
         <source>Список</source>
-        <target>Список</target>
+        <target state="final">Список</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/map/map.component.html</context>
           <context context-type="linenumber">35</context>
@@ -712,7 +806,7 @@
       </trans-unit>
       <trans-unit id="map__working_hours" datatype="html">
         <source>Время работы </source>
-        <target>Время работы </target>
+        <target state="final">Время работы </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/map/map.component.html</context>
           <context context-type="linenumber">48</context>
@@ -724,23 +818,227 @@
       </trans-unit>
       <trans-unit id="map__how_to_get" datatype="html">
         <source>Как добраться </source>
-        <target>Как добраться </target>
+        <target state="final">Как добраться </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/map/map.component.html</context>
           <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="cart__title" datatype="html">
+        <source>Оформление заказа</source>
+        <target state="final">Оформление заказа</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__order" datatype="html">
+        <source>заказ</source>
+        <target state="final">заказ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__contact_details" datatype="html">
+        <source>
+                контактные данные
+              </source>
+        <target state="final">
+                контактные данные
+              </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__your_first_name" datatype="html">
+        <source>Ваше имя</source>
+        <target state="final">Ваше имя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__your_last_name" datatype="html">
+        <source>Ваша фамилия</source>
+        <target state="final">Ваша фамилия</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__delivery_type" datatype="html">
+        <source>
+                  выберите способ доставки
+              </source>
+        <target state="final">
+                  выберите способ доставки
+              </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__delivery_courier" datatype="html">
+        <source>Курьером до двери</source>
+        <target state="final">Курьером до двери</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__delivery_other" datatype="html">
+        <source>Другой вариант</source>
+        <target state="final">Другой вариант</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__address" datatype="html">
+        <source>
+                адрес доставки
+            </source>
+        <target state="final">
+                адрес доставки
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__street" datatype="html">
+        <source>Улица</source>
+        <target state="final">Улица</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__house" datatype="html">
+        <source>Дом</source>
+        <target state="final">Дом</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__floor" datatype="html">
+        <source>Этаж</source>
+        <target state="final">Этаж</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__flat" datatype="html">
+        <source>Кв.</source>
+        <target state="final">Кв.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="cart__quantity_items" datatype="html">
         <source>Количество вещей:</source>
-        <target>Количество вещей:</target>
+        <target state="final">Количество вещей:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
           <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="cart__total_price" datatype="html">
+        <source>Общая стоимость:
+            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span>"/><x id="INTERPOLATION" equiv-text="{{cart?.price}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/>
+          </source>
+        <target state="final">Общая стоимость:
+            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span>"/><x id="INTERPOLATION" equiv-text="{{cart?.price}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/>
+          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__additional_text" datatype="html">
+        <source>*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</source>
+        <target state="final">*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/offers/offer-item-page/offer-item-page.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__submit_order" datatype="html">
+        <source>Оформить заказ</source>
+        <target state="final">Оформить заказ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="offers__search_text" datatype="html">
+        <source>Поиск по каталогу услуг</source>
+        <target state="final">Поиск по каталогу услуг</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="offers__sort_text" datatype="html">
+        <source>Сортировать по:</source>
+        <target state="final">Сортировать по:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="offers__sort_alphabet" datatype="html">
+        <source>Алфавиту</source>
+        <target state="final">Алфавиту</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="offers__sort_acd" datatype="html">
+        <source>Возрастанию цены</source>
+        <target state="final">Возрастанию цены</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="offers__sort_desc" datatype="html">
+        <source>Убыванию цены</source>
+        <target state="final">Убыванию цены</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cart__price" datatype="html">
+        <source>Цена: </source>
+        <target state="final">Цена: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/offers/offer-item-page/offer-item-page.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="cart__quantity" datatype="html">
         <source>Количество:</source>
-        <target>Количество:</target>
+        <target state="final">Количество:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/offers/offer-item-page/offer-item-page.component.html</context>
           <context context-type="linenumber">25</context>
@@ -750,108 +1048,24 @@
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="cart__additional_text" datatype="html">
-        <source>*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</source>
-          <target>*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</target>
+      <trans-unit id="cart__add_to_cart" datatype="html">
+        <source>Добавить в корзину</source>
+        <target state="final">Добавить в корзину</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/checkout/checkout.component.html</context>
-          <context context-type="linenumber">87</context>
-        </context-group>
-          <context-group purpose="location">
           <context context-type="sourcefile">app/pages/offers/offer-item-page/offer-item-page.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="offers__search_text" datatype="html">
-        <source>Поиск по каталогу услуг</source>
-        <target>Поиск по каталогу услуг</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="offers__sort_text" datatype="html">
-        <source>Сортировать по:</source>
-        <target>Сортировать по:</target>
+      <trans-unit id="cart__cart" datatype="html">
+        <source>Корзина</source>
+        <target state="final">Корзина</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
-          <context context-type="linenumber">37</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="offers__sort_alphabet" datatype="html">
-        <source>Алфавиту</source>
-        <target>Алфавиту</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
-          <context context-type="linenumber">41</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="offers__sort_acd" datatype="html">
-        <source>Возрастанию цены</source>
-        <target>Возрастанию цены</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="offers__sort_desc" datatype="html">
-        <source>Убыванию цены</source>
-        <target>Убыванию цены</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/offers/offer-page/offer-page.component.html</context>
-          <context context-type="linenumber">43</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="cart__price" datatype="html">
-        <source>Цена: </source>
-        <target>Цена: </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/offers/offer-item-page/offer-item-page.component.html</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="sourcefile">app/pages/order/order.component.html</context>
+          <context context-type="linenumber">1</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/order/order.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="cart__add_to_cart" datatype="html">
-        <source>Добавить в корзину</source>
-        <target>Добавить в корзину</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/offers/offer-item-page/offer-item-page.component.html</context>
-          <context context-type="linenumber">32</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="map__show_on_map" datatype="html">
-        <source>Показать на карте</source>
-        <target>Показать на карте</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/points/points.component.html</context>
-          <context context-type="linenumber">35</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="promos__finished" datatype="html">
-        <source>акция завершена</source>
-        <target>акция завершена</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/promos/promo-card/promo-card.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="vacancies__choose_city" datatype="html">
-        <source>Выберите город:</source>
-        <target>Выберите город:</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/vacancies/vacancies.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="vacancies__all_cities" datatype="html">
-        <source>Все города</source>
-        <target>Все города</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/pages/vacancies/vacancies.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="vacancies__vacancy_details" datatype="html">

@@ -1,11 +1,11 @@
-<app-breadcrumbs currentPage="Корзина"></app-breadcrumbs>
+<app-breadcrumbs currentPage="Корзина" i18n-currentPage="@@cart__cart"></app-breadcrumbs>
 
 <div class="container-inner">
   <div class="row">
     <div class="col-1 hidden-mobile"></div>
     <div class="col-4 col-tablet-3 col-desktop-5 position-relative">
       <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
-        <p>Корзина</p>
+        <p i18n="@@cart__cart">Корзина</p>
       </div>
     </div>
   </div>
@@ -21,10 +21,10 @@
       <div class="order__price-one" i18n="@@cart__price">
         Цена  
       </div>
-      <div class="order__price-total">
+      <div class="order__price-total" i18n="@@cart__total">
         Сумма
       </div>
-      <div class="order__remove">
+      <div class="order__remove" i18n="@@cart__delete">
         Удалить
       </div>
   
@@ -82,12 +82,12 @@
 
   <div class="additional-content">
     <div class="col-4 col-tablet-2 col-desktop-3">
-      <h4>Выберите дополнительный сервис</h4>
+      <h4 i18n="@@cart__choose_additional_service">Выберите дополнительный сервис</h4>
     </div>
     <div class="col-4 col-tablet-2 col-desktop-3">
       <div class="order__select">
           <select name="additional" class="select" [(ngModel)]="order.additional">
-            <option value="0" selected>Выбор дополнительного сервиса</option>
+            <option value="0" selected i18n="@@cart__choose_additional_service_placeholder">Выбор дополнительного сервиса</option>
             <option value="Другой вариант">Другой вариант</option>
           </select>
           <i class="ic ic--dropdown">^</i>
@@ -97,10 +97,10 @@
 
   <div class="row info-row">
     <div class="col-tablet-2 col-desktop-4">
-      <p>Оператор контакт центра свяжется с вами для подтверждения заказа и уточнения необходимых деталей в течении 15 минут</p>
+      <p i18n="@@cart__contact">Оператор контакт центра свяжется с вами для подтверждения заказа и уточнения необходимых деталей в течении 15 минут</p>
     </div>
     <div class="col-4 col-tablet-2 col-desktop-2 order-mobile-1">
-        <button class="order__submit btn btn-primary" type="submit">Отправить заказ</button>
+        <button class="order__submit btn btn-primary" type="submit" i18n="@@cart__submit" (click)="submitOrder()">Отправить заказ</button>
     </div>
   </div>
 

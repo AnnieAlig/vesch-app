@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckoutService } from '../../core/services/checkout.service';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -28,11 +29,13 @@ export class CheckoutComponent implements OnInit {
 
 
   constructor(
+    private route: ActivatedRoute,
     private checkoutService: CheckoutService
   ) { }
 
   ngOnInit() {
-    this.checkoutService.getCart().subscribe(
+    const order = this.route.snapshot.queryParams.order;
+    this.checkoutService.getCart(order).subscribe(
       (cart: any) => {
         this.cart = cart;
       }

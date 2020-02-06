@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="results">
-      <a class="results__item block-link" *ngFor="let vacancy of vacancies.items" [routerLink]="vacancy.link">
+      <a class="results__item block-link" *ngFor="let vacancy of vacancies?.items" [routerLink]="vacancy.link">
         <h3 class="vacancy-title">{{vacancy.title}}
           <span class="vacancy-salary" *ngIf="vacancy.salary">{{vacancy.salary}}</span>
         </h3>

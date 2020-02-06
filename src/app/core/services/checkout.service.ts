@@ -12,7 +12,7 @@ export class CheckoutService {
     private http: HttpClient,
   ) {  }
 
-  getCart(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'cart.json');
+  getCart(id): Observable<any> {
+    return this.http.get(environment.apiUrl + `cart_${id}.json`);
   }
 }

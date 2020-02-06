@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { LocalStorageService } from 'ngx-webstorage';
 import * as _ from 'underscore';
+import { HttpResponse } from '@angular/common/http';
 
 export class OrderItem {
   name = '';
@@ -70,6 +71,12 @@ export class OrderService {
 
   clear() {
     this.orderDataSource.next([]);
+  }
+
+  submit(data: any): Observable<any> {
+    console.log(data);
+    // return this.http.post( environment.apiUrl, data, httpOptions);
+    return of({status: 'success', order: 1262});
   }
 
   saveToStorage(data) {

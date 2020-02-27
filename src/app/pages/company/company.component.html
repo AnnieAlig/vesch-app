@@ -33,7 +33,7 @@
       <div class="col-desktop-3 col-tablet-2"></div>
       <div class="col-desktop-3 col-tablet-2">
           <h2 class="section__title mission__title">{{data.mission.title}}</h2>
-          <p class="section__desctiption">{{data.mission.description}}</p>
+          <div class="section__description" [innerHtml]="data.mission.description"></div>
       </div>
     </div>
   </section>
@@ -49,7 +49,7 @@
         <div class="steps__item" *ngFor="let item of data.values.items; let index = index">
           <div class="steps__number">{{index+1}}</div>
           <h3 class="steps__title">{{item.title}}</h3>
-          <p class="steps__description">{{item.description}}</p>
+          <div class="steps__description" [innerHtml]="item.description"></div>
         </div>
       </div>
       <div class="col-desktop-6"></div>

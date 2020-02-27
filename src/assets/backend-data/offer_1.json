@@ -126,7 +126,32 @@
         {
             "name": "Рубашки и блузы",
             "icon": "assets/img/offers/filter_08.png",
-            "items": []
+            "items": [
+                {
+                    "name": "Плавки, плавательные шорты",
+                    "photo": "assets/img/offers/item_40.png",
+                    "price": 100,
+                    "currency": "грн",
+                    "link": "",
+                    "id": 110
+                },
+                {
+                    "name": "Пляжное платье, туника",
+                    "photo": "assets/img/offers/item_41.png",
+                    "price": 250,
+                    "currency": "грн",
+                    "link": "",
+                    "id": 111
+                },
+                {
+                    "name": "Спортивные брюки, штаны",
+                    "photo": "assets/img/offers/item_33.png",
+                    "price": 300,
+                    "currency": "грн",
+                    "link": "",
+                    "id": 112
+                }
+            ]
         },
         {
             "name": "Свитера, джемперы, пуловеры",

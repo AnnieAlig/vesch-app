@@ -29,7 +29,7 @@
     <div class="row align-items-center justify-content-between">
         <form class="search__form" #form="ngForm">
             <div class="search__element col-desktop-3 col-4">
-                <input type="text" class="search__input" placeholder="Поиск по каталогу услуг" name="search_input" i18n-placeholder="@@offers__search_text">
+                <input type="text" class="search__input" (keyup)="search($event.target.value)" placeholder="Поиск по каталогу услуг" name="search_input" i18n-placeholder="@@offers__search_text">
                 <i class="ic ic--search"></i>
             </div>
             <div class="col-desktop-1"></div>

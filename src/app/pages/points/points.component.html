@@ -2,9 +2,7 @@
 
 <div class="container-inner" *ngIf="map">
   <div class="page__description col-desktop-5">
-    <p>
-        {{map.subtitle_long}}
-    </p>
+    <div [innerHtml]="map.subtitle_long"></div>
   </div>
   <div class="map__menu row">
       <div class="col-desktop-3">

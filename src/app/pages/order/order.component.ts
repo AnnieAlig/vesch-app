@@ -3,6 +3,7 @@ import { OrderService } from '../../core/order/order.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'ngx-webstorage';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-order',
@@ -14,11 +15,10 @@ import { LocalStorageService } from 'ngx-webstorage';
 export class OrderComponent implements OnInit, OnDestroy {
 
   public order = {
-    additional: '0',
     items: []
   };
   private _orderSubs: Subscription;
-  public orderItems;
+  // public orderItems;
 
   constructor(
     private orderService: OrderService,
@@ -27,15 +27,19 @@ export class OrderComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this._orderSubs = this.orderService.orderData.subscribe(
-      (orderItems) => {
-        this.orderItems = orderItems;
-      }
-    );
+    const customer = this.$localStorage.retrieve('customer-id');
+    if (customer) {
+      this.orderService.getOrder(customer).pipe(first()).subscribe(
+        (orderItems) => {
+          this.order.items = orderItems;
+        },
+      (err) => {
+        this.orderService.clear();
+      });
+    }
   }
 
   submitOrder() {
-    this.order.items = this.orderItems;
     this.orderService.submit(this.order).subscribe( (result) => {
       if (result && result.status === 'success') {
         this.router.navigate(['/checkout'], {queryParams: {order: result.order}});

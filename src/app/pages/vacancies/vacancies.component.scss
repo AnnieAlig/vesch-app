@@ -84,6 +84,14 @@
 
 .search__element{
     position: relative;
+    .placeholder{
+        position: absolute;
+        top: calc(50% - 12px);
+        color: var(--color_placeholder);
+        z-index: 10;
+        left: 15px;
+        pointer-events: none;
+    }
     .search__input,
     .search__select{
         width: 100%;
@@ -136,3 +144,27 @@
     top: calc(var(--decor-height) / -2 - 1px);
     margin-top: calc(var(--decor-height) / -2);
 }
+
+:host /deep/{
+    .ng-select.ng-select-single .ng-select-container{
+        height: 50px;
+    }
+    .ng-select{
+        .ng-arrow-wrapper{
+            display: none;
+        }
+    }
+    .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input{
+        top: 0;
+        height: 50px;
+        padding-left: 0;
+    }
+    .ng-select .ng-select-container .ng-value-container .ng-input>input{
+        box-sizing: border-box;
+    }
+    .ng-has-value .ng-placeholder,
+    .ng-select-opened .ng-placeholder {
+        display: none;
+    }
+}
+    

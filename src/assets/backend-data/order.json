@@ -1,0 +1,46 @@
+[
+    {
+        "name":"Горнолыжная куртка",
+        "photo":"assets/img/offers/item_43.png",
+        "price":500,
+        "currency":"грн",
+        "link":"",
+        "id":106,
+        "quantity":1,
+        "additional_options":[
+            {
+                "text": "Сервис 1",
+                "id": 123
+            },
+            {
+                "text": "Сервис 2",
+                "id": 234
+            },
+            {
+                "text": "Сервис 3",
+                "id": 345
+            }
+        ],
+        "additional_chosen": 123
+    },
+    {
+        "name":"Купальник",
+        "photo":"assets/img/offers/item_39.png",
+        "price":100,
+        "currency":"грн",
+        "link":"",
+        "id":109,
+        "quantity":2,
+        "additional_options":[
+            {
+                "text": "Сервис 4",
+                "id": 456
+            },
+            {
+                "text": "Сервис 5",
+                "id": 567
+            }
+        ],
+        "additional_chosen": null
+    }
+]

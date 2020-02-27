@@ -26,10 +26,8 @@
     <div class="col-1 hidden-mobile"></div>
     <div class="col-4 col-tablet-3 col-desktop-3 blacktie__texts">
         <h2 class="blacktie__title">{{blackTie_section?.title}}</h2>
-        <p class="blacktie__description"> {{blackTie_section?.description}}
-          <br>
-          {{blackTie_section?.description__additional}}
-        </p>
+        <div class="blacktie__description" [innerHtml]="blackTie_section?.description"></div>
+        <div class="blacktie__description" [innerHtml]="blackTie_section?.description__additional"></div>
         <div class="decor-bar mb50 hidden-desktop hidden-tablet">
             <div class="decor decor--full">
                 <img src="assets/img/decor.svg">
@@ -44,9 +42,7 @@
               <p class="blacktie__text order-1 order-tablet-2 order-desktop-2">
                   {{blacktie.title}}
               </p>
-              <p class="blacktie__description hidden-desktop hidden-tablet order-3">
-                  {{blacktie.description}}
-              </p>
+              <div class="blacktie__description hidden-desktop hidden-tablet order-3" [innerHtml]="blacktie.description"></div>
           </div>
           <div class="blacktie__item hidden-desktop align-self-end">
             <a routerLink="/offers/black-tie" class="page__more-link blacktie__link mb0">

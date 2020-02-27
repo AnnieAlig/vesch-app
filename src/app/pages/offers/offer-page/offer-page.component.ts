@@ -121,6 +121,24 @@ export class OfferPageComponent implements OnInit {
     }
   }
 
+  search(data) {
+    this.activeSectionIndexes = [];
+    if (data && data.length > 3) {
+      let result = [];
+      _.each(this.offer.filter_sections, (section: any) => {
+        const filteredItems = _.filter(section.items, (item: any) => {
+          return item.name.toLowerCase().includes(data);
+        });
+        if (filteredItems && filteredItems.length) {
+          result = _.union(result, filteredItems);
+        }
+      });
+      this.filteredItems = result;
+    } else if (!data) {
+      this.filterSection();
+    }
+  }
+
   addToCart(item) {
     this.orderService.add(item);
   }

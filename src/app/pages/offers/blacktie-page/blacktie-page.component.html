@@ -49,9 +49,7 @@
                         <div class="blacktie__icon">
                             <img src="{{blacktie.icon}}" alt="{{blacktie.alt}}">
                         </div>
-                        <p class="blacktie__description">
-                            {{blacktie.description}}
-                        </p>
+                        <div class="blacktie__description" [innerHtml]="blacktie.description"></div>
                     </div>
                 </div>
             </div>

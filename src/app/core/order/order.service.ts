@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { LocalStorageService } from 'ngx-webstorage';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import * as _ from 'underscore';
-import { HttpResponse } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 export class OrderItem {
   name = '';
@@ -23,6 +28,7 @@ export class OrderService {
   orderData = this.orderDataSource.asObservable();
 
   constructor(
+    private http: HttpClient,
     private $localStorage: LocalStorageService
   ) {}
 
@@ -92,8 +98,9 @@ export class OrderService {
       customer: this.$localStorage.retrieve('customer-id'),
       cart: cart
     };
-    // return this.http.post( environment.apiUrl, data, httpOptions);
-    return of(cart);
+    return this.http.post( environment.apiUrl + '/add_to_cart', data, httpOptions);
+    // return this.http.get( environment.apiUrl + '/order.json', httpOptions);
+    // return of(cart);
   }
 
   saveToStorage(data) {
@@ -110,9 +117,12 @@ export class OrderService {
   }
 
   getOrder(customer: any): Observable<any> {
-      console.log(customer);
-      // return this.http.post( environment.apiUrl, data, httpOptions);
-      return of(JSON.parse(this.$localStorage.retrieve('order-data')));
-    }
+    console.log(customer);
+    return this.http.get( environment.apiUrl + '/order.json?customer=' + customer, httpOptions);
+    // return of(JSON.parse(this.$localStorage.retrieve('order-data')));
+  }
 
+  set(order) {
+    this.orderDataSource.next(order);
+  }
 }

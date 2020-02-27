@@ -13,8 +13,9 @@
       <div class="row align-items-center justify-content-between">
           <form class="search__form" #form="ngForm">
               <div class="search__element col-desktop-3 col-4">
-                  <input *ngIf="isMobile" type="text" class="search__input" placeholder="Название города" name="city_input" i18n="vacancies__placeholder_mobile">
-                  <input *ngIf="!isMobile" type="text" class="search__input" placeholder="Начните вводить название города" name="city_input" i18n="vacancies__placeholder_desktop">
+                  <div class="placeholder" *ngIf="isMobile" [ngClass]="{'hidden': city?.length > 0}">Название города</div>
+                  <div class="placeholder" *ngIf="!isMobile" [ngClass]="{'hidden': city?.length > 0}">Начните вводить название города</div>
+                  <ng-select class="search__input" [items]="cityList" id="city_input" name='city_input' [(ngModel)]="city" [clearable]="false" (change)="search()"></ng-select>
                   <i class="ic ic--search"></i>
               </div>
               <div class="col-desktop-1"></div>
@@ -22,8 +23,9 @@
                 <p class="searh__label" i18n="@@vacancies__choose_city">Выберите город:</p>
               </div>
               <div class="search__element col-4 col-tablet-2 col-desktop-1">
-                  <select name="city_select" class="search__select">
-                    <option value="" selected disabled i18n="@@vacancies__all_cities">Все города</option>
+                  <select name="city_select" class="search__select" [(ngModel)]="city" (change)="search()">
+                    <option value="" selected i18n="@@vacancies__all_cities">Все города</option>
+                    <option [value]="city" *ngFor="let city of cityList">{{city}}</option>
                   </select>
                   <i class="ic ic--dropdown">^</i>
               </div>
@@ -31,7 +33,7 @@
       </div>
     </div>
     <div class="results">
-      <a class="results__item block-link" *ngFor="let vacancy of vacancies?.items" [routerLink]="vacancy.link">
+      <a class="results__item block-link" *ngFor="let vacancy of filteredVacancies" [routerLink]="vacancy.link">
         <h3 class="vacancy-title">{{vacancy.title}}
           <span class="vacancy-salary" *ngIf="vacancy.salary">{{vacancy.salary}}</span>
         </h3>

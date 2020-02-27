@@ -246,6 +246,9 @@
 .align-self-start{
     align-self: flex-start;
 }
+.hidden{
+    display: none!important;
+}
 @media(max-width:767px){
     .hidden-mobile{
         display: none!important;

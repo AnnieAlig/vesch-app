@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div class="order-content" *ngIf="orderItems && orderItems?.length">
+  <div class="order-content" *ngIf="order?.items && order?.items?.length">
     <div class="order__head hidden-mobile">
       <div class="order__product">
         &nbsp;
@@ -29,71 +29,74 @@
       </div>
   
     </div>
-    <div class="order__item hidden-mobile" *ngFor="let item of orderItems">
-      <div class="order__product">
-        <div class="product-image">
-          <img src="{{item?.photo}}" alt="{{item?.name}} photo">
-        </div>
-        <div class="product-name">
-          {{item?.name}}
-        </div>
-      </div>
-      <div class="order__quantity">
-        <div class="quantity-box">
-          <i class="ic ic--plus" (click)="orderService.remove(item, 1)">-</i>
-          <div class="number">{{item?.quantity}}</div>
-          <i class="ic ic--plus" (click)="orderService.add(item)">+</i>
-        </div>
-      </div>
-      <div class="order__price-one">
-        {{item?.price}} {{item?.currency}}
-      </div>
-      <div class="order__price-total">
-        <strong>{{item?.price * item?.quantity}} {{item?.currency}}</strong>  
-      </div>
-      <div class="order__remove">
-        <i class="ic ic--remove ic--close" (click)="orderService.remove(item)"></i>
-      </div>
-    </div>
-    <div class="order__item hidden-tablet hidden-desktop" *ngFor="let item of orderItems">
-      <div class="col-1 order__image--mob">
-        <img src="{{item?.photo}}" alt="{{item?.name}} photo">
-      </div>
-      <div class="col-3">
-        <div class="order-row">
+    <ng-container *ngFor="let item of order?.items; let i = index;">
+      <div class="order__item hidden-mobile">
+        <div class="order__product">
+          <div class="product-image">
+            <img src="{{item?.photo}}" alt="{{item?.name}} photo">
+          </div>
           <div class="product-name">
             {{item?.name}}
           </div>
-          <i class="ic ic--remove ic--close" (click)="orderService.remove(item)"></i>
         </div>
-        <div class="order-row">
+        <div class="order__quantity">
           <div class="quantity-box">
             <i class="ic ic--plus" (click)="orderService.remove(item, 1)">-</i>
             <div class="number">{{item?.quantity}}</div>
             <i class="ic ic--plus" (click)="orderService.add(item)">+</i>
           </div>
-          <div class="order-price--mob">
-            {{item?.price}} {{item?.currency}}<br><strong>{{item?.price * item?.quantity}} {{item?.currency}}</strong>  
+        </div>
+        <div class="order__price-one">
+          {{item?.price}} {{item?.currency}}
+        </div>
+        <div class="order__price-total">
+          <strong>{{item?.price * item?.quantity}} {{item?.currency}}</strong>  
+        </div>
+        <div class="order__remove">
+          <i class="ic ic--remove ic--close" (click)="orderService.remove(item)"></i>
+        </div>
+      </div>
+      <div class="order__item hidden-tablet hidden-desktop">
+        <div class="col-1 order__image--mob">
+          <img src="{{item?.photo}}" alt="{{item?.name}} photo">
+        </div>
+        <div class="col-3">
+          <div class="order-row">
+            <div class="product-name">
+              {{item?.name}}
+            </div>
+            <i class="ic ic--remove ic--close" (click)="orderService.remove(item)"></i>
+          </div>
+          <div class="order-row">
+            <div class="quantity-box">
+              <i class="ic ic--plus" (click)="orderService.remove(item, 1)">-</i>
+              <div class="number">{{item?.quantity}}</div>
+              <i class="ic ic--plus" (click)="orderService.add(item)">+</i>
+            </div>
+            <div class="order-price--mob">
+              {{item?.price}} {{item?.currency}}<br><strong>{{item?.price * item?.quantity}} {{item?.currency}}</strong>  
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      <div class="additional-content">
+        <div class="col-4 col-tablet-2 col-desktop-3">
+          <h4 i18n="@@cart__choose_additional_service">Выберите дополнительный сервис</h4>
+        </div>
+        <div class="col-4 col-tablet-2 col-desktop-3">
+          <div class="order__select">
+              <select name="additional" class="select" [(ngModel)]="order?.items[i].additional_chosen">
+                <option [value]="null" selected i18n="@@cart__choose_additional_service_placeholder">Выбор дополнительного сервиса</option>
+                <option [value]="option?.id" *ngFor="let option of item?.additional_options">{{option?.text}}</option>
+              </select>
+              <i class="ic ic--dropdown">^</i>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 
-  <div class="additional-content">
-    <div class="col-4 col-tablet-2 col-desktop-3">
-      <h4 i18n="@@cart__choose_additional_service">Выберите дополнительный сервис</h4>
-    </div>
-    <div class="col-4 col-tablet-2 col-desktop-3">
-      <div class="order__select">
-          <select name="additional" class="select" [(ngModel)]="order.additional">
-            <option value="0" selected i18n="@@cart__choose_additional_service_placeholder">Выбор дополнительного сервиса</option>
-            <option value="Другой вариант">Другой вариант</option>
-          </select>
-          <i class="ic ic--dropdown">^</i>
-      </div>
-    </div>
-  </div>
 
   <div class="row info-row">
     <div class="col-tablet-2 col-desktop-4">

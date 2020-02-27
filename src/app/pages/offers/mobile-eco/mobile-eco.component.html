@@ -34,7 +34,7 @@
               <div class="steps__item" *ngFor="let step of offer?.steps; let index = index">
                   <div class="steps__number">{{index+1}}</div>
                   <h3 class="steps__title">{{step.title}}</h3>
-                  <p class="steps__description">{{step.description}}</p>
+                  <div class="steps__description" [innerHtml]="step.description"></div>
               </div>
           </div>
           <div class="col-tablet-2 col-desktop-1"></div>

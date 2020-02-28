@@ -18,7 +18,7 @@ export class CallbackService {
 
   send(data: any): Observable<any> {
     console.log(data);
-    return this.http.post( environment.apiUrl + '/postdata/callback', data, httpOptions);
+    return this.http.post( environment.apiUrl + 'postdata/callback', data, httpOptions);
     // return of(new HttpResponse({ status: 200, body: 'success' }));
   }
 }

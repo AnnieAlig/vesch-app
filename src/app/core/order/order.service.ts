@@ -98,7 +98,7 @@ export class OrderService {
       customer: this.$localStorage.retrieve('customer-id'),
       cart: cart
     };
-    return this.http.post( environment.apiUrl + '/add_to_cart', data, httpOptions);
+    return this.http.post( environment.apiUrl + 'add_to_cart', data, httpOptions);
     // return this.http.get( environment.apiDataUrl + '/order.json', httpOptions);
     // return of(cart);
   }

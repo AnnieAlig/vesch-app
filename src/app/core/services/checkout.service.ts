@@ -16,7 +16,7 @@ export class CheckoutService {
   ) {  }
 
   getCart(id): Observable<any> {
-    return this.http.get(environment.apiUrl + `cart_${id}.json`);
+    return this.http.get(environment.apiDataUrl + `cart_${id}.json`);
   }
 
   submit(order, info): Observable<any> {
@@ -24,7 +24,7 @@ export class CheckoutService {
       order: order,
       info: info
     };
-    // return this.http.post(environment.apiUrl + 'submit', data, httpOptions);
+    // return this.http.post(environment.apiDataUrl + 'submit', data, httpOptions);
     console.log('data', data);
     return of(new HttpResponse({ status: 200, body: 'success' }));
   }

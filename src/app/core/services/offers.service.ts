@@ -13,18 +13,18 @@ export class OffersService {
   ) {}
 
   getOffers(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'offers.json');
+    return this.http.get(environment.apiDataUrl + 'offers.json');
   }
 
   getSomeOffers(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'offers-some.json');
+    return this.http.get(environment.apiDataUrl + 'offers-some.json');
   }
 
   getPage(id: number|string): Observable<any> {
-    return this.http.get(environment.apiUrl + 'offer_' + id + '.json');
+    return this.http.get(environment.apiDataUrl + 'offer_' + id + '.json');
   }
 
   getItemPage(id: number|string, parentId: number|string): Observable<any> {
-    return this.http.get(environment.apiUrl + 'offer-item_' + parentId + '_' + id + '.json');
+    return this.http.get(environment.apiDataUrl + 'offer-item_' + parentId + '_' + id + '.json');
   }
 }

@@ -13,10 +13,10 @@ export class LoyaltyService {
   ) {}
 
   getSlides(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'slider-loyalty.json');
+    return this.http.get(environment.apiDataUrl + 'slider-loyalty.json');
   }
 
   getPage(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'loyalty.json');
+    return this.http.get(environment.apiDataUrl + 'loyalty.json');
   }
 }

@@ -13,6 +13,6 @@ export class FaqService {
   ) { }
 
   getQuestions(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'faq.json');
+    return this.http.get(environment.apiDataUrl + 'faq.json');
   }
 }

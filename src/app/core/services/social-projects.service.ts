@@ -12,10 +12,10 @@ export class SocialProjectsService {
   ) {}
 
   getProjects() {
-    return this.http.get(environment.apiUrl + 'social_projects.json');
+    return this.http.get(environment.apiDataUrl + 'social_projects.json');
   }
 
   getPage(id: number): Observable<any> {
-    return this.http.get(environment.apiUrl + 'social_projects_' + id + '.json');
+    return this.http.get(environment.apiDataUrl + 'social_projects_' + id + '.json');
   }
 }

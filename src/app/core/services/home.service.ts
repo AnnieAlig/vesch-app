@@ -13,14 +13,14 @@ export class HomeService {
   ) {}
 
   getHomepage(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'homepage.json');
+    return this.http.get(environment.apiDataUrl + 'homepage.json');
   }
 
   getBlackTie(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'black-tie.json');
+    return this.http.get(environment.apiDataUrl + 'black-tie.json');
   }
 
   getMapList(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'map-list.json');
+    return this.http.get(environment.apiDataUrl + 'map-list.json');
   }
 }

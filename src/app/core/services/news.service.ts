@@ -12,10 +12,10 @@ export class NewsService {
   ) {}
 
   getNews() {
-    return this.http.get(environment.apiUrl + 'news.json');
+    return this.http.get(environment.apiDataUrl + 'news.json');
   }
 
   getPage(id: number): Observable<any> {
-    return this.http.get(environment.apiUrl + 'news_' + id + '.json');
+    return this.http.get(environment.apiDataUrl + 'news_' + id + '.json');
   }
 }

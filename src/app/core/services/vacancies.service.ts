@@ -13,10 +13,10 @@ export class VacanciesService {
   ) {}
 
   getVacancies() {
-    return this.http.get(environment.apiUrl + 'vacancies.json');
+    return this.http.get(environment.apiDataUrl + 'vacancies.json');
   }
 
   getPage(id: number): Observable<any> {
-    return this.http.get(environment.apiUrl + 'vacancy_' + id + '.json');
+    return this.http.get(environment.apiDataUrl + 'vacancy_' + id + '.json');
   }
 }

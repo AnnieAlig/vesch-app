@@ -13,7 +13,7 @@ export class HowWeWorkService {
   ) {}
 
   getData(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'how-we-work.json');
+    return this.http.get(environment.apiDataUrl + 'how-we-work.json');
   }
 
 }

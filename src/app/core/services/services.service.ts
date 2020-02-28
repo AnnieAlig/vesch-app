@@ -13,10 +13,10 @@ export class ServicesService {
   ) {}
 
   getServices() {
-    return this.http.get(environment.apiUrl + 'services-list.json');
+    return this.http.get(environment.apiDataUrl + 'services-list.json');
   }
 
   getPage(id: number): Observable<any> {
-    return this.http.get(environment.apiUrl + 'service_' + id + '.json');
+    return this.http.get(environment.apiDataUrl + 'service_' + id + '.json');
   }
 }

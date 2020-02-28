@@ -13,6 +13,6 @@ export class CompanyService {
   ) { }
 
   getData(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'company.json');
+    return this.http.get(environment.apiDataUrl + 'company.json');
   }
 }

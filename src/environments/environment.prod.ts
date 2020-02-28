@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: '/assets/backend-data/'
+  apiUrl: '/',
+  apiDataUrl: '/assets/backend-data/'
 };

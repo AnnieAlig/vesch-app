@@ -12,9 +12,9 @@ export class PromosService {
   ) {}
 
   getPromos() {
-    return this.http.get(environment.apiUrl + 'promos.json');
+    return this.http.get(environment.apiDataUrl + 'promos.json');
   }
   getPage(id: number): Observable<any> {
-    return this.http.get(environment.apiUrl + 'promo_' + id + '.json');
+    return this.http.get(environment.apiDataUrl + 'promo_' + id + '.json');
   }
 }

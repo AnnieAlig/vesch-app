@@ -15,7 +15,7 @@ export class ConfigService {
   ) {}
 
   getConfig(): Observable<any> {
-    return this.http.get(environment.apiUrl + 'config.json');
+    return this.http.get(environment.apiDataUrl + 'config.json');
   }
 
   store(data: any) {

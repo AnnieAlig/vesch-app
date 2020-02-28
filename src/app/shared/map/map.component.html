@@ -39,14 +39,24 @@
     </div>
     <div class="map__inner">
         <div class="map__frame" *ngIf="mode === 'map'" [@fadeInOut]>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.1316161213595!2d30.478105615686832!3d50.42001937947115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cecfedb45233%3A0x68b832bbbd83e6f9!2z0LLRg9C70LjRhtGPINCf0YDQtdC-0LHRgNCw0LbQtdC90YHRjNC60LAsIDQzLCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1suk!2sua!4v1544827621549" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.1316161213595!2d30.478105615686832!3d50.42001937947115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cecfedb45233%3A0x68b832bbbd83e6f9!2z0LLRg9C70LjRhtGPINCf0YDQtdC-0LHRgNCw0LbQtdC90YHRjNC60LAsIDQzLCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1suk!2sua!4v1544827621549" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+            <agm-map #map [latitude]='mapConfig.latitude' [longitude]='mapConfig.longitude' [zoom]="mapConfig.zoomLevel">
+                <agm-marker *ngFor="let marker of mapList; let i = index" [id]="'marker-' + i" [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]="selectedMarkerId === i ? mapConfig.chosenIconUrl : mapConfig.iconUrl" (markerClick)="selectMarker(i, infowindow)">
+                    <agm-info-window #infowindow>
+                        <p class="map__address">{{marker?.address}}</p>
+                        <p class="map__schedule">{{marker?.schedule}}</p>
+                        <a href="javascript:void(0)" (click)="getDirection(marker)" class="map__link">Как добраться</a>
+                    </agm-info-window>
+                </agm-marker>
+                <agm-direction *ngIf="direction?.destination?.lat" [origin]="direction?.origin" [destination]="direction?.destination"></agm-direction>  
+            </agm-map>
         </div>
         <div class="map__list row" *ngIf="mode === 'list'" [@fadeInOut]>
-            <div class="map__list-item" *ngFor="let item of mapList">
+            <div class="map__list-item" *ngFor="let item of mapList; let i = index">
                 <div class="map__list-address">{{item.address}}</div>
                 <div class="map__list-schedule">
                     <span i18n="@@map__working_hours">Время работы </span>  {{item.schedule}}</div>
-                <a href="{{item.link}}" class="map__list-link">
+                <a href="javascript:void(0)" (click)="showOnMap(item, i)" class="map__list-link">
                     <span i18n="@@map__how_to_get">Как добраться </span> <i class="ic--arrow"></i></a>
             </div>
         </div>

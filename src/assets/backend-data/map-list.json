@@ -12,60 +12,80 @@
         {
             "address": "Преображенская, 43",
             "schedule": "ПН-ВС с 08:30 до 20:30",
+            "latitude": 46.477088,
+            "longitude": 30.731194,
             "type": "point",
             "link": ""
         },
         {
             "address": "Ришельевская, 29",
             "schedule": "ПН-ВС с 08:30 до 20:30",
+            "latitude": 46.477070,
+            "longitude": 30.740339,
             "type": "point",
             "link": ""
         },
         {
             "address": "Ген. Бочарова, 44 (супермаркет 'Сильпо' ",
             "schedule": "ПН-ВС с 08:30 до 20:30",
+            "latitude": 46.586345,
+            "longitude": 30.800660,
             "type": "point",
             "link": ""
         },
         {
             "address": "Проспект Академика Глушко, 11к  (рядом с фитнес-клубом 'Стрекоза')",
             "schedule": "ПН-ВС с 08:30 до 20:30",
+            "latitude": 46.398459,
+            "longitude": 30.727593,
             "type": "atm",
             "link": ""
         },
         {
             "address": "ТОЦ «Kadorr», ул. Екатерининская, 27/1",
             "schedule": "ПН-ВС с 09:00 до 21:00",
+            "latitude": 46.481900,
+            "longitude": 30.739175,
             "type": "atm",
             "link": ""
         },
         {
             "address": "ТРЦ Fozzy, улица Балковская, 88",
             "schedule": "ПН-ВС с 08:30 до 20:30",
+            "latitude": 46.481564,
+            "longitude": 30.708210,
             "type": "point",
             "link": ""
         },
         {
             "address": "ТРЦ City center, 2 этаж пр-т Небесной Сотни, 2",
             "schedule": "ПН-ВС с 10:00 до 22:00",
+            "latitude": 46.416380,
+            "longitude": 30.711016,
             "type": "atm",
             "link": ""
         },
         {
             "address": "ТРЦ Семья, Днепропетровская дорога, 93А",
             "schedule": "ПН-ВС с 09:00 до 21:00",
+            "latitude": 46.575638,
+            "longitude": 30.796830,
             "type": "atm",
             "link": ""
         },
         {
             "address": "Гагаринское плато, 9",
             "schedule": "ПН-ВС с 08:30 до 20:30",
+            "latitude": 46.433698,
+            "longitude": 30.763269,
             "type": "atm",
             "link": ""
         },
         {
             "address": "ул. Маршала Говорова, 10/6",
             "schedule": "ПН-ВС с 08:30 до 20:30",
+            "latitude": 46.448883,
+            "longitude": 30.747342,
             "type": "atm",
             "link": ""
         }

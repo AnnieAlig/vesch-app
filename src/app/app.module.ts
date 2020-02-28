@@ -21,6 +21,10 @@ import { LinesComponent } from './layout/lines/lines.component';
 import { SharedModule } from './shared/shared.module';
 import { Ng2Webstorage } from 'ngx-webstorage';
 import { PhonePipe } from './core/pipes/phone.pipe';
+
+import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +48,11 @@ import { PhonePipe } from './core/pipes/phone.pipe';
     BrowserAnimationsModule,
     BootstrapModalModule.forRoot({container: document.body}),
     Ng2Webstorage.forRoot({ prefix: 'v', separator: '-', caseSensitive: true }),
-    SharedModule
+    SharedModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyApKI_HxX5zMJAhG6XXQSdwClRCUk7QYzI'
+    }),
+    AgmDirectionModule
   ],
   providers: [
   ],

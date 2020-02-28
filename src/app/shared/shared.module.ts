@@ -11,7 +11,6 @@ import { VideoComponent } from './video/video.component';
 import { SliderComponent } from './slider/slider.component';
 import { SocialShareComponent } from './social-share/social-share.component';
 // import { SuccessModalComponent } from './modals/success-modal/success-modal.component';
-
 export const components = [
   BreadcrumbsComponent,
   CallbackComponent,

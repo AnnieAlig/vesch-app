@@ -137,3 +137,43 @@
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: none; 
 }
+
+agm-map{
+    height: 100%;
+    width: 100%;
+    /deep/ {
+        .gm-style .gm-style-iw-c{
+            background-color: var(--color_secondary);
+            color: var(--color_white);
+            font-family: var(--main_font);
+            padding: 20px!important;
+            border-radius: 0;
+        }
+        .gm-style .gm-style-iw-d {
+            overflow: auto!important;
+        }
+        .gm-style .gm-style-iw-t::after{
+            display: none;
+        }
+        button.gm-ui-hover-effect{
+            display: none!important;
+        }
+        .map__address{
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 24px;
+        }
+        .map__schedule{
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 24px;
+            color: var(--color_light);
+        }
+        .map__link{
+            font-size: 10px;
+            letter-spacing: 1px;
+            line-height: 24px;
+            color: var(--color_primary);
+        }
+    }
+}

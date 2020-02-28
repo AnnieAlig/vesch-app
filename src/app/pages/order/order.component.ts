@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../core/order/order.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -12,13 +12,11 @@ import { first } from 'rxjs/operators';
     '../../../assets/styles/_pages.scss',
     './order.component.scss']
 })
-export class OrderComponent implements OnInit, OnDestroy {
+export class OrderComponent implements OnInit {
 
   public order = {
     items: []
   };
-  private _orderSubs: Subscription;
-  // public orderItems;
 
   constructor(
     private orderService: OrderService,
@@ -47,7 +45,4 @@ export class OrderComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
-    this._orderSubs.unsubscribe();
-  }
 }

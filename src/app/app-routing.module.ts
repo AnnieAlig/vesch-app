@@ -8,6 +8,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   { path: 'services', loadChildren: './pages/services/services.module#ServicesModule' },
+  { path: 'products', loadChildren: './pages/products/products.module#ProductsModule' },
   { path: 'promos', loadChildren: './pages/promos/promos.module#PromosModule' },
   { path: 'offers', loadChildren: './pages/offers/offers.module#OffersModule' },
   { path: 'loyalty', loadChildren: './pages/loyalty/loyalty.module#LoyaltyModule' },

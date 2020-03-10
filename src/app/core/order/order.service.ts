@@ -85,8 +85,8 @@ export class OrderService {
 
   submit(data: any): Observable<any> {
     console.log(data);
-    // return this.http.post( environment.apiDataUrl, data, httpOptions);
-    return of({status: 'success', order: 1262});
+    return this.http.post( environment.apiUrl + 'create_order', data, httpOptions);
+    // return of({status: 'success', order: 1262});
   }
 
   sendCart(cart: any): Observable<any> {
@@ -118,7 +118,7 @@ export class OrderService {
 
   getOrder(customer: any): Observable<any> {
     console.log(customer);
-    return this.http.get( environment.apiDataUrl + '/order.json?customer=' + customer, httpOptions);
+    return this.http.get( environment.apiDataUrl + 'order.json?customer=' + customer, httpOptions);
     // return of(JSON.parse(this.$localStorage.retrieve('order-data')));
   }
 

@@ -24,8 +24,8 @@ export class CheckoutService {
       order: order,
       info: info
     };
-    // return this.http.post(environment.apiDataUrl + 'submit', data, httpOptions);
     console.log('data', data);
-    return of(new HttpResponse({ status: 200, body: 'success' }));
+    return this.http.post(environment.apiUrl + 'do_order', data, httpOptions);
+    // return of(new HttpResponse({ status: 200, body: 'success' }));
   }
 }

@@ -7,12 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: ServicesComponent,
-    // data: {
-    //   meta: {
-    //     title: meta.pages.faq.title,
-    //     description: meta.pages.faq.description,
-    //   }
-    // },
   },
   {
   path: ':id',

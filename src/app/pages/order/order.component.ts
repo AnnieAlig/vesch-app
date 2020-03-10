@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OrderService } from '../../core/order/order.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -12,11 +12,13 @@ import { first } from 'rxjs/operators';
     '../../../assets/styles/_pages.scss',
     './order.component.scss']
 })
-export class OrderComponent implements OnInit {
+export class OrderComponent implements OnInit, OnDestroy {
 
   public order = {
     items: []
   };
+
+  private _subs = new Subscription();
 
   constructor(
     private orderService: OrderService,
@@ -30,6 +32,9 @@ export class OrderComponent implements OnInit {
       this.orderService.getOrder(customer).pipe(first()).subscribe(
         (orderItems) => {
           this.order.items = orderItems;
+          this._subs.add(this.orderService.orderData.subscribe((data) => {
+            this.order.items = data;
+          }));
         },
       (err) => {
         this.orderService.clear();
@@ -43,6 +48,12 @@ export class OrderComponent implements OnInit {
         this.router.navigate(['/checkout'], {queryParams: {order: result.order}});
       }
     });
+  }
+
+  ngOnDestroy() {
+    if (this._subs) {
+      this._subs.unsubscribe();
+    }
   }
 
 }

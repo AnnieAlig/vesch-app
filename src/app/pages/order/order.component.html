@@ -80,15 +80,15 @@
         </div>
       </div>
 
-      <div class="additional-content">
+      <div class="additional-content" *ngIf="item?.additional_options?.length">
         <div class="col-4 col-tablet-2 col-desktop-3">
           <h4 i18n="@@cart__choose_additional_service">Выберите дополнительный сервис</h4>
         </div>
         <div class="col-4 col-tablet-2 col-desktop-3">
           <div class="order__select">
-              <select name="additional" class="select" [(ngModel)]="order?.items[i].additional_chosen">
+              <select name="additional" class="select" [(ngModel)]="order?.items[i].additional_chosen" (change)="orderService.update(order?.items)">
                 <option [value]="null" selected i18n="@@cart__choose_additional_service_placeholder">Выбор дополнительного сервиса</option>
-                <option [value]="option?.id" *ngFor="let option of item?.additional_options">{{option?.text}}</option>
+                <option [value]="option?.id" *ngFor="let option of item?.additional_options">{{option?.text}} - {{option?.price}} {{item?.currency}}</option>
               </select>
               <i class="ic ic--dropdown">^</i>
           </div>

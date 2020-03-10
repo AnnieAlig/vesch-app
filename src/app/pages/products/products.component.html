@@ -1,0 +1,23 @@
+<app-breadcrumbs currentPage="Товары" i18n-currentPage="@@nav_services"></app-breadcrumbs>
+<div class="container-inner" *ngFor="let section of products">
+  <div class="row">
+    <div class="col-1 hidden-mobile"></div>
+    <div class="col-4 col-tablet-3 col-desktop-5 position-relative">
+      <h1 class="page__title">{{section?.category_name}}</h1>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="section?.products?.length">
+    <a class="col-4 col-tablet-1 col-desktop-1 product block-link" [routerLink]="item?.link" *ngFor="let item of section?.products; let index = index">
+      <div class="product__img">
+        <img src="{{item?.img}}" alt="{{item?.alt}}">
+      </div>
+      <h4 class="product__name">{{item?.name}}</h4>
+      <p class="product__description">{{item?.description}}</p>
+      <div class="product__price">
+        <button class="add_to_cart" (click)="addToCart(item);"></button>
+        <div class="price">{{item?.price}} {{item?.currency}}</div>
+      </div>
+    </a>
+  </div>
+</div>

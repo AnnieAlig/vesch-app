@@ -74,6 +74,7 @@ export class OrderService {
     this.sendCart(data).subscribe(
       (result) => {
         this.orderDataSource.next(result);
+        this.orderDataValue = result;
         this.saveToStorage(result);
       }
     );
@@ -81,6 +82,7 @@ export class OrderService {
 
   clear() {
     this.orderDataSource.next([]);
+    this.orderDataValue = [];
   }
 
   submit(data: any): Observable<any> {
@@ -124,5 +126,6 @@ export class OrderService {
 
   set(order) {
     this.orderDataSource.next(order);
+    this.orderDataValue = order;
   }
 }

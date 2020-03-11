@@ -3,6 +3,9 @@ import { CheckoutService } from '../../core/services/checkout.service';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { LocalStorageService } from 'ngx-webstorage';
+import {DialogService} from 'ng2-bootstrap-modal';
+import { SuccessModalComponent } from 'src/app/shared/modals/success-modal/success-modal.component';
+import { OrderService } from 'src/app/core/order/order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -32,7 +35,9 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private checkoutService: CheckoutService,
-    private $localStorage: LocalStorageService
+    private orderService: OrderService,
+    private $localStorage: LocalStorageService,
+    private dialogService: DialogService,
   ) { }
 
   ngOnInit() {
@@ -47,11 +52,19 @@ export class CheckoutComponent implements OnInit {
   submitOrder() {
     this.checkoutService.submit(this.cart, this.checkout).subscribe(
       (result) => {
-        if (this.$localStorage.retrieve('customer-id')) {
-          this.$localStorage.clear('customer-id');
-        }
-        if (this.$localStorage.retrieve('order-data')) {
-          this.$localStorage.clear('order-data');
+        if (result && result.success) {
+          const options = {
+            closeByClickingOutside: true,
+            backdropColor: 'rgba(0,0,0,.64)'
+          };
+          this.dialogService.addDialog(SuccessModalComponent, {title: result.success}, options);
+          if (this.$localStorage.retrieve('customer-id')) {
+            this.$localStorage.clear('customer-id');
+          }
+          if (this.$localStorage.retrieve('order-data')) {
+            this.$localStorage.clear('order-data');
+          }
+          this.orderService.clear();
         }
       }
     );

@@ -51,7 +51,8 @@ export class CallbackComponent implements OnInit, AfterViewInit {
             closeByClickingOutside: true,
             backdropColor: 'rgba(0,0,0,.64)',
           };
-          const disposable = this.dialogService.addDialog(SuccessModalComponent, {title: 'Ваша заявка успешно отправлена!'}, options)
+          const disposable = this.dialogService.addDialog(SuccessModalComponent,
+            {title: 'Ваша заявка успешно отправлена!', subtitle: 'Мы свяжемся с вами очень скоро'}, options)
             .subscribe((modal) => {
               this.callbackForm.reset();
               this.validated = false;

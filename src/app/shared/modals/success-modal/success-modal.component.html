@@ -8,8 +8,8 @@
           </div>
           <div class="modal-body">
             <img src="assets/img/vacancies/ic_send.svg" alt="icon sent" class="modal-img">
-            <p class="modal-title">{{title}}</p>
-            <p class="modal-subtitle">Мы свяжемся с вами очень скоро</p>
+            <p class="modal-title" [innerHtml]="title"></p>
+            <p class="modal-subtitle" *ngIf="subtitle">{{subtitle}}</p>
           </div>
       </div>
     </div>

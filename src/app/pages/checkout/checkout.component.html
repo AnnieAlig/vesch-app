@@ -47,7 +47,11 @@
             <h3 class="form-group-title" i18n="@@cart__address">
                 адрес доставки
             </h3>
-            <div class="checkout__select">
+            <input type="text" class="checkout__input" placeholder="Область" name="region" required 
+              [(ngModel)]="checkout.region" i18n-placeholder="@@cart__street">
+            <input type="text" class="checkout__input" placeholder="Город" name="city" required 
+              [(ngModel)]="checkout.city" i18n-placeholder="@@cart__street">
+            <!-- <div class="checkout__select">
                 <select name="region" class="select" [(ngModel)]="checkout.region">
                   <option value="Киевская область" selected>Киевская область</option>
                   <option value="Другой вариант">Другой вариант</option>
@@ -60,7 +64,7 @@
                   <option value="Другой вариант">Другой вариант</option>
                 </select>
                 <i class="ic ic--dropdown">^</i>
-            </div>
+            </div> -->
             <input type="text" class="checkout__input" placeholder="Улица" name="street" required 
               [(ngModel)]="checkout.street" i18n-placeholder="@@cart__street">
             <div class="checkout__input-row">

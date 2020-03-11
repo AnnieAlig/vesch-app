@@ -3,6 +3,7 @@ import { DialogComponent, DialogService, DialogOptions} from 'ng2-bootstrap-moda
 
 export interface SuccessModel {
   title: string;
+  subtitle: string;
 }
 
 @Component({
@@ -14,6 +15,7 @@ export class SuccessModalComponent  extends DialogComponent<SuccessModel, boolea
 implements SuccessModel, OnInit, OnDestroy {
 
   public title: string;
+  public subtitle: string;
 
   @HostListener('document:keydown', ['$event'])
   onKeydownHandler(event: KeyboardEvent) {

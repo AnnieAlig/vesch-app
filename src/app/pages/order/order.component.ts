@@ -32,10 +32,8 @@ export class OrderComponent implements OnInit, OnDestroy {
       this.orderService.getOrder(customer).pipe(first()).subscribe(
         (orderItems) => {
           this.order.items = orderItems;
-          console.log('first orderItems', orderItems)
           this._subs.add(this.orderService.orderData.subscribe((data) => {
             this.order.items = data;
-            console.log('update orderItems', data)
           }));
         },
       (err) => {
@@ -45,7 +43,7 @@ export class OrderComponent implements OnInit, OnDestroy {
   }
 
   submitOrder() {
-    this.orderService.submit(this.order).subscribe( (result) => {
+    this.orderService.submit(this.order.items).subscribe( (result) => {
       if (result && result.id) {
         this.router.navigate(['/checkout'], {queryParams: {order: result.id}});
       }

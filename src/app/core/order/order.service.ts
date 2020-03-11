@@ -85,7 +85,11 @@ export class OrderService {
     this.orderDataValue = [];
   }
 
-  submit(data: any): Observable<any> {
+  submit(cart: any): Observable<any> {
+    const data = {
+      customer: this.$localStorage.retrieve('customer-id'),
+      cart: cart
+    };
     console.log(data);
     return this.http.post( environment.apiUrl + 'create_order', data, httpOptions);
     // return of({status: 'success', order: 1262});

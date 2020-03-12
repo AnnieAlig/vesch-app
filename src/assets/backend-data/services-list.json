@@ -131,5 +131,8 @@
             "img": "assets/img/services/list/service_18.png",
             "alt": ""
         }
-    ]
+    ],
+    "texts": {
+        "page_title": "Дополнительные сервисы"
+    }
 }

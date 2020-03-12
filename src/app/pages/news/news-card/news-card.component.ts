@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-news-card',
@@ -11,11 +12,14 @@ import { Component, OnInit, Input, HostListener } from '@angular/core';
 export class NewsCardComponent implements OnInit {
   @Input() news_item: any;
   public isMobile: boolean;
+
   @HostListener('window:resize', ['$event'])
     onResize(event) {
       this.isMobile = window.innerWidth < 1023;
   }
-  constructor() { }
+  constructor(
+    private config: ConfigService
+    ) { }
 
   ngOnInit() {
     this.isMobile = window.innerWidth < 1023;

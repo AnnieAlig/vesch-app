@@ -6,6 +6,7 @@ import { WOW } from 'wowjs/dist/wow.min';
 import * as _ from 'underscore';
 import { Subscription } from 'rxjs';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-offer-item-page',
@@ -24,7 +25,8 @@ export class OfferItemPageComponent implements OnInit, OnDestroy {
     private router: Router,
     private offersService: OffersService,
     private orderService: OrderService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

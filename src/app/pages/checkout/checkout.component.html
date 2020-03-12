@@ -1,13 +1,13 @@
-<app-breadcrumbs currentPage="Оформление заказа" i18n-currentPage="@@cart__title"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.checkout?.page_title"></app-breadcrumbs>
 
 
 <div class="container-inner">
     <div class="row">
       <div class="col-1 hidden-mobile"></div>
       <div class="col-4 col-tablet-3 col-desktop-5 position-relative">
-        <h1 class="page__title"><span i18n="@@cart__order">заказ</span> № {{cart?.id}}</h1>
+        <h1 class="page__title">{{(config.configData | async)?.checkout?.order}} № {{cart?.id}}</h1>
         <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
-          <p i18n="@@cart__title">Оформление заказа</p>
+          <p>{{(config.configData | async)?.checkout?.title}}</p>
         </div>
       </div>
     </div>
@@ -17,26 +17,26 @@
       <div class="checkout-form-container">
         <div class="form-group-lg">
           <div class="form-group">
-              <h3 class="form-group-title" i18n="@@cart__contact_details">
-                контактные данные
+              <h3 class="form-group-title">
+                {{(config.configData | async)?.checkout?.contact_details}}
               </h3>
-              <input type="text" class="checkout__input" placeholder="Ваше имя" name="name" required 
-                [(ngModel)]="checkout.name" i18n-placeholder="@@cart__your_first_name">
-              <input type="text" class="checkout__input" placeholder="Ваша фамилия" name="surname" required 
-                [(ngModel)]="checkout.surname" i18n-placeholder="@@cart__your_last_name">
+              <input type="text" class="checkout__input" [placeholder]="(config.configData | async)?.checkout?.your_first_name" name="name" required 
+                [(ngModel)]="checkout.name">
+              <input type="text" class="checkout__input" [placeholder]="(config.configData | async)?.checkout?.your_last_name" name="surname" required 
+                [(ngModel)]="checkout.surname">
               <input type="text" class="checkout__input" placeholder="+38(0__)___-__-__" name="phone" required
                 [textMask]="{mask: phoneMask}" [(ngModel)]="checkout.phone">
               <input type="text" class="checkout__input email" placeholder="Ваш Email" name="email" required 
                 [(ngModel)]="checkout.email">
             </div>
           <div class="form-group">
-              <h3 class="form-group-title" i18n="@@cart__delivery_type">
-                  выберите способ доставки
+              <h3 class="form-group-title">
+                  {{(config.configData | async)?.checkout?.delivery_type}}
               </h3>
               <div class="checkout__select">
                   <select name="delivery" class="select" [(ngModel)]="checkout.delivery">
-                    <option value="Курьером до двери" selected i18n="@@cart__delivery_courier">Курьером до двери</option>
-                    <option value="Другой вариант" i18n="@@cart__delivery_other">Другой вариант</option>
+                    <option value="Курьером до двери" selected>{{(config.configData | async)?.checkout?.delivery_courier}}</option>
+                    <option value="Другой вариант">{{(config.configData | async)?.checkout?.delivery_other}}</option>
                   </select>
                   <i class="ic ic--dropdown">^</i>
               </div>
@@ -44,13 +44,11 @@
         </div>
         <div class="form-group-sm">
           <div class="form-group">
-            <h3 class="form-group-title" i18n="@@cart__address">
-                адрес доставки
-            </h3>
-            <input type="text" class="checkout__input" placeholder="Область" name="region" required 
-              [(ngModel)]="checkout.region" i18n-placeholder="@@cart__street">
-            <input type="text" class="checkout__input" placeholder="Город" name="city" required 
-              [(ngModel)]="checkout.city" i18n-placeholder="@@cart__street">
+            <h3 class="form-group-title">{{(config.configData | async)?.checkout?.address}}</h3>
+            <input type="text" class="checkout__input" [placeholder]="(config.configData | async)?.checkout?.region" name="region" required 
+              [(ngModel)]="checkout.region">
+            <input type="text" class="checkout__input" [placeholder]="(config.configData | async)?.checkout?.city" name="city" required 
+              [(ngModel)]="checkout.city">
             <!-- <div class="checkout__select">
                 <select name="region" class="select" [(ngModel)]="checkout.region">
                   <option value="Киевская область" selected>Киевская область</option>
@@ -65,15 +63,15 @@
                 </select>
                 <i class="ic ic--dropdown">^</i>
             </div> -->
-            <input type="text" class="checkout__input" placeholder="Улица" name="street" required 
-              [(ngModel)]="checkout.street" i18n-placeholder="@@cart__street">
+            <input type="text" class="checkout__input" [placeholder]="(config.configData | async)?.checkout?.street" name="street" required 
+              [(ngModel)]="checkout.street">
             <div class="checkout__input-row">
-                <input type="text" class="checkout__input" placeholder="Дом" name="house" required 
-                  [(ngModel)]="checkout.house" i18n-placeholder="@@cart__house">
-                <input type="text" class="checkout__input" placeholder="Этаж" name="floor" required 
-                  [(ngModel)]="checkout.floor" i18n-placeholder="@@cart__floor">
-                <input type="text" class="checkout__input" placeholder="Кв." name="flat" required 
-                  [(ngModel)]="checkout.flat" i18n-placeholder="@@cart__flat">
+                <input type="text" class="checkout__input" [placeholder]="(config.configData | async)?.checkout?.house" name="house" required 
+                  [(ngModel)]="checkout.house">
+                <input type="text" class="checkout__input" [placeholder]="(config.configData | async)?.checkout?.floor" name="floor" required 
+                  [(ngModel)]="checkout.floor">
+                <input type="text" class="checkout__input" [placeholder]="(config.configData | async)?.checkout?.flat" name="flat" required 
+                  [(ngModel)]="checkout.flat">
             </div>
           </div>
         </div>
@@ -81,18 +79,18 @@
       <div class="checkout-info-container">
         <div class="info-col">
           <p class="info-text h5">
-            <span i18n="@@cart__quantity_items">Количество вещей:</span>
+            <span>{{(config.configData | async)?.checkout?.quantity_items}}:</span>
             <span>{{cart?.quantity}}</span>
           </p>
-          <p class="info-text h5" i18n="@@cart__total_price">Общая стоимость:
+          <p class="info-text h5">{{(config.configData | async)?.checkout?.total_price}}:
             <span class="info-price">{{cart?.price}}</span>
           </p>
         </div>
         <div class="info-col order-mobile-last">
-          <p i18n="@@cart__additional_text">*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</p>
+          <p>{{(config.configData | async)?.checkout?.additional_text}}</p>
         </div>
         <div class="info-col">
-          <button class="checkout__submit btn btn-primary" type="submit" i18n="@@cart__submit_order">Оформить заказ</button>
+          <button class="checkout__submit btn btn-primary" type="submit">{{(config.configData | async)?.checkout?.submit_order}}</button>
         </div>
       </div>
     </form>

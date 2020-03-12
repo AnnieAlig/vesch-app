@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { MetaService } from 'src/app/core/services/meta.service';
 import { OrderService } from 'src/app/core/order/order.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-products',
@@ -16,7 +17,8 @@ export class ProductsComponent implements OnInit {
   constructor(
     private productsService: ProductsService,
     private orderService: OrderService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

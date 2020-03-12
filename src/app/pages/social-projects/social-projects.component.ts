@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialProjectsService } from '.././../core/services/social-projects.service';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-social-projects',
@@ -13,9 +14,11 @@ export class SocialProjectsComponent implements OnInit {
   public projects: any;
   public itemsPerPage: number;
   public page: any;
+
   constructor(
     private socialProjectsService: SocialProjectsService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

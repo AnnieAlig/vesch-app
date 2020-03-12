@@ -14,7 +14,7 @@
       <div class="col-desktop-1"></div>
       <div class="col-desktop-3 col-tablet-3 col-4 breadcrumbs__container">
         <div class="breadcrumbs__links">
-          <a routerLink="/" class="breadcrumbs-home" i18n="@@nav_main">Главная</a>
+          <a routerLink="/" class="breadcrumbs-home">{{(config.configData | async)?.navigation?.main}}</a>
           <span class="breadcrumbs__separator">
             <i class="fas fa-angle-right"></i>
           </span>

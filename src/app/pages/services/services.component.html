@@ -1,9 +1,9 @@
-<app-breadcrumbs currentPage="Сервисы" i18n-currentPage="@@nav_services"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.navigation?.services"></app-breadcrumbs>
 <div class="container-inner">
   <div class="row">
     <div class="col-1 hidden-mobile"></div>
     <div class="col-4 col-tablet-3 col-desktop-5 position-relative">
-      <h1 class="page__title">Дополнительные сервисы</h1>
+      <h1 class="page__title">{{texts?.page_title}}</h1>
     </div>
   </div>
 
@@ -14,7 +14,7 @@
         <div class="service__link">
           <span class="link rotated">
               <i class="ic ic--plus">+</i>
-              <span i18n="@@general__view_price">Смотреть прайс</span> 
+              <span>{{(config.configData | async)?.common_texts?.view_price}}</span> 
           </span>
         </div>
       </div>

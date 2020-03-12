@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HowWeWorkService } from 'src/app/core/services/how-we-work.service';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-how-we-work',
@@ -14,7 +15,8 @@ export class HowWeWorkComponent implements OnInit {
 
   constructor(
     private howWeWorkServise: HowWeWorkService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

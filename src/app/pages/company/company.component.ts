@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CompanyService } from '../../core/services/company.service';
 import * as _ from 'underscore';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 declare var lightGallery: any;
 
@@ -18,7 +19,8 @@ export class CompanyComponent implements OnInit {
 
   constructor(
     private metaService: MetaService,
-    private companyService: CompanyService
+    private companyService: CompanyService,
+    private config: ConfigService
     ) { }
 
   ngOnInit() {

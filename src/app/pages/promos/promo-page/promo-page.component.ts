@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PromosService } from '../../../core/services/promos.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-promo-page',
@@ -18,7 +19,8 @@ export class PromoPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private promosService: PromosService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

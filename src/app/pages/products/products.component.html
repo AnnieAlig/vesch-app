@@ -1,4 +1,4 @@
-<app-breadcrumbs currentPage="Товары" i18n-currentPage="@@nav_services"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.navigation?.products"></app-breadcrumbs>
 <div class="container-inner" *ngFor="let section of products">
   <div class="row">
     <div class="col-1 hidden-mobile"></div>

@@ -4,6 +4,7 @@ import { VacanciesService } from '../../../core/services/vacancies.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import * as _ from 'underscore';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-vacancy-page',
@@ -20,7 +21,8 @@ export class VacancyPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private vacanciesService: VacanciesService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

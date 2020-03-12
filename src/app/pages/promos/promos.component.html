@@ -1,9 +1,9 @@
-<app-breadcrumbs currentPage="Акции" i18n-currentPage="@@nav__promos"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.navigation?.promos"></app-breadcrumbs>
 <div class="container-inner">
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
     <div class="page__brand_text-rotated hidden-mobile">
-        <p i18n="@@nav__promos">акции</p>
+        <p>{{(config.configData | async)?.navigation?.promos}}</p>
     </div>
   </div>
   <div class="row promos_container">

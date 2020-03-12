@@ -1,4 +1,4 @@
-<app-breadcrumbs currentPage="Программа лояльности" i18n-currentPage="@@nav__loyalty"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.navigation?.loyalty"></app-breadcrumbs>
 <!-- SLIDER -->
 <div class="slider container-inner">
   <div class="decor-bar">
@@ -17,7 +17,7 @@
         <div [innerHtml]="loyalty?.description"></div>
       </div>
       <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
-          <p i18n="@@nav__loyalty">программа лояльности</p>
+          <p>{{(config.configData | async)?.navigation?.loyalty}}</p>
       </div>
   </div>
   <div class="loyalty-content col-desktop-5">

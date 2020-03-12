@@ -1,4 +1,4 @@
-<app-breadcrumbs [currentPage]="offer.title" parentPage="Услуги" *ngIf="offer?.title" i18n-parentPage="@@nav_offers"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="offer.title" [parentPage]="(config.configData | async)?.navigation?.offers" *ngIf="offer?.title"></app-breadcrumbs>
 <div class="container-inner" *ngIf="offer">
   <div class="slider__container">
     <div class="slider__inner">
@@ -29,18 +29,18 @@
     <div class="row align-items-center justify-content-between">
         <form class="search__form" #form="ngForm">
             <div class="search__element col-desktop-3 col-4">
-                <input type="text" class="search__input" (keyup)="search($event.target.value)" placeholder="Поиск по каталогу услуг" name="search_input" i18n-placeholder="@@offers__search_text">
+                <input type="text" class="search__input" (keyup)="search($event.target.value)" [placeholder]="offer?.texts?.search_text" name="search_input">
                 <i class="ic ic--search"></i>
             </div>
             <div class="col-desktop-1"></div>
             <div class="col-4 col-tablet-2 col-desktop-1 d-flex align-items-center">
-              <p class="searh__label" i18n="@@offers__sort_text">Сортировать по:</p>
+              <p class="searh__label">{{offer?.texts?.sort_text}}</p>
             </div>
             <div class="search__element col-4 col-tablet-2 col-desktop-1">
                 <select name="city_select" class="search__select" (change)="sort(filteredItems, $event.target.value)">
-                  <option value="alphabet" selected i18n="@@offers__sort_alphabet">Алфавиту</option>
-                  <option value="ACD" i18n="@@offers__sort_acd">Возрастанию цены</option>
-                  <option value="DESC" i18n="@@offers__sort_desc">Убыванию цены</option>
+                  <option value="alphabet" selected>{{offer?.texts?.sort_alphabet}}</option>
+                  <option value="ACD">{{offer?.texts?.sort_acd}}</option>
+                  <option value="DESC">{{offer?.texts?.sort_desc}}</option>
                 </select>
                 <i class="ic ic--dropdown">^</i>
             </div>

@@ -1,4 +1,4 @@
-<app-breadcrumbs currentPage="Компания" i18n-currentPage="@@nav__company"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.navigation?.company"></app-breadcrumbs>
 <div class="container-inner" *ngIf="data">
   <section class="image">
     <div class="row">
@@ -23,7 +23,7 @@
           <div class="description-text" [innerHtml]="data.description"></div>
       </div>
       <div class="page__brand_text-rotated hidden-mobile">
-          <p i18n="@@nav__company">компания</p>
+          <p>{{(config.configData | async)?.navigation?.company}}</p>
       </div>
     </div>
   </section>

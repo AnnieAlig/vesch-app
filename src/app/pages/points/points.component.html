@@ -1,25 +1,25 @@
-<app-breadcrumbs currentPage="Пункты приема" i18n-currentPage="@@nav__points"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.navigation?.points"></app-breadcrumbs>
 
 <div class="container-inner" *ngIf="map">
   <div class="page__description col-desktop-5">
-    <div [innerHtml]="map.subtitle_long"></div>
+    <div [innerHtml]="mapData?.subtitle_long"></div>
   </div>
   <div class="map__menu row">
       <div class="col-desktop-3">
         <ul class="menu-list map__sort">
           <li class="navbar__item">
-              <a href="javascript:void(0);" class="navbar__link" (click)="filter('all')" [ngClass]="{'active': filterOption === 'all'}" i18n="@@map__all_locations">
-                  Все локации
+              <a href="javascript:void(0);" class="navbar__link" (click)="filter('all')" [ngClass]="{'active': filterOption === 'all'}">
+                  {{mapData?.texts?.all_locations}}
               </a>
           </li>
           <li class="navbar__item">
-              <a href="javascript:void(0);" class="navbar__link" (click)="filter('point')" [ngClass]="{'active': filterOption === 'point'}" i18n="@@map__points">
-                  Приемные пункты
+              <a href="javascript:void(0);" class="navbar__link" (click)="filter('point')" [ngClass]="{'active': filterOption === 'point'}">
+                {{mapData?.texts?.points}}
               </a>
           </li>
           <li class="navbar__item">
-              <a href="javascript:void(0);" class="navbar__link" (click)="filter('atm')" [ngClass]="{'active': filterOption === 'atm'}" i18n="@@map__atm">
-                  Чистоматы
+              <a href="javascript:void(0);" class="navbar__link" (click)="filter('atm')" [ngClass]="{'active': filterOption === 'atm'}">
+                {{mapData?.texts?.atm}}
               </a>
           </li>
         </ul>
@@ -28,9 +28,8 @@
       <div class="map__list-item" *ngFor="let item of mapList; let i = index">
         <h3 class="map__list-address">{{item.address}}</h3>
         <div class="map__list-schedule">
-          <span i18n="@@map__working_hours">Время работы </span> 
-          {{item.schedule}}</div>
-        <a href="javascript:void(0)" (click)="showOnMap(item, i)" class="map__list-link" i18n="@@map__show_on_map">Показать на карте</a>
+          {{mapData?.texts?.working_hours}} {{item.schedule}}</div>
+        <a href="javascript:void(0)" (click)="showOnMap(item, i)" class="map__list-link">{{mapData?.texts?.show_on_map}}</a>
       </div>
     </div>
     <div class="map__frame">
@@ -39,7 +38,7 @@
               <agm-info-window #infowindow>
                   <p class="map__address">{{marker?.address}}</p>
                   <p class="map__schedule">{{marker?.schedule}}</p>
-                  <a href="javascript:void(0)" (click)="getDirection(marker)" class="map__link">Как добраться</a>
+                  <a href="javascript:void(0)" (click)="getDirection(marker)" class="map__link">>{{mapData?.texts?.how_to_get}}</a>
               </agm-info-window>
           </agm-marker>
           <agm-direction *ngIf="direction?.destination?.lat" [origin]="direction?.origin" [destination]="direction?.destination"></agm-direction>

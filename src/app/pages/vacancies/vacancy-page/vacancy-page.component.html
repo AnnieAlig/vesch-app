@@ -1,26 +1,26 @@
-<app-breadcrumbs [currentPage]="vacancy.title" parentPage="Вакансии" *ngIf="vacancy?.title" i18n-parentPage="@@nav__vacancies"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="vacancy.title" [parentPage]="(config.configData | async)?.navigation?.vacancies" *ngIf="vacancy?.title"></app-breadcrumbs>
 <div class="container-inner" *ngIf="vacancy">
   
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
     <!-- <h1 class="page__title">{{vacancy.title}}</h1> -->
     <div class="page__brand_text-rotated hidden-mobile">
-        <p i18n="@@nav__vacancies">вакансии</p>
+        <p>{{(config.configData | async)?.navigation?.vacancies}}</p>
     </div>
   </div>
   <div class="page__image">
     <img src="{{vacancy.image}}" alt="{{vacancy.title}} image">
   </div>
   <div class="page__text-block">
-    <h3 class="page__subtitle" i18n="@@vacancies__vacancy_details">Описание вакансии</h3>
+    <h3 class="page__subtitle">{{(config.configData | async)?.vacancies?.details}}</h3>
     <div class="page__description" [innerHtml]="vacancy?.description"></div>
   </div>
   <div class="page__text-block">
-    <h3 class="page__subtitle" i18n="@@vacancies__vacancy_conditions">Условия работы</h3>
+    <h3 class="page__subtitle">{{(config.configData | async)?.vacancies?.conditions}}</h3>
     <div class="page__description" [innerHtml]="vacancy?.conditions"></div>
   </div>
   <div class="page__text-block">
-    <h3 class="page__subtitle" i18n="@@vacancies__vacancy_salary">Заработная плата</h3>
+    <h3 class="page__subtitle">{{(config.configData | async)?.vacancies?.salary}}</h3>
     <h3 class="page__subtitle">
         <span class="vacancy-salary" *ngIf="vacancy.salary">{{vacancy.salary}}</span>
       </h3>

@@ -1,4 +1,4 @@
-<app-breadcrumbs [currentPage]="project.title" parentPage="Социальные проекты" *ngIf="project?.title" i18n-parentPage="@@nav__social_projects"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="project.title" [parentPage]="(config.configData | async)?.navigation?.social_projects" *ngIf="project?.title"></app-breadcrumbs>
 <div class="container-inner" *ngIf="project">
   
   <div class="page__image">

@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { WOW } from 'wowjs/dist/wow.min';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-breadcrumbs',
@@ -11,13 +12,14 @@ export class BreadcrumbsComponent implements OnInit, AfterViewInit {
   @Input() currentPage: string;
   @Input() parentPage: string;
   @Input() subParent: string;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private config: ConfigService
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngAfterViewInit() {
     // new WOW().init();

@@ -1,4 +1,4 @@
-<app-breadcrumbs currentPage="FAQ" parentPage="О нас" i18n-parentPage="@@nav__about_us"></app-breadcrumbs>
+<app-breadcrumbs currentPage="FAQ" [parentPage]="(config.configData | async)?.navigation?.about_us"></app-breadcrumbs>
 
 <div class="container-inner">
   <div class="row">

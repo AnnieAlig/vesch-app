@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ComponentRef, HostListener, Renderer2 } from '@angular/core';
 import { DialogComponent, DialogService, DialogOptions} from 'ng2-bootstrap-modal';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 export interface SearchModel {}
 
@@ -12,6 +13,7 @@ export interface SearchModel {}
   export class SearchModalComponent extends DialogComponent<SearchModel, boolean>
   implements SearchModel, OnInit, OnDestroy {
     public searchInput;
+
     @HostListener('document:keydown', ['$event'])
     onKeydownHandler(event: KeyboardEvent) {
       if (event.key === 'Escape') {
@@ -25,6 +27,7 @@ export interface SearchModel {}
   constructor(
     dialogService: DialogService,
     private renderer: Renderer2,
+    private config: ConfigService
   ) {
     super(dialogService);
   }

@@ -188,5 +188,12 @@
             "img": "assets/img/offers/rel_3.png",
             "link": ""
         }
-    ]
+    ],
+    "texts": {
+        "search_text": "Поиск по каталогу услуг",
+        "sort_text": "Сортировать по:",
+        "sort_alphabet": "Алфавиту",
+        "sort_acd": "Возрастанию цены",
+        "sort_desc": "Убыванию цены"
+    }
 }

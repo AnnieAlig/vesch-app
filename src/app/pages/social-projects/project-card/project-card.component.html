@@ -5,7 +5,7 @@
   <h3 class="card__title">{{project_item.title}}</h3>
   <p class="card__text">{{project_item.excerpt}}</p>
   <span class="card__link page__more-link link"> 
-    <span i18n="@@general__more_details">Детальнее</span>
+    {{(config.configData | async)?.common_texts?.more_details}}
     <i class="ic ic--more">^</i>
   </span>
 </a>

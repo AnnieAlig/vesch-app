@@ -4,6 +4,7 @@ import { OffersService } from '../../core/services/offers.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import * as _ from 'underscore';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-offers',
@@ -17,6 +18,7 @@ export class OffersComponent implements OnInit, AfterViewInit {
   public offers: any;
   public isMobile: boolean;
   public hidden: any;
+
   @HostListener('window:resize', ['$event'])
     onResize(event) {
       this.isMobile = window.innerWidth < 768;
@@ -24,7 +26,8 @@ export class OffersComponent implements OnInit, AfterViewInit {
   constructor(
     private offersService: OffersService,
     private router: Router,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

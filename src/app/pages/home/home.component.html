@@ -37,7 +37,7 @@
             <h3 class="benefits__title">{{benefit.title}}</h3>
             <div class="benefits__description" [innerHtml]="benefit.description"></div>
             <a href="{{benefit.link}}" class="benefits__link">
-                <span i18n="@@general__more_details">Детальнее</span>
+                <span>{{(config.configData | async)?.common_texts?.more_details}}</span>
                 <i class="ic ic--more">^</i>
             </a>
             <div class="benefits__image">
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="brand_text-rotated hidden-mobile">
-            <p i18n="@@homepage__new_view">новый взгляд на вещи</p>
+            <p>{{texts?.new_view}}</p>
         </div>
     </section>
     <div class="decor-bar decor-bar--lg hidden-tablet hidden-mobile">
@@ -91,13 +91,13 @@
         <div class="row">
             <div class="col-desktop-1"></div>
             <h2 class="col-tablet-3 col-desktop-3 steps__main-title">
-                <span i18n="@@homepage__mobile_eco">Мобильная экочистка</span> &ndash; <span i18n="@@homepage__how_it_works">как это работает</span> 
+                {{texts?.mobile_eco_how_it_works}}
             </h2>
             <div class="col-tablet-2 col-desktop-2 steps__image">
                 <img class="wow slideInLeft" data-wow-duration="1s" src="assets/img/home/mobile_bus.png" alt="mobile cleaning">
             </div>
             <div class="brand_text-rotated hidden-mobile">
-                <p i18n="@@homepage__mobile_eco">мобильная экочистка</p>
+                <p>{{texts?.mobile_eco}}</p>
             </div>
             <div class="steps__container col-4">
                 <div class="steps__item" *ngFor="let step of steps; let index = index">
@@ -108,7 +108,7 @@
             </div>
             <div class="col-tablet-2 col-desktop-1"></div>
             <div class="col-tablet-2 col-desktop-1 mobile-app">
-                <h3 class="mobile-app__title" i18n="@@general__download_app">Скачайте приложение через</h3>
+                <h3 class="mobile-app__title">{{(config.configData | async)?.navigation?.download_app}}</h3>
                 <a href="" class="mobile-app__link">
                     <img src="assets/img/home/apple@2x.png" srcset="assets/img/home/apple@1x.png 1x, /assets/img/home/apple@2x.png 2x, /assets/img/home/apple@3x.png 3x" alt="app store">
                 </a>
@@ -149,9 +149,9 @@
     <section class="services">
         <div class="row">
             <div class="col-desktop-1"></div>
-            <h2 class="services__title-main" i18n="@@homepage__popular_offers">Популярные услуги</h2>
+            <h2 class="services__title-main">{{texts?.popular_offers}}</h2>
             <div class="brand_text-rotated hidden-mobile">
-                <p i18n="@@nav_offers">услуги</p>
+                <p>{{(config.configData | async)?.navigation?.offers}}</p>
             </div>
         </div>
         <div class="row">
@@ -161,7 +161,7 @@
                     <div class="services__link">
                         <span class="rotated link">
                             <i class="ic ic--plus">+</i>
-                            <span i18n="@@general__view_price">Смотреть прайс</span> 
+                            <span>{{texts?.view_price}}</span> 
                         </span>
                     </div>
                 </div>
@@ -172,7 +172,7 @@
         <div class="row services__all">
             <div class="col-1 col-tablet-3 col-desktop-5"></div>
             <a routerLink="/offers" class="col-tablet-1 col-desktop-1 services__all-link">
-                <span i18n="@@homepage__all_offers">Все услуги</span> 
+                <span>{{texts?.all_offers}}</span> 
                 <i class="ic ic--more">^</i>
             </a>
         </div>
@@ -248,7 +248,7 @@
                 </div>
                 <div class="col-desktop-5 col-tablet-3"></div>
                 <a routerLink="/offers/black-tie" class="col-tablet-1 col-desktop-1 blacktie__all-link">
-                    <span i18n="@@general__more_details">Детальнее</span> 
+                    <span>{{(config.configData | async)?.common_texts?.more_details}}</span> 
                     <i class="ic ic--more">^</i>
                 </a>
             </div>
@@ -277,8 +277,8 @@
                     </div>
                     <div class="priority__description" [innerHtml]="priority?.description"></div>
                     <div class="btn-container priorty__buttons d-flex">
-                        <a routerLink="/loyalty" class="btn btn-secondary" i18n="@@homepage__learn_more">Узнать больше</a>
-                        <a href="" class="btn btn-primary" i18n="@@homepage__join">Присоединиться</a>
+                        <a routerLink="/loyalty" class="btn btn-secondary">{{(config.configData | async)?.common_texts?.learn_more}}</a>
+                        <a href="" class="btn btn-primary">{{texts?.join}}</a>
                     </div>
                 </div>
                 <div class="priority__image hidden-tablet hidden-mobile">

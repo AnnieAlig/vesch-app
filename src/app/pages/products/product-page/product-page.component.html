@@ -1,4 +1,4 @@
-<app-breadcrumbs [currentPage]="productItem.name" parentPage="Продукты" [subParent]="productItem?.parent" *ngIf="productItem?.name" i18n-parentPage="@@nav_offers"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="productItem.name" [parentPage]="(config.configData | async)?.navigation?.products" [subParent]="productItem?.parent" *ngIf="productItem?.name"></app-breadcrumbs>
 <div class="container-inner" *ngIf="productItem">
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
@@ -18,19 +18,19 @@
       <div class="item__info">
         <h3 class="item__name">{{productItem.name}}</h3>
         <p class="item__text h5">
-          <span i18n="@@cart__price">Цена: </span>
+          <span>{{(config.configData | async)?.common_texts?.price}}: </span>
           <span class="item__price">{{productItem.price}} {{productItem.currency}}</span>
         </p>
         <div class="item__text"> 
-          <p class="h5" i18n="@@cart__quantity">Количество:</p>
+          <p class="h5">{{(config.configData | async)?.common_texts?.quantity}}:</p>
           <div class="quantity-box">
             <i class="ic ic--plus" (click)="changeQuantity('remove')">-</i>
             <div class="number">{{productItem?.quantity}}</div>
             <i class="ic ic--plus" (click)="changeQuantity('add')">+</i>
           </div>
         </div>
-        <button class="item__btn btn btn-primary" (click)="addToCart(productItem)" i18n="@@cart__add_to_cart">Добавить в корзину</button>
-        <p class="additional-text"i18n="@@cart__additional_text">*  Оценка стоимости вашего заказа рассчитана по базовым тарифам и является предварительной. Окончательная стоимость будет сформирована после оценки изделий при приеме.</p>
+        <button class="item__btn btn btn-primary" (click)="addToCart(productItem)">{{(config.configData | async)?.common_texts?.add_to_cart}}</button>
+        <p class="additional-text">{{(config.configData | async)?.common_texts?.additional_text}}</p>
       </div>
     </div>
   </div>

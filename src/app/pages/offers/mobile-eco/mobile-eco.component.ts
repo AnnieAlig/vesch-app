@@ -3,6 +3,7 @@ import { OffersService } from '../../../core/services/offers.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import { HomeService } from '../../../core/services/home.service';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-mobile-eco',
@@ -17,7 +18,8 @@ export class MobileEcoComponent implements OnInit {
 
   constructor(
     private offersService: OffersService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

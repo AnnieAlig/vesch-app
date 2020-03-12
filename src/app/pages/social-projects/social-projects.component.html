@@ -1,9 +1,9 @@
-<app-breadcrumbs currentPage="Социальные проекты" i18n-currentPage="@@nav__social_projects"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.navigation?.social_projects"></app-breadcrumbs>
 <div class="container-inner">
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
     <div class="page__brand_text-rotated hidden-mobile">
-        <p i18n="@@nav__social_projects">социальные проекты</p>
+        <p>{{(config.configData | async)?.navigation?.social_projects}}</p>
     </div>
   </div>
   <div class="row">

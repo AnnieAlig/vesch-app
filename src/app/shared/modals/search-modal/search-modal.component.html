@@ -22,11 +22,11 @@
               <div class="col-1 hidden-tablet"></div>
               <div class="col-4 search">
                   <label for="" class="search-label"> 
-                      <input type="text" class="search-input" placeholder="Поиск по сайту..."
-                        [(ngModel)]="searchInput" name="search" i18n-placeholder="@@search__placeholder">
+                      <input type="text" class="search-input" [placeholder]="(config.configData | async)?.modals?.search__placeholder"
+                        [(ngModel)]="searchInput" name="search">
                       <i class="ic ic--search ic--mobile" (click)="search()"></i>
                   </label>
-                  <p class="search-help hidden-tablet" i18n="@@search__help_text">Нажмите enter для поиска или esc, чтобы выйти</p>
+                  <p class="search-help hidden-tablet">{{(config.configData | async)?.modals?.help_text}}</p>
                 </div>
             </div>
           </div>

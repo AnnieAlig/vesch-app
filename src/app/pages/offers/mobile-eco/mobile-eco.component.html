@@ -1,10 +1,10 @@
-<app-breadcrumbs [currentPage]="offer.title" parentPage="Услуги" *ngIf="offer?.title" i18n-parentPage="@@nav_offers"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="offer.title" [parentPage]="(config.configData | async)?.navigation?.offers" *ngIf="offer?.title"></app-breadcrumbs>
 <div class="container-inner" *ngIf="offer">
   
   <div class="row position-relative">
         <div class="col-desktop-1"></div>
         <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
-            <p i18n="@@nav_offers">услуги</p>
+            <p>{{(config.configData | async)?.navigation?.offers}}</p>
         </div>
     </div>
 
@@ -28,7 +28,7 @@
               <img class="wow slideInLeft" data-wow-duration="1s" src="assets/img/home/mobile_bus.png" alt="mobile cleaning">
           </div>
           <div class="page__brand_text-rotated hidden-mobile">
-              <p>как это работает</p>
+              <p>{{(config.configData | async)?.navigation?.how_it_works}}</p>
           </div>
           <div class="steps__container col-4">
               <div class="steps__item" *ngFor="let step of offer?.steps; let index = index">
@@ -39,7 +39,7 @@
           </div>
           <div class="col-tablet-2 col-desktop-1"></div>
           <div class="col-tablet-2 col-desktop-1 mobile-app">
-              <h3 class="mobile-app__title" i18n="@@general__download_app">Скачайте приложение через</h3>
+              <h3 class="mobile-app__title">{{(config.configData | async)?.navigation?.download_app}}</h3>
               <a href="" class="mobile-app__link">
                   <img src="assets/img/home/apple@2x.png" srcset="assets/img/home/apple@1x.png 1x, /assets/img/home/apple@2x.png 2x, /assets/img/home/apple@3x.png 3x" alt="app store">
               </a>

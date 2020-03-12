@@ -4,6 +4,7 @@ import { CallbackService} from '../../core/services/callback.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import {DialogService} from 'ng2-bootstrap-modal';
 import { SuccessModalComponent } from '../../shared/modals/success-modal/success-modal.component';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 
 @Component({
@@ -16,8 +17,6 @@ export class CallbackComponent implements OnInit, AfterViewInit {
   @Input() mode: any;
   @Input() referrer: any;
   public data: any;
-  private modeOrder: any;
-  private modeSubscribe: any;
 
   @ViewChild('form') callbackForm: HTMLFormElement;
   public callback = {
@@ -30,7 +29,8 @@ export class CallbackComponent implements OnInit, AfterViewInit {
 
   constructor(
     private dialogService: DialogService,
-    private callbackService: CallbackService
+    private callbackService: CallbackService,
+    private config: ConfigService
   ) {}
 
   ngOnInit() {

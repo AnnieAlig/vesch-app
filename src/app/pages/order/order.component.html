@@ -1,11 +1,11 @@
-<app-breadcrumbs currentPage="Корзина" i18n-currentPage="@@cart__cart"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.navigation?.cart"></app-breadcrumbs>
 
 <div class="container-inner">
   <div class="row">
     <div class="col-1 hidden-mobile"></div>
     <div class="col-4 col-tablet-3 col-desktop-5 position-relative">
       <div class="page__brand_text-rotated hidden-mobile hidden-tablet">
-        <p i18n="@@cart__cart">Корзина</p>
+        <p>{{(config.configData | async)?.navigation?.cart}}</p>
       </div>
     </div>
   </div>
@@ -15,17 +15,17 @@
       <div class="order__product">
         &nbsp;
       </div>
-      <div class="order__quantity" i18n="@@cart__quantity">
-        Количество
+      <div class="order__quantity">
+        {{(config.configData | async)?.common_texts?.quantity}}
       </div>
-      <div class="order__price-one" i18n="@@cart__price">
-        Цена  
+      <div class="order__price-one">
+        {{(config.configData | async)?.common_texts?.price}}
       </div>
-      <div class="order__price-total" i18n="@@cart__total">
-        Сумма
+      <div class="order__price-total">
+        {{(config.configData | async)?.common_texts?.total}}
       </div>
-      <div class="order__remove" i18n="@@cart__delete">
-        Удалить
+      <div class="order__remove">
+        {{(config.configData | async)?.common_texts?.delete}}
       </div>
   
     </div>
@@ -82,12 +82,12 @@
 
       <div class="additional-content" *ngIf="item?.additional_options?.length">
         <div class="col-4 col-tablet-2 col-desktop-3">
-          <h4 i18n="@@cart__choose_additional_service">Выберите дополнительный сервис</h4>
+          <h4>{{(config.configData | async)?.common_texts?.choose_additional_service}}</h4>
         </div>
         <div class="col-4 col-tablet-2 col-desktop-3">
           <div class="order__select">
               <select name="additional" class="select" [(ngModel)]="order?.items[i].additional_chosen" (change)="orderService.update(order?.items)">
-                <option [value]="null" selected i18n="@@cart__choose_additional_service_placeholder">Выбор дополнительного сервиса</option>
+                <option [value]="null" selected>{{(config.configData | async)?.common_texts?.additional_service_placeholder}}</option>
                 <option [value]="option?.id" *ngFor="let option of item?.additional_options">{{option?.text}} - {{option?.price}} {{item?.currency}}</option>
               </select>
               <i class="ic ic--dropdown">^</i>
@@ -100,10 +100,10 @@
 
   <div class="row info-row">
     <div class="col-tablet-2 col-desktop-4">
-      <p i18n="@@cart__contact">Оператор контакт центра свяжется с вами для подтверждения заказа и уточнения необходимых деталей в течении 15 минут</p>
+      <p>{{(config.configData | async)?.common_texts?.contact_text}}</p>
     </div>
     <div class="col-4 col-tablet-2 col-desktop-2 order-mobile-1">
-        <button class="order__submit btn btn-primary" type="submit" i18n="@@cart__submit" (click)="submitOrder()">Отправить заказ</button>
+        <button class="order__submit btn btn-primary" type="submit" (click)="submitOrder()">{{(config.configData | async)?.common_texts?.submit_order}}</button>
     </div>
   </div>
 

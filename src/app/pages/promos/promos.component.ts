@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PromosService } from '../../core/services/promos.service';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-promos',
@@ -12,9 +13,11 @@ import { MetaService } from 'src/app/core/services/meta.service';
 export class PromosComponent implements OnInit {
   public promos: any;
   public itemsPerPage: number;
+
   constructor(
     private promosService: PromosService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

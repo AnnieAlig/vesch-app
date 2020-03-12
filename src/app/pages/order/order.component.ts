@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'ngx-webstorage';
 import { first } from 'rxjs/operators';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-order',
@@ -23,7 +24,8 @@ export class OrderComponent implements OnInit, OnDestroy {
   constructor(
     private orderService: OrderService,
     private router: Router,
-    private $localStorage: LocalStorageService
+    private $localStorage: LocalStorageService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

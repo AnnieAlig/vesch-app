@@ -3,6 +3,7 @@ import { ServicesService } from '../../core/services/services.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import { Router } from '@angular/router';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-services',
@@ -13,11 +14,13 @@ import { MetaService } from 'src/app/core/services/meta.service';
 })
 export class ServicesComponent implements OnInit, AfterViewInit {
   public services: any;
+  public texts: any;
 
   constructor(
     private servicesService: ServicesService,
     private router: Router,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {
@@ -29,6 +32,9 @@ export class ServicesComponent implements OnInit, AfterViewInit {
           }
           if (data.services) {
             this.services = data.services;
+          }
+          if (data.texts) {
+            this.texts = data.texts;
           }
         }
       }

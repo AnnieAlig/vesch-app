@@ -1,10 +1,10 @@
-<app-breadcrumbs currentPage="Вакансии" i18n-currentPage="@@nav__vacancies"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="(config.configData | async)?.navigation?.vacancies"></app-breadcrumbs>
 <div class="container-inner">
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
-    <!-- <h1 class="page__title" i18n="@@nav__vacancies">Вакансии</h1> -->
+    <!-- <h1 class="page__title">Вакансии</h1> -->
     <div class="page__brand_text-rotated hidden-mobile">
-        <p i18n="@@nav__vacancies">вакансии</p>
+        <p>{{(config.configData | async)?.navigation?.vacancies}}</p>
     </div>
   </div>
   <div class="page__description" [innerHtml]="vacancies?.description">
@@ -20,11 +20,11 @@
               </div>
               <div class="col-desktop-1"></div>
               <div class="col-4 col-tablet-2 col-desktop-1 d-flex align-items-center">
-                <p class="searh__label" i18n="@@vacancies__choose_city">Выберите город:</p>
+                <p class="searh__label">{{(config.configData | async)?.vacancies?.all_cities}}:</p>
               </div>
               <div class="search__element col-4 col-tablet-2 col-desktop-1">
                   <select name="city_select" class="search__select" [(ngModel)]="city" (change)="search()">
-                    <option value="" selected i18n="@@vacancies__all_cities">Все города</option>
+                    <option value="" selected>{{(config.configData | async)?.vacancies?.choose_city}}</option>
                     <option [value]="city" *ngFor="let city of cityList">{{city}}</option>
                   </select>
                   <i class="ic ic--dropdown">^</i>
@@ -38,7 +38,7 @@
           <span class="vacancy-salary" *ngIf="vacancy.salary">{{vacancy.salary}}</span>
         </h3>
         <span class="page__more-link vacancy-link link"> 
-          <span i18n="@@general__more_details">Детальнее</span>
+          <span>{{(config.configData | async)?.common_texts?.more_details}}</span>
           <i class="ic ic--more">^</i>
         </span>
       </a>

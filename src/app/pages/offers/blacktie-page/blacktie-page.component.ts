@@ -4,6 +4,7 @@ import { WOW } from 'wowjs/dist/wow.min';
 import { OffersService } from '../../../core/services/offers.service';
 import * as _ from 'underscore';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-blacktie-page',
@@ -21,7 +22,8 @@ export class BlacktiePageComponent implements OnInit {
   constructor(
     private homeService: HomeService,
     private offersService: OffersService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

@@ -3,6 +3,7 @@ import { VacanciesService } from '../../core/services/vacancies.service';
 import { Router } from '@angular/router';
 import { MetaService } from 'src/app/core/services/meta.service';
 import * as _ from 'underscore';
+import { ConfigService } from 'src/app/core/services/config.service';
 @Component({
   selector: 'app-vacancies',
   templateUrl: './vacancies.component.html',
@@ -17,6 +18,7 @@ export class VacanciesComponent implements OnInit {
   public isMobile: boolean;
   public cityList = [];
   public city = '';
+
   @HostListener('window:resize', ['$event'])
     onResize(event) {
       this.isMobile = window.innerWidth < 768;
@@ -25,7 +27,8 @@ export class VacanciesComponent implements OnInit {
   constructor(
     private vacanciesService: VacanciesService,
     private router: Router,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

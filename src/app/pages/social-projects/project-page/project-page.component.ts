@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SocialProjectsService } from '.././../../core/services/social-projects.service';
 import { WOW } from 'wowjs/dist/wow.min';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-project-page',
@@ -18,7 +19,8 @@ export class ProjectPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private socialProjectsService: SocialProjectsService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

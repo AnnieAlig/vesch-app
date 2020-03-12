@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../core/services/news.service';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -13,9 +14,11 @@ export class NewsComponent implements OnInit {
   public news: any;
   public itemsPerPage: number;
   public page: any;
+
   constructor(
     private newsService: NewsService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

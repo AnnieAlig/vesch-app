@@ -6,6 +6,7 @@ import * as _ from 'underscore';
 import { WOW } from 'wowjs/dist/wow.min';
 import { Router } from '@angular/router';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private sliderInterval: any;
   public prevSlide: number;
 
+  public texts;
   public benefits;
   public steps;
   public services;
@@ -45,7 +47,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private _sanitizer: DomSanitizer,
     private renderer: Renderer2,
     private router: Router,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) {
     // this.sliderInterval = setInterval(() => {
     //   this.changeSlide();
@@ -89,6 +92,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
           }
           if (data.blacktie) {
             this.blackTie_section = data.blacktie;
+          }
+          if (data.texts) {
+            this.texts = data.texts;
           }
           setTimeout( () => {
             // this.createSlider();

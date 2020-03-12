@@ -1,10 +1,10 @@
-<app-breadcrumbs [currentPage]="promo.title" parentPage="Акции" *ngIf="promo?.title" i18n-parentPage="@@nav__promos"></app-breadcrumbs>
+<app-breadcrumbs [currentPage]="promo.title" [parentPage]="(config.configData | async)?.navigation?.promos" *ngIf="promo?.title"></app-breadcrumbs>
 <div class="container-inner" *ngIf="promo">
   
   <div class="row position-relative">
     <div class="col-desktop-1"></div>
     <div class="page__brand_text-rotated hidden-mobile">
-        <p i18n="@@nav__promos">акции</p>
+        <p>{{(config.configData | async)?.navigation?.promos}}</p>
     </div>
   </div>
   <div class="page__image">

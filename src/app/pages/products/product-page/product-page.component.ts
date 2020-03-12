@@ -5,6 +5,7 @@ import { ProductsService } from 'src/app/core/services/products.service';
 import { OrderService, OrderItem } from 'src/app/core/order/order.service';
 import { MetaService } from 'src/app/core/services/meta.service';
 import * as _ from 'underscore';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-product-page',
@@ -22,7 +23,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     private router: Router,
     private productsService: ProductsService,
     private orderService: OrderService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

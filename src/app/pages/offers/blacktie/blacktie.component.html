@@ -46,7 +46,7 @@
           </div>
           <div class="blacktie__item hidden-desktop align-self-end">
             <a routerLink="/offers/black-tie" class="page__more-link blacktie__link mb0">
-                <span i18n="@@general__more_details">Детальнее</span>
+                <span>{{(config.configData | async)?.common_texts?.more_details}}</span>
                 <i class="ic ic--more">^</i>
             </a>
           </div>
@@ -57,7 +57,7 @@
             <p>Black Tie</p>
         </div>
         <a routerLink="/offers/black-tie" class="page__more-link blacktie__link">
-            <span i18n="@@general__more_details">Детальнее</span>
+            <span>{{(config.configData | async)?.common_texts?.more_details}}</span>
             <i class="ic ic--more">^</i>
         </a>
     </div>

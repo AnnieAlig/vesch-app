@@ -6,6 +6,7 @@ import { WOW } from 'wowjs/dist/wow.min';
 import * as juxtapose from '../../../../assets/scripts/juxtapose.js';
 import * as _ from 'underscore';
 import { MetaService } from 'src/app/core/services/meta.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 declare var juxtapose: any;
 
@@ -37,7 +38,8 @@ export class OfferPageComponent implements OnInit {
     private router: Router,
     private offersService: OffersService,
     private orderService: OrderService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private config: ConfigService
   ) {}
 
   ngOnInit() {

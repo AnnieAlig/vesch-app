@@ -6,6 +6,7 @@ import { LocalStorageService } from 'ngx-webstorage';
 import {DialogService} from 'ng2-bootstrap-modal';
 import { SuccessModalComponent } from 'src/app/shared/modals/success-modal/success-modal.component';
 import { OrderService } from 'src/app/core/order/order.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-checkout',
@@ -38,6 +39,7 @@ export class CheckoutComponent implements OnInit {
     private orderService: OrderService,
     private $localStorage: LocalStorageService,
     private dialogService: DialogService,
+    private config: ConfigService
   ) { }
 
   ngOnInit() {

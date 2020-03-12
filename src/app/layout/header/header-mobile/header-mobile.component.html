@@ -44,8 +44,8 @@
               </div>
               <div class="mobile__search-bar hidden-tablet">
                   <label for="" class="search-label"> 
-                      <input type="text" class="search-input" placeholder="Поиск по сайту..."
-                        [(ngModel)]="searchInput" name="search" i18n-placeholder="@@search__placeholder">
+                      <input type="text" class="search-input" [placeholder]="config?.header_texts?.search_placeholder"
+                        [(ngModel)]="searchInput" name="search">
                       <i class="ic ic--search ic--mobile" (click)="search()"></i>
                   </label>
               </div>
@@ -56,59 +56,59 @@
                               <a class="mobile__link text-small" href="tel:{{number | phone}}">
                                   <i class="ic ic--phone ic--mobile"></i>
                                   {{number}}
-                                  <span class="mobile__link--colored" i18n="@@general__call">Позвонить</span>
+                                  <span class="mobile__link--colored">{{config?.header_texts?.call}}</span>
                               </a>
                           </li>
                       </ul>
                       <ul class="menu-list mobile__menu-main">
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/promos" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__promos">Акции</a>
+                                  <a routerLink="/promos" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.promos}}</a>
                               </h5>
                           </li>
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/services" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav_services">Сервисы</a>
+                                  <a routerLink="/services" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.services}}</a>
                               </h5>
                           </li>
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/offers" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav_offers">Услуги</a>
+                                  <a routerLink="/offers" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.offers}}</a>
                               </h5>
                           </li>
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/products" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav_items">Товары</a>
+                                  <a routerLink="/products" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.products}}</a>
                               </h5>
                           </li>
                           <li class="mobile__menu-item">
                               <h5 class="mobile__title">
-                                  <a routerLink="/points" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__points">Пункты приёма</a>
+                                  <a routerLink="/points" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.points}}</a>
                               </h5>
                           </li>
                       </ul>
-                      <h5 class="mobile__title" i18n="@@nav__about_us">О нас</h5>
+                      <h5 class="mobile__title">{{config?.navigation?.about_us}}</h5>
                       <ul class="menu-list mobile__menu-about">    
                           <li class="mobile__menu-item">
-                              <a routerLink="/company" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__company">Компания</a>
+                              <a routerLink="/company" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.company}}</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/how-we-work" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__how_we_work">Как мы работаем</a>
+                              <a routerLink="/how-we-work" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.how_we_work}}</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/loyalty" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__loyalty">Программа лояльности</a>
+                              <a routerLink="/loyalty" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.loyalty}}</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/products" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav_items">Товары</a>
+                              <a routerLink="/products" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.products}}</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/news" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__news">Новости</a>
+                              <a routerLink="/news" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.news}}</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/social-projects" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__social_projects">Социальные проекты</a>
+                              <a routerLink="/social-projects" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.social_projects}}</a>
                           </li>
                           <li class="mobile__menu-item">
-                              <a routerLink="/vacancies" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()" i18n="@@nav__vacancies">Вакансии </a>
+                              <a routerLink="/vacancies" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">{{config?.navigation?.vacancies}} </a>
                           </li>
                           <li class="mobile__menu-item">
                               <a routerLink="/faq" class="mobile__menu-link" routerLinkActive="active" (click)="toggleMenu()">FAQ</a>
@@ -123,7 +123,7 @@
               </div>
           </div>
           <div class="mobile__footer" *ngIf="config?.apps?.length">
-              <p class="mb25" i18n="@@general__download_app">Скачайте приложение через</p>
+              <p class="mb25">{{config?.navigation?.download_app}}</p>
               <a [href]="app?.link" class="mobile-app__link" *ngFor="let app of config?.apps">
                   <img *ngIf="app?.name === 'app_store'" src="assets/img/home/apple_white.png" [alt]="app?.name">
                   <img *ngIf="app?.name === 'google_play'" src="assets/img/home/google_white.png" [alt]="app?.name">

@@ -34,5 +34,32 @@
             "name": "google_play",
             "link": "test"
         }
-    ]
+    ],
+    "footer_texts": {
+        "contact_us": "Свяжитесь с нами",
+        "by_phone": "По телефону",
+        "call": "Позвонить",
+        "write": "Написать",
+        "write_emails": "Пишите нам на почту",
+        "in_social": "Мы в соцсетях"
+    },
+    "navigation": {
+        "about_us": "О нас",
+        "company": "Компания",
+        "how_we_work": "Как мы работаем",
+        "loyalty": "Программа лояльности",
+        "news": "Новости",
+        "social_projects": "Социальные проекты",
+        "vacancies": "Вакансии",
+        "promos": "Акции",
+        "services": "Сервисы",
+        "offers": "Услуги",
+        "points": "Пункты приёма",
+        "products": "Товары",
+        "download_app": "Скачайте приложение через"
+    },
+    "header_texts": {
+        "search_placeholder": "Поиск по сайту...",
+        "call": "Позвонить"
+    }
 }

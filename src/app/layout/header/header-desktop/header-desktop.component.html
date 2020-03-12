@@ -56,25 +56,25 @@
       </a>
       <ul class="menu-list navbar__menu">
           <li class="navbar__item">
-              <a href="javascript:void(0);" class="navbar__link navbar--dropdown" (click)="collapsed = !collapsed" [ngClass]="{'active': collapsed}" #dropdown_link i18n="@@nav__about_us">
-                  О нас
+              <a href="javascript:void(0);" class="navbar__link navbar--dropdown" (click)="collapsed = !collapsed" [ngClass]="{'active': collapsed}" #dropdown_link>
+                {{config?.navigation?.about_us}}
                   <i class="ic ic--dropdown">^</i>
               </a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/promos" class="navbar__link" routerLinkActive="active" i18n="@@nav__promos">Акции</a>
+              <a routerLink="/promos" class="navbar__link" routerLinkActive="active">{{config?.navigation?.promos}}</a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/services" class="navbar__link" routerLinkActive="active" i18n="@@nav_services">Сервисы</a>
+              <a routerLink="/services" class="navbar__link" routerLinkActive="active">{{config?.navigation?.services}}</a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/offers" class="navbar__link" routerLinkActive="active" i18n="@@nav_offers">Услуги</a>
+              <a routerLink="/offers" class="navbar__link" routerLinkActive="active">{{config?.navigation?.offers}}</a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/products" class="navbar__link" routerLinkActive="active" i18n="@@nav_items">Товары</a>
+              <a routerLink="/products" class="navbar__link" routerLinkActive="active">{{config?.navigation?.products}}</a>
           </li>
           <li class="navbar__item">
-              <a routerLink="/points" class="navbar__link" routerLinkActive="active" i18n="@@nav__points">Пункты приема</a>
+              <a routerLink="/points" class="navbar__link" routerLinkActive="active">{{config?.navigation?.points}}</a>
           </li>
       </ul>
   </div>
@@ -85,26 +85,26 @@
         <div class="container-inner">
             <div class="row">
                 <div class="col-1"></div>
-                <div class="about-us__title" i18n="@@nav__about_us">о нас</div>
+                <div class="about-us__title">{{config?.navigation?.about_us}}</div>
                 <div class="col-1"></div>
                 <ul class="menu-list about-us__menu col-1">
                     <li class="about-us-item">
-                        <a routerLink="/company" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__company">Компания</a>
+                        <a routerLink="/company" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">{{config?.navigation?.company}}</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/how-we-work" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__how_we_work">Как мы работаем</a>
+                        <a routerLink="/how-we-work" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">{{config?.navigation?.how_we_work}}</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/loyalty" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__loyalty">Программа лояльности</a>
+                        <a routerLink="/loyalty" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">{{config?.navigation?.loyalty}}</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/news" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__news">Новости</a>
+                        <a routerLink="/news" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">{{config?.navigation?.news}}</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/social-projects" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__social_projects">Социальные проекты</a>
+                        <a routerLink="/social-projects" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">{{config?.navigation?.social_projects}}</a>
                     </li>
                     <li class="about-us-item">
-                        <a routerLink="/vacancies" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed" i18n="@@nav__vacancies">Вакансии </a>
+                        <a routerLink="/vacancies" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">{{config?.navigation?.vacancies}} </a>
                     </li>
                     <li class="about-us-item">
                         <a routerLink="/faq" class="about-us-link" routerLinkActive="active" (click)="collapsed = !collapsed">FAQ</a>

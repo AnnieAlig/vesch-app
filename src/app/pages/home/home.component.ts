@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private renderer: Renderer2,
     private router: Router,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) {
     // this.sliderInterval = setInterval(() => {
     //   this.changeSlide();

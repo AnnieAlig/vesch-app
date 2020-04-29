@@ -20,7 +20,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     private servicesService: ServicesService,
     private router: Router,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

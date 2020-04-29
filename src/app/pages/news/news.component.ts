@@ -18,7 +18,7 @@ export class NewsComponent implements OnInit {
   constructor(
     private newsService: NewsService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

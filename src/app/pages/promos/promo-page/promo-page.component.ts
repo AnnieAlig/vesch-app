@@ -20,7 +20,7 @@ export class PromoPageComponent implements OnInit {
     private route: ActivatedRoute,
     private promosService: PromosService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
     private productsService: ProductsService,
     private orderService: OrderService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

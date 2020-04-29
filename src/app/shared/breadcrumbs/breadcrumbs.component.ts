@@ -16,7 +16,7 @@ export class BreadcrumbsComponent implements OnInit, AfterViewInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {}

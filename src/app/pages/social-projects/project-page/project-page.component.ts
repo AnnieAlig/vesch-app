@@ -20,7 +20,7 @@ export class ProjectPageComponent implements OnInit {
     private route: ActivatedRoute,
     private socialProjectsService: SocialProjectsService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

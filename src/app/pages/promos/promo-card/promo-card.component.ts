@@ -17,7 +17,7 @@ export class PromoCardComponent implements OnInit {
       this.isMobile = window.innerWidth < 1023;
   }
   constructor(
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

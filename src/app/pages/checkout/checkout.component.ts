@@ -39,7 +39,7 @@ export class CheckoutComponent implements OnInit {
     private orderService: OrderService,
     private $localStorage: LocalStorageService,
     private dialogService: DialogService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

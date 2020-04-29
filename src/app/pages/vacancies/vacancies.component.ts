@@ -28,7 +28,7 @@ export class VacanciesComponent implements OnInit {
     private vacanciesService: VacanciesService,
     private router: Router,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

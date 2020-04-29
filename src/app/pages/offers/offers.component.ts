@@ -27,7 +27,7 @@ export class OffersComponent implements OnInit, AfterViewInit {
     private offersService: OffersService,
     private router: Router,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

@@ -22,7 +22,7 @@ export class VacancyPageComponent implements OnInit {
     private route: ActivatedRoute,
     private vacanciesService: VacanciesService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

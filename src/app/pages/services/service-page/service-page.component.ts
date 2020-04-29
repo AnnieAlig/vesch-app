@@ -20,7 +20,7 @@ export class ServicePageComponent implements OnInit {
     private route: ActivatedRoute,
     private servicesService: ServicesService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

@@ -18,7 +18,7 @@ export class SocialProjectsComponent implements OnInit {
   constructor(
     private socialProjectsService: SocialProjectsService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

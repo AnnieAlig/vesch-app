@@ -17,7 +17,7 @@ export class LoyaltyComponent implements OnInit {
   constructor(
     private loyaltyService: LoyaltyService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

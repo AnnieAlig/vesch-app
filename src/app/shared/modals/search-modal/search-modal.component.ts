@@ -27,7 +27,7 @@ export interface SearchModel {}
   constructor(
     dialogService: DialogService,
     private renderer: Renderer2,
-    private config: ConfigService
+    public config: ConfigService
   ) {
     super(dialogService);
   }

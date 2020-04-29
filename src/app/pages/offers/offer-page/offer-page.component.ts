@@ -39,7 +39,7 @@ export class OfferPageComponent implements OnInit {
     private offersService: OffersService,
     private orderService: OrderService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) {}
 
   ngOnInit() {

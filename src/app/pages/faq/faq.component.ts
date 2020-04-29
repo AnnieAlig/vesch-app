@@ -17,7 +17,7 @@ export class FaqComponent implements OnInit {
   constructor(
     private faqService: FaqService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

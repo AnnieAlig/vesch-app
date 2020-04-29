@@ -16,7 +16,7 @@ export class PointsComponent extends MapComponent implements OnInit {
   constructor(
     protected homeService: HomeService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) {
     super(homeService);
   }

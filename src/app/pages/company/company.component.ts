@@ -20,7 +20,7 @@ export class CompanyComponent implements OnInit {
   constructor(
     private metaService: MetaService,
     private companyService: CompanyService,
-    private config: ConfigService
+    public config: ConfigService
     ) { }
 
   ngOnInit() {

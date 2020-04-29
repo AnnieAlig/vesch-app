@@ -23,7 +23,7 @@ export class BlacktiePageComponent implements OnInit {
     private homeService: HomeService,
     private offersService: OffersService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

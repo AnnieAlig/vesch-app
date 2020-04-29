@@ -17,7 +17,7 @@ export class PromosComponent implements OnInit {
   constructor(
     private promosService: PromosService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

@@ -24,7 +24,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     private productsService: ProductsService,
     private orderService: OrderService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

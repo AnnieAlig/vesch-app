@@ -26,7 +26,7 @@ export class OfferItemPageComponent implements OnInit, OnDestroy {
     private offersService: OffersService,
     private orderService: OrderService,
     private metaService: MetaService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

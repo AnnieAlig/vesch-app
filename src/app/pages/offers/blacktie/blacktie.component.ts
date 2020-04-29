@@ -14,7 +14,7 @@ export class BlacktieComponent implements OnInit {
 
   constructor(
     private homeService: HomeService,
-    private config: ConfigService
+    public config: ConfigService
   ) { }
 
   ngOnInit() {

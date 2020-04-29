@@ -30,7 +30,7 @@ export class CallbackComponent implements OnInit, AfterViewInit {
   constructor(
     private dialogService: DialogService,
     private callbackService: CallbackService,
-    private config: ConfigService
+    public config: ConfigService
   ) {}
 
   ngOnInit() {
